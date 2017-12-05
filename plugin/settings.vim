@@ -7,7 +7,11 @@ set tabstop=2
 set shiftwidth=2
 set lines=350
 set columns=350
+set backspace=indent,eol,start
+set whichwrap=b,<,>,[,],l,h
 
+set clipboard=unnamed
+set autoread
 set hidden
 set showcmd
 set wildmenu
@@ -21,11 +25,17 @@ set cursorline
 set hlsearch
 set incsearch
 
+set noswapfile
 set updatecount=80                    " update swapfiles every 80 chars
 set updatetime=2000
 
+" FOLDING
+set foldenable
+set foldmethod=indent
+set foldcolumn=3
+
 if has('linebreak')
-  let &showbreak='↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
+  let &showbreak='  ↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
 endif
 
 if has('windows')
@@ -35,3 +45,5 @@ endif
 if has('vertsplit')
   set splitright                      " open vertical splits to the right of the current window
 endif
+
+autocmd! bufwritepost $MYVIMRC source $MYVIMRC
