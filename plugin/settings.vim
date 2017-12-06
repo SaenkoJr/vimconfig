@@ -1,5 +1,7 @@
 set encoding=utf-8
 
+set viewoptions-=options
+
 set number
 set relativenumber
 set expandtab                         " Always use spaces instead of tabs
@@ -32,11 +34,12 @@ set updatetime=2000
 " FOLDING
 set foldenable
 "set foldmethod=syntax
-set foldmethod=indent
-"set foldmethod=manual
+"set foldmethod=indent
+set foldmethod=manual
 set foldcolumn=3
-autocmd BufWinLeave "." mkview
-autocmd BufWinEnter "." silent loadview
+"set foldnestmax=3
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
 
 if has('linebreak')
   let &showbreak='  ↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
