@@ -31,8 +31,12 @@ set updatetime=2000
 
 " FOLDING
 set foldenable
+"set foldmethod=syntax
 set foldmethod=indent
+"set foldmethod=manual
 set foldcolumn=3
+autocmd BufWinLeave "." mkview
+autocmd BufWinEnter "." silent loadview
 
 if has('linebreak')
   let &showbreak='  ↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
