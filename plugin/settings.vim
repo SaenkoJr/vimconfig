@@ -1,11 +1,17 @@
 set encoding=utf-8
 
 set viewoptions-=options
+"set lazyredraw
 
 set number
 set relativenumber
 set expandtab                         " Always use spaces instead of tabs
+filetype plugin indent on
+set cindent
+set smartindent
+set smarttab
 set tabstop=2
+set textwidth=250
 set shiftwidth=2
 set lines=350
 set columns=350
@@ -15,10 +21,7 @@ set whichwrap=b,<,>,[,],l,h
 set clipboard=unnamed
 set autoread
 set hidden
-set showcmd
 set wildmenu
-set autoindent
-set smartindent
 set breakindent
 
 set ruler
@@ -28,18 +31,17 @@ set hlsearch
 set incsearch
 
 set noswapfile
-set updatecount=80                    " update swapfiles every 80 chars
-set updatetime=2000
+"set updatecount=80                    " update swapfiles every 80 chars
+"set updatetime=2000
 
 " FOLDING
-set foldenable
-"set foldmethod=syntax
-"set foldmethod=indent
-set foldmethod=manual
-set foldcolumn=3
-"set foldnestmax=3
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+if has('folding')
+  if has('windows')
+    set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+  endif
+  set foldmethod=indent               " not as cool as syntax, but faster
+  set foldlevelstart=99               " start unfolded
+endif
 
 if has('linebreak')
   let &showbreak='  ↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
@@ -51,6 +53,10 @@ endif
 
 if has('vertsplit')
   set splitright                      " open vertical splits to the right of the current window
+endif
+
+if has('showcmd')
+  set showcmd
 endif
 
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC

@@ -1,6 +1,6 @@
 let s:expansion_active = 0
 
-function! autocomplete#setup_mappings()
+function! autocomplete#setup_mappings() abort
   " Overwrite the mappings that UltiSnips sets up during expansion.
   execute 'inoremap <buffer> <silent> ' . g:UltiSnipsJumpForwardTrigger .
         \ ' <C-R>=autocomplete#expand_or_jump("N")<CR>'
