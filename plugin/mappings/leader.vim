@@ -10,6 +10,8 @@ nnoremap <Leader>p :echo expand('%')<CR>
 
 nnoremap <Leader>q :quit<CR>
 
+nnoremap <Leader>w :write<CR>
+
 nnoremap <Leader>n :noh<CR>
 
 " Edit file, starting in same directory as current file
