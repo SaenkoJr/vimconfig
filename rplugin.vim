@@ -35,6 +35,7 @@ call remote#host#RegisterPlugin('python3', 'C:/Users/Maxim/.vim/plugged/Language
       \ {'sync': v:false, 'name': 'LanguageClient_textDocument_documentSymbol', 'type': 'function', 'opts': {}},
       \ {'sync': v:false, 'name': 'LanguageClient_textDocument_formatting', 'type': 'function', 'opts': {}},
       \ {'sync': v:false, 'name': 'LanguageClient_textDocument_hover', 'type': 'function', 'opts': {}},
+      \ {'sync': v:true, 'name': 'LanguageClient_textDocument_hoverSync', 'type': 'function', 'opts': {}},
       \ {'sync': v:false, 'name': 'LanguageClient_textDocument_rangeFormatting', 'type': 'function', 'opts': {}},
       \ {'sync': v:false, 'name': 'LanguageClient_textDocument_references', 'type': 'function', 'opts': {}},
       \ {'sync': v:false, 'name': 'LanguageClient_textDocument_rename', 'type': 'function', 'opts': {}},
