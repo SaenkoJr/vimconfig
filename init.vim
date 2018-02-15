@@ -25,6 +25,9 @@ Plug 'vim-airline/vim-airline-themes'
 
 "colors 
 Plug 'chriskempson/base16-vim'
+Plug 'nightsense/stellarized' "stellarized_dark
+Plug 'nightsense/seagrey' "seagrey-dark
+Plug 'arcticicestudio/nord-vim'
 
 " Syntax 
 Plug 'othree/html5.vim'
@@ -54,13 +57,13 @@ Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-colorscheme base16-ocean
+"colors
+colorscheme nord
+let g:nord_uniform_status_lines = 1
+let g:nord_comment_brightness = 15
 
 " Autopairs
 let g:AutoPairs={'(':')', '[':']', '{':'}',"'":"'",'"':'"', '`':'`', '<':'>'}
-
-let mapleader=' '
-let g:multi_cursor_next_key='<C-q>'
 
 " python provide
 let g:python3_host_prog='C:/Program Files/Python36/python.exe'
@@ -77,6 +80,8 @@ let g:user_emmet_settings = {
       \}
 
 "mappings
+let mapleader=' '
+let g:multi_cursor_next_key='<C-q>'
 nmap <Leader>e <Plug>(easymotion-prefix)
 map <C-n> :NERDTreeToggle<CR>
 map <F2> :EasyBufferToggle<CR>
@@ -84,13 +89,23 @@ map <F2> :EasyBufferToggle<CR>
 nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
 
 " airline settings 
-let g:airline_theme='base16'
+"let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 
 " Use deoplete.
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 20
+let g:deoplete#max_list = 15
+
+"function g:Multiple_cursors_before()
+  "let g:deoplete#disable_auto_complete = 1
+"endfunction
+"function g:Multiple_cursors_after()
+  "let g:deoplete#disable_auto_complete = 0
+"endfunction
+
+call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 
 " Use tern_for_vim
 let g:tern#command = ['tern']
@@ -100,18 +115,20 @@ let g:tern#arguments =['--persistent']
 let g:deoplete#sources#ternjs#filetypes = [
                 \ 'jsx',
                 \ 'javascript.jsx',
-                \ 'vue',
                 \ 'node',
                 \ 'es6'
                 \ ]
 
 " ale settings
 let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'jsx': ['eslint'],
-\}
-let g:ale_linter_aliases = { 'jsx': 'css' }
+      \ 'javascript': ['eslint'],
+      \ 'jsx': ['eslint'],
+      \}
 
+let g:ale_linter_aliases = { 'jsx': 'css' }
 let g:ale_fixers = {
-\ 'javascript': ['eslint'],
-\}
+      \ 'javascript': ['eslint'],
+      \}
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0

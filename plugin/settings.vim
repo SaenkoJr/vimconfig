@@ -1,7 +1,8 @@
 set encoding=utf-8
 
 set viewoptions-=options
-"set lazyredraw
+set lazyredraw
+set ttyfast
 
 set number
 set relativenumber
@@ -9,6 +10,7 @@ set expandtab                         " Always use spaces instead of tabs
 filetype plugin indent on
 set cindent
 set smartindent
+set ignorecase
 set smarttab
 set tabstop=2
 set textwidth=250
@@ -17,6 +19,7 @@ set lines=350
 set columns=350
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
+set fileformat=unix
 
 set clipboard=unnamed
 set autoread
@@ -29,6 +32,10 @@ set cursorline
 
 set hlsearch
 set incsearch
+set termuicolors
+
+" Enable hotkeys for Russian layout
+set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчнях;abcdefghijklmnopqrstuvwxyz
 
 set noswapfile
 "set updatecount=80                    " update swapfiles every 80 chars
