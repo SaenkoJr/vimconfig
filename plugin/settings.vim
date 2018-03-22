@@ -19,7 +19,7 @@ set lines=350
 set columns=350
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
-set fileformat=unix
+set fileformats=unix,dos
 
 set clipboard=unnamed
 set autoread
@@ -32,7 +32,6 @@ set cursorline
 
 set hlsearch
 set incsearch
-set termuicolors
 
 " Enable hotkeys for Russian layout
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчнях;abcdefghijklmnopqrstuvwxyz
