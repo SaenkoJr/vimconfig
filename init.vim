@@ -20,6 +20,7 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
+Plug 'dyng/ctrlsf.vim'
 
 " Airline
 Plug 'vim-airline/vim-airline'
@@ -67,6 +68,7 @@ let g:nord_comment_brightness = 16
 
 " Commenters
 let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
 
 " Autopairs
 let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '<':'>'}

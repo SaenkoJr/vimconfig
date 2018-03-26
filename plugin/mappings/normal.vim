@@ -12,3 +12,5 @@ map <C-n> :NERDTreeToggle<CR>
 map <F2> :EasyBufferToggle<CR>
 "nnoremap <silent> <F8> :TagbarToggle<CR>
 nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
+
+nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
