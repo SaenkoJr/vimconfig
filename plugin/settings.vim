@@ -1,4 +1,5 @@
 set encoding=utf-8
+set termguicolors
 
 set viewoptions-=options
 set lazyredraw
@@ -19,7 +20,6 @@ set lines=350
 set columns=350
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
-set fileformats=unix,dos
 
 set clipboard=unnamed
 set autoread

@@ -3,9 +3,8 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <C-p> :FZF<CR>
-nnoremap <C-p><C-p> :FZF D:<CR>
-nnoremap <C-p>` :FZF ~<CR>
+nnoremap <C-p><C-p> :FZF<CR>
+nnoremap <C-p> :FZF ~<CR>
 nnoremap <C-p>s :Snippets<CR>
 
 map <C-n> :NERDTreeToggle<CR>

@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-" Utilities
+"--------- Utilities ---------
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rking/ag.vim'
 Plug 'mhinz/vim-startify'       " For sessions
@@ -15,24 +15,26 @@ Plug 'tpope/vim-surround'       " Surrounding in pairs
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
 
-" NerdTree and ctrlp
+"--------- NerdTree and ctrlp ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
 
-" Airline
+"--------- Airline ---------
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-"colors 
+"--------- Colors ---------
 Plug 'chriskempson/base16-vim'
 Plug 'nightsense/stellarized' "stellarized_dark
 Plug 'nightsense/seagrey' "seagrey-dark
 Plug 'arcticicestudio/nord-vim'
+Plug 'ayu-theme/ayu-vim' 
+Plug 'rakr/vim-two-firewatch' 
 
-" Syntax 
+"--------- Syntax --------- 
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -41,12 +43,12 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'  " For json files
 
-" Autocomplete ana snips
+"--------- Autocomplete ana snips ---------
 Plug 'ternjs/tern_for_vim'
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'mattn/emmet-vim' 
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -55,33 +57,43 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-" Git 
+"--------- Git ---------
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 
-"colors
+"--------- Colorscheme --------- 
 colorscheme nord
-let g:nord_uniform_status_lines = 1
-let g:nord_comment_brightness = 16
 
-" Commenters
+" ayu
+" let ayucolor="light"
+
+" two-firewatch
+" set background=light
+
+" nord
+let g:nord_underline = 1
+let g:nord_uniform_status_lines = 1
+let g:nord_uniform_diff_background = 1
+" let g:nord_comment_brightness = 20
+
+"--------- Commenters ---------
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 
-" Autopairs
+"--------- Autopairs ---------
 let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '<':'>'}
 
-" js syntax highlight
+"--------- js syntax highlight ---------
 let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_colorful_config = 1
 
 " python provide
-let g:python3_host_prog='C:/Program Files/Python36/python.exe'
-let g:python_host_prog='C:/Python27/python.exe'
+" let g:python3_host_prog='C:/Program Files/Python36/python.exe'
+" let g:python_host_prog='C:/Python27/python.exe'
 
-"emmet settings
+"--------- emmet settings ---------
 let g:user_emmet_install_global = 0
 autocmd FileType html,css,javascript.jsx,javascript EmmetInstall
 let g:user_emmet_leader_key='<C-E>'
@@ -94,21 +106,18 @@ let g:user_emmet_settings = {
       \  },
       \}
 
-"mappings
+"--------- Mappings ---------
 let mapleader=' '
 let g:multi_cursor_next_key='<C-q>'
 
-" airline settings 
+"--------- Airline settings ---------
 "let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline#extensions#tabline#left_sep = '>>'
-let g:airline#extensions#tabline#left_alt_sep = '>>'
-let g:airline_left_sep = '>>'
-let g:airline_right_sep = '<<'
+let g:airline_powerline_fonts = 1
 
-" Use deoplete.
+"--------- Use deoplete. ---------
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 20
 let g:deoplete#max_list = 35
@@ -122,11 +131,11 @@ let g:deoplete#max_list = 35
 
 call deoplete#custom#source('_', 'sorters', ['sorter_word'])
 
-" Use tern_for_vim
+"--------- Use tern_for_vim ---------
 let g:tern#command = ['tern']
 let g:tern#arguments =['--persistent']
 
-" termjs deoplete
+"--------- termjs deoplete ---------
 let g:deoplete#sources#ternjs#filetypes = [
                 \ 'jsx',
                 \ 'javascript.jsx',
@@ -134,7 +143,7 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'es6'
                 \ ]
 
-" ale settings
+"--------- ale settings ---------
 let g:ale_linters = {
       \ 'javascript': ['eslint'],
       \ 'jsx': ['eslint'],
@@ -148,7 +157,7 @@ let g:ale_fixers = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
-" indentLine settings
+"--------- indentLine settings ---------
 let g:indentLine_char = '┆'
 let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
