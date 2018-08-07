@@ -1,10 +1,12 @@
 set encoding=utf-8
+set mouse=a
 set termguicolors
 
 set viewoptions-=options
 set lazyredraw
 set ttyfast
 
+set nowrap
 set number
 set relativenumber
 set expandtab                         " Always use spaces instead of tabs
@@ -34,7 +36,7 @@ set hlsearch
 set incsearch
 
 " Enable hotkeys for Russian layout
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчнях;abcdefghijklmnopqrstuvwxyz
+set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<> 
 
 set noswapfile
 "set updatecount=80                    " update swapfiles every 80 chars

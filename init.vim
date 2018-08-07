@@ -8,7 +8,7 @@ Plug 'w0rp/ale'                 " linter
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'matze/vim-move'           
-Plug 'godlygeek/tabular'        " Align text
+Plug 'godlygeek/tabular'        " Align text (beauty tabs)
 Plug 'majutsushi/tagbar'        " Show tags 
 Plug 'troydm/easybuffer.vim'
 Plug 'tpope/vim-surround'       " Surrounding in pairs
@@ -161,3 +161,6 @@ let g:ale_lint_on_enter = 0
 let g:indentLine_char = '┆'
 let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
+
+"--------- FZF ---------
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
