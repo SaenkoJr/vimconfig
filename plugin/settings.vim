@@ -1,6 +1,5 @@
 set encoding=utf-8
 set mouse=a
-set termguicolors
 
 set viewoptions-=options
 set lazyredraw
@@ -18,8 +17,6 @@ set smarttab
 set tabstop=2
 set textwidth=250
 set shiftwidth=2
-set lines=350
-set columns=350
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
 

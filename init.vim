@@ -14,6 +14,8 @@ Plug 'troydm/easybuffer.vim'
 Plug 'tpope/vim-surround'       " Surrounding in pairs
 "Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
+Plug 'jpalardy/vim-slime'       " REPL
+Plug 'edkolev/tmuxline.vim'	" tmuxline
 
 "--------- NerdTree and ctrlp ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -31,8 +33,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'nightsense/stellarized' "stellarized_dark
 Plug 'nightsense/seagrey' "seagrey-dark
 Plug 'arcticicestudio/nord-vim'
-Plug 'ayu-theme/ayu-vim' 
-Plug 'rakr/vim-two-firewatch' 
 
 "--------- Syntax --------- 
 Plug 'othree/html5.vim'
@@ -42,6 +42,8 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'  " For json files
+Plug 'wlangstroth/vim-racket'
+Plug 'kovisoft/slimv'
 
 "--------- Autocomplete ana snips ---------
 Plug 'ternjs/tern_for_vim'
@@ -64,18 +66,18 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "--------- Colorscheme --------- 
-colorscheme nord
+" set termguicolors
+" colorscheme oceandark
 
-" ayu
-" let ayucolor="light"
-
-" two-firewatch
-" set background=light
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 " nord
-let g:nord_underline = 1
-let g:nord_uniform_status_lines = 1
-let g:nord_uniform_diff_background = 1
+" let g:nord_underline = 1
+" let g:nord_uniform_status_lines = 1
+" let g:nord_uniform_diff_background = 1
 " let g:nord_comment_brightness = 20
 
 "--------- Commenters ---------
@@ -88,10 +90,6 @@ let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '<':'>'}
 "--------- js syntax highlight ---------
 let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_colorful_config = 1
-
-" python provide
-" let g:python3_host_prog='C:/Program Files/Python36/python.exe'
-" let g:python_host_prog='C:/Python27/python.exe'
 
 "--------- emmet settings ---------
 let g:user_emmet_install_global = 0
@@ -111,11 +109,35 @@ let mapleader=' '
 let g:multi_cursor_next_key='<C-q>'
 
 "--------- Airline settings ---------
-"let g:airline_theme='base16'
+let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
+" let g:airline_solarized_bg='dark'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
+
+" for tmuxline + vim-airline integration
+let g:airline#extensions#tmuxline#enabled = 1
+" start tmuxline even without vim running
+let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
+let g:tmuxline_preset = {
+      \'a'       : '#S',
+      \'b'       : ['#I:#P', '#W'],
+      \'win'     : ['#I', '#W'],
+      \'cwin'    : ['#I', '#W'],
+      \'y'       : ['%b %d', '%R'],
+      \'z'       : '#(whoami)',
+      \'options' : {
+      \   'status-justify': 'left',
+      \   'window-status-separator': ' ',
+      \}}
+
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '',
+    \ 'right' : '',
+    \ 'right_alt' : '',
+    \ 'space' : ' '}
 
 "--------- Use deoplete. ---------
 let g:deoplete#enable_at_startup = 1
@@ -164,3 +186,9 @@ let g:vim_json_syntax_conceal = 0
 
 "--------- FZF ---------
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+
+"--------- Slime ---------
+let g:slime_target = "tmux"
+let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":1.2"}
+

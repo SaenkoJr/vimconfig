@@ -10,9 +10,9 @@ if has('autocmd')
   augroup WincentAutocomplete
     autocmd!
     autocmd! User UltiSnipsEnterFirstSnippet
-    autocmd User UltiSnipsEnterFirstSnippet call autocomplete#setup_mappings()
+    autocmd  User UltiSnipsEnterFirstSnippet call autocomplete#setup_mappings()
     autocmd! User UltiSnipsExitLastSnippet
-    autocmd User UltiSnipsExitLastSnippet call autocomplete#teardown_mappings()
+    autocmd  User UltiSnipsExitLastSnippet call autocomplete#teardown_mappings()
   augroup END
 endif
 
