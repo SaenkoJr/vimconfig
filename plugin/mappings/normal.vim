@@ -13,3 +13,9 @@ map <F2> :EasyBufferToggle<CR>
 nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
 
 nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
+
+"----- LSP -----
+nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>

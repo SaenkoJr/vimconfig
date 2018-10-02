@@ -1,7 +1,10 @@
 call plug#begin('~/.vim/plugged')
 
 "--------- Utilities ---------
-Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \}
 Plug 'rking/ag.vim'
 Plug 'mhinz/vim-startify'       " For sessions
 Plug 'w0rp/ale'                 " linter
@@ -12,7 +15,7 @@ Plug 'godlygeek/tabular'        " Align text (beauty tabs)
 Plug 'majutsushi/tagbar'        " Show tags 
 Plug 'troydm/easybuffer.vim'
 Plug 'tpope/vim-surround'       " Surrounding in pairs
-"Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
 Plug 'Yggdroot/indentLine'
 Plug 'jpalardy/vim-slime'       " REPL
 Plug 'edkolev/tmuxline.vim'	" tmuxline
@@ -58,6 +61,9 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+
+"--------- LSP servers --------- 
+Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
 
 "--------- Git ---------
 Plug 'tpope/vim-fugitive'
@@ -143,6 +149,7 @@ let g:tmuxline_separators = {
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#auto_complete_delay = 20
 let g:deoplete#max_list = 35
+let g:deoplete#max_processes = 2
 
 "function g:Multiple_cursors_before()
   "let g:deoplete#disable_auto_complete = 1
@@ -164,6 +171,13 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ 'node',
                 \ 'es6'
                 \ ]
+
+"--------- LSP ---------
+let g:LanguageClient_autoStart = 0
+let g:LanguageClient_serverCommands = {
+      \ 'javascript': ['node', expand('~/.vim/plugged/javascript-typescript-langserver/lib/language-server-stdio.js')],
+      \ 'javascript.jsx': ['node', expand('~/.vim/plugged/javascript-typescript-langserver/lib/language-server-stdio.js')],
+      \}
 
 "--------- ale settings ---------
 let g:ale_linters = {

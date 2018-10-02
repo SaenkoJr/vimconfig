@@ -1,5 +1,8 @@
 " Open last buffer
 nnoremap <Leader><Leader> <C-^>
+nmap <Leader>l :bnext<CR>
+nmap <Leader>h :bprevious<CR>
+nmap <Leader>bd :bd<CR>
 
 nnoremap <Leader>o :only<CR>
 
@@ -17,10 +20,9 @@ nnoremap <Leader>n :noh<CR>
 nmap <Leader>k <Plug>(ale_previous_wrap)
 nmap <Leader>j <Plug>(ale_next_wrap)
 
-nmap <Leader>l :bnext<CR>
-nmap <Leader>h :bprevious<CR>
-nmap <Leader>bd :bd<CR>
-
 nmap <Leader>e <Plug>(easymotion-prefix)
 " Edit file, starting in same directory as current file
 "nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+
+"----- LSP -----
+nnoremap <Leader> rnm :call LanguageClient_textDocument_rename()<CR>

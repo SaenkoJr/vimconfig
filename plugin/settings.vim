@@ -2,12 +2,12 @@ set encoding=utf-8
 set mouse=a
 
 set viewoptions-=options
-set lazyredraw
-set ttyfast
+" set nolazyredraw
+set regexpengine=1
 
 set nowrap
 set number
-set relativenumber
+set norelativenumber
 set expandtab                         " Always use spaces instead of tabs
 filetype plugin indent on
 set cindent
@@ -15,7 +15,9 @@ set smartindent
 set ignorecase
 set smarttab
 set tabstop=2
-set textwidth=250
+set synmaxcol=128
+syntax sync minlines=256
+set textwidth=180
 set shiftwidth=2
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
@@ -26,7 +28,7 @@ set hidden
 set wildmenu
 set breakindent
 
-set ruler
+" set ruler
 set cursorline
 
 set hlsearch
