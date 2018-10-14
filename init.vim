@@ -41,12 +41,13 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-"Plug 'mxw/vim-jsx', { 'for': 'jsx' }
-Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'mxw/vim-jsx'
+" Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'  " For json files
 Plug 'wlangstroth/vim-racket'
 Plug 'kovisoft/slimv'
+Plug 'leafgarland/typescript-vim'
 
 "--------- Autocomplete ana snips ---------
 Plug 'ternjs/tern_for_vim'
@@ -61,6 +62,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'wokalski/autocomplete-flow'
 
 "--------- LSP servers --------- 
 Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
@@ -96,6 +98,7 @@ let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '<':'>'}
 "--------- js syntax highlight ---------
 let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_colorful_config = 1
+let g:jsx_ext_required = 0
 
 "--------- emmet settings ---------
 let g:user_emmet_install_global = 0
@@ -147,9 +150,11 @@ let g:tmuxline_separators = {
 
 "--------- Use deoplete. ---------
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 20
-let g:deoplete#max_list = 35
+let g:deoplete#auto_complete_delay = 0
+let g:deoplete#max_list = 50
 let g:deoplete#max_processes = 2
+let g:deoplete#camel_case = v:true
+let g:autocomplete_flow#insert_paren_after_function = 0
 
 "function g:Multiple_cursors_before()
   "let g:deoplete#disable_auto_complete = 1
@@ -181,8 +186,8 @@ let g:LanguageClient_serverCommands = {
 
 "--------- ale settings ---------
 let g:ale_linters = {
-      \ 'javascript': ['eslint'],
-      \ 'jsx': ['eslint'],
+      \ 'javascript': ['eslint', 'flow'],
+      \ 'jsx': ['eslint', 'flow'],
       \}
 
 let g:ale_linter_aliases = { 'jsx': 'css' }
@@ -192,6 +197,9 @@ let g:ale_fixers = {
 
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
+
+hi ALEError ctermbg=red ctermfg=white cterm=underline
+hi ALEWarning ctermbg=yellow ctermfg=black cterm=underline
 
 "--------- indentLine settings ---------
 let g:indentLine_char = '┆'

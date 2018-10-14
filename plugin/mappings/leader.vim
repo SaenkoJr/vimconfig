@@ -1,7 +1,7 @@
 " Open last buffer
 nnoremap <Leader><Leader> <C-^>
-nmap <Leader>l :bnext<CR>
-nmap <Leader>h :bprevious<CR>
+nmap <Leader>ll :bnext<CR>
+nmap <Leader>hh :bprevious<CR>
 nmap <Leader>bd :bd<CR>
 
 nnoremap <Leader>o :only<CR>

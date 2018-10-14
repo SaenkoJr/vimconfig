@@ -17,10 +17,10 @@ if has('autocmd')
 endif
 
 " Additional UltiSnips config.
-let g:UltiSnipsSnippetsDir = $HOME . '/.vim/ultisnips'
+let g:UltiSnipsSnippetsDir = $HOME . '/dotfiles/.config/neovim/ultisnips'
 let g:UltiSnipsSnippetDirectories = [
-      \ $HOME . '/.vim/ultisnips',
-      \ $HOME . '/.vim/ultisnips-private'
+      \ $HOME . '/dotfiles/.config/neovim/ultisnips',
+      \ $HOME . '/dotfiles/.config/neovim/ultisnips-private'
       \ ]
 
 inoremap <expr><C-j> pumvisible() ? "\<C-n>" : "\<C-j>"

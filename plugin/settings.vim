@@ -35,7 +35,7 @@ set hlsearch
 set incsearch
 
 " Enable hotkeys for Russian layout
-set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ;`qwertyuiop[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<> 
+" set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПnОЛДЖЭЯЧСМИТЬБЮ;`qwertyuinp[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<> 
 
 set noswapfile
 "set updatecount=80                    " update swapfiles every 80 chars

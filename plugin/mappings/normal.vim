@@ -14,6 +14,8 @@ nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
 
 nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
 
+map <A-/> <Plug>NERDCommenterToggle
+
 "----- LSP -----
 nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
