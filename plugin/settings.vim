@@ -5,6 +5,7 @@ set viewoptions-=options
 " set nolazyredraw
 set regexpengine=1
 
+set noshowmode
 set nowrap
 set number
 set norelativenumber
@@ -15,7 +16,6 @@ set smartindent
 set ignorecase
 set smarttab
 set tabstop=2
-set synmaxcol=128
 syntax sync minlines=256
 set textwidth=180
 set shiftwidth=2

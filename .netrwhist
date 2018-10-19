@@ -1,6 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_cnt =5
 let g:netrw_dirhist_1='/home/maksim/Public/Study/Sicp/Chapter 1'
 let g:netrw_dirhist_2='/home/maksim/Public/Study/Front/circule'
 let g:netrw_dirhist_3='/home/maksim/dotfiles/.config/nvim'
 let g:netrw_dirhist_4='/home/maksim/dotfiles/.config/nvim/plugin'
+let g:netrw_dirhist_5='/home/maksim/dotfiles'

@@ -15,6 +15,9 @@ if has('autocmd')
     " Disable paste mode on leaving insert mode.
     autocmd InsertLeave * set nopaste
 
+    autocmd InsertLeave * silent! pclose!
+    autocmd FileType html,css,javascript.jsx,javascript EmmetInstall
+
     " Make current window more obvious by turning off/adjusting some features in non-current
     " windows.
     if exists('+colorcolumn')

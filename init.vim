@@ -1,10 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
 "--------- Utilities ---------
-Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \}
 Plug 'rking/ag.vim'
 Plug 'mhinz/vim-startify'       " For sessions
 Plug 'w0rp/ale'                 " linter
@@ -19,6 +15,7 @@ Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'Yggdroot/indentLine'
 Plug 'jpalardy/vim-slime'       " REPL
 Plug 'edkolev/tmuxline.vim'	" tmuxline
+Plug 'airblade/vim-rooter'
 
 "--------- NerdTree and ctrlp ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -42,19 +39,13 @@ Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx'
-" Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug'
-Plug 'elzr/vim-json'  " For json files
+Plug 'elzr/vim-json'
 Plug 'wlangstroth/vim-racket'
 Plug 'kovisoft/slimv'
 Plug 'leafgarland/typescript-vim'
 
 "--------- Autocomplete ana snips ---------
-Plug 'ternjs/tern_for_vim'
-Plug 'sirver/ultisnips'
-Plug 'honza/vim-snippets'
-Plug 'mattn/emmet-vim' 
-Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -62,10 +53,23 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'autozimu/LanguageClient-neovim', {
+      \ 'branch': 'next',
+      \ 'do': 'bash install.sh',
+      \}
+" Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
+Plug 'mattn/emmet-vim' 
+" Plug 'ternjs/tern_for_vim'
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 Plug 'wokalski/autocomplete-flow'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
+Plug 'Shougo/echodoc.vim'
 
 "--------- LSP servers --------- 
 Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
+Plug 'flowtype/flow-language-server', {'do': 'npm install && npm run build'}
 
 "--------- Git ---------
 Plug 'tpope/vim-fugitive'
@@ -74,9 +78,6 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "--------- Colorscheme --------- 
-" set termguicolors
-" colorscheme oceandark
-
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
@@ -95,6 +96,9 @@ let g:NERDDefaultAlign = 'left'
 "--------- Autopairs ---------
 let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '<':'>'}
 
+"--------- Rooter ---------
+let g:rooter_patterns = ['package.json', '.git/']
+
 "--------- js syntax highlight ---------
 let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_colorful_config = 1
@@ -102,7 +106,6 @@ let g:jsx_ext_required = 0
 
 "--------- emmet settings ---------
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,javascript.jsx,javascript EmmetInstall
 let g:user_emmet_leader_key='<C-E>'
 let g:user_emmet_settings = {
       \ 'javascript.jsx': {
@@ -114,20 +117,18 @@ let g:user_emmet_settings = {
       \}
 
 "--------- Mappings ---------
-let mapleader=' '
+let mapleader=" "
 let g:multi_cursor_next_key='<C-q>'
 
 "--------- Airline settings ---------
 let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
-" let g:airline_solarized_bg='dark'
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
 
 " for tmuxline + vim-airline integration
 let g:airline#extensions#tmuxline#enabled = 1
-" start tmuxline even without vim running
 let airline#extensions#tmuxline#snapshot_file = "~/.tmux-status.conf"
 let g:tmuxline_preset = {
       \'a'       : '#S',
@@ -150,24 +151,38 @@ let g:tmuxline_separators = {
 
 "--------- Use deoplete. ---------
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 0
+let g:echodoc_enable_at_startup=1
+let g:deoplete#file#enable_buffer_path = 1
+let g:deoplete#auto_complete_delay = 10
 let g:deoplete#max_list = 50
-let g:deoplete#max_processes = 2
+let g:deoplete#delimiters = ['/', '.']
 let g:deoplete#camel_case = v:true
-let g:autocomplete_flow#insert_paren_after_function = 0
+let g:deoplete#smart_case = v:true
+let g:deoplete#min_pattern_length = 1
+let g:autocomplete_flow#insert_paren_after_function = 1
+let g:deoplete#ignore_sources = {'_': ['around', 'buffer' ]}
+set completeopt=menuone,noselect,noinsert,longest
+set completeopt-=preview
+let g:neosnippet#enable_completed_snippet = 1
+let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#disable_runtime_snippets = {
+\   '_' : 1,
+\ }
 
-"function g:Multiple_cursors_before()
-  "let g:deoplete#disable_auto_complete = 1
-"endfunction
-"function g:Multiple_cursors_after()
-  "let g:deoplete#disable_auto_complete = 0
-"endfunction
+" function g:Multiple_cursors_before()
+"   let g:deoplete#disable_auto_complete = 1
+" endfunction
+" function g:Multiple_cursors_after()
+"   let g:deoplete#disable_auto_complete = 0
+" endfunction
 
-call deoplete#custom#source('_', 'sorters', ['sorter_word'])
+call deoplete#custom#source('around', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#source('LanguageClient', 'mark', '[lang-server]')
+call deoplete#custom#source('_', 'sorters', ['converter_auto_paren'])
 
 "--------- Use tern_for_vim ---------
 let g:tern#command = ['tern']
-let g:tern#arguments =['--persistent']
+let g:tern#arguments = ['--persistent']
 
 "--------- termjs deoplete ---------
 let g:deoplete#sources#ternjs#filetypes = [
@@ -178,20 +193,30 @@ let g:deoplete#sources#ternjs#filetypes = [
                 \ ]
 
 "--------- LSP ---------
-let g:LanguageClient_autoStart = 0
+let g:LanguageClient_autoStart = 1
 let g:LanguageClient_serverCommands = {
-      \ 'javascript': ['node', expand('~/.vim/plugged/javascript-typescript-langserver/lib/language-server-stdio.js')],
-      \ 'javascript.jsx': ['node', expand('~/.vim/plugged/javascript-typescript-langserver/lib/language-server-stdio.js')],
+      \ 'reason':         ['ocaml-language-server', '--stdio'],
+      \ 'ocaml':          ['ocaml-language-server', '--stdio'],
+      \ 'javascript':     ['javascript-typescript-stdio'],
+      \ 'javascript.jsx': ['javascript-typescript-stdio'],
       \}
 
+let g:LanguageClient_hoverPreview = "Auto"
+let g:LanguageClient_waitOutputTimeout = 5
+let g:LanguageClient_diagnosticsEnable = 0
+
+let g:LanguageClient_rootMarkers = {
+      \ 'javascript': ['.flowconfig', 'package.json'],
+      \}
 "--------- ale settings ---------
 let g:ale_linters = {
+      \ 'jsx':        ['eslint', 'flow'],
       \ 'javascript': ['eslint', 'flow'],
-      \ 'jsx': ['eslint', 'flow'],
       \}
 
 let g:ale_linter_aliases = { 'jsx': 'css' }
 let g:ale_fixers = {
+      \ 'jsx':        ['eslint'],
       \ 'javascript': ['eslint'],
       \}
 
