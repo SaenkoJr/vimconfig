@@ -232,7 +232,7 @@ let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
 
 "--------- FZF ---------
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore-dir .local/share/nvim/view -g ""'
 
 "--------- Slime ---------
 let g:slime_target = "tmux"
