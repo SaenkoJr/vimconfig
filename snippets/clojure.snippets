@@ -72,8 +72,10 @@ snippet pmethod
 	(${1:name} [${2:this} ${0:args}])
 snippet refer
 	(:refer-clojure :exclude [${0}])
-snippet require
-	(:require [${1:namespace} :as [${0}]])
+snippet req
+	(:require [${1:namespace} :as ${0}])
+snippet reqf
+	(:require [${1:namespace} :refer [${0}]])
 snippet use
 	(:use [${1:namespace} :only [${0}]])
 snippet print
@@ -85,3 +87,9 @@ snippet when
 snippet when-let
 	(when-let [${1:result} ${2:test}]
 		${0:body})
+snippet main
+	(defn -main [${1}]
+		${0})
+snippet deps
+  {:deps
+    {${1:name} {${0}}}}

@@ -281,12 +281,21 @@ snippet timeout
 	setTimeout(function () {${0}}${2}, ${1:10});
 
 # flow types
+snippet fl
+  // @flow
+
+snippet fls
+  // @flow strict
+
 snippet tp
   type ${1:name} = {
     ${0: type}
-  }
+  };
 
 snippet etp
   type ${1:name} = {|
     ${0: type}
-  |}
+  |};
+
+snippet ftp
+  type ${1: name} = ${2}(${3: arg}) => ${0: result};

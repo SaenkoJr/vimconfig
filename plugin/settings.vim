@@ -5,9 +5,9 @@ set viewoptions-=options
 " set nolazyredraw
 set regexpengine=1
 
-set noshowmode
+" set noshowmode
 set nowrap
-set number
+set nonumber
 set norelativenumber
 set expandtab                         " Always use spaces instead of tabs
 filetype plugin indent on

@@ -16,9 +16,10 @@ nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
 
 map <A-/> <Plug>NERDCommenterToggle
 
+nnoremap <silent> <leader>FN :NERDTreeFind<CR>
 "----- LSP -----
-nnoremap <silent> K :call LanguageClient_textDocument_hover()<CR>
+nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <leader>lr :call LanguageClient_textDocument_rename()<CR>
-
+nnoremap <silent> <leader>lrn :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> <leader>lm :call LanguageClient_contextMenu()<CR>
+
