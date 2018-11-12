@@ -50,6 +50,8 @@ snippet rcc
 			);
 		}
 	}
+
+  export default ${2:ClassName};
 snippet rdr
 	ReactDOM.render(${1}, ${2})
 snippet ercc
@@ -60,11 +62,26 @@ snippet ercc
 			);
 		}
 	}
+snippet frc "Func react component"
+  const ${1:ComponentName} = (${2:props}) => {
+    return (
+      ${0:<div />}
+    );
+  };
+
+  export default ${3:ComponentName};
 snippet ctor
 	constructor() {
 		super();
 		${1}
 	}
+
+snippet rctor
+	constructor(props) {
+		super(props);
+		${1}
+	}
+
 snippet ren
 	render() {
 		return (

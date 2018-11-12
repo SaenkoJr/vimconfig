@@ -13,13 +13,12 @@ Plug 'troydm/easybuffer.vim'
 Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'	    " tmuxline
-Plug 'ryanoasis/vim-devicons'
 " Plug 'terryma/vim-multiple-cursors'
 " Plug 'jpalardy/vim-slime'       " REPL
 
 "--------- NerdTree and fzf ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -93,10 +92,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 call plug#end()
-let $RUST_BACKTRACE = 'full'
 
 "--------- Mappings ---------
-let mapleader=" "
+let mapleader="\<SPACE>"
 let g:multi_cursor_next_key='<C-q>'
 
 "--------- Colorscheme --------- 
@@ -226,7 +224,7 @@ set completeopt-=preview
 let g:neosnippet#disable_runtime_snippets = {
 \   '_' : 1,
 \ }
-" let g:autocomplete_flow#insert_paren_after_function = 0
+let g:autocomplete_flow#insert_paren_after_function = 0
 
 " function g:Multiple_cursors_before()
 "   let g:deoplete#disable_auto_complete = 1

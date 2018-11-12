@@ -28,6 +28,9 @@ set hidden
 set wildmenu
 set breakindent
 
+set notimeout
+set ttimeout
+
 " set ruler
 set cursorline
 
