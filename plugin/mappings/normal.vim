@@ -4,7 +4,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nnoremap <C-p><C-p> :FZF<CR>
-nnoremap <C-p> :FZF ~<CR>
+nnoremap <C-p><C-g> :FZF ~<CR>
 nnoremap <C-p>s :Snippets<CR>
 
 map <C-n> :NERDTreeToggle<CR>

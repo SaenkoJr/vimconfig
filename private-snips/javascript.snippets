@@ -1,0 +1,362 @@
+snippet var
+  var ${1} = ${0};
+
+snippet const
+  const ${1} = ${0};
+
+snippet let
+  let ${1} = ${0};
+
+snippet if "if (condition) { ... }"
+  if (${1:true}) {
+    ${0:${VISUAL}}
+  }
+
+snippet ife "if (condition) { ... } else { ... }"
+  if (${1:true}) {
+    ${2}
+  } else {
+    ${0:${VISUAL}}
+  }
+
+snippet ter "ternar ? true : flase"
+  ${1:/* condition */} ? ${2:/* if true */} : ${0:/* if false */}
+
+snippet switch
+  switch (${1:expression}) {
+    case '${2:case}':
+      ${3}
+      break;
+      ${4}
+    default:
+      ${0}
+  }
+
+snippet case "case 'xyz': ... break"
+  case '${1:case}':
+    ${0:${VISUAL}}
+  break;
+
+snippet ret "return"
+  return ${0:result};
+
+snippet try "try { ... } catch(e) { ... }"
+  try {
+    ${1:${VISUAL}}
+  } catch (${2:e}) {
+    ${0:/* handle error */}
+  }
+
+snippet im "import xyz from 'xyz'"
+  import ${1} from '${0:$1}';
+
+snippet imas "import * as xyz from 'xyz'"
+  import * as ${1} from '${0:$1}';
+
+snippet imm "import { member } from 'xyz'"
+  import { ${1} } from '${0}';
+
+snippet cla "class"
+  class ${1} {
+    ${0:${VISUAL}}
+  }
+
+snippet clax "class with extends"
+  class ${1} extends ${2} {
+    constructor(props, ${3}) {
+      ${0:${VISUAL}}
+    }
+  }
+
+snippet clac "class with constructor"
+  class ${1} {
+    constructor(${2}) {
+      ${0:${VISUAL}}
+    }
+  }
+
+snippet foro "for (const prop of object}) { ... }"
+  for (const ${1:prop} of ${2:object}) {
+    ${0:$1}
+  }
+
+snippet fun "function"
+  function ${1:function_name}(${2}) {
+    ${0:${VISUAL}}
+  }
+
+snippet fun* "generetor"
+  function* ${1:function_name}(${2}) {
+    ${0:${VISUAL}}
+  }
+
+snippet c=> "const arrow fn"
+  const ${1:function_name} = (${2}) => {
+    ${0:${VISUAL}}
+  }
+
+snippet caf "const arrow fn"
+  const ${1:function_name} = (${2}) => {
+    ${0:${VISUAL}}
+  }
+
+snippet => "anonymous arrow fn"
+  (${1}) => {
+    ${0:${VISUAL}}
+  }
+
+snippet af "anonymous arrow fn"
+  (${1}) => {
+    ${0:${VISUAL}}
+  }
+
+snippet sym "symbol"
+  const ${1} = Symbol('${0}');
+
+snippet ed "export default"
+  export default ${0};
+
+snippet for "for (...) {...}"
+  for (let ${1:i} = 0, ${2:len} = ${3:Things}.length; $1 < $2; $1++) {
+    ${0:${VISUAL}}
+  }
+
+snippet forr "reversed for (...) {...}"
+  for (let ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2--) {
+    ${0:${VISUAL}}
+  }
+
+snippet wh "(condition) { ... }"
+  while (${1:/* condition */}) {
+    ${0:${VISUAL}}
+  }
+
+snippet do "do { ... } while (condition)"
+  do {
+    ${0:${VISUAL}}
+  } while (${1:/* condition */});
+
+snippet fori "for in ( ... ) { ... }"
+  for (let ${1:prop} in ${2:object}) {
+    ${0:$2[$1]}
+  }
+
+snippet /** "comment"
+  /**
+   * ${0:description}
+   *
+  **/
+
+snippet jsonp "json parse"
+  JSON.parse(${0:jstr});
+
+snippet jsons "json stringify"
+  JSON.stringify(${0:object});
+
+snippet get "get elements"
+  getElementsBy${1:TagName}('${0}')
+
+snippet gett "get element"
+  getElementBy${1:Id}('${0}')
+
+snippet by. "Elements by class"
+  ${1:document}.getElementsByClassName('${0:class}')
+
+snippet by# "Elements by id"
+  ${1:document}.getElementById('${0:element ID}')
+
+snippet qs "Query selector"
+  ${1:document}.querySelector('${0:CSS selector}')
+
+snippet qsa "Query selector"
+  ${1:document}.querySelectorAll('${0:CSS selector}')
+
+snippet cl "console.log"
+  console.log(${0});
+
+snippet cd "console.debug"
+  console.debug(${0});
+
+snippet ce "console.error"
+  console.error(${0});
+
+snippet cw "console.warn"
+  console.warn(${0});
+
+snippet ci "console.info"
+  console.info(${0});
+
+snippet ct "console.trace"
+  console.trace(${0:label});
+
+snippet ctime "console.time ... console.timeEnd"
+  console.time("${1:label}");
+  ${0:${VISUAL}}
+  console.timeEnd("$1");
+
+snippet ctimestamp "console.timeStamp"
+  console.timeStamp("${0:label}");
+
+snippet ca "console.assert"
+  console.assert(${1:expression}, ${0:obj});
+
+snippet cclear "console.clear"
+  console.clear();
+
+snippet cdir "console.dir"
+  console.dir(${0:obj});
+
+snippet cdirx "console.dirxml"
+  console.dirxml(${0:object});
+
+snippet cgroup "console.group"
+  console.group("${1:label}");
+  ${0:${VISUAL}}
+  console.groupEnd();
+
+snippet cgroupc "console.groupCollapsed"
+  console.groupCollapsed("${1:label}");
+  ${0:${VISUAL}}
+  console.groupEnd();
+
+snippet cprof "console.profile"
+  console.profile("${1:label}");
+  ${0:${VISUAL}}
+  console.profileEnd();
+
+snippet ctable "console.table"
+  console.table(${1:"${0:value}"});
+
+snippet us "use strict"
+  'use strict';
+
+snippet #!
+  #!/usr/bin/env node
+
+snippet ex "module exports"
+  module.exports = ${0};
+
+snippet re "requre"
+  ${1:const} ${2} = require('${0:module_name}');
+
+snippet nprom "new Promise ( ... )"
+  new Promise((resolve, reject) => {
+    ${0}
+  });
+
+# React snippets
+snippet ir "import React"
+  import React from 'react';
+
+snippet irc "import React, { Component }"
+  import React, { Component } from 'react';
+
+snippet ird "import ReactDOM"
+  import ReactDOM from 'react-dom';
+
+snippet cdm "componentDidMount"
+  componentDidMount() {
+    ${0}
+  }
+
+snippet cdup "componentDidUpdate"
+  componentDidUpdate(prevProps, prevState) {
+    ${0}
+  }
+
+snippet cwun "componentWillUnmount"
+  componentWillUnmount() {
+    ${0}
+  }
+
+snippet dp "static defaultProps { ... }"
+  static defaultProps = {
+    ${1}: ${0},
+  }
+
+snippet st "state { ... }"
+  state = {
+    ${1}: ${0},
+  }
+
+snippet pt "propTypes { ... }"
+  static propTypes = {
+    ${1}: React.PropTypes.${0:type},
+  }
+
+snippet rcc "class extends react"
+  class ${1:ClassName} extends React.Component {
+    render() {
+      return (
+        ${0:<div />}
+      );
+    }
+  }
+
+  export default $1;
+
+snippet rdr "ReactDOM.render"
+  ReactDOM.render(${1}, document.getElementById(${2}))
+
+snippet ercc "export react class"
+  export default class ${1:ClassName} extends React.Component {
+    render() {
+      return (
+        ${0:<div />}
+      );
+    }
+  }
+
+snippet ctor "constructor"
+  constructor() {
+    ${0}
+  }
+
+snippet pctor "constructor whit props"
+  constructor(props) {
+    super(props);
+    ${0}
+  }
+
+snippet ren "render"
+  render() {
+    return (
+      ${0:<div />}
+    );
+  }
+
+snippet sst "set state"
+  this.setState({
+    ${1}: ${0}
+  });
+
+snippet prp "this.props"
+  this.props.${0}
+
+snippet ste "this.state"
+  this.state.${0}
+
+snippet comp "react component"
+  <${1:ComponentName} ${2}>
+    ${0:content}
+  <$1/>
+
+snippet scomp "single react component"
+  <${1:ComponentName} ${0}/>
+
+# Jest
+snippet desc "describe ( ... )"
+  describe('${1:description}', function() {
+    ${0}
+  });
+
+snippet test "test( ... )"
+  test('${1:test name}', () => {
+    ${0}
+  });
+
+snippet expect "expect ( ... )"
+  expect(${1:fnc})${0}
+
+snippet eq "toEqual"
+  .toEqual(${1:result})${0}

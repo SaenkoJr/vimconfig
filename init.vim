@@ -14,7 +14,7 @@ Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'	    " tmuxline
 " Plug 'terryma/vim-multiple-cursors'
-" Plug 'jpalardy/vim-slime'       " REPL
+Plug 'jpalardy/vim-slime'       " REPL
 
 "--------- NerdTree and fzf ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
@@ -79,8 +79,7 @@ Plug 'mattn/emmet-vim'
 " Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 Plug 'wokalski/autocomplete-flow'
 Plug 'Shougo/neosnippet.vim'
-" Plug 'Shougo/neosnippet-snippets'
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 " Plug 'Shougo/echodoc.vim'
 
 "--------- LSP servers --------- 
@@ -202,8 +201,8 @@ let g:tmuxline_separators = {
     \ 'space' : ' '}
 
 "--------- Use deoplete. ---------
-let g:deoplete#enable_at_startup = 1
 " let g:echodoc_enable_at_startup=1
+let g:deoplete#enable_at_startup = 1
 let g:deoplete#file#enable_buffer_path = 1
 let g:deoplete#auto_complete_delay = 10
 let g:deoplete#max_list = 50
@@ -219,12 +218,21 @@ let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 set completeopt=menuone,noselect,noinsert,longest
 set completeopt-=preview
 
+" let g:UltiSnipsEditSplit="horizontal"
+
 " let g:neosnippet#enable_completed_snippet = 1
 " let g:neosnippet#enable_snipmate_compatibility = 1
+let g:neosnippet#enable_auto_clear_markers = 1
+let g:neosnippet#enable_conceal_markers = 0
 let g:neosnippet#disable_runtime_snippets = {
 \   '_' : 1,
 \ }
 let g:autocomplete_flow#insert_paren_after_function = 0
+let g:neosnippet#snippets_directory = $HOME.'/dotfiles/.config/nvim/private-snips'
+
+call deoplete#custom#source('around', 'matchers', ['matcher_full_fuzzy'])
+call deoplete#custom#source('LanguageClient', 'mark', '[lang-server]')
+" call deoplete#custom#source('_', 'sorters', ['converter_auto_paren'])
 
 " function g:Multiple_cursors_before()
 "   let g:deoplete#disable_auto_complete = 1
@@ -232,10 +240,6 @@ let g:autocomplete_flow#insert_paren_after_function = 0
 " function g:Multiple_cursors_after()
 "   let g:deoplete#disable_auto_complete = 0
 " endfunction
-
-call deoplete#custom#source('around', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('LanguageClient', 'mark', '[lang-server]')
-" call deoplete#custom#source('_', 'sorters', ['converter_auto_paren'])
 
 "--------- Use tern_for_vim ---------
 let g:tern#command = ['tern']

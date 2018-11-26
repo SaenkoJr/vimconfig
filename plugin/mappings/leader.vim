@@ -27,9 +27,8 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <silent> <leader>FN :NERDTreeFind<CR>
 
 " "----- LSP -----
-nnoremap <leader>rnm :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
 nnoremap <silent> <leader>gd :call LanguageClient_textDocument_definition()<CR>
-nnoremap <silent> <leader>lrn :call LanguageClient_textDocument_rename()<CR>
+nnoremap <silent> <leader>lrm :call LanguageClient_textDocument_rename()<CR>
 nnoremap <silent> <leader>lm :call LanguageClient_contextMenu()<CR>
 
