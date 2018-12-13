@@ -13,12 +13,15 @@ Plug 'troydm/easybuffer.vim'
 Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'	    " tmuxline
-" Plug 'terryma/vim-multiple-cursors'
 Plug 'jpalardy/vim-slime'       " REPL
+Plug 'tpope/vim-dispatch'
+" Plug 'terryma/vim-multiple-cursors'
+
+"--------- Test utils ---------
+Plug 'janko-m/vim-test'
 
 "--------- NerdTree and fzf ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-" Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'scrooloose/nerdcommenter'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
@@ -50,40 +53,30 @@ Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
 Plug 'tpope/vim-fireplace', { 'for': ['clojure', 'scheme', 'racket'] }
 Plug 'tpope/vim-classpath', { 'for': ['clojure', 'scheme', 'racket'] }
 Plug 'tpope/vim-salve', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'tpope/vim-dispatch', { 'for': ['clojure', 'scheme', 'racket'] }
 Plug 'clojure-vim/async-clj-omni', { 'for': ['clojure'] }
 
 Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
 Plug 'snoe/clj-refactor.nvim', { 'for': ['clojure', 'scheme', 'racket'] }
 Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }
+Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 " Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
 " Plug 'vim-scripts/paredit.vim', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 "--------- Autocomplete ana snips ---------
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'autozimu/LanguageClient-neovim', {
-      \ 'branch': 'next',
-      \ 'do': 'bash install.sh',
-      \ 'for': ['javascript', 'javascript.jsx', 'typescript'],
-      \}
+" Plug 'autozimu/LanguageClient-neovim', {
+"       \ 'branch': 'next',
+"       \ 'do': 'bash install.sh',
+"       \}
+
+Plug 'Valloric/YouCompleteMe'
+
 Plug 'mattn/emmet-vim' 
-" Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
-" Plug 'ternjs/tern_for_vim'
-" Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
-Plug 'wokalski/autocomplete-flow'
 Plug 'Shougo/neosnippet.vim'
+" Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 " Plug 'honza/vim-snippets'
-" Plug 'Shougo/echodoc.vim'
 
 "--------- LSP servers --------- 
-Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
+" Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
 Plug 'flowtype/flow-language-server', {'do': 'npm install && npm run build'}
 
 "--------- Git ---------
@@ -91,6 +84,10 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 call plug#end()
+
+"--------- netrw ---------
+let g:loaded_netrw       = 1
+let g:loaded_netrwPlugin = 1
 
 "--------- Mappings ---------
 let mapleader="\<SPACE>"
@@ -112,6 +109,7 @@ endif
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowBookmarks=1
 let NERDTreeAutoDeleteBuffer = 1
+let g:NERDTreeWinSize = 35 
 
 "--------- NerdTreeGit ---------
 let g:NERDTreeIndicatorMapCustom = {
@@ -166,7 +164,7 @@ let g:clj_fmt_autosave = 0
 let g:parinfer_mode = 'indent'
 let g:parinfer_force_balance = 1
 
-""""""" paredit """"""""""
+""""""" Paredit """"""""""
 let g:paredit_mode = 1
 let g:paredit_shortmaps = 1
 let g:paredit_leader = ','
@@ -200,25 +198,41 @@ let g:tmuxline_separators = {
     \ 'right_alt' : '',
     \ 'space' : ' '}
 
-"--------- Use deoplete. ---------
+"--------- Testrunner ---------
+let test#strategy = "basic"
+" let g:test#javascript#jest#options = '--silent'
+
+"--------- Use deoplete / ncm2 / ycm ---------
 " let g:echodoc_enable_at_startup=1
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#file#enable_buffer_path = 1
-let g:deoplete#auto_complete_delay = 10
-let g:deoplete#max_list = 50
-let g:deoplete#delimiters = ['/', '.']
-let g:deoplete#camel_case = v:true
-let g:deoplete#smart_case = v:true
-let g:deoplete#min_pattern_length = 1
-let g:deoplete#ignore_sources = {'_': ['around', 'buffer' ]}
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#file#enable_buffer_path = 1
+" let g:deoplete#auto_complete_delay = 10
+" let g:deoplete#max_list = 50
+" let g:deoplete#delimiters = ['/', '.']
+" let g:deoplete#camel_case = v:true
+" let g:deoplete#smart_case = v:true
+" let g:deoplete#min_pattern_length = 1
+" let g:deoplete#ignore_sources = {'_': ['around', 'buffer' ]}
 
-let g:deoplete#keyword_patterns = {}
-let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
+" let g:deoplete#keyword_patterns = {}
+" let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
 
-set completeopt=menuone,noselect,noinsert,longest
+" call deoplete#custom#source('around', 'matchers', ['full_fuzzy'])
+" call deoplete#custom#source('LanguageClient', 'mark', '[lang-server]')
+" call deoplete#custom#source('_', 'sorters', ['converter_auto_paren'])
+
+let g:ycm_key_list_select_completion = []
+let g:ycm_use_ultisnips_completer = 0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_enable_diagnostic_highlighting = 0
+let g:ycm_max_num_candidates = 20
+let g:ycm_filepath_blacklist = {
+\ 'html': 0,
+\ 'xml': 0
+\}
+
+" set completeopt=menuone,noselect,longest
 set completeopt-=preview
-
-" let g:UltiSnipsEditSplit="horizontal"
 
 " let g:neosnippet#enable_completed_snippet = 1
 " let g:neosnippet#enable_snipmate_compatibility = 1
@@ -230,51 +244,27 @@ let g:neosnippet#disable_runtime_snippets = {
 let g:autocomplete_flow#insert_paren_after_function = 0
 let g:neosnippet#snippets_directory = $HOME.'/dotfiles/.config/nvim/private-snips'
 
-call deoplete#custom#source('around', 'matchers', ['matcher_full_fuzzy'])
-call deoplete#custom#source('LanguageClient', 'mark', '[lang-server]')
-" call deoplete#custom#source('_', 'sorters', ['converter_auto_paren'])
-
-" function g:Multiple_cursors_before()
-"   let g:deoplete#disable_auto_complete = 1
-" endfunction
-" function g:Multiple_cursors_after()
-"   let g:deoplete#disable_auto_complete = 0
-" endfunction
-
-"--------- Use tern_for_vim ---------
-let g:tern#command = ['tern']
-let g:tern#arguments = ['--persistent']
-
-"--------- termjs deoplete ---------
-let g:deoplete#sources#ternjs#filetypes = [
-                \ 'jsx',
-                \ 'javascript.jsx',
-                \ 'node',
-                \ 'es6'
-                \ ]
-
 "--------- LSP ---------
-let g:LanguageClient_autoStart = 1
-let g:LanguageClient_serverCommands = {
-      \ 'reason':         ['ocaml-language-server', '--stdio'],
-      \ 'ocaml':          ['ocaml-language-server', '--stdio'],
-      \ 'javascript':     ['javascript-typescript-stdio'],
-      \ 'javascript.jsx': ['javascript-typescript-stdio'],
-      \}
+" let g:LanguageClient_autoStart = 1
+" let g:LanguageClient_serverCommands = {
+"       \ 'javascript':     ['javascript-typescript-stdio'],
+"       \ 'javascript.jsx': ['javascript-typescript-stdio'],
+"       \}
 
-let g:LanguageClient_hoverPreview = "Auto"
-let g:LanguageClient_waitOutputTimeout = 5
-let g:LanguageClient_diagnosticsEnable = 0
+" let g:LanguageClient_hoverPreview = "Auto"
+" let g:LanguageClient_waitOutputTimeout = 5
+" let g:LanguageClient_diagnosticsEnable = 0
 
-let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
-let g:LanguageClient_loggingLevel = 'INFO'
-let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
+" let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
+" let g:LanguageClient_loggingLevel = 'INFO'
+" let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
 
-let g:LanguageClient_rootMarkers = {
-      \ 'javascript':     ['.flowconfig', 'package.json'],
-      \ 'javascript.jsx': ['.flowconfig', 'package.json'],
-      \}
-"--------- ale settings ---------
+" let g:LanguageClient_rootMarkers = {
+"       \ 'javascript':     ['.flowconfig', 'package.json'],
+"       \ 'javascript.jsx': ['.flowconfig', 'package.json'],
+"       \}
+
+"--------- Ale settings ---------
 let g:ale_linters = {
       \ 'jsx':        ['eslint', 'flow-language-server'],
       \ 'javascript': ['eslint', 'flow-language-server'],

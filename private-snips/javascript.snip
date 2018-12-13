@@ -48,13 +48,13 @@ snippet try "try { ... } catch(e) { ... }"
   }
 
 snippet im "import xyz from 'xyz'"
-  import ${1} from '${0:$1}';
+  import ${0} from '${1}';
 
 snippet imas "import * as xyz from 'xyz'"
-  import * as ${1} from '${0:$1}';
+  import * as ${0} from '${1}';
 
 snippet imm "import { member } from 'xyz'"
-  import { ${1} } from '${0}';
+  import { ${0} } from '${1}';
 
 snippet cla "class"
   class ${1} {
@@ -75,6 +75,16 @@ snippet clac "class with constructor"
     }
   }
 
+snippet mt "class method"
+  ${1:method name}(${2}) {
+    ${0}
+  }
+
+snippet amt "arrow class method"
+  ${1:method name} = (${2}) => {
+    ${0}
+  }
+
 snippet foro "for (const prop of object}) { ... }"
   for (const ${1:prop} of ${2:object}) {
     ${0:$1}
@@ -93,12 +103,12 @@ snippet fun* "generetor"
 snippet c=> "const arrow fn"
   const ${1:function_name} = (${2}) => {
     ${0:${VISUAL}}
-  }
+  };
 
 snippet caf "const arrow fn"
   const ${1:function_name} = (${2}) => {
     ${0:${VISUAL}}
-  }
+  };
 
 snippet => "anonymous arrow fn"
   (${1}) => {
@@ -237,7 +247,7 @@ snippet ex "module exports"
   module.exports = ${0};
 
 snippet re "requre"
-  ${1:const} ${2} = require('${0:module_name}');
+  ${1:const} ${0} = require('${2:module_name}');
 
 snippet nprom "new Promise ( ... )"
   new Promise((resolve, reject) => {
@@ -253,6 +263,10 @@ snippet irc "import React, { Component }"
 
 snippet ird "import ReactDOM"
   import ReactDOM from 'react-dom';
+
+snippet laz "React lazy import"
+  const ${1:ImportName} = React.lazy(() => import('${0}'));
+  
 
 snippet cdm "componentDidMount"
   componentDidMount() {
@@ -295,9 +309,6 @@ snippet rcc "class extends react"
 
   export default $1;
 
-snippet rdr "ReactDOM.render"
-  ReactDOM.render(${1}, document.getElementById(${2}))
-
 snippet ercc "export react class"
   export default class ${1:ClassName} extends React.Component {
     render() {
@@ -306,6 +317,28 @@ snippet ercc "export react class"
       );
     }
   }
+
+snippet frcc "functional react component"
+  const ${1:MethodName} = (${2:props}) => {
+    return (
+      ${0}
+    )
+  }
+
+  export default $1;
+
+snippet frag "React.Fragment"
+  <React.Fragment>
+    ${0}
+  </React.Fragment>
+
+snippet sus "React.Suspense"
+  <React.Suspense fallback={${1:<div>Loading...</div>}}>
+    ${0}
+  </React.Suspense>
+
+snippet rdr "ReactDOM.render"
+  ReactDOM.render(${1}, document.getElementById(${2}))
 
 snippet ctor "constructor"
   constructor() {
@@ -326,9 +359,7 @@ snippet ren "render"
   }
 
 snippet sst "set state"
-  this.setState({
-    ${1}: ${0}
-  });
+  this.setState({${0}});
 
 snippet prp "this.props"
   this.props.${0}
@@ -339,7 +370,7 @@ snippet ste "this.state"
 snippet comp "react component"
   <${1:ComponentName} ${2}>
     ${0:content}
-  <$1/>
+  </$1>
 
 snippet scomp "single react component"
   <${1:ComponentName} ${0}/>

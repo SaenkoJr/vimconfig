@@ -5,7 +5,6 @@ set viewoptions-=options
 " set nolazyredraw
 set regexpengine=1
 
-" set noshowmode
 set nowrap
 set nonumber
 set norelativenumber
@@ -17,7 +16,7 @@ set ignorecase
 set smarttab
 set tabstop=2
 syntax sync minlines=256
-set textwidth=180
+set textwidth=100
 set shiftwidth=2
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
@@ -67,6 +66,10 @@ endif
 
 if has('showcmd')
   set showcmd
+endif
+
+if has('nvim')
+  tmap <C-o> <C-\><C-n>
 endif
 
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC

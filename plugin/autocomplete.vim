@@ -4,16 +4,6 @@ inoremap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-j>"
 inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
 
-inoremap <silent><expr> <c-space>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<c-space>" :
-      \ deoplete#mappings#manual_complete()
-
-function! s:check_back_space() abort "{{{
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
-
 imap <expr><TAB>
       \ pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" :
       \ neosnippet#expandable_or_jumpable() ?
