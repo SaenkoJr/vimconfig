@@ -3,18 +3,17 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nnoremap <C-p><C-p> :FZF<CR>
-nnoremap <C-p><C-g> :FZF ~<CR>
+nnoremap <C-p><C-p> :Files<CR>
+nnoremap <C-p><C-g> :Files ~<CR>
 nnoremap <C-p>s :Snippets<CR>
 
-map <C-n> :NERDTreeToggle<CR>
-"nnoremap <silent> <F8> :TagbarToggle<CR>
-nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
+" formating file
+nnoremap =G :normal! gg=G``<CR>
 
-nmap <C-F>n <Plug>CtrlSFCwordPath<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
+" nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
 
 map <A-/> <Plug>NERDCommenterToggle
-
 
 "----- LSP -----
 nnoremap gd :YcmCompleter GoToDefinition<CR>

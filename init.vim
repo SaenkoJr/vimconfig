@@ -10,11 +10,13 @@ Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'        " Align text (beauty tabs)
 Plug 'majutsushi/tagbar'        " Show tags 
 Plug 'troydm/easybuffer.vim'
-Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'	    " tmuxline
 Plug 'jpalardy/vim-slime'       " REPL
+Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-unimpaired'
+Plug 'RRethy/vim-illuminate'
 " Plug 'terryma/vim-multiple-cursors'
 
 "--------- Test utils ---------
@@ -22,8 +24,8 @@ Plug 'janko-m/vim-test'
 
 "--------- NerdTree and fzf ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
-
 Plug 'scrooloose/nerdcommenter'
+
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'dyng/ctrlsf.vim'
@@ -105,6 +107,9 @@ endif
 " let g:nord_uniform_diff_background = 1
 " let g:nord_comment_brightness = 20
 
+"--------- illuminate ---------
+let g:Illuminate_ftblacklist = ['nerdtree', 'easymotion']
+
 "--------- NerdTree ---------
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowBookmarks=1
@@ -124,6 +129,11 @@ let g:NERDTreeIndicatorMapCustom = {
     \ 'Ignored'   : '☒',
     \ "Unknown"   : "?"
     \ }
+
+"--------- Tagbar ---------
+let g:tagbar_autofocus = 1
+let g:tagbar_compact = 1
+let g:tagbar_updateonsave_maxlines = 1
 
 "--------- Commenters ---------
 let g:NERDSpaceDelims = 1
@@ -281,8 +291,11 @@ let g:ale_fixers = {
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_lint_on_enter = 0
 
-hi ALEError ctermbg=red ctermfg=white cterm=underline
-hi ALEWarning ctermbg=yellow ctermfg=black cterm=underline
+hi ALEError cterm=underline ctermfg=red
+hi ALEWarning cterm=underline ctermfg=yellow
+
+hi ALEErrorSign ctermfg=red
+hi ALEWarningSign ctermfg=yellow 
 
 "--------- indentLine settings ---------
 let g:indentLine_char = '┆'
@@ -290,7 +303,14 @@ let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
 
 "--------- FZF ---------
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore-dir .local/share/nvim/view --ignore-dir .cache/neosnippet -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore yarn.lock --ignore-dir .local/share/nvim/view --ignore-dir .cache/neosnippet -g ""'
+
+"--------- ctrlsf ---------
+let g:ctrlsf_auto_focus = {
+    \ "at": "done",
+    \ }
+let g:ctrlsf_default_root = 'project'
+let g:ctrlsf_search_mode = 'async'
 
 "--------- Slime ---------
 let g:slime_target = "tmux"

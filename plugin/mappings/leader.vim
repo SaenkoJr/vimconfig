@@ -1,18 +1,18 @@
 " Open last buffer
 nnoremap <Leader><Leader> <C-^>
-nmap <Leader>ll :bnext<CR>
-nmap <Leader>hh :bprevious<CR>
-nmap <Leader>bd :bd<CR>
+nmap <silent> <Leader>ll :bnext<CR>
+nmap <silent> <Leader>hh :bprevious<CR>
 nnoremap <leader>ob :EasyBufferToggle<CR>
 
 nnoremap <Leader>oo :only<CR>
 
 nnoremap <silent> <Leader>r :call mappings#cycle_numbering()<CR>
 
-nnoremap <Leader>q :quit<CR>
-nnoremap <Leader>w :write<CR>
+nmap <silent> <Leader>Q :bd<CR>
+nnoremap <silent> <Leader>q :quit<CR>
+nnoremap <silent> <Leader>w :write<CR>
 
-nnoremap <Leader>n :noh<CR>
+nnoremap <Leader>/ :noh<CR>
 
 nmap <Leader>k <Plug>(ale_previous_wrap)
 nmap <Leader>j <Plug>(ale_next_wrap)
@@ -23,10 +23,13 @@ nmap <Leader>s <Plug>(easymotion-s)
 " Edit file, starting in same directory as current file
 "nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
-nnoremap <silent> <leader>FN :NERDTreeFind<CR>
+nnoremap <leader>FN :NERDTreeFind<CR>
+nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
 
-" "----- LSP -----
-nnoremap <leader>yrm :YcmCompleter RefactorRename<CR>
+nnoremap <silent> <leader>tt :TagbarToggle<CR>
+
+" ----- LSP -----
+nnoremap <leader>yrm :YcmCompleter RefactorRename 
 
 " nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
 " nnoremap <silent> <leader>gd :call LanguageClient_textDocument_definition()<CR>

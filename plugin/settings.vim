@@ -32,6 +32,7 @@ set ttimeout
 
 " set ruler
 set cursorline
+set cursorcolumn
 
 set hlsearch
 set incsearch
