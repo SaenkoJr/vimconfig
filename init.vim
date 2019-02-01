@@ -16,7 +16,9 @@ Plug 'jpalardy/vim-slime'       " REPL
 Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-repeat'
 Plug 'RRethy/vim-illuminate'
+Plug 'guns/vim-sexp'
 " Plug 'terryma/vim-multiple-cursors'
 
 "--------- Test utils ---------
@@ -48,21 +50,22 @@ Plug 'mxw/vim-jsx'
 Plug 'digitaltoad/vim-pug'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
+Plug 'guns/vim-clojure-highlight'
 
 """"""" Lisp and Clojure """""""""   
 " Plug 'kovisoft/slimv'
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
-Plug 'tpope/vim-fireplace', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'tpope/vim-classpath', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'tpope/vim-salve', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'clojure-vim/async-clj-omni', { 'for': ['clojure'] }
+Plug 'tpope/vim-fireplace', { 'for': ['clojure'] }             " for lein repl
+Plug 'tpope/vim-classpath', { 'for': ['clojure'] }
+Plug 'tpope/vim-salve', { 'for': ['clojure'] }                 " seems like dosen`t work
+Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
+" Plug 'clojure-vim/async-clj-omni', { 'for': ['clojure'] }      " back for deoplete
 
-Plug 'eraserhd/parinfer-rust', {'do': 'cargo build --release'}
-Plug 'snoe/clj-refactor.nvim', { 'for': ['clojure', 'scheme', 'racket'] }
+" Plug 'snoe/clj-refactor.nvim', { 'for': ['clojure', 'scheme', 'racket'] }
+" Plug 'vim-scripts/paredit.vim', { 'for': ['clojure', 'scheme', 'racket'] }
+Plug 'eraserhd/parinfer-rust', { 'for': ['clojure'] } " infer parentheses
 Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
-" Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
-" Plug 'vim-scripts/paredit.vim', { 'for': ['clojure', 'scheme', 'racket'] }
 
 "--------- Autocomplete ana snips ---------
 " Plug 'autozimu/LanguageClient-neovim', {
@@ -71,7 +74,6 @@ Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 "       \}
 
 Plug 'Valloric/YouCompleteMe'
-
 Plug 'mattn/emmet-vim' 
 Plug 'Shougo/neosnippet.vim'
 " Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
@@ -93,6 +95,7 @@ let g:loaded_netrwPlugin = 1
 
 "--------- Mappings ---------
 let mapleader="\<SPACE>"
+let maplocalleader=","
 let g:multi_cursor_next_key='<C-q>'
 
 "--------- Colorscheme --------- 
@@ -115,20 +118,6 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeShowBookmarks=1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeWinSize = 35 
-
-"--------- NerdTreeGit ---------
-let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "*",
-    \ "Staged"    : "+",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "X",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
 
 "--------- Tagbar ---------
 let g:tagbar_autofocus = 1
@@ -169,15 +158,10 @@ let g:clojure_syntax_keywords = {
     \ }
 let g:salve_auto_start_repl = 1
 let g:dispatch_no_maps = 1
-let g:clj_fmt_autosave = 0
+let g:clj_fmt_autosave = 1
 
-let g:parinfer_mode = 'indent'
-let g:parinfer_force_balance = 1
-
-""""""" Paredit """"""""""
-let g:paredit_mode = 1
-let g:paredit_shortmaps = 1
-let g:paredit_leader = ','
+"--------- Sexp ---------
+let g:sexp_filetypes = 'clojure,scheme,lisp,racket'
 
 "--------- Airline settings ---------
 let g:airline_theme='base16'
@@ -232,6 +216,7 @@ let test#strategy = "basic"
 " call deoplete#custom#source('_', 'sorters', ['converter_auto_paren'])
 
 let g:ycm_key_list_select_completion = []
+let g:ycm_semantic_triggers = { 'clojure': ['('] }
 let g:ycm_use_ultisnips_completer = 0
 let g:ycm_show_diagnostics_ui = 0
 let g:ycm_enable_diagnostic_highlighting = 0

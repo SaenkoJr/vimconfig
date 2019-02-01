@@ -30,9 +30,16 @@ nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
 " ----- LSP -----
 nnoremap <leader>yrm :YcmCompleter RefactorRename 
+nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
 
 " nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
 " nnoremap <silent> <leader>gd :call LanguageClient_textDocument_definition()<CR>
 " nnoremap <silent> <leader>lrm :call LanguageClient_textDocument_rename()<CR>
 " nnoremap <silent> <leader>lm :call LanguageClient_contextMenu()<CR>
 
+" ---- Testrunner ----
+nmap <silent> <leader>tn :TestNearest<CR>
+nmap <silent> <leader>tf :TestFile<CR>
+nmap <silent> <leader>ts :TestSuite<CR>
+nmap <silent> <leader>tl :TestLast<CR>
+" nmap <silent> t<C-g> :TestVisit<CR>

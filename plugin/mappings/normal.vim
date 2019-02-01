@@ -16,11 +16,3 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 map <A-/> <Plug>NERDCommenterToggle
 
 "----- LSP -----
-nnoremap gd :YcmCompleter GoToDefinition<CR>
-
-" ---- Testrunner ----
-nmap <silent> t<C-n> :TestNearest<CR>
-nmap <silent> t<C-f> :TestFile<CR>
-nmap <silent> t<C-s> :TestSuite<CR>
-nmap <silent> t<C-l> :TestLast<CR>
-nmap <silent> t<C-g> :TestVisit<CR>
