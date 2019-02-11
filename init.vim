@@ -19,7 +19,7 @@ Plug 'tpope/vim-unimpaired'     " fast moved
 Plug 'tpope/vim-repeat'
 Plug 'RRethy/vim-illuminate'    " Select illuminating other uses of the current word under the cursor
 Plug 'guns/vim-sexp'
-" Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
 "--------- Test utils ---------
 Plug 'janko-m/vim-test'
@@ -87,7 +87,18 @@ let g:loaded_netrwPlugin = 1
 "--------- Mappings ---------
 let mapleader="\<SPACE>"
 let maplocalleader=","
-let g:multi_cursor_next_key='<C-q>'
+
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-q>'
+let g:multi_cursor_select_all_word_key = '<A-q>'
+let g:multi_cursor_start_key           = 'g<C-q>'
+let g:multi_cursor_select_all_key      = 'g<A-q>'
+let g:multi_cursor_next_key            = '<C-q>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 "--------- Colorscheme --------- 
 if filereadable(expand("~/.vimrc_background"))
