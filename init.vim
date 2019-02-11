@@ -131,7 +131,7 @@ let g:tagbar_compact = 1
 let g:tagbar_updateonsave_maxlines = 1
 
 "--------- Autopairs ---------
-let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '<':'>'}
+let g:AutoPairs={'(':')', '[':']', '{':'}', '`':'`', '<':'>'}
 
 "--------- Js syntax highlight ---------
 let g:javascript_plugin_flow = 1
