@@ -114,7 +114,6 @@ let NERDTreeIgnore = ['node_modules']
 "--------- Commenters ---------
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
-
 "--------- Tagbar ---------
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
