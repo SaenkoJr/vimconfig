@@ -1,27 +1,153 @@
+snippet ns "name space"
+  (ns ${0})
+
 snippet pt "print"
-  (print ${0})
+  (print ${0:args})
 
 snippet ptln "print with new line"
-  (println ${0})
+  (println ${0:args})
 
 snippet def "(def ...)"
-  (def ${1:name} "${2:docstring}" ${0})
+  (def ${1:name} ${0:body})
 
 snippet defn "(defn ...)"
-  (defn ${1:name} [${2:params}] ${0})
+  (defn ${1:name} [${2:params}] ${0:body})
 
 snippet defnm "(defn with multi-arity)"
   (defn ${1:name}
     ${0})
 
 snippet fn "anonymous func"
-  (fn [${1:args}] ${0})
+  (fn [${1:args}] ${0:body})
 
 snippet str "to string"
-  (str ${1:string} ${0})
+  (str ${1:string} ${0:args})
 
 snippet apply "(apply ...)"
-  (apply ${1:fn} ${0})
+  (apply ${1:fn} ${0:args})
 
 snippet let "create binding for vars"
   (let [${1:name value}] ${0:code that uses names})
+
+snippet req "require"
+  (:require [${1}]${0})
+
+# for collections
+snippet get "get [...]"
+  (get ${1:col} ${0:key})
+
+snippet cnt "count"
+  (count ${0:col})
+
+snippet conj "add to col"
+  (conj ${1:col} ${0:items})
+
+snippet cont "contains? item in coll"
+  (contains? ${1:coll} ${0:item})
+
+snippet find "find item in coll"
+  (find ${1:coll} ${0:item})
+
+snippet into "put one coll into another"
+  (into ${1:first} ${0:second})
+
+# vectors 
+snippet vec "(vector ...)"
+  (vector ${0:items})
+
+# lists
+snippet lst "new list"
+  (list ${0:items})
+
+snippet l "new list"
+  '(${0:items})
+
+snippet fst "first item of list"
+  (first ${0:list})
+
+snippet rst "rest of list"
+  (rest ${0:list})
+
+snippet pk "peek"
+  (peek ${0:list})
+
+snippet pp "pop"
+  (pop ${0:list})
+
+# sets 
+snippet set "new set"
+  (set ${0:items})
+
+snippet # "new set"
+  #{${0:items}}
+
+snippet disj "delete item from set"
+  (disj ${1:coll} ${0:items})
+
+# maps
+snippet assoc "add item to map"
+  (assoc ${1:coll} ${0:item}) 
+
+snippet dissoc "remove item to map"
+  (dissoc ${1:coll} ${0:item}) 
+
+snippet keys "keys of map"
+  (keys ${0:map}) 
+
+snippet vals "vals of map"
+  (vals ${0:map}) 
+
+snippet defrec "define record"
+  (defrecord ${1:name} [${0:fields}])
+
+snippet if "(if true false)"
+  (if ${1:conditional} ${2:truthy} ${0:falsey})
+
+snippet when "(when)"
+  (when ${1:conditional} ${0:then})
+
+snippet cond "(cond ...)"
+  (cond (${1:conditional}) ${0:then})
+
+snippet case "(case x ...)"
+  (case ${1:x}
+    ${2:then}
+    ${0}})
+
+snippet dotimes "(dotimes [i 3] ...)"
+  (dotimes [${1:index} ${2:times}]
+    ${0})
+
+snippet doseq "(doseq [...])"
+  (doseq [${1:number} ${2:col}}]
+    ${0})
+
+snippet for "(for [...] ...)"
+  (for [${1:col}] ${0})
+
+snippet try "(try ...)"
+  (try
+    ${1:what}
+    (catch ${0}))
+
+snippet tryf "(try ... finally)"
+  (try
+    ${1:what}
+    (catch ${2:errhandl})
+    (finally ${0}))
+
+snippet throw "(throw ...)"
+  (throw ${0})
+
+snippet exi "(ex-info ...)"
+  (ex-info ${1:info} ${0})
+
+snippet exd "(ex-data ...)"
+  (ex-data ${0})
+
+snippet wo "(with-open ...)"
+  (with-open ${0})
+
+# for testing
+snippet asrt "(assert ...)"
+  (assert (${0:body}))

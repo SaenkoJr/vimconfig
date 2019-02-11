@@ -42,7 +42,7 @@ set incsearch
 
 set noswapfile
 "set updatecount=80                    " update swapfiles every 80 chars
-"set updatetime=2000
+set updatetime=200
 
 " FOLDING
 if has('folding')
@@ -72,5 +72,7 @@ endif
 if has('nvim')
   tmap <C-o> <C-\><C-n>
 endif
+
+hi MatchParen cterm=underline ctermbg=none
 
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC

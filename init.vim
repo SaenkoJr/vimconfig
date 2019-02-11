@@ -17,7 +17,7 @@ Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-repeat'
-Plug 'RRethy/vim-illuminate'
+Plug 'RRethy/vim-illuminate'    " Select illuminating other uses of the current word under the cursor
 Plug 'guns/vim-sexp'
 " Plug 'terryma/vim-multiple-cursors'
 
@@ -27,6 +27,7 @@ Plug 'janko-m/vim-test'
 "--------- NerdTree and fzf ---------
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -38,8 +39,8 @@ Plug 'vim-airline/vim-airline-themes'
 
 "--------- Colors ---------
 Plug 'chriskempson/base16-vim'
-Plug 'nightsense/stellarized' "stellarized_dark
-Plug 'nightsense/seagrey' "seagrey-dark
+Plug 'nightsense/stellarized' " stellarized_dark
+Plug 'nightsense/seagrey'     " seagrey-dark
 Plug 'arcticicestudio/nord-vim'
 
 "--------- Syntax --------- 
@@ -47,36 +48,26 @@ Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx'
-Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'guns/vim-clojure-highlight'
 
-""""""" Lisp and Clojure """""""""   
-" Plug 'kovisoft/slimv'
+""""""" Clojure """""""""   
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
 Plug 'tpope/vim-fireplace', { 'for': ['clojure'] }             " for lein repl
 Plug 'tpope/vim-classpath', { 'for': ['clojure'] }
 Plug 'tpope/vim-salve', { 'for': ['clojure'] }                 " seems like dosen`t work
 Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
-" Plug 'clojure-vim/async-clj-omni', { 'for': ['clojure'] }      " back for deoplete
 
-" Plug 'snoe/clj-refactor.nvim', { 'for': ['clojure', 'scheme', 'racket'] }
-" Plug 'vim-scripts/paredit.vim', { 'for': ['clojure', 'scheme', 'racket'] }
-Plug 'eraserhd/parinfer-rust', { 'for': ['clojure'] } " infer parentheses
-Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }
+Plug 'eraserhd/parinfer-rust', { 'for': ['clojure', 'scheme', 'racket'] } " infer parentheses
+Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }   " formater
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 "--------- Autocomplete ana snips ---------
-" Plug 'autozimu/LanguageClient-neovim', {
-"       \ 'branch': 'next',
-"       \ 'do': 'bash install.sh',
-"       \}
-
 Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim' 
 Plug 'Shougo/neosnippet.vim'
-" Plug 'nixprime/cpsm', { 'do': 'PY3=ON ./install.sh' }
 " Plug 'honza/vim-snippets'
 
 "--------- LSP servers --------- 
@@ -110,7 +101,7 @@ endif
 " let g:nord_uniform_diff_background = 1
 " let g:nord_comment_brightness = 20
 
-"--------- illuminate ---------
+"--------- Illuminate ---------
 let g:Illuminate_ftblacklist = ['nerdtree', 'easymotion']
 
 "--------- NerdTree ---------
@@ -118,27 +109,28 @@ let NERDTreeQuitOnOpen = 1
 let NERDTreeShowBookmarks=1
 let NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeWinSize = 35 
+let NERDTreeIgnore = ['node_modules']
+
+"--------- Commenters ---------
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
 
 "--------- Tagbar ---------
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_updateonsave_maxlines = 1
 
-"--------- Commenters ---------
-let g:NERDSpaceDelims = 1
-let g:NERDDefaultAlign = 'left'
-
 "--------- Autopairs ---------
 let g:AutoPairs={'(':')', '[':']', '{':'}', "'":"'", '"':'"', '`':'`', '<':'>'}
 
-"--------- js syntax highlight ---------
+"--------- Js syntax highlight ---------
 let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_colorful_config = 1
 let g:jsx_ext_required = 0
 
 "--------- emmet settings ---------
 let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key='<C-E>'
+let g:user_emmet_leader_key='<M-,>'
 let g:user_emmet_settings = {
       \ 'javascript.jsx': {
       \   'extends': [ 'jsx', 'js' ],
@@ -288,7 +280,7 @@ let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
 
 "--------- FZF ---------
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore yarn.lock --ignore-dir .local/share/nvim/view --ignore-dir .cache/neosnippet -g ""'
+let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore yarn.lock --ignore-dir node_modules --ignore-dir .local/share/nvim/view --ignore-dir .cache/neosnippet -g ""'
 
 "--------- ctrlsf ---------
 let g:ctrlsf_auto_focus = {

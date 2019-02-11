@@ -14,5 +14,6 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
 
 map <A-/> <Plug>NERDCommenterToggle
+nnoremap <F5> :UndotreeToggle<CR>
 
 "----- LSP -----
