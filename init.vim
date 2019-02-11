@@ -15,7 +15,7 @@ Plug 'edkolev/tmuxline.vim'	    " tmuxline
 Plug 'jpalardy/vim-slime'       " REPL
 Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-unimpaired'     " fast moved
 Plug 'tpope/vim-repeat'
 Plug 'RRethy/vim-illuminate'    " Select illuminating other uses of the current word under the cursor
 Plug 'guns/vim-sexp'
