@@ -3,7 +3,7 @@ call plug#begin('~/.vim/plugged')
 "--------- Utilities ---------
 Plug 'rking/ag.vim'
 Plug 'mhinz/vim-startify'       " For sessions
-Plug 'w0rp/ale'                 " linter
+" Plug 'w0rp/ale'                 " linter
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'matze/vim-move'           
@@ -65,14 +65,16 @@ Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }   " form
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 "--------- Autocomplete ana snips ---------
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
+
+" Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim' 
 Plug 'Shougo/neosnippet.vim'
 " Plug 'honza/vim-snippets'
 
 "--------- LSP servers --------- 
 " Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
-Plug 'flowtype/flow-language-server', {'do': 'npm install && npm run build'}
+" Plug 'flowtype/flow-language-server', {'do': 'npm install && npm run build'}
 
 "--------- Git ---------
 Plug 'tpope/vim-fugitive'
@@ -262,27 +264,27 @@ let g:neosnippet#snippets_directory = $HOME.'/dotfiles/.config/nvim/private-snip
 "       \}
 
 "--------- Ale settings ---------
-let g:ale_linters = {
-      \ 'jsx':        ['eslint', 'flow-language-server'],
-      \ 'javascript': ['eslint', 'flow-language-server'],
-      \ 'clojure':    ['joker'],
-      \}
+" let g:ale_linters = {
+"       \ 'jsx':        ['eslint', 'flow-language-server'],
+"       \ 'javascript': ['eslint', 'flow-language-server'],
+"       \ 'clojure':    ['joker'],
+"       \}
 
-let g:ale_linter_aliases = { 'jsx': 'css' }
-let g:ale_fixers = {
-      \ 'jsx':        ['eslint'],
-      \ 'javascript': ['eslint'],
-      \ 'clojure':    ['joker'],
-      \}
+" let g:ale_linter_aliases = { 'jsx': 'css' }
+" let g:ale_fixers = {
+"       \ 'jsx':        ['eslint'],
+"       \ 'javascript': ['eslint'],
+"       \ 'clojure':    ['joker'],
+"       \}
 
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_enter = 0
 
-hi ALEError cterm=underline ctermfg=red
-hi ALEWarning cterm=underline ctermfg=yellow
+" hi ALEError cterm=underline ctermfg=red
+" hi ALEWarning cterm=underline ctermfg=yellow
 
-hi ALEErrorSign ctermfg=red
-hi ALEWarningSign ctermfg=yellow 
+" hi ALEErrorSign ctermfg=red
+" hi ALEWarningSign ctermfg=yellow 
 
 "--------- indentLine settings ---------
 let g:indentLine_char = '┆'
