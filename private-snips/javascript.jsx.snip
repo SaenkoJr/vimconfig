@@ -15,3 +15,10 @@ snippet tag "<tag...>"
 
 snippet ims "import styles"
   import '${0}';
+
+# Hooks
+snippet ust "Use state"
+  const [${1:name}, ${2:setName}] = useState(${0});
+
+snippet ue "UseEffect"
+  useEffect(${0}${1:args});

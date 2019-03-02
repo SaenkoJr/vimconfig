@@ -112,6 +112,9 @@ snippet gfun "generetor"
     ${0:${VISUAL}}
   }
 
+snippet yi "yield"
+  yield${0}
+
 snippet c=> "const arrow fn"
   const ${1:function_name} = (${2}) => {
     ${0:${VISUAL}}
@@ -164,9 +167,9 @@ snippet do "do { ... } while (condition)"
     ${0:${VISUAL}}
   } while (${1:/* condition */});
 
-snippet fori "for in ( ... ) { ... }"
-  for (let ${1:prop} in ${2:object}) {
-    ${0:$2[$1]}
+snippet forin "for in ( ... ) { ... }"
+  for (const ${1:prop} in ${2:object}) {
+    ${0}
   }
 
 snippet /** "comment"
@@ -258,6 +261,9 @@ snippet cprof "console.profile"
 snippet ctable "console.table"
   console.table(${1:"${0:value}"});
 
+snippet num "Number(...)"
+  Number(${0})
+
 snippet us "use strict"
   'use strict';
 
@@ -275,12 +281,21 @@ snippet nprom "new Promise ( ... )"
     ${0}
   });
 
+snippet pa "Promise.all( ... )"
+  Promise.all([${0}]);
+
+snippet sto "setTimeout"
+  setTimeout(${0}, ${1:delay});
+
+snippet sti "setInterval"
+  const ${2:intervalId} = setInterval(${0}, ${1:delay});
+
 # React snippets
 snippet ir "import React"
   import React from 'react';
 
-snippet irc "import React, { Component }"
-  import React, { Component } from 'react';
+snippet irs "import React, { ... }"
+  import React, { ${0} } from 'react';
 
 snippet ird "import ReactDOM"
   import ReactDOM from 'react-dom';
