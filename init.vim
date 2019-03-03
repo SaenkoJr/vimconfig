@@ -201,24 +201,6 @@ let test#strategy = "basic"
 " let g:test#javascript#jest#options = '--silent'
 
 "--------- Use deoplete / ncm2 / ycm ---------
-" let g:echodoc_enable_at_startup=1
-" let g:deoplete#enable_at_startup = 1
-" let g:deoplete#file#enable_buffer_path = 1
-" let g:deoplete#auto_complete_delay = 10
-" let g:deoplete#max_list = 50
-" let g:deoplete#delimiters = ['/', '.']
-" let g:deoplete#camel_case = v:true
-" let g:deoplete#smart_case = v:true
-" let g:deoplete#min_pattern_length = 1
-" let g:deoplete#ignore_sources = {'_': ['around', 'buffer' ]}
-
-" let g:deoplete#keyword_patterns = {}
-" let g:deoplete#keyword_patterns.clojure = '[\w!$%&*+/:<=>?@\^_~\-\.#]*'
-
-" call deoplete#custom#source('around', 'matchers', ['full_fuzzy'])
-" call deoplete#custom#source('LanguageClient', 'mark', '[lang-server]')
-" call deoplete#custom#source('_', 'sorters', ['converter_auto_paren'])
-
 let g:ycm_key_list_select_completion = []
 let g:ycm_semantic_triggers = { 'clojure': ['('] }
 let g:ycm_use_ultisnips_completer = 0
@@ -244,36 +226,14 @@ let g:autocomplete_flow#insert_paren_after_function = 0
 let g:neosnippet#snippets_directory = $HOME.'/dotfiles/.config/nvim/private-snips'
 
 "--------- LSP ---------
-" let g:LanguageClient_autoStart = 1
-" let g:LanguageClient_serverCommands = {
-"       \ 'javascript':     ['javascript-typescript-stdio'],
-"       \ 'javascript.jsx': ['javascript-typescript-stdio'],
-"       \}
-
-" let g:LanguageClient_hoverPreview = "Auto"
-" let g:LanguageClient_waitOutputTimeout = 5
-" let g:LanguageClient_diagnosticsEnable = 0
-
-" let g:LanguageClient_loggingFile = '/tmp/LanguageClient.log'
-" let g:LanguageClient_loggingLevel = 'INFO'
-" let g:LanguageClient_serverStderr = '/tmp/LanguageServer.log'
-
-" let g:LanguageClient_rootMarkers = {
-"       \ 'javascript':     ['.flowconfig', 'package.json'],
-"       \ 'javascript.jsx': ['.flowconfig', 'package.json'],
-"       \}
 
 "--------- Ale settings ---------
 " let g:ale_linters = {
-"       \ 'jsx':        ['eslint', 'flow-language-server'],
-"       \ 'javascript': ['eslint', 'flow-language-server'],
 "       \ 'clojure':    ['joker'],
 "       \}
 
 " let g:ale_linter_aliases = { 'jsx': 'css' }
 " let g:ale_fixers = {
-"       \ 'jsx':        ['eslint'],
-"       \ 'javascript': ['eslint'],
 "       \ 'clojure':    ['joker'],
 "       \}
 

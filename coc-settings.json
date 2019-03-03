@@ -1,4 +1,23 @@
 {
+  "suggest.timeout": 500,
+  "suggest.maxCompleteItemCount": 25,
+
+  "eslint.filetypes": [
+    "javascript",
+    "javascriptreact",
+    "javascript.jsx"
+  ],
+
+  "coc.source.neosnippet.priority": 10,
+
+  "diagnostic.virtualText": true,
+  "diagnostic.enableMessage": "jump",
+
   "javascript.suggest.autoImports": true,
-  "typescript.suggest.autoImports": true
+  "javascript.suggestionActions.enabled": false,
+
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.quoteStyle": "single",
+
+  "eslint.autoFixOnSave": true
 }

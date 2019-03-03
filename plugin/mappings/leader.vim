@@ -14,14 +14,14 @@ nnoremap <silent> <Leader>w :write<CR>
 
 nnoremap <Leader>/ :noh<CR>
 
-" nmap <Leader>k <Plug>(ale_previous_wrap)
-" nmap <Leader>j <Plug>(ale_next_wrap)
+nmap <Leader>k <Plug>(ale_previous_wrap)
+nmap <Leader>j <Plug>(ale_next_wrap)
 
 nmap <Leader>k <Plug>(coc-diagnostic-prev)
 nmap <Leader>j <Plug>(coc-diagnostic-next)
 
-nmap <Leader>e <Plug>(easymotion-prefix)
-nmap <Leader>s <Plug>(easymotion-s)
+" nmap <Leader>e <Plug>(easymotion-prefix)
+" nmap <Leader>s <Plug>(easymotion-s)
 
 " Edit file, starting in same directory as current file
 "nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
