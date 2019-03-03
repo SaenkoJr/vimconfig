@@ -1,6 +1,9 @@
 {
   "suggest.timeout": 500,
   "suggest.maxCompleteItemCount": 25,
+  "suggest.maxPreviewWidth": 65,
+  "suggest.numberSelect": true,
+  "suggest.detailField": "abbr",
 
   "eslint.filetypes": [
     "javascript",
@@ -10,8 +13,9 @@
 
   "coc.source.neosnippet.priority": 10,
 
-  "diagnostic.virtualText": true,
-  "diagnostic.enableMessage": "jump",
+  "diagnostic.displayByAle": true,
+  "diagnostic.enable": false,
+  "diagnostic.refreshOnInsertMode": false,
 
   "javascript.suggest.autoImports": true,
   "javascript.suggestionActions.enabled": false,
@@ -19,5 +23,5 @@
   "typescript.suggest.autoImports": true,
   "typescript.preferences.quoteStyle": "single",
 
-  "eslint.autoFixOnSave": true
+  "eslint.autoFixOnSave": false
 }

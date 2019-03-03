@@ -3,19 +3,19 @@ call plug#begin('~/.vim/plugged')
 "--------- Utilities ---------
 Plug 'rking/ag.vim'
 Plug 'mhinz/vim-startify'       " For sessions
-" Plug 'w0rp/ale'                 " linter
+Plug 'w0rp/ale'                 " linter
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
-Plug 'matze/vim-move'           
+Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'        " Align text (beauty tabs)
-Plug 'majutsushi/tagbar'        " Show tags 
+Plug 'majutsushi/tagbar'        " Show tags
 Plug 'troydm/easybuffer.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'	    " tmuxline
 Plug 'jpalardy/vim-slime'       " REPL
 Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-unimpaired'     " fast moved
+Plug 'tpope/vim-unimpaired'     " fast move
 Plug 'tpope/vim-repeat'
 Plug 'RRethy/vim-illuminate'    " Select illuminating other uses of the current word under the cursor
 Plug 'guns/vim-sexp'
@@ -43,7 +43,7 @@ Plug 'nightsense/stellarized' " stellarized_dark
 Plug 'nightsense/seagrey'     " seagrey-dark
 Plug 'arcticicestudio/nord-vim'
 
-"--------- Syntax --------- 
+"--------- Syntax ---------
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -53,7 +53,7 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'guns/vim-clojure-highlight'
 
-""""""" Clojure """""""""   
+""""""" Clojure """""""""
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
 Plug 'tpope/vim-fireplace', { 'for': ['clojure'] }             " for lein repl
 Plug 'tpope/vim-classpath', { 'for': ['clojure'] }
@@ -65,14 +65,11 @@ Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }   " form
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 "--------- Autocomplete ana snips ---------
-Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
-
-" Plug 'Valloric/YouCompleteMe'
-Plug 'mattn/emmet-vim' 
+Plug 'mattn/emmet-vim'
 Plug 'Shougo/neosnippet.vim'
-" Plug 'honza/vim-snippets'
 
-"--------- LSP servers --------- 
+"--------- LSP servers ---------
+Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
 " Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
 " Plug 'flowtype/flow-language-server', {'do': 'npm install && npm run build'}
 
@@ -102,7 +99,7 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
-"--------- Colorscheme --------- 
+"--------- Colorscheme ---------
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
@@ -121,7 +118,7 @@ let g:Illuminate_ftblacklist = ['nerdtree', 'easymotion']
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowBookmarks=1
 let NERDTreeAutoDeleteBuffer = 1
-let g:NERDTreeWinSize = 35 
+let g:NERDTreeWinSize = 35
 let NERDTreeIgnore = ['node_modules']
 
 "--------- Commenters ---------
@@ -190,31 +187,17 @@ let g:tmuxline_preset = {
       \}}
 
 let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '',
-    \ 'right' : '',
+    \ 'left'      : '',
+    \ 'left_alt'  : '',
+    \ 'right'     : '',
     \ 'right_alt' : '',
-    \ 'space' : ' '}
+    \ 'space'     : ' '}
 
 "--------- Testrunner ---------
 let test#strategy = "basic"
 " let g:test#javascript#jest#options = '--silent'
 
 "--------- Use deoplete / ncm2 / ycm ---------
-let g:ycm_key_list_select_completion = []
-let g:ycm_semantic_triggers = { 'clojure': ['('] }
-let g:ycm_use_ultisnips_completer = 0
-let g:ycm_show_diagnostics_ui = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_max_num_candidates = 20
-let g:ycm_filepath_blacklist = {
-\ 'html': 0,
-\ 'xml': 0
-\}
-
-" set completeopt=menuone,noselect,longest
-set completeopt-=preview
-
 " let g:neosnippet#enable_completed_snippet = 1
 " let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#enable_auto_clear_markers = 1
@@ -222,32 +205,38 @@ let g:neosnippet#enable_conceal_markers = 0
 let g:neosnippet#disable_runtime_snippets = {
 \   '_' : 1,
 \ }
-let g:autocomplete_flow#insert_paren_after_function = 0
+" let g:autocomplete_flow#insert_paren_after_function = 0
 let g:neosnippet#snippets_directory = $HOME.'/dotfiles/.config/nvim/private-snips'
 
 "--------- LSP ---------
 
 "--------- Ale settings ---------
-" let g:ale_linters = {
-"       \ 'clojure':    ['joker'],
-"       \}
+let g:ale_linters = {
+      \ 'javascript'     : ['eslint'],
+      \ 'javascript.jsx' : ['eslint'],
+      \ 'clojure'        : ['joker'],
+      \}
 
-" let g:ale_linter_aliases = { 'jsx': 'css' }
-" let g:ale_fixers = {
-"       \ 'clojure':    ['joker'],
-"       \}
+let g:ale_linter_aliases = { 'jsx': 'css' }
+let g:ale_fixers = {
+      \ '*'              : ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'javascript'     : ['prettier', 'eslint'],
+      \ 'javascript.jsx' : ['prettier', 'eslint'],
+      \ 'clojure'        : ['joker'],
+      \}
 
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_enter = 0
+let g:ale_completion_enabled   = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter        = 0
 
-" hi ALEError cterm=underline ctermfg=red
-" hi ALEWarning cterm=underline ctermfg=yellow
+hi ALEError cterm=underline ctermfg=red
+hi ALEWarning cterm=underline ctermfg=yellow
 
-" hi ALEErrorSign ctermfg=red
-" hi ALEWarningSign ctermfg=yellow 
+hi ALEErrorSign ctermfg=red
+hi ALEWarningSign ctermfg=yellow
 
 "--------- indentLine settings ---------
-let g:indentLine_char = '┆'
+let g:indentLine_char         = '┆'
 let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
 
@@ -259,10 +248,9 @@ let g:ctrlsf_auto_focus = {
     \ "at": "done",
     \ }
 let g:ctrlsf_default_root = 'project'
-let g:ctrlsf_search_mode = 'async'
+let g:ctrlsf_search_mode  = 'async'
 
 "--------- Slime ---------
-let g:slime_target = "tmux"
-let g:slime_paste_file = "$HOME/.slime_paste"
+let g:slime_target         = "tmux"
+let g:slime_paste_file     = "$HOME/.slime_paste"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":1.2"}
-
