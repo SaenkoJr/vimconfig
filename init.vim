@@ -20,6 +20,7 @@ Plug 'tpope/vim-repeat'
 Plug 'RRethy/vim-illuminate'    " Select illuminating other uses of the current word under the cursor
 Plug 'guns/vim-sexp'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'chrisbra/Colorizer'
 
 "--------- Test utils ---------
 Plug 'janko-m/vim-test'

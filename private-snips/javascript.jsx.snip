@@ -16,6 +16,13 @@ snippet tag "<tag...>"
 snippet ims "import styles"
   import '${0}';
 
+snippet mstp "mapStateToProps"
+  const mapStateToProps = (state) => {
+    return {
+      ${0}
+    };
+  };
+
 # Hooks
 snippet ust "Use state"
   const [${1:name}, ${2:setName}] = useState(${0});

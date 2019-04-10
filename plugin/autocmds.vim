@@ -16,7 +16,7 @@ if has('autocmd')
     autocmd InsertLeave * set nopaste
 
     autocmd InsertLeave * silent! pclose!
-    autocmd FileType html,css,javascript.jsx,javascript EmmetInstall
+    autocmd FileType html,css,pug,sass,scss,javascript.jsx,javascript EmmetInstall
 
     " Make current window more obvious by turning off/adjusting some features in non-current
     " windows.

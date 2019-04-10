@@ -2,8 +2,7 @@
   "suggest.timeout": 500,
   "suggest.maxCompleteItemCount": 25,
   "suggest.maxPreviewWidth": 65,
-  "suggest.numberSelect": true,
-  "suggest.detailField": "abbr",
+  "suggest.detailField": "preview",
 
   "eslint.filetypes": [
     "javascript",
@@ -12,8 +11,8 @@
   ],
 
   "coc.source.neosnippet.priority": 10,
+  "suggest.languageSourcePriority": 100,
 
-  "diagnostic.displayByAle": true,
   "diagnostic.enable": false,
   "diagnostic.refreshOnInsertMode": false,
 
