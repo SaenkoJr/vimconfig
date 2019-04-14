@@ -21,6 +21,7 @@ Plug 'RRethy/vim-illuminate'    " Select illuminating other uses of the current 
 Plug 'guns/vim-sexp'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chrisbra/Colorizer'
+Plug 'metakirby5/codi.vim'      " Like a quokka for vs code
 
 "--------- Test utils ---------
 Plug 'janko-m/vim-test'
@@ -255,3 +256,8 @@ let g:ctrlsf_search_mode  = 'async'
 let g:slime_target         = "tmux"
 let g:slime_paste_file     = "$HOME/.slime_paste"
 let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":1.2"}
+
+"--------- Codi ---------
+let g:codi#aliases = {
+    \ 'javascript.jsx': 'javascript',
+    \ }
