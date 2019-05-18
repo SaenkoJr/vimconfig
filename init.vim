@@ -126,20 +126,21 @@ let NERDTreeIgnore = ['node_modules']
 "--------- Commenters ---------
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
+
 "--------- Tagbar ---------
 let g:tagbar_autofocus = 1
 let g:tagbar_compact = 1
 let g:tagbar_updateonsave_maxlines = 1
 
 "--------- Autopairs ---------
-let g:AutoPairs={'(':')', '[':']', '{':'}', '`':'`'}
+let g:AutoPairs={'(':')', '[':']', '{':'}'}
 
 "--------- Js syntax highlight ---------
 let g:javascript_plugin_flow = 1
 let g:vim_jsx_pretty_colorful_config = 1
 let g:jsx_ext_required = 0
 
-"--------- emmet settings ---------
+"--------- Emmet settings ---------
 let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<M-,>'
 let g:user_emmet_settings = {
@@ -210,7 +211,7 @@ let g:neosnippet#disable_runtime_snippets = {
 " let g:autocomplete_flow#insert_paren_after_function = 0
 let g:neosnippet#snippets_directory = $HOME.'/dotfiles/.config/nvim/private-snips'
 
-"--------- LSP ---------
+"--------- LSP (coc) ---------
 
 "--------- Ale settings ---------
 let g:ale_linters = {
@@ -237,7 +238,7 @@ hi ALEWarning cterm=underline ctermfg=yellow
 hi ALEErrorSign ctermfg=red
 hi ALEWarningSign ctermfg=yellow
 
-"--------- indentLine settings ---------
+"--------- IndentLine settings ---------
 let g:indentLine_char         = '┆'
 let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
@@ -245,7 +246,7 @@ let g:vim_json_syntax_conceal = 0
 "--------- FZF ---------
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore yarn.lock --ignore-dir node_modules --ignore-dir .local/share/nvim/view --ignore-dir .cache/neosnippet -g ""'
 
-"--------- ctrlsf ---------
+"--------- Ctrlsf ---------
 let g:ctrlsf_auto_focus = {
     \ "at": "done",
     \ }

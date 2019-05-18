@@ -32,8 +32,11 @@ snippet apply "(apply ...)"
 snippet let "create binding for vars"
   (let [${1:name value}] ${0:code that uses names})
 
-snippet req "require"
+snippet req "(:require [...])"
   (:require [${1}]${0})
+
+snippet map "(map fn col)"
+  (map ${1:fn} ${0})
 
 # for collections
 snippet get "get [...]"
@@ -53,6 +56,12 @@ snippet find "find item in coll"
 
 snippet into "put one coll into another"
   (into ${1:first} ${0:second})
+
+snippet dkeys "{:keys [key1 key2 ...]}"
+  {:keys [${0}]}
+
+snippet red "(reduce fn ?val coll)"
+  (reduce ${0:fn} ${1:val?} ${2:coll})
 
 # vectors 
 snippet vec "(vector ...)"
