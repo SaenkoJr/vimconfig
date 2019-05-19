@@ -32,6 +32,8 @@ nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
 
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
 
+nmap <silent> <leader>ml :Maps<CR>
+
 " ----- LSP -----
 " nnoremap <leader>yrm :YcmCompleter RefactorRename
 " nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>

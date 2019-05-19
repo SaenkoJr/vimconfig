@@ -31,8 +31,8 @@ set breakindent
 " set ttimeout
 
 " set ruler
-set cursorline
-set cursorcolumn
+" set cursorline
+" set cursorcolumn
 
 set hlsearch
 set incsearch
@@ -44,10 +44,9 @@ set noswapfile
 "set updatecount=80                    " update swapfiles every 80 chars
 set updatetime=200
 
-" FOLDING
 if has('folding')
   if has('windows')
-    set fillchars=vert:┃              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+    set fillchars=vert:c              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
   endif
   set foldmethod=indent               " not as cool as syntax, but faster
   set foldlevelstart=99               " start unfolded

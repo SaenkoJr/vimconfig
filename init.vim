@@ -10,7 +10,7 @@ Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'        " Align text (beauty tabs)
 Plug 'majutsushi/tagbar'        " Show tags
 Plug 'troydm/easybuffer.vim'
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'	    " tmuxline
 Plug 'jpalardy/vim-slime'       " REPL
 Plug 'tpope/vim-surround'       " Surrounding in pairs
@@ -55,14 +55,14 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'guns/vim-clojure-highlight'
 
-""""""" Clojure """""""""
+"--------- Clojure ---------
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
 Plug 'tpope/vim-fireplace', { 'for': ['clojure'] }             " for lein repl
 Plug 'tpope/vim-classpath', { 'for': ['clojure'] }
 Plug 'tpope/vim-salve', { 'for': ['clojure'] }                 " seems like dosen`t work
 Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
 
-Plug 'eraserhd/parinfer-rust', { 'for': ['clojure', 'scheme', 'racket'] } " infer parentheses
+Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release', 'for': ['clojure', 'scheme', 'racket'] } " infer parentheses
 Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }   " formater
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
@@ -163,6 +163,8 @@ let g:clojure_syntax_keywords = {
 let g:salve_auto_start_repl = 1
 let g:dispatch_no_maps = 1
 let g:clj_fmt_autosave = 1
+let g:clojure_fuzzy_indent_patterns = ['^doto', '^with', '^def', '^let', 'go-loop', 'match', '^context', '^GET', '^PUT', '^POST', '^PATCH', '^DELETE', '^ANY', 'this-as', '^are', '^dofor']
+let g:clojure_maxlines = 100
 
 "--------- Sexp ---------
 let g:sexp_filetypes = 'clojure,scheme,lisp,racket'
