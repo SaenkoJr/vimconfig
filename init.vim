@@ -8,7 +8,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
 Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'        " Align text (beauty tabs)
-Plug 'majutsushi/tagbar'        " Show tags
+Plug 'liuchengxu/vista.vim' " for tags
 Plug 'troydm/easybuffer.vim'
 " Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'	    " tmuxline
@@ -127,10 +127,8 @@ let NERDTreeIgnore = ['node_modules']
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 
-"--------- Tagbar ---------
-let g:tagbar_autofocus = 1
-let g:tagbar_compact = 1
-let g:tagbar_updateonsave_maxlines = 1
+"--------- Vista ---------
+let g:vista_default_executive = 'coc'
 
 "--------- Autopairs ---------
 let g:AutoPairs={'(':')', '[':']', '{':'}'}

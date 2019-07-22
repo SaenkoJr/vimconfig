@@ -11,7 +11,6 @@ nnoremap <C-p>s :Snippets<CR>
 nnoremap =G :normal! gg=G``<CR>
 
 map <silent> <C-n> :NERDTreeToggle<CR>
-" nnoremap <silent> <F8> :TagbarOpenAutoClose<CR>
 
 map <A-/> <Plug>NERDCommenterToggle
 nnoremap <F5> :UndotreeToggle<CR>

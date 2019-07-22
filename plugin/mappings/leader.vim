@@ -30,7 +30,7 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>FN :NERDTreeFind<CR>
 nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
 
-nnoremap <silent> <leader>tt :TagbarToggle<CR>
+nnoremap <silent> <leader>v :Vista<CR>
 
 nmap <silent> <leader>ml :Maps<CR>
 
