@@ -10,7 +10,7 @@
     "javascript.jsx"
   ],
 
-  "coc.source.neosnippet.priority": 10,
+  "coc.source.neosnippet.priority": 90,
   "suggest.languageSourcePriority": 100,
 
   "diagnostic.enable": false,

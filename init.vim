@@ -71,7 +71,7 @@ Plug 'mattn/emmet-vim'
 Plug 'Shougo/neosnippet.vim'
 
 "--------- LSP servers ---------
-Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': 'yarn install' }
+Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': { -> coc#util#install() } }
 " Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
 " Plug 'flowtype/flow-language-server', {'do': 'npm install && npm run build'}
 
@@ -211,7 +211,7 @@ let g:neosnippet#disable_runtime_snippets = {
 \   '_' : 1,
 \ }
 " let g:autocomplete_flow#insert_paren_after_function = 0
-let g:neosnippet#snippets_directory = $HOME.'/dotfiles/.config/nvim/private-snips'
+let g:neosnippet#snippets_directory = $HOME.'/.config/nvim/private-snips'
 
 "--------- LSP (coc) ---------
 
