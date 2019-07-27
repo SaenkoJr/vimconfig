@@ -41,8 +41,6 @@ Plug 'vim-airline/vim-airline-themes'
 
 "--------- Colors ---------
 Plug 'chriskempson/base16-vim'
-Plug 'nightsense/stellarized' " stellarized_dark
-Plug 'nightsense/seagrey'     " seagrey-dark
 Plug 'arcticicestudio/nord-vim'
 
 "--------- Syntax ---------
@@ -54,6 +52,7 @@ Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'guns/vim-clojure-highlight'
+Plug 'ekalinin/Dockerfile.vim'
 
 "--------- Clojure ---------
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
@@ -71,9 +70,26 @@ Plug 'mattn/emmet-vim'
 Plug 'Shougo/neosnippet.vim'
 
 "--------- LSP servers ---------
-Plug 'neoclide/coc.nvim', { 'tag': '*', 'do': { -> coc#util#install() } }
-" Plug 'sourcegraph/javascript-typescript-langserver', {'do': 'npm install && npm run build'}
-" Plug 'flowtype/flow-language-server', {'do': 'npm install && npm run build'}
+Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
+let g:coc_global_extensions = [
+      \ 'coc-tsserver',
+      \ 'coc-html',
+      \ 'coc-css',
+      \ 'coc-json',
+      \ 'coc-emmet',
+      \ 'coc-lists',
+      \ 'coc-vimlsp',
+      \ 'coc-sh',
+      \ 'coc-stylelint',
+      \ 'coc-elixir',
+      \ 'coc-python',
+      \ 'coc-java',
+      \ 'coc-jest',
+      \ 'coc-highlight',
+      \ 'coc-neosnippet',
+      \ 'coc-docker',
+      \ 'coc-diagnostic',
+      \]
 
 "--------- Git ---------
 Plug 'tpope/vim-fugitive'
