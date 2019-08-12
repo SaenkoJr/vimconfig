@@ -22,6 +22,7 @@ Plug 'guns/vim-sexp'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'chrisbra/Colorizer'
 Plug 'metakirby5/codi.vim'      " Like a quokka for vs code
+Plug 'luochen1990/rainbow'
 
 "--------- Test utils ---------
 Plug 'janko-m/vim-test'
@@ -52,7 +53,7 @@ Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'guns/vim-clojure-highlight'
-Plug 'ekalinin/Dockerfile.vim'
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
 "--------- Clojure ---------
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
@@ -70,7 +71,8 @@ Plug 'mattn/emmet-vim'
 Plug 'Shougo/neosnippet.vim'
 
 "--------- LSP servers ---------
-Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
+" Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 let g:coc_global_extensions = [
       \ 'coc-tsserver',
       \ 'coc-html',
@@ -89,6 +91,7 @@ let g:coc_global_extensions = [
       \ 'coc-neosnippet',
       \ 'coc-docker',
       \ 'coc-diagnostic',
+      \ 'coc-yaml',
       \]
 
 "--------- Git ---------
@@ -96,6 +99,18 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 call plug#end()
+
+"--------- rainbow ---------
+let g:rainbow_active = 0
+let g:rainbow_conf = {
+      \ 'separately': {
+      \   '*': 0,
+      \   'clojure': {
+      \   },
+      \   'lisp': {
+      \   },
+      \}
+\}
 
 "--------- netrw ---------
 let g:loaded_netrw       = 1
@@ -170,10 +185,10 @@ let g:user_emmet_settings = {
 let g:clojure_align_multiline_strings = 1 " Align subsequent lines in multiline strings
                                           " to the column after the opening quote,
                                           " instead of the same column
-let g:clojure_syntax_keywords = {
-    \ 'clojureMacro': ["defproject", "defcustom"],
-    \ 'clojureFunc': ["string/join", "string/replace"]
-    \ }
+" let g:clojure_syntax_keywords = {
+"     \ 'clojureMacro': ["defproject", "defcustom"],
+"     \ 'clojureFunc': ["string/join", "string/replace"]
+"     \ }
 let g:salve_auto_start_repl = 1
 let g:dispatch_no_maps = 1
 let g:clj_fmt_autosave = 1
@@ -228,6 +243,7 @@ let g:neosnippet#disable_runtime_snippets = {
 let g:neosnippet#snippets_directory = $HOME.'/.config/nvim/private-snips'
 
 "--------- LSP (coc) ---------
+let g:coc_snippet_next = '<tab>'
 
 "--------- Ale settings ---------
 let g:ale_linters = {

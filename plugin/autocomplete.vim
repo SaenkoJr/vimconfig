@@ -12,6 +12,9 @@ imap <expr><TAB>
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
       \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
+imap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+smap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif

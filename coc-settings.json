@@ -1,7 +1,9 @@
 {
+  "coc.preferences.jumpCommand": "split",
+
   "suggest.timeout": 500,
   "suggest.maxCompleteItemCount": 25,
-  "suggest.maxPreviewWidth": 65,
+  "suggest.maxPreviewWidth": 100,
   "suggest.detailField": "preview",
 
   "eslint.filetypes": [
@@ -10,6 +12,8 @@
     "javascript.jsx"
   ],
 
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
+  "emmet.excludeLanguages": ["markdown", "javascript", "javascriptreact"],
   "coc.source.neosnippet.priority": 90,
   "suggest.languageSourcePriority": 100,
 
