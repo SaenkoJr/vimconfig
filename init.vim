@@ -48,7 +48,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
@@ -165,8 +166,8 @@ let g:vista_default_executive = 'coc'
 let g:AutoPairs={'(':')', '[':']', '{':'}'}
 
 "--------- Js syntax highlight ---------
-let g:javascript_plugin_flow = 1
-let g:vim_jsx_pretty_colorful_config = 1
+let g:vim_jsx_pretty_highlight_close_tag = 1
+let g:vim_jsx_pretty_colorful_config = 0
 let g:jsx_ext_required = 0
 
 "--------- Emmet settings ---------
@@ -174,7 +175,7 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key='<M-,>'
 let g:user_emmet_settings = {
       \ 'javascript.jsx': {
-      \   'extends': [ 'jsx', 'js' ],
+      \   'extends': ['jsx', 'js' ],
       \  },
       \ 'javascript': {
       \   'extends': 'jsx'
