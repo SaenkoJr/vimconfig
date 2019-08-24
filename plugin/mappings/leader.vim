@@ -11,6 +11,7 @@ nnoremap <silent> <Leader>r :call mappings#cycle_numbering()<CR>
 nmap <silent> <Leader>Q :bd<CR>
 nnoremap <silent> <Leader>q :quit<CR>
 nnoremap <silent> <Leader>w :write<CR>
+nnoremap <silent> <Leader>W :wa<CR>
 
 nnoremap <Leader>/ :noh<CR>
 

@@ -48,8 +48,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-" Plug 'mxw/vim-jsx'
-Plug 'maxmellon/vim-jsx-pretty'
+Plug 'mxw/vim-jsx'
+" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
@@ -91,6 +91,7 @@ let g:coc_global_extensions = [
       \ 'coc-highlight',
       \ 'coc-neosnippet',
       \ 'coc-docker',
+      \ 'coc-solargraph',
       \ 'coc-diagnostic',
       \ 'coc-yaml',
       \]
@@ -111,7 +112,7 @@ let g:rainbow_conf = {
       \   'lisp': {
       \   },
       \}
-\}
+      \}
 
 "--------- netrw ---------
 let g:loaded_netrw       = 1
@@ -184,8 +185,8 @@ let g:user_emmet_settings = {
 
 "--------- Clojure(Script) settings ---------
 let g:clojure_align_multiline_strings = 1 " Align subsequent lines in multiline strings
-                                          " to the column after the opening quote,
-                                          " instead of the same column
+" to the column after the opening quote,
+" instead of the same column
 " let g:clojure_syntax_keywords = {
 "     \ 'clojureMacro': ["defproject", "defcustom"],
 "     \ 'clojureFunc': ["string/join", "string/replace"]
@@ -222,11 +223,11 @@ let g:tmuxline_preset = {
       \}}
 
 let g:tmuxline_separators = {
-    \ 'left'      : '',
-    \ 'left_alt'  : '',
-    \ 'right'     : '',
-    \ 'right_alt' : '',
-    \ 'space'     : ' '}
+      \ 'left'      : '',
+      \ 'left_alt'  : '',
+      \ 'right'     : '',
+      \ 'right_alt' : '',
+      \ 'space'     : ' '}
 
 "--------- Testrunner ---------
 let test#strategy = "basic"
@@ -238,8 +239,8 @@ let test#strategy = "basic"
 let g:neosnippet#enable_auto_clear_markers = 1
 let g:neosnippet#enable_conceal_markers = 0
 let g:neosnippet#disable_runtime_snippets = {
-\   '_' : 1,
-\ }
+      \   '_' : 1,
+      \ }
 " let g:autocomplete_flow#insert_paren_after_function = 0
 let g:neosnippet#snippets_directory = $HOME.'/.config/nvim/private-snips'
 
@@ -250,7 +251,7 @@ let g:coc_snippet_next = '<tab>'
 let g:ale_linters = {
       \ 'javascript'     : ['eslint'],
       \ 'javascript.jsx' : ['eslint'],
-      \ 'clojure'        : ['joker'],
+      \ 'clojure'        : ['joker', 'eastwood'],
       \}
 
 let g:ale_linter_aliases = { 'jsx': 'css' }
@@ -258,7 +259,7 @@ let g:ale_fixers = {
       \ '*'              : ['remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript'     : ['prettier', 'eslint'],
       \ 'javascript.jsx' : ['prettier', 'eslint'],
-      \ 'clojure'        : ['joker'],
+      \ 'clojure'        : ['joker', 'eastwood'],
       \}
 
 let g:ale_set_highlights = 0
@@ -281,9 +282,11 @@ let g:vim_json_syntax_conceal = 0
 let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore yarn.lock --ignore-dir node_modules --ignore-dir .local/share/nvim/view --ignore-dir .cache/neosnippet -g ""'
 
 "--------- Ctrlsf ---------
+let g:ctrlsf_ackprg = 'rg'
+let g:ctrlsf_case_sensitive = 'smart'
 let g:ctrlsf_auto_focus = {
-    \ "at": "done",
-    \ }
+      \ "at": "done",
+      \ }
 let g:ctrlsf_default_root = 'project'
 let g:ctrlsf_search_mode  = 'async'
 
@@ -294,5 +297,5 @@ let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane"
 
 "--------- Codi ---------
 let g:codi#aliases = {
-    \ 'javascript.jsx': 'javascript',
-    \ }
+      \ 'javascript.jsx': 'javascript',
+      \ }

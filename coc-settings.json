@@ -2,10 +2,13 @@
   "coc.preferences.jumpCommand": "split",
 
   "suggest.timeout": 500,
-  "suggest.maxCompleteItemCount": 25,
+  "suggest.maxCompleteItemCount": 30,
   "suggest.maxPreviewWidth": 100,
   "suggest.detailField": "preview",
 
+  "eslint.packageManager": "yarn",
+  "eslint.autoFix": false,
+  "eslint.autoFixOnSave": false,
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
@@ -25,8 +28,6 @@
 
   "typescript.suggest.autoImports": true,
   "typescript.preferences.quoteStyle": "single",
-
-  "eslint.autoFixOnSave": false,
 
   "languageserver": {
     "clojure-lsp": {

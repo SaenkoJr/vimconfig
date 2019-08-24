@@ -3,7 +3,7 @@ if has('autocmd')
   au filetype racket set lisp
   au filetype racket set autoindent
 
-  augroup WincentAutocmds
+  augroup Autocmds
     autocmd!
 
     autocmd VimResized * execute "normal! \<c-w>="
@@ -17,15 +17,6 @@ if has('autocmd')
 
     autocmd InsertLeave * silent! pclose!
     autocmd FileType html,css,pug,sass,scss,javascript.jsx,javascript EmmetInstall
-
-    " Make current window more obvious by turning off/adjusting some features in non-current
-    " windows.
-    if exists('+colorcolumn')
-      autocmd BufEnter,FocusGained,VimEnter,WinEnter * if autocmds#should_colorcolumn() | let &l:colorcolumn='+' . join(range(0, 254), ',+') | endif
-      autocmd FocusLost,WinLeave * if autocmds#should_colorcolumn() | let &l:colorcolumn=join(range(1, 255), ',') | endif
-    endif
-    " autocmd InsertLeave,VimEnter,WinEnter * if autocmds#should_cursorline() | setlocal cursorline | endif
-    " autocmd InsertEnter,WinLeave * if autocmds#should_cursorline() | setlocal nocursorline | endif
 
     if has('mksession')
       " Save/restore folds and cursor position.
