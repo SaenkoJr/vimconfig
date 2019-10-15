@@ -35,6 +35,9 @@ nnoremap <silent> <leader>v :Vista<CR>
 
 nmap <silent> <leader>ml :Maps<CR>
 
+" ----- Git -----
+nmap <silent> <leader>gb :Gblame<CR>
+
 " ----- LSP -----
 " nnoremap <leader>yrm :YcmCompleter RefactorRename
 " nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>

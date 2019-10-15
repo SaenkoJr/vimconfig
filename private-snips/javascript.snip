@@ -68,6 +68,11 @@ snippet imas "import * as xyz from 'xyz'"
 snippet imm "import { member } from 'xyz'"
   import { ${0} } from '${1}';
 
+snippet imed "import member from 'xyz'"
+  import ${2} from '${1}';${0}
+
+  export default $2;
+
 snippet cla "class"
   class ${1} {
     ${0:${VISUAL}}
@@ -430,3 +435,6 @@ snippet eq "toEqual"
 
 snippet esd "disable eslint"
   /* eslint-disable */
+
+snippet epd "preventDefault"
+  e.preventDefault();

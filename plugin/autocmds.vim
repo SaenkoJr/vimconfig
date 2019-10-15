@@ -18,6 +18,9 @@ if has('autocmd')
     autocmd InsertLeave * silent! pclose!
     autocmd FileType html,css,pug,sass,scss,javascript.jsx,javascript EmmetInstall
 
+    autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
+    autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
+
     if has('mksession')
       " Save/restore folds and cursor position.
       autocmd BufWritePost,BufLeave,WinLeave ?* if autocmds#should_mkview() | call autocmds#mkview() | endif

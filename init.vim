@@ -48,8 +48,8 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'othree/html5.vim'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx'
-" Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'mxw/vim-jsx'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'digitaltoad/vim-pug', { 'for': 'pug' }
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
@@ -58,13 +58,14 @@ Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
 "--------- Clojure ---------
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
+Plug 'guns/vim-slamhound', { 'for': 'clojure' } " auto load imports
 Plug 'tpope/vim-fireplace', { 'for': ['clojure'] }             " for lein repl
 Plug 'tpope/vim-classpath', { 'for': ['clojure'] }
 Plug 'tpope/vim-salve', { 'for': ['clojure'] }                 " seems like dosen`t work
 Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
+Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }   " formater
 
 Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release', 'for': ['clojure', 'scheme', 'racket'] } " infer parentheses
-Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }   " formater
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 "--------- Autocomplete ana snips ---------
@@ -251,7 +252,7 @@ let g:coc_snippet_next = '<tab>'
 let g:ale_linters = {
       \ 'javascript'     : ['eslint'],
       \ 'javascript.jsx' : ['eslint'],
-      \ 'clojure'        : ['joker', 'eastwood'],
+      \ 'clojure'        : ['joker'],
       \}
 
 let g:ale_linter_aliases = { 'jsx': 'css' }
@@ -259,7 +260,7 @@ let g:ale_fixers = {
       \ '*'              : ['remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript'     : ['prettier', 'eslint'],
       \ 'javascript.jsx' : ['prettier', 'eslint'],
-      \ 'clojure'        : ['joker', 'eastwood'],
+      \ 'clojure'        : ['joker'],
       \}
 
 let g:ale_set_highlights = 0

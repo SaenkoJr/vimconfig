@@ -5,6 +5,7 @@
   "suggest.maxCompleteItemCount": 30,
   "suggest.maxPreviewWidth": 100,
   "suggest.detailField": "preview",
+  "suggest.removeDuplicateItems": true,
 
   "eslint.packageManager": "yarn",
   "eslint.autoFix": false,
