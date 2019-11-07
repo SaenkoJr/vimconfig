@@ -37,11 +37,9 @@ nmap <silent> <leader>ml :Maps<CR>
 
 " ----- Git -----
 nmap <silent> <leader>gb :Gblame<CR>
+nmap <silent> <leader>G :G<CR>
 
 " ----- LSP -----
-" nnoremap <leader>yrm :YcmCompleter RefactorRename
-" nnoremap <leader>gd :YcmCompleter GoToDefinition<CR>
-
 nmap <leader>yrm <Plug>(coc-rename)
 
 " nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>

@@ -44,6 +44,9 @@ snippet switch
       ${0}
   }
 
+snippet esp "e.stopPropagation();"
+  e.stopPropagation();
+
 snippet case "case 'xyz': ... break"
   case '${1:case}':
     ${0:${VISUAL}}
@@ -60,16 +63,16 @@ snippet try "try { ... } catch(e) { ... }"
   }
 
 snippet im "import xyz from 'xyz'"
-  import ${0} from '${1}';
+  import from '${1}';
 
 snippet imas "import * as xyz from 'xyz'"
   import * as ${0} from '${1}';
 
 snippet imm "import { member } from 'xyz'"
-  import { ${0} } from '${1}';
+  import {} from '${1}';
 
 snippet imed "import member from 'xyz'"
-  import ${2} from '${1}';${0}
+  import ${2} from '${0}';
 
   export default $2;
 
@@ -402,7 +405,7 @@ snippet ren "render"
 snippet sst "set state"
   this.setState({${0}});
 
-snippet prp "this.props"
+snippet tpr "this.props"
   this.props.${0}
 
 snippet ste "this.state"

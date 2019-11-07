@@ -24,10 +24,6 @@
   "diagnostic.enable": false,
   "diagnostic.refreshOnInsertMode": false,
 
-  "javascript.suggest.autoImports": true,
-  "javascript.suggestionActions.enabled": false,
-
-  "typescript.suggest.autoImports": true,
   "typescript.preferences.quoteStyle": "single",
 
   "languageserver": {
