@@ -17,12 +17,15 @@ Plug 'tpope/vim-surround'       " Surrounding in pairs
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'     " fast move
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'         " helpers for unix
+Plug 'tpope/vim-jdaddy'         " for json
 Plug 'RRethy/vim-illuminate'    " Select illuminating other uses of the current word under the cursor
 Plug 'guns/vim-sexp'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'Shougo/echodoc.vim'
 Plug 'chrisbra/Colorizer'
 Plug 'metakirby5/codi.vim'      " Like a quokka for vs code
 Plug 'luochen1990/rainbow'
+Plug 'skywind3000/asyncrun.vim'
 
 "--------- Test utils ---------
 Plug 'janko-m/vim-test'
@@ -58,11 +61,11 @@ Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
 
 "--------- Clojure ---------
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
-Plug 'guns/vim-slamhound', { 'for': 'clojure' } " auto load imports
+Plug 'guns/vim-slamhound', { 'for': 'clojure' }                " auto load imports
 Plug 'tpope/vim-fireplace', { 'for': ['clojure'] }             " for lein repl
 Plug 'tpope/vim-classpath', { 'for': ['clojure'] }
 Plug 'tpope/vim-salve', { 'for': ['clojure'] }                 " seems like dosen`t work
-Plug 'venantius/vim-eastwood', { 'for': 'clojure' }
+Plug 'venantius/vim-eastwood', { 'for': 'clojure' }            " linter
 Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }   " formater
 
 Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release', 'for': ['clojure', 'scheme', 'racket'] } " infer parentheses
@@ -160,6 +163,9 @@ let NERDTreeIgnore = ['node_modules']
 "--------- Commenters ---------
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters={
+	\ 'javascript.jsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+\}
 
 "--------- Vista ---------
 let g:vista_default_executive = 'coc'
@@ -204,6 +210,7 @@ let g:sexp_filetypes = 'clojure,scheme,lisp,racket'
 "--------- Airline settings ---------
 let g:airline_theme='base16'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#disable_refresh = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
@@ -230,8 +237,16 @@ let g:tmuxline_separators = {
       \ 'right_alt' : '',
       \ 'space'     : ' '}
 
+"--------- Asyncrun ---------
+let g:asyncrun_open = 30
+let g:asyncrun_win_loc = 2
+
 "--------- Testrunner ---------
-let test#strategy = "basic"
+let test#strategy = {
+      \ 'file': 'asyncrun',
+      \ 'nearest': 'asyncrun',
+      \ 'suite': 'basic',
+      \}
 " let g:test#javascript#jest#options = '--silent'
 
 "--------- Use deoplete / ncm2 / ycm ---------
@@ -300,3 +315,6 @@ let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane"
 let g:codi#aliases = {
       \ 'javascript.jsx': 'javascript',
       \ }
+
+"--------- Startify ---------
+let g:startify_change_to_dir = 0
