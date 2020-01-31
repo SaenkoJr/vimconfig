@@ -42,6 +42,8 @@ nmap <silent> <leader>G :G<CR>
 
 " ----- LSP -----
 nmap <leader>yrm <Plug>(coc-rename)
+" nmap <leader>k <Plug>(coc-diagnostic-prev) 
+" nmap <leader>j <Plug>(coc-diagnostic-next) 
 
 " nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
 " nnoremap <silent> <leader>gd :call LanguageClient_textDocument_definition()<CR>
@@ -53,4 +55,4 @@ nmap <silent> <leader>tn :TestNearest<CR>
 nmap <silent> <leader>tf :TestFile<CR>
 nmap <silent> <leader>ts :TestSuite<CR>
 nmap <silent> <leader>tl :TestLast<CR>
-" nmap <silent> t<C-g> :TestVisit<CR>
+nmap <silent> <leader>tv :TestVisit<CR>

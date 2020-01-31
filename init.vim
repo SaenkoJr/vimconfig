@@ -165,10 +165,13 @@ let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters={
 	\ 'javascript.jsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+	\ 'typescript.tsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
 \}
 
 "--------- Vista ---------
 let g:vista_default_executive = 'coc'
+let g:vista_sidebar_width = 100
+let g:vista_echo_cursor_strategy = 'floating_win'
 
 "--------- Autopairs ---------
 let g:AutoPairs={'(':')', '[':']', '{':'}'}
@@ -187,6 +190,12 @@ let g:user_emmet_settings = {
       \  },
       \ 'javascript': {
       \   'extends': 'jsx'
+      \  },
+      \ 'typescript.tsx': {
+      \   'extends': ['tsx', 'ts' ],
+      \  },
+      \ 'typescript': {
+      \   'extends': ['tsx'],
       \  },
       \}
 
@@ -261,12 +270,15 @@ let g:neosnippet#disable_runtime_snippets = {
 let g:neosnippet#snippets_directory = $HOME.'/.config/nvim/private-snips'
 
 "--------- LSP (coc) ---------
-let g:coc_snippet_next = '<tab>'
+let g:coc_snippet_next = '<S-tab>'
+let g:coc_snippet_prev = ''
 
 "--------- Ale settings ---------
 let g:ale_linters = {
       \ 'javascript'     : ['eslint'],
       \ 'javascript.jsx' : ['eslint'],
+      \ 'typescript'     : ['eslint'],
+      \ 'typescript.tsx' : ['eslint'],
       \ 'clojure'        : ['joker'],
       \}
 
@@ -275,6 +287,8 @@ let g:ale_fixers = {
       \ '*'              : ['remove_trailing_lines', 'trim_whitespace'],
       \ 'javascript'     : ['prettier', 'eslint'],
       \ 'javascript.jsx' : ['prettier', 'eslint'],
+      \ 'typescript'     : ['prettier', 'eslint'],
+      \ 'typescript.tsx' : ['prettier', 'eslint'],
       \ 'clojure'        : ['joker'],
       \}
 

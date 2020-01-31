@@ -18,10 +18,10 @@ nnoremap <F5> :UndotreeToggle<CR>
 "----- LSP -----
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-" nnoremap <silent> K :call <SID>show_documentation()<CR>
+nmap <silent> <C-space> <Plug>(coc-float-hide)
 
 function! Expand(exp) abort
     let l:result = expand(a:exp)
@@ -42,6 +42,7 @@ nnoremap <silent> cram :call CocRequest('clojure-lsp', 'workspace/executeCommand
 nnoremap <silent> crcn :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'clean-ns', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
 nnoremap <silent> cref :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'extract-function', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1, input('Function name: ')]})<CR>
 
+autocmd FileType typescript,javascript nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')

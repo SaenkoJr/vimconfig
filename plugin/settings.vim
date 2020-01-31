@@ -21,7 +21,7 @@ set shiftwidth=2
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
 
-set clipboard=unnamed
+set clipboard=unnamedplus
 set autoread
 set hidden
 set wildmenu

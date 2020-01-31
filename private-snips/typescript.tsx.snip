@@ -1,0 +1,37 @@
+snippet hndlclk "handleClick (...)"
+  handleClick = () => {
+    ${0}
+  }
+
+snippet hndlinpt "handleInputChange (...)"
+  handleInputChange = (${1:e}) => {
+    ${0}
+  }
+
+snippet imsm "import css module"
+  import styles from '${0}';
+
+snippet tag "<tag...>"
+  <${1:tagName}${2}>
+    ${0}
+  </$1>
+
+snippet ims "import styles"
+  import '${0}';
+
+snippet mstp "mapStateToProps"
+  const mapStateToProps = (state) => {
+    return {
+      ${0}
+    };
+  };
+
+snippet rcml "react multy comment"
+  {/* ${0} */}
+
+# Hooks
+snippet ust "Use state"
+  const [${1:name}, ${2:setName}] = useState(${0});
+
+snippet ue "UseEffect"
+  useEffect(${0}${1:args});
