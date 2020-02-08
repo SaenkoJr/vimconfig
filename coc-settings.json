@@ -51,8 +51,12 @@
   "eslint.filetypes": [
     "javascript",
     "javascriptreact",
-    "javascript.jsx"
+    "javascript.jsx",
+    "typescript",
+    "typescript.tsx"
   ],
+
+  "jest.watch": false,
 
   "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly",
   "emmet.excludeLanguages": ["markdown", "javascript", "javascriptreact", "typescript", "typescriptreact"],
