@@ -16,7 +16,6 @@ if has('autocmd')
     autocmd InsertLeave * set nopaste
 
     autocmd InsertLeave * silent! pclose!
-    autocmd FileType html,css,pug,sass,scss,javascript.jsx,javascript EmmetInstall
 
     autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
     autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx

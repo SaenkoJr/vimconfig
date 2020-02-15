@@ -72,7 +72,6 @@ Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release', 'for': ['clojure
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 
 "--------- Autocomplete ana snips ---------
-Plug 'mattn/emmet-vim'
 Plug 'Shougo/neosnippet.vim'
 
 "--------- LSP servers ---------
@@ -182,22 +181,22 @@ let g:vim_jsx_pretty_colorful_config = 0
 let g:jsx_ext_required = 0
 
 "--------- Emmet settings ---------
-let g:user_emmet_install_global = 0
-let g:user_emmet_leader_key='<M-,>'
-let g:user_emmet_settings = {
-      \ 'javascript.jsx': {
-      \   'extends': ['jsx', 'js' ],
-      \  },
-      \ 'javascript': {
-      \   'extends': 'jsx'
-      \  },
-      \ 'typescript.tsx': {
-      \   'extends': ['tsx', 'ts' ],
-      \  },
-      \ 'typescript': {
-      \   'extends': ['tsx'],
-      \  },
-      \}
+" let g:user_emmet_install_global = 0
+" let g:user_emmet_leader_key='<M-,>'
+" let g:user_emmet_settings = {
+"       \ 'javascript.jsx': {
+"       \   'extends': ['jsx', 'js' ],
+"       \  },
+"       \ 'javascript': {
+"       \   'extends': 'jsx'
+"       \  },
+"       \ 'typescript.tsx': {
+"       \   'extends': ['tsx', 'ts' ],
+"       \  },
+"       \ 'typescript': {
+"       \   'extends': ['tsx'],
+"       \  },
+"       \}
 
 "--------- Clojure(Script) settings ---------
 let g:clojure_align_multiline_strings = 1 " Align subsequent lines in multiline strings
