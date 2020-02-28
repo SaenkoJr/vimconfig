@@ -114,7 +114,9 @@ let g:rainbow_conf = {
       \   },
       \   'lisp': {
       \   },
-      \}
+      \   'javascript': {
+      \   },
+      \ }
       \}
 
 "--------- netrw ---------
