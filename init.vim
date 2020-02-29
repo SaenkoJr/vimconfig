@@ -31,7 +31,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'janko-m/vim-test'
 
 "--------- NerdTree and fzf ---------
-Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+" Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
@@ -78,6 +78,7 @@ Plug 'Shougo/neosnippet.vim'
 " Plug 'neoclide/coc.nvim', { 'do': { -> coc#util#install() } }
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 let g:coc_global_extensions = [
+      \ 'coc-explorer',
       \ 'coc-tsserver',
       \ 'coc-html',
       \ 'coc-css',
@@ -154,6 +155,16 @@ endif
 "--------- Illuminate ---------
 let g:Illuminate_ftblacklist = ['nerdtree', 'easymotion']
 
+"--------- Coc Explorer ---------
+let g:coc_explorer_global_presets = {
+      \  'default': {
+      \     'file.child.template': '[git | 1] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]',
+      \     'position': 'left',
+      \     'quitOnOpen': true,
+      \     'previewAction-onHover': 'false',
+      \  }
+      \}
+
 "--------- NerdTree ---------
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowBookmarks=1
@@ -165,9 +176,9 @@ let NERDTreeIgnore = ['node_modules']
 let g:NERDSpaceDelims = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDCustomDelimiters={
-	\ 'javascript.jsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-	\ 'typescript.tsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
-\}
+      \ 'javascript.jsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+      \ 'typescript.tsx': { 'left': '//', 'right': '', 'leftAlt': '{/*', 'rightAlt': '*/}' },
+      \}
 
 "--------- Vista ---------
 let g:vista_default_executive = 'coc'

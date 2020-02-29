@@ -7,10 +7,12 @@ nnoremap <C-p><C-p> :Files<CR>
 nnoremap <C-p><C-g> :Files ~<CR>
 nnoremap <C-p>s :Snippets<CR>
 
+nnoremap <silent> <C-n> :CocCommand explorer --preset default<cr>
+
 " formating file
 nnoremap =G :normal! gg=G``<CR>
 
-map <silent> <C-n> :NERDTreeToggle<CR>
+" map <silent> <C-n> :NERDTreeToggle<CR>
 
 map <A-/> <Plug>NERDCommenterToggle
 nnoremap <F5> :UndotreeToggle<CR>
