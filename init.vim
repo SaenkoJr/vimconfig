@@ -58,6 +58,7 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'guns/vim-clojure-highlight'
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 
 "--------- Clojure ---------
 Plug 'guns/vim-clojure-static', { 'for': ['clojure'] }
@@ -286,10 +287,10 @@ let g:ale_linters = {
 let g:ale_linter_aliases = { 'jsx': 'css' }
 let g:ale_fixers = {
       \ '*'              : ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'javascript'     : ['prettier', 'eslint'],
-      \ 'javascript.jsx' : ['prettier', 'eslint'],
-      \ 'typescript'     : ['prettier', 'eslint'],
-      \ 'typescript.tsx' : ['prettier', 'eslint'],
+      \ 'javascript'     : ['eslint'],
+      \ 'javascript.jsx' : ['eslint'],
+      \ 'typescript'     : ['eslint'],
+      \ 'typescript.tsx' : ['eslint'],
       \ 'clojure'        : ['joker'],
       \}
 
@@ -314,6 +315,7 @@ let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore yarn.lock --ignor
 
 "--------- Ctrlsf ---------
 let g:ctrlsf_ackprg = 'rg'
+let g:ctrlsf_ignore_dir = ['node_modules']
 let g:ctrlsf_case_sensitive = 'smart'
 let g:ctrlsf_auto_focus = {
       \ "at": "done",
