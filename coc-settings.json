@@ -11,8 +11,9 @@
   "explorer.file.column.git.icon.added": "✚",
   "explorer.file.column.git.icon.deleted": "✗",
   "explorer.file.column.git.icon.modified": "",
-  "explorer.file.column.git.icon.ignored": "!",
-  "explorer.file.column.git.icon.untracked": "❓",
+  "explorer.file.column.git.icon.renamed": "✒",
+  "explorer.file.column.git.icon.ignored": "",
+  "explorer.file.column.git.icon.untracked": "",
 
   "suggest.timeout": 500,
   "suggest.numberSelect": true,
