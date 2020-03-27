@@ -84,7 +84,6 @@ let g:coc_global_extensions = [
       \ 'coc-html',
       \ 'coc-css',
       \ 'coc-json',
-      \ 'coc-emmet',
       \ 'coc-lists',
       \ 'coc-vimlsp',
       \ 'coc-sh',
@@ -160,9 +159,6 @@ let g:Illuminate_ftblacklist = ['nerdtree', 'easymotion']
 let g:coc_explorer_global_presets = {
       \  'default': {
       \     'file.child.template': '[git | 1] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]',
-      \     'position': 'left',
-      \     'quitOnOpen': true,
-      \     'previewAction-onHover': 'false',
       \  }
       \}
 
@@ -193,24 +189,6 @@ let g:AutoPairs={'(':')', '[':']', '{':'}'}
 let g:vim_jsx_pretty_highlight_close_tag = 1
 let g:vim_jsx_pretty_colorful_config = 0
 let g:jsx_ext_required = 0
-
-"--------- Emmet settings ---------
-" let g:user_emmet_install_global = 0
-" let g:user_emmet_leader_key='<M-,>'
-" let g:user_emmet_settings = {
-"       \ 'javascript.jsx': {
-"       \   'extends': ['jsx', 'js' ],
-"       \  },
-"       \ 'javascript': {
-"       \   'extends': 'jsx'
-"       \  },
-"       \ 'typescript.tsx': {
-"       \   'extends': ['tsx', 'ts' ],
-"       \  },
-"       \ 'typescript': {
-"       \   'extends': ['tsx'],
-"       \  },
-"       \}
 
 "--------- Clojure(Script) settings ---------
 let g:clojure_align_multiline_strings = 1 " Align subsequent lines in multiline strings

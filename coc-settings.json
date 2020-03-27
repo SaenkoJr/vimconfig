@@ -3,6 +3,16 @@
   "coc.preferences.snippetStatusText": "SNIP",
   "coc.preferences.rootPatterns": [".git",".hg",".projections.json", "project.clj"],
 
+  "explorer.previewAction.onHover": false,
+  "explorer.position": "floating",
+  "explorer.icon.enableNerdfont": true,
+  "explorer.autoExpandSingleNode": false,
+  "explorer.icon.hidden": " ",
+  "explorer.file.column.git.icon.added": "✚",
+  "explorer.file.column.git.icon.deleted": "✗",
+  "explorer.file.column.git.icon.modified": "",
+  "explorer.file.column.git.icon.ignored": "!",
+  "explorer.file.column.git.icon.untracked": "❓",
 
   "suggest.timeout": 500,
   "suggest.numberSelect": true,
