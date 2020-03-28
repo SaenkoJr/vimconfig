@@ -155,13 +155,6 @@ endif
 "--------- Illuminate ---------
 let g:Illuminate_ftblacklist = ['nerdtree', 'easymotion']
 
-"--------- Coc Explorer ---------
-let g:coc_explorer_global_presets = {
-      \  'default': {
-      \     'file.child.template': '[git | 1] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]',
-      \  }
-      \}
-
 "--------- NerdTree ---------
 let NERDTreeQuitOnOpen = 1
 let NERDTreeShowBookmarks=1
@@ -298,9 +291,6 @@ hi ALEWarningSign ctermfg=yellow
 let g:indentLine_char         = '┆'
 let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
-
-"--------- FZF ---------
-let $FZF_DEFAULT_COMMAND = 'ag --hidden --ignore .git --ignore yarn.lock --ignore-dir node_modules --ignore-dir .local/share/nvim/view --ignore-dir .cache/neosnippet -g ""'
 
 "--------- Ctrlsf ---------
 let g:ctrlsf_ackprg = 'rg'

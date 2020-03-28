@@ -3,14 +3,30 @@
   "coc.preferences.snippetStatusText": "SNIP",
   "coc.preferences.rootPatterns": [".git",".hg",".projections.json", "project.clj"],
 
+  "explorer.presets": {
+    "default": {
+      "buffer-root-template": "[0.5] [icon] [title]",
+      "file-root-template": "[0.5] [icon] [title] [root] [fullpath]",
+      "file.child.template": "[0.5] [git | 1] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][readonly] [linkIcon & 1][link growRight 1 omitCenter 5][size]",
+      "file-child-labeling-template": "[0.5] [fullpath][link][diagnosticWarning][diagnosticError][size][accessed][modified][created][readonly]"
+    }
+  },
+  "explorer.keyMappings": {
+    "l": ["expand"]
+  },
   "explorer.previewAction.onHover": false,
+  "explorer.quitOnOpen": true,
   "explorer.position": "floating",
+  "explorer.floating.width": 120,
+  "explorer.floating.height": -30,
+  "explorer.floating.contentWidth": -2,
+  "explorer.openAction.strategy": "sourceWindow",
   "explorer.icon.enableNerdfont": true,
   "explorer.autoExpandSingleNode": false,
   "explorer.icon.hidden": " ",
   "explorer.file.column.git.icon.added": "✚",
   "explorer.file.column.git.icon.deleted": "✗",
-  "explorer.file.column.git.icon.modified": "",
+  "explorer.file.column.git.icon.modified": "*",
   "explorer.file.column.git.icon.renamed": "✒",
   "explorer.file.column.git.icon.ignored": "",
   "explorer.file.column.git.icon.untracked": "",

@@ -2,7 +2,7 @@
 nnoremap <Leader><Leader> <C-^>
 nmap <silent> <Leader>ll :bnext<CR>
 nmap <silent> <Leader>hh :bprevious<CR>
-nnoremap <leader>ob :EasyBufferToggle<CR>
+nnoremap <leader>ob :EasyBuffer<CR>
 
 nnoremap <Leader>oo :only<CR>
 
@@ -19,9 +19,6 @@ nmap <Leader>k <Plug>(ale_previous_wrap)
 nmap <Leader>j <Plug>(ale_next_wrap)
 nmap <Leader>af :ALEFix<CR>
 
-" nmap <Leader>k <Plug>(coc-diagnostic-prev)
-" nmap <Leader>j <Plug>(coc-diagnostic-next)
-
 nmap <Leader>e <Plug>(easymotion-prefix)
 nmap <Leader>s <Plug>(easymotion-s)
 nmap <Leader>. <Plug>(easymotion-repeat)
@@ -31,6 +28,7 @@ nmap <Leader>. <Plug>(easymotion-repeat)
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <leader>FN :NERDTreeFind<CR>
 nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
+nmap <leader>ff :Rg <CR>
 
 nnoremap <silent> <leader>v :Vista<CR>
 
@@ -42,13 +40,9 @@ nmap <silent> <leader>G :G<CR>
 
 " ----- LSP -----
 nmap <leader>yrm <Plug>(coc-rename)
+nmap <leader>cr :CocRestart<CR>
 " nmap <leader>k <Plug>(coc-diagnostic-prev) 
 " nmap <leader>j <Plug>(coc-diagnostic-next) 
-
-" nnoremap <silent> <leader>K :call LanguageClient_textDocument_hover()<CR>
-" nnoremap <silent> <leader>gd :call LanguageClient_textDocument_definition()<CR>
-" nnoremap <silent> <leader>lrm :call LanguageClient_textDocument_rename()<CR>
-" nnoremap <silent> <leader>lm :call LanguageClient_contextMenu()<CR>
 
 " ---- Testrunner ----
 nmap <silent> <leader>tn :TestNearest<CR>

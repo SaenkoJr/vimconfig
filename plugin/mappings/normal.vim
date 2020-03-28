@@ -5,7 +5,6 @@ nnoremap <C-l> <C-w>l
 
 nnoremap <C-p><C-p> :Files<CR>
 nnoremap <C-p><C-g> :Files ~<CR>
-nnoremap <C-p>s :Snippets<CR>
 
 nnoremap <silent> <C-n> :CocCommand explorer --preset default<cr>
 
