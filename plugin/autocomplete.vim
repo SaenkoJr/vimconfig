@@ -4,16 +4,19 @@ inoremap <expr><Down> pumvisible() ? "\<C-n>" : "\<Down>"
 inoremap <expr><C-k> pumvisible() ? "\<C-p>" : "\<C-j>"
 inoremap <expr><Up> pumvisible() ? "\<C-p>" : "\<Up>"
 
-imap <expr><TAB>
-      \ pumvisible() ? "\<Plug>(neosnippet_expand_or_jump)" :
-      \ neosnippet#expandable_or_jumpable() ?
-      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" imap <expr> <buffer> <silent> <C-l> pumvisible() ? "\<C-y>" : "\<C-l>"
+" smap <expr> <buffer> <silent> <C-l> pumvisible() ? "\<C-y>" : "\<C-l>"
 
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+inoremap <silent><expr> <C-l>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<C-l>" :
+      \ coc#refresh()
 
-imap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-smap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
 if has('conceal')
   set conceallevel=2 concealcursor=niv

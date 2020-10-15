@@ -1,13 +1,14 @@
-set encoding=utf-8
+set encoding=utf8
 set mouse=a
 
 set viewoptions-=options
-" set nolazyredraw
 set regexpengine=1
+" set nolazyredraw
+
+set number
+set relativenumber
 
 set nowrap
-set nonumber
-set norelativenumber
 set expandtab                         " Always use spaces instead of tabs
 filetype plugin indent on
 set cindent
@@ -27,33 +28,32 @@ set hidden
 set wildmenu
 set breakindent
 
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
 " set notimeout
 " set ttimeout
-
-" set ruler
-" set cursorline
-" set cursorcolumn
 
 set hlsearch
 set incsearch
 
-" Enable hotkeys for Russian layout
-" set langmap=ёйцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕHГШЩЗХЪФЫВАПnОЛДЖЭЯЧСМИТЬБЮ;`qwertyuinp[]asdfghjkl\\;'zxcvbnm\\,.QWERTYUIOP{}ASDFGHJKL:\\"ZXCVBNM<>
-
-set noswapfile
 "set updatecount=80                    " update swapfiles every 80 chars
+set noswapfile
 set updatetime=200
 
 if has('folding')
   if has('windows')
-    set fillchars=vert:c              " BOX DRAWINGS HEAVY VERTICAL (U+2503, UTF-8: E2 94 83)
+    set fillchars+=vert:\|              
   endif
-  set foldmethod=indent               " not as cool as syntax, but faster
+
+  set foldmethod=indent               
+  set foldopen-=block               
+  set foldnestmax=5               
   set foldlevelstart=99               " start unfolded
 endif
 
 if has('linebreak')
-  let &showbreak='  ↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
+  let &showbreak=' ↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
 endif
 
 if has('windows')
@@ -82,8 +82,8 @@ command! -bang -nargs=? -complete=dir Files
 
 command! -bang -nargs=* Rg
       \ call fzf#vim#grep(
-      \   'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow --glob "!.git/*" --glob "!node_modules/*" '.shellescape(<q-args>), 1,
-      \   <bang>0 ? fzf#vim#with_preview('up:60%')
+      \   'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow -g "!yarn.lock" -g "!.git/*" -g "!node_modules/*" '.shellescape(<q-args>), 1,
+      \   <bang>0 ? fzf#vim#with_preview('up:65%')
       \           : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0)
 

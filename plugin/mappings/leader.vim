@@ -6,8 +6,6 @@ nnoremap <leader>ob :EasyBuffer<CR>
 
 nnoremap <Leader>oo :only<CR>
 
-nnoremap <silent> <Leader>r :call mappings#cycle_numbering()<CR>
-
 nmap <silent> <Leader>Q :bd<CR>
 nnoremap <silent> <Leader>q :quit<CR>
 nnoremap <silent> <Leader>w :write<CR>
@@ -15,18 +13,13 @@ nnoremap <silent> <Leader>W :wa<CR>
 
 nnoremap <Leader>/ :noh<CR>
 
-nmap <Leader>k <Plug>(ale_previous_wrap)
-nmap <Leader>j <Plug>(ale_next_wrap)
-nmap <Leader>af :ALEFix<CR>
-
 nmap <Leader>e <Plug>(easymotion-prefix)
 nmap <Leader>s <Plug>(easymotion-s)
 nmap <Leader>. <Plug>(easymotion-repeat)
 
 " Edit file, starting in same directory as current file
 "nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
-nnoremap <leader>FN :NERDTreeFind<CR>
+nnoremap <localleader>cd :cd %:p:h<CR>:pwd<CR>
 nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
 nmap <leader>ff :Rg <CR>
 
@@ -34,15 +27,26 @@ nnoremap <silent> <leader>v :Vista<CR>
 
 nmap <silent> <leader>ml :Maps<CR>
 
+" ----- Tabularize -----
+xmap <leader>tb :Tabularize /
+
 " ----- Git -----
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>G :G<CR>
 
-" ----- LSP -----
-nmap <leader>yrm <Plug>(coc-rename)
+" ----- COC -----
 nmap <leader>cr :CocRestart<CR>
-" nmap <leader>k <Plug>(coc-diagnostic-prev) 
-" nmap <leader>j <Plug>(coc-diagnostic-next) 
+nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>ca <Plug>(coc-codeaction)
+xmap <leader>ca <Plug>(coc-codeaction-selected)
+nmap <leader>cl :CocList<cr>
+nmap <leader>cd :CocList diagnostics<cr>
+nmap <leader>cc :CocList commands<cr>
+nmap <leader>co :CocList outline<cr>
+nmap <leader>cb :CocCommand fzf-preview.Buffers<cr>
+
+nmap <leader>k <Plug>(coc-diagnostic-prev)
+nmap <leader>j <Plug>(coc-diagnostic-next)
 
 " ---- Testrunner ----
 nmap <silent> <leader>tn :TestNearest<CR>

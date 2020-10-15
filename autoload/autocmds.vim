@@ -1,12 +1,12 @@
-let g:WincentColorColumnBlacklist = ['diff', 'nerdtree', 'qf']
-let g:WincentMkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
-let g:WincentCursorlineBlacklist = ['ctlr-p']
+let g:ColorColumnBlacklist = ['diff', 'nerdtree', 'qf']
+let g:MkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
+let g:CursorlineBlacklist = ['ctlr-p']
 
 " Loosely based on: http://vim.wikia.com/wiki/Make_views_automatic
 function! autocmds#should_mkview() abort
   return
         \ &buftype == '' &&
-        \ index(g:WincentMkviewFiletypeBlacklist, &filetype) == -1 &&
+        \ index(g:MkviewFiletypeBlacklist, &filetype) == -1 &&
         \ !exists('$SUDO_USER') " Don't create root-owned files.
 endfunction
 

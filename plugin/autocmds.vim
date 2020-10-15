@@ -3,8 +3,20 @@ if has('autocmd')
   au filetype racket set lisp
   au filetype racket set autoindent
 
+  augroup ColorThemes
+    autocmd!
+
+    hi SignColumn guibg=#e6e6e6
+
+    hi! CocErrorSign guifg=#ec0009
+    hi! CocInfoSign guifg=#ffa51e
+    hi! CocWarningSign guifg=#ffa51e
+  augroup END
+
   augroup Autocmds
     autocmd!
+
+    autocmd CursorHold * silent call CocActionAsync('highlight')
 
     " autocmd VimResized * execute "normal! \<c-w>="
 
@@ -23,6 +35,7 @@ if has('autocmd')
     if has('mksession')
       " Save/restore folds and cursor position.
       autocmd BufWritePost,BufLeave,WinLeave ?* if autocmds#should_mkview() | call autocmds#mkview() | endif
+
       if has('folding')
         autocmd BufWinEnter ?* if autocmds#should_mkview() | silent! loadview | execute 'silent! ' . line('.') . 'foldopen!' | endif
       else
