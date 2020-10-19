@@ -355,8 +355,8 @@ let g:startify_change_to_dir = 0
 let g:startify_lists = [
       \ { 'type': function('s:gitModified'),  'header': ['   --------------------  GIT Modified ---------------------']},
       \ { 'type': function('s:gitUntracked'), 'header': ['   --------------------  GIT Untracked --------------------']},
-      \ { 'type': 'files',     'header': ['   ---------------------  MRU ---------------------']            },
       \ { 'type': 'dir',       'header': ['   ---------------------  MRU Current Dir ---------------------'] },
+      \ { 'type': 'files',     'header': ['   ---------------------  MRU ---------------------']            },
       \ { 'type': 'sessions',  'header': ['   ---------------------  Sessions ---------------------']       },
       \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
       \ { 'type': 'commands',  'header': ['   Commands']       },
