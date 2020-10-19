@@ -47,7 +47,7 @@ nnoremap <silent> cram :call CocRequest('clojure-lsp', 'workspace/executeCommand
 nnoremap <silent> crcn :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'clean-ns', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
 nnoremap <silent> cref :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'extract-function', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1, input('Function name: ')]})<CR>
 
-autocmd FileType typescript,javascript,ruby,haskell nnoremap <silent> K :call <SID>show_documentation()<CR>
+autocmd FileType typescript,javascript,ruby,haskell,dockerfile nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
