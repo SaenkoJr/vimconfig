@@ -241,6 +241,10 @@ let g:vim_jsx_pretty_highlight_close_tag = 1
 let g:vim_jsx_pretty_colorful_config = 0
 let g:jsx_ext_required = 0
 
+"--------- Python ---------
+let g:python_host_prog = '$HOME/.asdf/shims/python2'
+let g:python3_host_prog = '$HOME/.asdf/shims/python3'
+
 "--------- Haskell syntax highlight ---------
 let g:haskell_indent_if = 2
 
