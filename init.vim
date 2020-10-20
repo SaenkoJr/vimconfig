@@ -281,36 +281,6 @@ let test#strategy = {
 let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = 'S-<tab>'
 
-"--------- Ale settings ---------
-let g:ale_linters = {
-      \ 'javascript'     : ['eslint'],
-      \ 'javascript.jsx' : ['eslint'],
-      \ 'typescript'     : ['eslint'],
-      \ 'typescript.tsx' : ['eslint'],
-      \ 'clojure'        : ['joker'],
-      \}
-
-let g:ale_linter_aliases = { 'jsx': 'css' }
-let g:ale_fixers = {
-      \ '*'              : ['remove_trailing_lines', 'trim_whitespace'],
-      \ 'javascript'     : ['eslint'],
-      \ 'javascript.jsx' : ['eslint'],
-      \ 'typescript'     : ['eslint'],
-      \ 'typescript.tsx' : ['eslint'],
-      \ 'clojure'        : ['joker'],
-      \}
-
-let g:ale_set_highlights = 0
-let g:ale_completion_enabled   = 0
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter        = 0
-
-hi ALEError cterm=underline ctermfg=red
-hi ALEWarning cterm=underline ctermfg=yellow
-
-hi ALEErrorSign ctermfg=red
-hi ALEWarningSign ctermfg=yellow
-
 "--------- IndentLine settings ---------
 let g:indentLine_char         = '┆'
 let g:indentLine_conceallevel = 2

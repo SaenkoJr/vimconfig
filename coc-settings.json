@@ -57,6 +57,7 @@
   "signature.hideOnTextChange": true,
   "signature.floatMaxWidth": 200,
 
+  
   "diagnostic.maxWindowHeight": 12,
   "diagnostic.maxWindowWidth": 200,
   "diagnostic.refreshOnInsertMode": true,
@@ -67,12 +68,6 @@
   "diagnostic-languageserver.filetypes": {
     "markdown": ["write-good", "markdownlint"],
     "ruby": ["solargraph"],
-    "javascript": ["eslint"],
-    "typescript": ["eslint"],
-    "javascriptreact": ["eslint"],
-    "javascript.jsx": ["eslint"],
-    "typescriptreact": ["eslint"],
-    "typescript.jsx": ["eslint"],
     "sh": "shellcheck"
   },
   "diagnostic.filetypeMap": {
@@ -80,7 +75,8 @@
     "sh": "shellcheck"
   },
 
-  "eslint.run": "onSave",
+  "eslint.enable": true,
+  "eslint.packageManager": "yarn",
   "eslint.autoFixOnSave": true,
   
   "snippets.priority": 99,
@@ -99,6 +95,7 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+  "javascript.validate.enable": false,
 
   "languageserver": {
     "clojure-lsp": {
