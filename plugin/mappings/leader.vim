@@ -32,7 +32,7 @@ xmap <leader>tb :Tabularize /
 
 " ----- Git -----
 nmap <silent> <leader>gb :Gblame<CR>
-nmap <silent> <leader>G :G<CR>
+nmap <silent> <leader>gs :G<CR>
 
 " ----- COC -----
 nmap <leader>cr :CocRestart<CR>
