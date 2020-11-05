@@ -12,10 +12,10 @@
     "stack.yaml"
   ],
   "coc.preferences.formatOnSaveFiletypes": [
-    "ruby", 
-    "javascript", 
-    "typescript"
+    "ruby"
   ],
+
+  "session.saveOnVimLeave": false,
 
   "suggest.autoTrigger": "none",
   "suggest.detailField": "preview",
@@ -56,7 +56,6 @@
 
   "signature.hideOnTextChange": true,
   "signature.floatMaxWidth": 200,
-
   
   "diagnostic.maxWindowHeight": 12,
   "diagnostic.maxWindowWidth": 200,
@@ -95,7 +94,9 @@
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
-  "javascript.validate.enable": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
 
   "languageserver": {
     "clojure-lsp": {
