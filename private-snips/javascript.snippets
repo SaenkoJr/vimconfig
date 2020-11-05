@@ -31,3 +31,37 @@ endsnippet
 snippet im "import x from '...'" b
 import ${0:module} from '${1}';
 endsnippet
+
+snippet imm "import { module } from '...'" b
+import { ${0:module} } from '${1}';
+endsnippet
+
+snippet ed "export default" b
+export default ${0};
+endsnippet
+
+snippet ret "return" b
+return ${0};
+endsnippet
+
+snippet cl "console.log()" b
+console.log(${0});
+endsnippet
+
+snippet cll "log line" b
+console.log('=======================================');
+endsnippet
+
+snippet ce "console.error()" b
+console.error(${0});
+endsnippet
+
+snippet af "() => {...}" b
+${1} => {
+	${0}
+}
+endsnippet
+
+snippet laf "One line arrow fn" b
+${1} => ${0}
+endsnippet
