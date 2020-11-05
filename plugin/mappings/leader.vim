@@ -13,10 +13,6 @@ nnoremap <silent> <Leader>W :wa<CR>
 
 nnoremap <Leader>/ :noh<CR>
 
-nmap <Leader>e <Plug>(easymotion-prefix)
-nmap <Leader>s <Plug>(easymotion-s)
-nmap <Leader>. <Plug>(easymotion-repeat)
-
 " Edit file, starting in same directory as current file
 "nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <localleader>cd :cd %:p:h<CR>:pwd<CR>
@@ -25,7 +21,14 @@ nmap <leader>ff :Rg <CR>
 
 nnoremap <silent> <leader>v :Vista<CR>
 
-nmap <silent> <leader>ml :Maps<CR>
+nmap <silent> <leader>ml :Maps<CR>            " -- List of key mapping
+
+nmap <silent> <leader>mx :MaximizerToggle<CR> " -- Maximize window
+
+" ----- Easymotion -----
+nmap <Leader>e <Plug>(easymotion-prefix)
+nmap <Leader>s <Plug>(easymotion-s)
+nmap <Leader>. <Plug>(easymotion-repeat)
 
 " ----- Tabularize -----
 xmap <leader>tb :Tabularize /

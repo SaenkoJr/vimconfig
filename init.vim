@@ -27,6 +27,8 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
+Plug 'benmills/vimux'
+Plug 'szw/vim-maximizer'
 
 "--------- Test utils ---------
 Plug 'janko-m/vim-test'
@@ -230,6 +232,9 @@ let g:vista_default_executive = 'coc'
 let g:vista_sidebar_width = 100
 let g:vista_echo_cursor_strategy = 'floating_win'
 
+"--------- Maximizer ---------
+let g:maximizer_set_default_mapping = 1
+
 "--------- Floaterm ---------
 let g:floaterm_keymap_toggle = '<F12>'
 
@@ -266,12 +271,14 @@ let g:clojure_maxlines = 100
 let g:sexp_filetypes = 'clojure,scheme,lisp,racket'
 
 "--------- Asyncrun ---------
+let g:asyncrun_mode = 'term'
+let g:asyncrun_encs = 'gbk'
 let g:asyncrun_open = 30
 let g:asyncrun_win_loc = 2
 
 "--------- Testrunner ---------
 let test#strategy = {
-      \ 'file': 'asyncrun',
+      \ 'file': 'basic',
       \ 'nearest': 'asyncrun',
       \ 'suite': 'basic',
       \}

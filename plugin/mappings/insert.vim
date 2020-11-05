@@ -7,4 +7,4 @@ inoremap <M-k> <C-Up>
 inoremap <M-j> <C-Down>
 
 inoremap <silent><expr> <c-space> coc#refresh()
-imap <C-l> <Plug>(coc-snippets-expand)
+" imap <C-l> <Plug>(coc-snippets-expand)
