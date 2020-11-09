@@ -6,6 +6,5 @@ xnoremap <C-l> <C-w>l
 xnoremap c "_c
 xnoremap C "_C
 
-xmap <leader>t  :Tabularize /
-
-xmap <leader>s  <Plug>(coc-convert-snippet)
+"----- EasyAlign -----
+xmap ga <Plug>(EasyAlign)

@@ -1,3 +1,9 @@
+" ----- Registers -----
+xmap <leader>p "0p
+
+" ----- Vim source -----
+map <leader>vr :source $MYVIMRC<CR>
+
 " Open last buffer
 nnoremap <Leader><Leader> <C-^>
 nmap <silent> <Leader>ll :bnext<CR>
@@ -19,18 +25,13 @@ nnoremap <localleader>cd :cd %:p:h<CR>:pwd<CR>
 nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
 nmap <leader>ff :Rg <CR>
 
-nnoremap <silent> <leader>v :Vista<CR>
-
-nmap <silent> <leader>ml :Maps<CR>            
-nmap <silent> <leader>mx :MaximizerToggle<CR> 
+nmap <silent> <leader>ml :Maps<CR>
+nmap <silent> <leader>mx :MaximizerToggle<CR>
 
 " ----- Easymotion -----
 nmap <Leader>e <Plug>(easymotion-prefix)
 nmap <Leader>s <Plug>(easymotion-s)
 nmap <Leader>. <Plug>(easymotion-repeat)
-
-" ----- Tabularize -----
-xmap <leader>tb :Tabularize /
 
 " ----- Vimspector -----
 nmap <leader>ir <Plug>VimspectorContinue
@@ -52,6 +53,8 @@ nmap <leader>cb :CocCommand fzf-preview.Buffers<cr>
 
 nmap <leader>k <Plug>(coc-diagnostic-prev)
 nmap <leader>j <Plug>(coc-diagnostic-next)
+
+xmap <leader>s  <Plug>(coc-convert-snippet)
 
 " ---- Testrunner ----
 nmap <silent> <leader>tn :TestNearest<CR>

@@ -1,6 +1,4 @@
-let g:ColorColumnBlacklist = ['diff', 'nerdtree', 'qf']
 let g:MkviewFiletypeBlacklist = ['diff', 'hgcommit', 'gitcommit']
-let g:CursorlineBlacklist = ['ctlr-p']
 
 " Loosely based on: http://vim.wikia.com/wiki/Make_views_automatic
 function! autocmds#should_mkview() abort

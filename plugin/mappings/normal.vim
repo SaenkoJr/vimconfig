@@ -19,6 +19,12 @@ nnoremap =G :normal! gg=G``<CR>
 
 map <A-/> <Plug>NERDCommenterToggle
 
+" ----- Vista -----
+nnoremap <silent> <F11> :Vista<CR>
+
+"----- EasyAlign -----
+nmap ga <Plug>(EasyAlign)
+
 "----- LSP -----
 " Remap keys for gotos
 nmap <silent> gd <Plug>(coc-definition)
@@ -32,6 +38,7 @@ function! Expand(exp) abort
     return l:result ==# '' ? '' : "file://" . l:result
 endfunction
 
+" clojure
 nnoremap <silent> crcc :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'cycle-coll', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
 nnoremap <silent> crth :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'thread-first', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
 nnoremap <silent> crtt :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'thread-last', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
@@ -46,6 +53,7 @@ nnoremap <silent> cram :call CocRequest('clojure-lsp', 'workspace/executeCommand
 nnoremap <silent> crcn :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'clean-ns', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1]})<CR>
 nnoremap <silent> cref :call CocRequest('clojure-lsp', 'workspace/executeCommand', {'command': 'extract-function', 'arguments': [Expand('%:p'), line('.') - 1, col('.') - 1, input('Function name: ')]})<CR>
 
+" docs
 autocmd FileType typescript,javascript,ruby,haskell,dockerfile,json nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)

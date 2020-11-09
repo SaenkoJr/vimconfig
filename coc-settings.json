@@ -55,8 +55,8 @@
   },
 
   "signature.hideOnTextChange": true,
-  
-  "diagnostic.maxWindowHeight": 12,
+
+  "diagnostic.maxWindowHeight": 18,
   "diagnostic.maxWindowWidth": 200,
   "diagnostic.refreshOnInsertMode": true,
   "diagnostic.virtualText": true,
@@ -76,7 +76,7 @@
   "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "eslint.autoFixOnSave": true,
-  
+
   "snippets.priority": 99,
   "snippets.userSnippetsDirectory": "$HOME/.config/nvim/private-snips",
   "snippets.extends": {
@@ -88,7 +88,7 @@
   "list.height": 20,
   "list.maxPreviewHeight": 20,
   "list.previewSplitRight": true,
-  
+
   "typescript.preferences.quoteStyle": "single",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,

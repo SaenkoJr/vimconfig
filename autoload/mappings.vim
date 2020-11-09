@@ -11,4 +11,3 @@ function! mappings#cycle_numbering() abort
     set number!<CR>
   endif
 endfunction
-
