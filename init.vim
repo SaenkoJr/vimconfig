@@ -9,7 +9,7 @@ Plug 'matze/vim-move'
 Plug 'godlygeek/tabular'         " Align text (beauty tabs)
 Plug 'liuchengxu/vista.vim'      " for tags
 Plug 'troydm/easybuffer.vim'
-" Plug 'Yggdroot/indentLine'
+Plug 'Yggdroot/indentLine'
 Plug 'edkolev/tmuxline.vim'      " tmuxline
 Plug 'jpalardy/vim-slime'        " REPL
 Plug 'tpope/vim-surround'        " Surrounding in pairs
@@ -79,9 +79,6 @@ Plug 'venantius/vim-cljfmt', { 'for': ['clojure', 'scheme', 'racket'] }         
 
 Plug 'eraserhd/parinfer-rust', { 'do': 'cargo build --release', 'for': ['clojure', 'scheme', 'racket'] } " infer parentheses
 Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
-
-"--------- Autocomplete ana snips ---------
-" Plug 'Shougo/neosnippet.vim'
 
 "--------- LSP servers ---------
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
@@ -293,6 +290,7 @@ let g:coc_snippet_next = '<tab>'
 let g:coc_snippet_prev = 'S-<tab>'
 
 "--------- IndentLine settings ---------
+let g:indentLine_fileType     = ['pug']
 let g:indentLine_char         = '┆'
 let g:indentLine_conceallevel = 2
 let g:vim_json_syntax_conceal = 0
