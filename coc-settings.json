@@ -55,7 +55,6 @@
   },
 
   "signature.hideOnTextChange": true,
-  "signature.floatMaxWidth": 200,
   
   "diagnostic.maxWindowHeight": 12,
   "diagnostic.maxWindowWidth": 200,

@@ -29,13 +29,13 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 Plug 'benmills/vimux'
 Plug 'szw/vim-maximizer'
+Plug 'puremourning/vimspector'
 
 "--------- Test utils ---------
 Plug 'janko-m/vim-test'
 
 "--------- fzf ---------
 Plug 'scrooloose/nerdcommenter'
-Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
@@ -237,6 +237,10 @@ let g:maximizer_set_default_mapping = 1
 
 "--------- Floaterm ---------
 let g:floaterm_keymap_toggle = '<F12>'
+
+"--------- Vimspector ---------
+let g:vimspector_install_gadgets = ['vscode-node-debug2', 'vscode-for-chrome', 'debugpy']
+let g:vimspector_base_dir = expand('$HOME/.vim/vimspector-config')
 
 "--------- Autopairs ---------
 let g:AutoPairs={'(':')', '[':']', '{':'}'}

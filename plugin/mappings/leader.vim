@@ -21,9 +21,8 @@ nmap <leader>ff :Rg <CR>
 
 nnoremap <silent> <leader>v :Vista<CR>
 
-nmap <silent> <leader>ml :Maps<CR>            " -- List of key mapping
-
-nmap <silent> <leader>mx :MaximizerToggle<CR> " -- Maximize window
+nmap <silent> <leader>ml :Maps<CR>            
+nmap <silent> <leader>mx :MaximizerToggle<CR> 
 
 " ----- Easymotion -----
 nmap <Leader>e <Plug>(easymotion-prefix)
@@ -32,6 +31,9 @@ nmap <Leader>. <Plug>(easymotion-repeat)
 
 " ----- Tabularize -----
 xmap <leader>tb :Tabularize /
+
+" ----- Vimspector -----
+nmap <leader>ir <Plug>VimspectorContinue
 
 " ----- Git -----
 nmap <silent> <leader>gb :Gblame<CR>

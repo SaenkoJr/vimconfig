@@ -18,7 +18,6 @@ nnoremap =G :normal! gg=G``<CR>
 " map <silent> <C-n> :NERDTreeToggle<CR>
 
 map <A-/> <Plug>NERDCommenterToggle
-nnoremap <F5> :UndotreeToggle<CR>
 
 "----- LSP -----
 " Remap keys for gotos
