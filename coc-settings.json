@@ -12,7 +12,9 @@
     "stack.yaml"
   ],
   "coc.preferences.formatOnSaveFiletypes": [
-    "ruby"
+    "ruby",
+    "css",
+    "markdown"
   ],
 
   "session.saveOnVimLeave": false,
@@ -76,6 +78,10 @@
   "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "eslint.autoFixOnSave": true,
+
+  "prettier.trailingComma": "all",
+  "prettier.singleQuote": true,
+  "prettier.eslintIntegration": true,
 
   "snippets.priority": 99,
   "snippets.userSnippetsDirectory": "$HOME/.config/nvim/private-snips",

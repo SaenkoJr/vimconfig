@@ -43,12 +43,12 @@ set updatetime=200
 
 if has('folding')
   if has('windows')
-    set fillchars+=vert:\|              
+    set fillchars+=vert:\|
   endif
 
-  set foldmethod=indent               
-  set foldopen-=block               
-  set foldnestmax=5               
+  set foldmethod=indent
+  set foldopen-=block
+  set foldnestmax=5
   set foldlevelstart=99               " start unfolded
 endif
 
@@ -86,5 +86,7 @@ command! -bang -nargs=* Rg
       \   <bang>0 ? fzf#vim#with_preview('up:65%')
       \           : fzf#vim#with_preview('right:50%:hidden', '?'),
       \   <bang>0)
+
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC

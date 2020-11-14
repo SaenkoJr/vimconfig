@@ -23,7 +23,7 @@ nnoremap <Leader>/ :noh<CR>
 "nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
 nnoremap <localleader>cd :cd %:p:h<CR>:pwd<CR>
 nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
-nmap <leader>ff :Rg <CR>
+nmap <leader>ff :Rg <C-R><C-W><CR>
 
 nmap <silent> <leader>ml :Maps<CR>
 nmap <silent> <leader>mx :MaximizerToggle<CR>
@@ -55,6 +55,8 @@ nmap <leader>k <Plug>(coc-diagnostic-prev)
 nmap <leader>j <Plug>(coc-diagnostic-next)
 
 xmap <leader>s  <Plug>(coc-convert-snippet)
+
+xmap <leader>fs  <Plug>(coc-format-selected)
 
 " ---- Testrunner ----
 nmap <silent> <leader>tn :TestNearest<CR>
