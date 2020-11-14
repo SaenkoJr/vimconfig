@@ -19,6 +19,10 @@
 
   "session.saveOnVimLeave": false,
 
+  "list.source.commands.defaultOptions": ["--number-select"],
+  "list.source.files.defaultOptions": ["--auto-preview"],
+  "list.source.diagnostics.defaultOptions": ["--auto-preview"],
+
   "suggest.autoTrigger": "none",
   "suggest.detailField": "preview",
   "suggest.languageSourcePriority": 90,

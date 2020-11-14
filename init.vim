@@ -97,6 +97,7 @@ Plug 'metakirby5/codi.vim'       " Like a quokka for vs code
   let g:codi#aliases = {
         \ 'javascript.jsx': 'javascript',
         \ }
+  let g:codi#virtual_text_prefix = "❯❯ "
   " ==============================
 
 Plug 'scrooloose/nerdcommenter'
