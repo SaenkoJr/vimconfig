@@ -352,6 +352,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
   let g:coc_snippet_prev = 'S-<tab>'
   let g:coc_global_extensions = [
         \ 'coc-css',
+        \ 'coc-cssmodules',
         \ 'coc-diagnostic',
         \ 'coc-docker',
         \ 'coc-elixir',
@@ -368,6 +369,7 @@ Plug 'neoclide/coc.nvim', { 'branch': 'release' }
         \ 'coc-snippets',
         \ 'coc-solargraph',
         \ 'coc-stylelint',
+        \ 'coc-template',
         \ 'coc-tsserver',
         \ 'coc-vimlsp',
         \ 'coc-yaml',
