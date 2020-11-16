@@ -22,6 +22,7 @@
   "list.source.commands.defaultOptions": ["--number-select"],
   "list.source.files.defaultOptions": ["--auto-preview"],
   "list.source.diagnostics.defaultOptions": ["--auto-preview"],
+  "list.source.buffers.defaultArgs": ["--auto-preview"],
 
   "suggest.autoTrigger": "none",
   "suggest.detailField": "preview",
