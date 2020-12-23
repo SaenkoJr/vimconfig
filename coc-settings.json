@@ -24,6 +24,8 @@
   "list.source.diagnostics.defaultOptions": ["--auto-preview"],
   "list.source.buffers.defaultArgs": ["--auto-preview"],
 
+  "highlight.document.enable": false,
+
   "suggest.autoTrigger": "none",
   "suggest.detailField": "preview",
   "suggest.languageSourcePriority": 90,
@@ -107,6 +109,11 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+
+  "solargraph.commandPath": "/home/maksim/.asdf/shims/solargraph",
+  "solargraph.diagnostics": true,
+  "solargraph.formatting": true,
+  "solargraph.hover": true,
 
   "languageserver": {
     "clojure-lsp": {

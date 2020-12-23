@@ -53,6 +53,7 @@ Plug 'liuchengxu/vista.vim'
   " }}
 
 Plug 'troydm/easybuffer.vim'
+Plug 'schickling/vim-bufonly'
 Plug 'Yggdroot/indentLine'
   " {{
     let g:indentLine_fileType     = ['pug']
@@ -76,11 +77,13 @@ Plug 'jpalardy/vim-slime'        " REPL
   " }}
 
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'      " fast move
 Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-eunuch'          " helpers for unix
+Plug 'tpope/vim-eunuch'          " shell commands
 Plug 'tpope/vim-jdaddy'          " for json
+Plug 'tpope/vim-speeddating'
 Plug 'RRethy/vim-illuminate'
   " {{
     let g:Illuminate_ftblacklist = ['easymotion']
@@ -170,6 +173,25 @@ Plug 'airblade/vim-rooter'
   " }}
 
 Plug 'junegunn/vim-easy-align'
+Plug 'junegunn/limelight.vim'
+" {{{
+  let g:limelight_default_coefficient = 0.7
+  let g:limelight_conceal_ctermfg = 238
+  " nmap <silent> gl :Limelight!!<CR>
+  " xmap gl <Plug>(Limelight)
+" }}}
+
+Plug 'kana/vim-textobj-user'
+Plug 'glts/vim-textobj-comment' " dac dic yic cic
+Plug 'kana/vim-textobj-indent'  " dii cai
+Plug 'kana/vim-textobj-function'
+Plug 'nelstrom/vim-textobj-rubyblock'
+
+"--------------------------------------- ------------ ---------------------------------------
+"---------------------------------------      DB      ---------------------------------------
+"--------------------------------------- ------------ ---------------------------------------
+Plug 'tpope/vim-dadbod'
+Plug 'kristijanhusak/vim-dadbod-ui'
 
 "--------------------------------------- ------------ ---------------------------------------
 "---------------------------------------  Test utils  ---------------------------------------
@@ -263,7 +285,12 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'guns/vim-clojure-highlight'
 Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
-" Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+
+"--------------------------------------- ------------- ---------------------------------------
+"---------------------------------------      Ruby     ---------------------------------------
+"--------------------------------------- ------------- ---------------------------------------
+Plug 'vim-ruby/vim-ruby', { 'for': ['ruby', 'haml', 'eruby', 'slim'] }
+Plug 'tpope/vim-rails', { 'for': ['ruby', 'eruby', 'slim', 'haml', 'coffee', 'javascript'] }
 
 "------------- ------------- -------------
 "-------------    Haskell    -------------
@@ -313,34 +340,34 @@ Plug 'wlangstroth/vim-racket', { 'for': 'racket' }
 "---------------------------------------  LSP servers  ---------------------------------------
 "--------------------------------------- ------------- ---------------------------------------
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-  " {{
-    let g:coc_snippet_next = '<tab>'
-    let g:coc_snippet_prev = 'S-<tab>'
-    let g:coc_global_extensions = [
-          \ 'coc-css',
-          \ 'coc-cssmodules',
-          \ 'coc-diagnostic',
-          \ 'coc-docker',
-          \ 'coc-elixir',
-          \ 'coc-eslint',
-          \ 'coc-fzf-preview',
-          \ 'coc-highlight',
-          \ 'coc-html',
-          \ 'coc-java',
-          \ 'coc-json',
-          \ 'coc-lists',
-          \ 'coc-prettier',
-          \ 'coc-python',
-          \ 'coc-sh',
-          \ 'coc-snippets',
-          \ 'coc-solargraph',
-          \ 'coc-stylelint',
-          \ 'coc-template',
-          \ 'coc-tsserver',
-          \ 'coc-vimlsp',
-          \ 'coc-yaml',
-          \]
-  " }}
+" {{
+  let g:coc_snippet_next = '<tab>'
+  let g:coc_snippet_prev = 'S-<tab>'
+  let g:coc_global_extensions = [
+        \ 'coc-css',
+        \ 'coc-cssmodules',
+        \ 'coc-diagnostic',
+        \ 'coc-docker',
+        \ 'coc-elixir',
+        \ 'coc-eslint',
+        \ 'coc-fzf-preview',
+        \ 'coc-highlight',
+        \ 'coc-html',
+        \ 'coc-java',
+        \ 'coc-json',
+        \ 'coc-lists',
+        \ 'coc-prettier',
+        \ 'coc-python',
+        \ 'coc-sh',
+        \ 'coc-snippets',
+        \ 'coc-solargraph',
+        \ 'coc-stylelint',
+        \ 'coc-template',
+        \ 'coc-tsserver',
+        \ 'coc-vimlsp',
+        \ 'coc-yaml',
+        \]
+" }}
 
 "--------------------------------------- ------------- ---------------------------------------
 "---------------------------------------      Git      ---------------------------------------
@@ -411,7 +438,7 @@ set t_Co=256
 set termguicolors
 
 set background=light
-colorscheme paper
+colorscheme PaperColor
 
 "--------- Mappings ---------
 let mapleader="\<SPACE>"

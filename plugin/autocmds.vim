@@ -6,7 +6,7 @@ if has('autocmd')
   augroup ColorThemes
     autocmd!
 
-    " hi SignColumn guibg=#e6e6e6
+    hi SignColumn guibg=#e6e6e6
 
     hi! CocErrorSign guifg=#ec0009
     hi! CocInfoSign guifg=#ffa51e

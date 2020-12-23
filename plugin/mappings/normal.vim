@@ -12,6 +12,8 @@ nnoremap <C-p><C-g> :Files ~<CR>
 nnoremap <silent> <C-n> :Ranger<cr>
 nnoremap <silent> <F9> :RangerWorkingDirectory<cr>
 
+nmap <silent> gl :Limelight!!<CR>
+
 " formating file
 nnoremap =G :normal! gg=G``<CR>
 
