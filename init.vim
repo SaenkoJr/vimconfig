@@ -96,12 +96,17 @@ Plug 'guns/vim-sexp'
 
 Plug 'Shougo/echodoc.vim'
 Plug 'metakirby5/codi.vim'       " Like a quokka for vs code
-  " {{
-    let g:codi#aliases = {
-          \ 'javascript.jsx': 'javascript',
-          \ }
-    let g:codi#virtual_text_prefix = "❯❯ "
-  " }}
+" {{
+  let g:codi#interpreters = {
+        \ 'ruby': {
+        \   'bin': ['irb', '-f'],
+        \ },
+        \}
+  let g:codi#aliases = {
+        \ 'javascript.jsx': 'javascript',
+        \ }
+  let g:codi#virtual_text_prefix = "❯❯ "
+" }}
 
 Plug 'scrooloose/nerdcommenter'
   " {{
