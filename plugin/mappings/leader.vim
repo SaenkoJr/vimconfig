@@ -40,7 +40,7 @@ nmap <leader>ir <Plug>VimspectorContinue
 nmap <silent> <leader>gb :Gblame<CR>
 nmap <silent> <leader>gs :G<CR>
 
-" ----- COC -----
+" ----- CoC -----
 nmap <leader>cr :CocRestart<CR>
 nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>ca <Plug>(coc-codeaction)
