@@ -102,6 +102,16 @@
   "list.maxPreviewHeight": 20,
   "list.previewSplitRight": true,
 
+  "html.filetypes": [
+    "html",
+    "htmlruby",
+    "eruby",
+    "erb",
+    "handlebars",
+    "htmldjango"
+  ],
+  "html.autoClosingTags": true,
+
   "typescript.preferences.quoteStyle": "single",
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyParenthesis": true,
   "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
