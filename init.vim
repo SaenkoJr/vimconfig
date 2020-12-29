@@ -22,13 +22,13 @@ Plug 'mhinz/vim-startify'
     let g:startify_fortune_use_unicode = 1
     let g:startify_change_to_dir = 0
     let g:startify_lists = [
-          \ { 'type': 'dir',       'header': ['   ---------------------  MRU Current Dir ---------------------'] },
-          \ { 'type': function('s:gitModified'),  'header': ['   --------------------  GIT Modified ---------------------']},
-          \ { 'type': function('s:gitUntracked'), 'header': ['   --------------------  GIT Untracked --------------------']},
-          \ { 'type': 'files',     'header': ['   ---------------------  MRU ---------------------']            },
-          \ { 'type': 'sessions',  'header': ['   ---------------------  Sessions ---------------------']       },
-          \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-          \ { 'type': 'commands',  'header': ['   Commands']       },
+          \ { 'type': 'dir',                      'header': ['   ---------------------  MRU Current Dir ---------------------'] },
+          \ { 'type': function('s:gitModified'),  'header': ['   ---------------------  GIT Modified ---------------------']},
+          \ { 'type': function('s:gitUntracked'), 'header': ['   ---------------------  GIT Untracked --------------------']},
+          \ { 'type': 'files',                    'header': ['   ---------------------  MRU ---------------------']            },
+          \ { 'type': 'sessions',                 'header': ['   ---------------------  Sessions ---------------------']       },
+          \ { 'type': 'bookmarks',                'header': ['   Bookmarks']      },
+          \ { 'type': 'commands',                 'header': ['   Commands']       },
           \ ]
   " }}
 
@@ -69,12 +69,13 @@ Plug 'ntpeters/vim-better-whitespace'
     let g:strip_whitespace_confirm=0
   " }}
 
-Plug 'jpalardy/vim-slime'        " REPL
-  " {{
-    let g:slime_target         = "tmux"
-    let g:slime_paste_file     = "$HOME/.slime_paste"
-    " let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":1.2"}
-  " }}
+Plug 'axvr/zepl.vim'
+" Plug 'jpalardy/vim-slime'        " REPL
+"   " {{
+"     let g:slime_target         = "tmux"
+"     let g:slime_paste_file     = "$HOME/.slime_paste"
+"     " let g:slime_default_config = {"socket_name": split($TMUX, ",")[0], "target_pane": ":1.2"}
+"   " }}
 
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'

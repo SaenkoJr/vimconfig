@@ -13,6 +13,12 @@ if has('autocmd')
     hi! CocWarningSign guifg=#ffa51e
   augroup END
 
+  augroup zepl
+    autocmd!
+
+    autocmd FileType ruby let b:repl_config = { 'cmd': 'bundle exec rails console' }
+  augroup END
+
   augroup Autocmds
     autocmd!
 
