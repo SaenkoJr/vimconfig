@@ -1,3 +1,8 @@
+" ----- Local leader -----
+" Edit file, starting in same directory as current file
+"nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
+nnoremap <localleader>cd :cd %:p:h<CR>:pwd<CR>
+
 " ----- Registers -----
 xmap <leader>p "0p
 
@@ -10,7 +15,7 @@ nmap <silent> <Leader>ll :bnext<CR>
 nmap <silent> <Leader>hh :bprevious<CR>
 nnoremap <leader>ob :EasyBuffer<CR>
 
-nnoremap <Leader>oo :only<CR>
+nnoremap <Leader>oo :Bonly<CR>
 
 nmap <silent> <Leader>Q :bd<CR>
 nnoremap <silent> <Leader>q :quit<CR>
@@ -19,9 +24,6 @@ nnoremap <silent> <Leader>W :wa<CR>
 
 nnoremap <Leader>/ :noh<CR>
 
-" Edit file, starting in same directory as current file
-"nnoremap <LocalLeader><LocalLeader>e :edit <C-R>=expand('%:p:h') . '/'<CR>
-nnoremap <localleader>cd :cd %:p:h<CR>:pwd<CR>
 nmap <leader>fn <Plug>CtrlSFCwordPath<CR>
 nmap <leader>ff :Rg <C-R><C-W><CR>
 
@@ -51,12 +53,15 @@ nmap <leader>cc :CocList commands<cr>
 nmap <leader>co :CocList outline<cr>
 nmap <leader>cb :CocCommand fzf-preview.Buffers<cr>
 
+nmap <leader>cy :CocList yank<cr>
+
 nmap <leader>k <Plug>(coc-diagnostic-prev)
 nmap <leader>j <Plug>(coc-diagnostic-next)
 
-xmap <leader>s  <Plug>(coc-convert-snippet)
+nmap <leader>cf <Plug>(coc-fix-current)
+xmap <leader>fs <Plug>(coc-format-selected)
 
-xmap <leader>fs  <Plug>(coc-format-selected)
+xmap <leader>s <Plug>(coc-convert-snippet)
 
 " ---- Testrunner ----
 nmap <silent> <leader>tn :TestNearest<CR>

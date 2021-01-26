@@ -10,17 +10,18 @@ set relativenumber
 
 set nowrap
 set expandtab                         " Always use spaces instead of tabs
-filetype plugin indent on
 set cindent
 set smartindent
 set ignorecase
 set smarttab
 set tabstop=2
-syntax sync minlines=256
 set textwidth=100
 set shiftwidth=2
 set backspace=indent,eol,start
 set whichwrap=b,<,>,[,],l,h
+set synmaxcol=200
+syntax sync minlines=256
+filetype plugin indent on
 
 set clipboard=unnamedplus
 set autoread
@@ -53,15 +54,15 @@ if has('folding')
 endif
 
 if has('linebreak')
-  let &showbreak=' ↳ '                 " DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
+  let &showbreak=' ↳ '
 endif
 
 if has('windows')
-  set splitbelow                      " open horizontal splits below current window
+  set splitbelow
 endif
 
 if has('vertsplit')
-  set splitright                      " open vertical splits to the right of the current window
+  set splitright
 endif
 
 if has('showcmd')

@@ -35,6 +35,7 @@ if has('autocmd')
 
     autocmd InsertLeave * silent! pclose!
 
+    autocmd BufNewFile,BufRead *.slim setlocal filetype=slim
     autocmd bufnewfile,bufread *.jsx set filetype=javascript.jsx
     autocmd bufnewfile,bufread *.tsx set filetype=typescript.tsx
 
