@@ -22,7 +22,10 @@
   "list.source.commands.defaultOptions": ["--number-select"],
   "list.source.files.defaultOptions": ["--auto-preview"],
   "list.source.diagnostics.defaultOptions": ["--auto-preview"],
+  "list.source.yank.defaultOptions": ["--auto-preview"],
   "list.source.buffers.defaultArgs": ["--auto-preview"],
+
+  "yank.enableCompletion": false,
 
   "highlight.document.enable": false,
 
@@ -82,7 +85,6 @@
     "sh": "shellcheck"
   },
 
-  "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "eslint.autoFixOnSave": true,
 
@@ -102,9 +104,12 @@
   "list.maxPreviewHeight": 20,
   "list.previewSplitRight": true,
 
+  "html.enable": true,
+  "html.format.enable": true,
   "html.filetypes": [
     "html",
     "htmlruby",
+    "htmlerb",
     "eruby",
     "erb",
     "handlebars",
@@ -120,7 +125,6 @@
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
   "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
 
-  "solargraph.commandPath": "/home/maksim/.asdf/shims/solargraph",
   "solargraph.diagnostics": true,
   "solargraph.formatting": true,
   "solargraph.hover": true,
