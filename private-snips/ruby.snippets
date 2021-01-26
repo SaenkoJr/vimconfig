@@ -58,6 +58,57 @@ snippet pl "======================================" b
 puts "======================================"
 endsnippet
 
+snippet pll "======================================" b
+puts "======================================"
+${1:pp} ${0}
+puts "======================================"
+endsnippet
+
 snippet ps "puts "
 puts ${0}
+endsnippet
+
+snippet froz "frozen string literal" b
+# frozen_string_literal: true
+endsnippet
+
+snippet priv "private" b
+private
+endsnippet
+
+snippet mod "module" b
+module ${1:ModuleName}
+	${0}
+end
+endsnippet
+
+snippet valid "validates" b
+validates ${1::attribute}, ${2:presence: true}${0:,}
+endsnippet
+
+snippet do "do .. end"
+do
+	${0}
+end
+endsnippet
+
+snippet dob "do |block| .. end"
+do |${1:block}|
+	${0}
+end
+endsnippet
+
+snippet bauth "http basic auth" b
+http_basic_authenticate_with name: ${1:'name'}, password: ${2:'secret'}, except: ${0:%i[index]}
+endsnippet
+
+snippet fk "foreign_key"
+foreign_key: ${0::author_id}
+endsnippet
+
+snippet test "test case"
+test '${1:description}' do
+	${2:test}
+	assert_response ${0}
+end
 endsnippet
