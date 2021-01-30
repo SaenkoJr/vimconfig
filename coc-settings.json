@@ -1,5 +1,6 @@
 {
   "coc.source.file.ignoreHidden":false,
+  "coc.source.floaterm.enable": false,
 
   "coc.preferences.colorSupport": true,
   "coc.preferences.maxFileSize": "6MB",
