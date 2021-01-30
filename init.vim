@@ -48,7 +48,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'troydm/easybuffer.vim'
   Plug 'schickling/vim-bufonly'
   Plug 'Yggdroot/indentLine'
-    let g:indentLine_fileType     = ['pug', 'slim', 'slime', 'html.slim']
+    let g:indentLine_fileType     = ['pug', 'slim', 'slime', 'html.slim', 'html']
     let g:indentLine_char         = '┆'
     let g:indentLine_conceallevel = 2
     let g:vim_json_syntax_conceal = 0
@@ -215,8 +215,8 @@ call plug#begin('~/.vim/plugged')
     let g:airline_theme                              = 'sol'
     let g:airline#extensions#tabline#enabled         = 1
     let g:airline#extensions#tabline#disable_refresh = 1
+    let g:airline#extensions#tabline#formatter       = 'short_path'
     let g:airline#extensions#ale#enabled             = 1
-    let g:airline#extensions#tabline#formatter       = 'unique_tail'
     let g:airline_powerline_fonts                    = 1
 
     " for tmuxline + vim-airline integration
