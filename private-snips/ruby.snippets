@@ -108,7 +108,22 @@ endsnippet
 
 snippet test "test case"
 test '${1:description}' do
-	${2:test}
-	assert_response ${0}
+	${0}
 end
+endsnippet
+
+snippet ars "assert_response :success"
+assert_response :success
+endsnippet
+
+snippet arc "assert_response :created"
+assert_response :created
+endsnippet
+
+snippet aeq "assert_equal"
+assert_equal ${1:one}, ${0:two}
+endsnippet
+
+snippet prp "Require params" b
+params.require(${1:entity}).permit(${0:params})
 endsnippet
