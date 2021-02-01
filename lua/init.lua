@@ -1,0 +1,6 @@
+require 'globals'
+require 'autocommands'
+require 'plugins'
+require 'settings'
+require 'mappings'
+require 'lsp'
