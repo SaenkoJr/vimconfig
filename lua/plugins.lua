@@ -22,25 +22,39 @@ return require('packer').startup(
       -- lsp
       use { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate all' }
       use { 'neovim/nvim-lspconfig' }
+      use { 'RishabhRD/nvim-lsputils', requires = {{ 'RishabhRD/popfix' }} }
       use { 'glepnir/lspsaga.nvim' }
       use { 'nvim-lua/completion-nvim' }
+      use { 'steelsojka/completion-buffers' }
+      -- use { 'mattn/vim-lsp-settings' }
+      -- use { 'hrsh7th/nvim-compe' }
 
       -- telescope
-      -- use {
-      --   'nvim-telescope/telescope.nvim',
-      --   requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-      -- }
+      use {
+        'nvim-telescope/telescope.nvim',
+        requires = {
+          { 'nvim-lua/popup.nvim' },
+          { 'nvim-lua/plenary.nvim' },
+          { 'nvim-telescope/telescope-fzy-native.nvim' },
+        }
+      }
 
-      -- utils
+      -- FZF
+      use { 'junegunn/fzf', run = './install --bin' }
+      use { 'junegunn/fzf.vim' }
+      use { 'dyng/ctrlsf.vim' }
+
+      --  utils
+      use { 'tweekmonster/startuptime.vim', otp = true }
       use { 'AndrewRadev/splitjoin.vim' }
-      use { 'RRethy/vim-illuminate' }
+      use { 'RRethy/vim-illuminate' } -- highlights
       use { 'Shougo/echodoc.vim' }
       use { 'Yggdroot/indentLine' }
       use { 'airblade/vim-rooter' }
       use { 'easymotion/vim-easymotion' }
       use { 'farmergreg/vim-lastplace' }
-      use { 'francoiscabrol/ranger.vim' }
-      use { 'junegunn/limelight.vim' }
+      use { 'francoiscabrol/ranger.vim' } -- file manager
+      use { 'junegunn/limelight.vim' } -- highlight blocks
       use { 'junegunn/vim-easy-align' }
       use { 'glts/vim-textobj-comment' } -- dac dic yic cic
       use { 'kana/vim-textobj-function' }
@@ -58,16 +72,21 @@ return require('packer').startup(
       use { 'talek/obvious-resize' }
       use { 'tpope/vim-dispatch' }
       use { 'tpope/vim-eunuch' }          -- shell commands
-      use { 'tpope/vim-jdaddy' }          -- for json
       use { 'tpope/vim-ragtag' }
       use { 'tpope/vim-repeat' }
       use { 'tpope/vim-speeddating' }
       use { 'tpope/vim-surround' }
       use { 'tpope/vim-unimpaired' }
+      use { 'tpope/vim-jdaddy' }          -- for json
       use { 'troydm/easybuffer.vim' }
       use { 'voldikss/vim-floaterm' }
       use { 'wellle/targets.vim' }
       use { 'mbbill/undotree' }
+      use { 'szw/vim-maximizer' }
+
+      -- html
+      use { 'alvan/vim-closetag', ft = { 'ruby', 'eruby', 'html' } } -- auto close tags
+      use { 'AndrewRadev/tagalong.vim', ft = { 'ruby', 'eruby', 'html' } } -- auto change html tags
 
       -- airline
       use { 'edkolev/tmuxline.vim' }

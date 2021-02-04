@@ -1,16 +1,18 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ','
 
-require 'mappings.lsp'
 require 'mappings.buffers'
-require 'mappings.ranger'
-require 'mappings.git'
-require 'mappings.limelight'
 require 'mappings.easy-align'
 require 'mappings.easymotion'
+require 'mappings.fzf'
+require 'mappings.git'
+require 'mappings.limelight'
+require 'mappings.lsp'
 require 'mappings.nerdcommenter'
 require 'mappings.obvious-resize'
-require 'mappings.telescope'
+require 'mappings.ranger'
+
+map('n', '_R', ':lua reload_config()<cr>')
 
 map('i', 'jj', '<C-[>')
 

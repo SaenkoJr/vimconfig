@@ -1,9 +1,10 @@
 vim.g.airline_theme = 'sol'
 vim.g.airline_powerline_fonts = 1
+vim.g['airline#extensions#nvimlsp#enabled']         = 0
 vim.g['airline#extensions#tabline#enabled']         = 1
 vim.g['airline#extensions#tabline#disable_refresh'] = 1
-vim.g['airline#extensions#tabline#formatter'] = 'short_path'
-vim.g['airline#extensions#tmuxline#snapshot_file']    = "~/.tmux-status.conf"
+vim.g['airline#extensions#tabline#formatter']       = 'short_path'
+vim.g['airline#extensions#tmuxline#snapshot_file']  = "~/.tmux-status.conf"
 
 vim.g['airline#extensions#tmuxline#enabled']        = 1
 vim.g.tmuxline_preset = {
