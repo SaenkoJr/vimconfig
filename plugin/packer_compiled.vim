@@ -51,6 +51,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/completion-nvim"
   },
+  ["completion-treesitter"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/completion-treesitter"
+  },
   ["ctrlsf.vim"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/ctrlsf.vim"
@@ -192,6 +196,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-easymotion"
   },
+  ["vim-efm-langserver-settings"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-efm-langserver-settings"
+  },
   ["vim-endwise"] = {
     loaded = false,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/vim-endwise"
@@ -217,8 +225,8 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-illuminate"
   },
   ["vim-jdaddy"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-jdaddy"
+    loaded = false,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/vim-jdaddy"
   },
   ["vim-lastplace"] = {
     loaded = true,
@@ -231,6 +239,10 @@ _G.packer_plugins = {
   ["vim-move"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-move"
+  },
+  ["vim-paper"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-paper"
   },
   ["vim-ragtag"] = {
     loaded = true,
@@ -293,13 +305,14 @@ vim.cmd [[command! -nargs=* -range -bang -complete=file TSUpdate all lua require
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
-vim.cmd [[au FileType eruby ++once lua require("packer.load")({'vim-rails', 'vim-closetag', 'vim-endwise', 'tagalong.vim'}, { ft = "eruby" }, _G.packer_plugins)]]
-vim.cmd [[au FileType slim ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "slim" }, _G.packer_plugins)]]
-vim.cmd [[au FileType haml ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "haml" }, _G.packer_plugins)]]
-vim.cmd [[au FileType coffee ++once lua require("packer.load")({'vim-rails'}, { ft = "coffee" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-rails'}, { ft = "javascript" }, _G.packer_plugins)]]
 vim.cmd [[au FileType html ++once lua require("packer.load")({'vim-closetag', 'tagalong.vim'}, { ft = "html" }, _G.packer_plugins)]]
-vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-rails', 'vim-closetag', 'vim-endwise', 'tagalong.vim'}, { ft = "ruby" }, _G.packer_plugins)]]
+vim.cmd [[au FileType slim ++once lua require("packer.load")({'vim-endwise', 'vim-rails'}, { ft = "slim" }, _G.packer_plugins)]]
+vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-jdaddy'}, { ft = "json" }, _G.packer_plugins)]]
+vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-rails'}, { ft = "javascript" }, _G.packer_plugins)]]
+vim.cmd [[au FileType eruby ++once lua require("packer.load")({'vim-closetag', 'vim-endwise', 'vim-rails', 'tagalong.vim'}, { ft = "eruby" }, _G.packer_plugins)]]
+vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-closetag', 'vim-endwise', 'vim-rails', 'tagalong.vim'}, { ft = "ruby" }, _G.packer_plugins)]]
+vim.cmd [[au FileType coffee ++once lua require("packer.load")({'vim-rails'}, { ft = "coffee" }, _G.packer_plugins)]]
+vim.cmd [[au FileType haml ++once lua require("packer.load")({'vim-endwise', 'vim-rails'}, { ft = "haml" }, _G.packer_plugins)]]
 vim.cmd("augroup END")
 END
 

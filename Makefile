@@ -32,6 +32,8 @@ install-typescript-lsp:
 
 install-efm-lsp:
 	go get github.com/mattn/efm-langserver
+	asdf reshim go
 
 install-solargraph-lsp:
 	gem install solargraph
+	asdf reshim ruby

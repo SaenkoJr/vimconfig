@@ -6,12 +6,14 @@ function _G.map(mode, lhs, rhs, opts)
   api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-function _G.au(event, filetype, action)
-  vim.cmd('au' .. ' ' .. event .. ' ' .. filetype .. ' ' .. action)
+function _G.bmap(bufnr, mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
+  if opts then options = vim.tbl_extend('force', options, opts) end
+  api.nvim_buf_set_keymap(bufnr, mode, lhs, rhs, options)
 end
 
-function _G.on_attach_lsp(client)
-  print("'" .. client.name .. "' server attached")
+function _G.au(event, filetype, action)
+  vim.cmd('au' .. ' ' .. event .. ' ' .. filetype .. ' ' .. action)
 end
 
 function _G.reload_lsp()
@@ -20,7 +22,7 @@ function _G.reload_lsp()
 end
 
 function _G.reload_config()
-  local modules = { 'lsp', 'mappings', 'settings', 'autocommands', 'globals', 'plugins' }
+  local modules = { 'globals', 'settings', 'autocommands', 'mappings', 'plugins', 'lsp-config' }
   for _, moduleName in pairs(modules) do
     for packageName, _ in pairs(package.loaded) do
       if string.find(packageName, '^' .. moduleName) then

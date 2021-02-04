@@ -1,7 +1,5 @@
--- require 'settings.plugins.nvim-compe'
 require 'settings.plugins.airline'
 require 'settings.plugins.asyncrun'
-require 'settings.plugins.completion-nvim'
 require 'settings.plugins.ctrlsf-vim'
 require 'settings.plugins.easymotion'
 require 'settings.plugins.indentline'

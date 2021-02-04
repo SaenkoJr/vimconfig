@@ -1,4 +1,4 @@
-vim.cmd 'au BufEnter * lua require "completion".on_attach()'
+vim.cmd [[ au BufEnter * lua require("completion").on_attach() ]]
 
 vim.g.completion_items_priority = {
   Field      = 10,
@@ -22,14 +22,15 @@ vim.g.completion_items_priority = {
 vim.g.completion_confirm_key            = '<C-l>'
 vim.g.completion_enable_auto_popup      = 0
 vim.g.completion_matching_smart_case    = 1
+vim.g.completion_trigger_on_delete      = 1
 vim.g.completion_enable_snippet         = 'UltiSnips'
-vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy', 'all' }
+vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
 vim.g.completion_chain_complete_list = {
   default = {
     { complete_items = { 'lsp' } },
-    { complete_items = { 'buffers' } },
-    { mode = { '<c-p>' } },
-    { mode = { '<c-n>' } },
+    { complete_items = { 'ts' } },
+    { complete_items = { 'snippet' } },
+    -- { complete_items = { 'buffers' } },
   }
 }
 
@@ -45,6 +46,7 @@ vim.g.completion_customize_lsp_label = {
   Struct     = ' [struct]',
   Keyword    = ' [keyword]',
   Treesitter = ' [treesitter]',
+  Snippet    = ' [snippets]',
   TabNine    = ' [tabnine]',
   Buffers    = ' [buffers]',
   Text       = ' [text]',

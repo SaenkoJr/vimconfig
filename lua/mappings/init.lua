@@ -7,7 +7,6 @@ require 'mappings.easymotion'
 require 'mappings.fzf'
 require 'mappings.git'
 require 'mappings.limelight'
-require 'mappings.lsp'
 require 'mappings.nerdcommenter'
 require 'mappings.obvious-resize'
 require 'mappings.ranger'
@@ -43,3 +42,9 @@ map('i', '<M-h>', '<Left>')
 map('i', '<M-l>', '<Right>')
 map('i', '<M-k>', '<C-Up>')
 map('i', '<M-j>', '<C-Down>')
+
+map('i', '<C-Space>', '<Plug>(completion_trigger)', { noremap = false })
+map('i', '<C-k>', 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true })
+map('i', '<C-j>', 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true })
+map('i', 'K', '<Plug>(completion_prev_source)', { noremap = false })
+map('i', 'J', '<Plug>(completion_next_source)', { noremap = false })
