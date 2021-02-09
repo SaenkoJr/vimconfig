@@ -28,6 +28,8 @@ local rg_opts = [[
 vim.cmd 'filetype plugin indent on'
 vim.cmd 'syntax sync minlines=256'
 vim.cmd 'colorscheme paper'
+opt('o', 'background', 'light')
+
 vim.cmd (
   "command! -bang -nargs=* Rg call fzf#vim#grep('"
   .. rg_opts ..
@@ -36,7 +38,6 @@ vim.cmd (
 
 -- global
 opt('o', 'autoread', true)
-opt('o', 'background', 'light')
 opt('o', 'backspace', 'indent,eol,start')
 opt('o', 'backup', false)
 opt('o', 'clipboard', 'unnamedplus')

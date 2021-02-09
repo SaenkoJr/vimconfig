@@ -108,8 +108,17 @@ return require('packer').startup(
 
     -- colors
     use { 'NLKNguyen/papercolor-theme' }
-    use { 'equt/paper.vim' }
     use { 'arcticicestudio/nord-vim' }
+    use { 'ayu-theme/ayu-vim' }
+    use { 'casperstorm/sort-hvid.vim' }
+    use { 'equt/paper.vim' }
+    use { 'lifepillar/vim-colortemplate' }
+    use { 'logico/typewriter-vim' }
+    use { 'mikker/vim-colors-pap' }
+    use { 'pgdouyon/vim-yin-yang' }
+    use { 'rflban/homecolors.vim' }
+    use { 'thenewvu/vim-colors-sketching' }
+    use { 'wolverian/minimal' }
   end,
   config = {
     display = {
