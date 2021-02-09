@@ -28,7 +28,7 @@ install-css-lsp:
 	npm install --global vscode-css-languageserver-bin
 
 install-typescript-lsp:
-	npm i -g typescript-language-server
+	npm i -g typescript typescript-language-server
 
 install-efm-lsp:
 	go get github.com/mattn/efm-langserver

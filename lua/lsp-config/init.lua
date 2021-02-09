@@ -8,6 +8,7 @@ local servers = {
   bash = 'bashls',
   css  = 'cssls',
   html = 'html',
+  js   = 'tsserver',
   lua  = 'sumneko_lua',
   ruby = 'solargraph',
   efm  = 'efm'

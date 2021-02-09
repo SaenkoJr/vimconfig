@@ -20,7 +20,7 @@ return function(config, on_attach)
       'lua',
       'css',
       'html',
-      'ruby',
+      -- 'ruby',
       'eruby',
     },
     settings = {
