@@ -40,11 +40,9 @@ map('n', '<localleader>cd', ':cd %:p:h<CR>:pwd<CR>')
 
 map('i', '<M-h>', '<Left>')
 map('i', '<M-l>', '<Right>')
-map('i', '<M-k>', '<C-Up>')
-map('i', '<M-j>', '<C-Down>')
 
 map('i', '<C-Space>', '<Plug>(completion_trigger)', { noremap = false })
 map('i', '<C-k>', 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true })
 map('i', '<C-j>', 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true })
-map('i', '<C-K>', '<Plug>(completion_prev_source)', { noremap = false })
-map('i', '<C-J>', '<Plug>(completion_next_source)', { noremap = false })
+map('i', '<m-k>', '<Plug>(completion_prev_source)', { noremap = false })
+map('i', '<m-j>', '<Plug>(completion_next_source)', { noremap = false })
