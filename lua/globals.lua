@@ -21,6 +21,29 @@ function _G.reload_lsp()
   cmd [[edit]]
 end
 
+function _G.hi(group, options)
+  vim.cmd(
+    "highlight! " ..
+    group ..
+    " " ..
+    "cterm=" ..
+    (options.cterm or "none") ..
+    " " ..
+    "ctermfg=" ..
+    (options.ctermfg or "none") ..
+    " " ..
+    "ctermbg=" ..
+    (options.ctermbg or "none") ..
+    " " ..
+    "gui=" ..
+    (options.gui or "none") ..
+    " " ..
+    "guifg=" ..
+    (options.guifg or "none") ..
+    " " .. "guibg=" .. (options.guibg or "none")
+  )
+end
+
 function _G.reload_config()
   local modules = { 'globals', 'settings', 'autocommands', 'mappings', 'plugins', 'lsp-config' }
   for _, moduleName in pairs(modules) do

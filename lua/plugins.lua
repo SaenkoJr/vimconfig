@@ -11,7 +11,9 @@ end
 cmd [[ packadd packer.nvim ]]
 
 -- cmd [[ autocmd BufWritePost plugins.lua lua reload() ]]
-cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
+-- cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
+cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua lua reload_config() ]]
+cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua PackerCompile ]]
 
 return require('packer').startup(
 {
@@ -29,7 +31,8 @@ return require('packer').startup(
     use { 'steelsojka/completion-buffers' }
     use { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate all' }
     use { 'nvim-treesitter/completion-treesitter' }
-    use { 'tsuyoshicho/vim-efm-langserver-settings' }
+    use { 'Shougo/neosnippet.vim' }
+    -- use { 'tsuyoshicho/vim-efm-langserver-settings' }
 
     -- telescope
     use {
@@ -50,7 +53,7 @@ return require('packer').startup(
     use { 'tweekmonster/startuptime.vim' }
     use { 'AndrewRadev/splitjoin.vim' }
     use { 'RRethy/vim-illuminate' } -- highlights
-    use { 'Shougo/echodoc.vim' }
+    -- use { 'Shougo/echodoc.vim' }
     use { 'Yggdroot/indentLine' }
     use { 'airblade/vim-rooter' }
     use { 'easymotion/vim-easymotion' }
@@ -79,7 +82,7 @@ return require('packer').startup(
     use { 'tpope/vim-speeddating' }
     use { 'tpope/vim-surround' }
     use { 'tpope/vim-unimpaired' }
-    use { 'tpope/vim-jdaddy', ft = { 'json' } }  -- for json
+    use { 'tpope/vim-jdaddy', ft = { 'json' } }
     use { 'troydm/easybuffer.vim' }
     use { 'voldikss/vim-floaterm' }
     use { 'wellle/targets.vim' }
@@ -105,7 +108,8 @@ return require('packer').startup(
 
     -- colors
     use { 'NLKNguyen/papercolor-theme' }
-    use { 'YorickPeterse/vim-paper' }
+    use { 'equt/paper.vim' }
+    use { 'arcticicestudio/nord-vim' }
   end,
   config = {
     display = {

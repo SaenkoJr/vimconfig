@@ -9,7 +9,7 @@ return function(config, on_attach)
       Lua = {
         runtime = { version = 'LuaJIT' },
         diagnostics = {
-          globals = {"vim", "use", "map"}
+          globals = { 'vim', 'use', 'map', 'bmap' }
         },
         workspace = {
           library = {

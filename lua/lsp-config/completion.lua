@@ -1,4 +1,4 @@
-vim.cmd [[ au BufEnter * lua require("completion").on_attach() ]]
+au('BufEnter', '*', 'lua require("completion").on_attach()')
 
 vim.g.completion_items_priority = {
   Field      = 10,
@@ -19,16 +19,16 @@ vim.g.completion_items_priority = {
   File       = 5,
 }
 
-vim.g.completion_confirm_key            = '<C-l>'
+vim.g.completion_confirm_key            = "<C-l>"
 vim.g.completion_enable_auto_popup      = 0
 vim.g.completion_matching_smart_case    = 1
 vim.g.completion_trigger_on_delete      = 1
-vim.g.completion_enable_snippet         = 'UltiSnips'
+vim.g.completion_enable_snippet         = 'Neosnippet'
 vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
 vim.g.completion_chain_complete_list = {
   default = {
     { complete_items = { 'lsp' } },
-    { complete_items = { 'ts' } },
+    { complete_items = { 'ts', 'buffers' } },
     { complete_items = { 'snippet' } },
     -- { complete_items = { 'buffers' } },
   }
@@ -52,6 +52,12 @@ vim.g.completion_customize_lsp_label = {
   Text       = ' [text]',
   File       = ' [file]',
   Enum       = ' [enum]',
+}
+
+vim.g['neosnippet#snippets_directory'] = vim.fn.stdpath('data') .. '/.config/nvim/private-snips'
+vim.g['neosnippet#enable_snipmate_compatibility'] = 1
+vim.g['neosnippet#disable_runtime_snippets'] = {
+  ['_'] = 1
 }
 
     -- "keyword":       "\uf1de",

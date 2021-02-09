@@ -1,2 +1,2 @@
-map('n', '<leader>gs', ':G<CR>')
-map('n', '<leader>gc', '<cmd>Telescope git_commits')
+map('n', '<leader>gs', ':G<cr>')
+map('n', '<leader>gc', '<cmd>Telescope git_commits<cr>')

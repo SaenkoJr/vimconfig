@@ -1,6 +1,6 @@
 return function(config, on_attach)
   local luaFormat = {
-    formatCommand = "luafmt --stdin",
+    formatCommand = "npx luafmt --stdin --indent-count 2",
     formatStdin = true
   }
   local languages = {
@@ -20,6 +20,7 @@ return function(config, on_attach)
       'lua',
       'css',
       'html',
+      'ruby',
       'eruby',
     },
     settings = {

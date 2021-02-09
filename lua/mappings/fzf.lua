@@ -6,3 +6,5 @@ map('n', '<leader>fn', ':Rg <C-R><C-W><cr>')
 
 map('n', '<leader>ff', '<cmd>Files<cr>')
 map('n', '<leader>fF', '<cmd>Files ~<cr>')
+
+map('n', '<leader>ds', '<cmd>Telescope lsp_document_symbols<cr>')

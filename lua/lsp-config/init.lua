@@ -1,21 +1,22 @@
 require 'lsp-config.completion'
+require 'lsp-config.diagnostic'
 
 local lsp_config = require 'lspconfig'
 
 local lsp = vim.lsp
 local servers = {
   bash = 'bashls',
-  css = 'cssls',
+  css  = 'cssls',
   html = 'html',
-  lua = 'sumneko_lua',
+  lua  = 'sumneko_lua',
   ruby = 'solargraph',
-  efm = 'efm'
+  efm  = 'efm'
 }
 
 -- handlers --
-lsp.handlers['textDocument/codeAction'] = require('lsputil.codeAction').code_action_handler
+lsp.handlers['textDocument/codeAction']     = require('lsputil.codeAction').code_action_handler
 lsp.handlers['textDocument/documentSymbol'] = require('lsputil.symbols').document_handler
-lsp.handlers['textDocument/symbol'] = require('lsputil.symbols').workspace_handler
+lsp.handlers['textDocument/symbol']         = require('lsputil.symbols').workspace_handler
 lsp.handlers['textDocument/declaration']    = require('lsputil.locations').declaration_handler
 lsp.handlers['textDocument/definition']     = require('lsputil.locations').definition_handler
 lsp.handlers['textDocument/implementation'] = require('lsputil.locations').implementation_handler
@@ -26,14 +27,14 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   if client.resolved_capabilities.hover then
-    -- bmap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
-    -- bmap(bufnr, 'n', '<leader>K', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
     bmap(bufnr, 'n', 'K',  ':Lspsaga hover_doc<cr>')
     bmap(bufnr, 'n', '<leader>K', ':Lspsaga signature_help<cr>')
+    -- bmap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>')
+    -- bmap(bufnr, 'n', '<leader>K', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
   end
 
   if client.resolved_capabilities.goto_definition then
-    -- bmap('n', 'gd', ':Lspsaga lsp_finder<cr>')
+    -- bmap(bufnr, 'n', 'gd', ':Lspsaga lsp_finder<cr>')
     bmap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>')
   end
 
@@ -46,26 +47,35 @@ local on_attach = function(client, bufnr)
     bmap(bufnr, 'n', '<leader>rn', ':Lspsaga rename<cr>')
   end
 
-  bmap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
-  bmap(bufnr, 'n', '<leader>gt', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+  if client.resolved_capabilities.code_action then
+    bmap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
+    bmap(bufnr, 'v', '<leader>ca', '<cmd>lua vim.lsp.buf.range_code_action()<cr>')
+  else
+    print('Server has no code actions')
+  end
 
-  bmap(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<cr>')
-  bmap(bufnr, 'v', '<leader>ca', "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
+  if client.resolved_capabilities.implementation then
+    bmap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+  end
 
-  -------- saga
-  bmap(bufnr, 'n', 'gp', ':Lspsaga preview_definition<cr>')
+  if client.resolved_capabilities.type_definition then
+    bmap(bufnr, 'n', '<leader>gt', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+  end
+
+  bmap(bufnr, 'n', 'gp', '<cmd>lua require"lspsaga.provider".preview_definition()<CR>')
   -- bmap(bufnr, 'n', '<leader>ca', ':Lspsaga code_action<cr>')
   -- bmap(bufnr, 'v', '<leader>ca', ":'<,'>Lspsaga range_code_action<cr>")
 
-  -------- diagnostic
   if client.resolved_capabilities.document_formatting then
     bmap(bufnr, 'n', '<leader>fm', '<cmd>lua vim.lsp.buf.formatting()<cr>')
   elseif client.resolved_capabilities.document_range_formatting then
     bmap(bufnr, 'v', '<space>fm', '<cmd>lua vim.lsp.buf.range_formatting()<CR>')
   end
 
-  map('n', '<leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
-  map('n', '<leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
+  map('n', '<leader>k', '<cmd>lua require"lspsaga.diagnostic".lsp_jump_diagnostic_prev()<CR>')
+  map('n', '<leader>j', '<cmd>lua require"lspsaga.diagnostic".lsp_jump_diagnostic_next()<CR>')
+  -- map('n', '<leader>k', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+  -- map('n', '<leader>j', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')
 
   print("'" .. client.name .. "' server attached.")
 end

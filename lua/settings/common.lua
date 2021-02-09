@@ -11,12 +11,23 @@ vim.python3_host_prog = '$HOME/.asdf/shims/python3'
 vim.loaded_netrw       = 1
 vim.loaded_netrwPlugin = 1
 
-local rg_opts = 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow -g "!yarn.lock" -g "!.git" -g "!node_modules"'
+local rg_opts = [[
+  rg --column
+    --line-number
+    --no-heading
+    --color=always
+    --fixed-strings
+    --smart-case
+    --hidden
+    --follow
+    --g "!yarn.lock"
+    --g "!.git"
+    --g "!node_modules"
+]]
 
-vim.cmd 'colorscheme PaperColor'
 vim.cmd 'filetype plugin indent on'
 vim.cmd 'syntax sync minlines=256'
-vim.cmd 'syntax sync minlines=256'
+vim.cmd 'colorscheme paper'
 vim.cmd (
   "command! -bang -nargs=* Rg call fzf#vim#grep('"
   .. rg_opts ..
@@ -42,22 +53,26 @@ opt('o', 'joinspaces', false)
 opt('o', 'mouse', 'a')
 opt('o', 'regexpengine', 1)
 opt('o', 'scrolloff', 3)
+opt('o', 'shortmess', scopes.o.shortmess .. 'c')
 opt('o', 'showcmd', true)
+opt('o', 'sidescrolloff', 10)
 opt('o', 'smartcase', true)
 opt('o', 'smarttab', true)
 opt('o', 'splitbelow', true)
 opt('o', 'splitright', true)
 opt('o', 'swapfile', false)
 opt('o', 'termguicolors', true)
+opt('o', 'ttyfast', true)
+opt('o', 'updatetime', 300)
 opt('o', 'viewoptions', 'options')
-opt('o', 'wildmenu', true)
-opt('o', 'shortmess', 'c')
 opt('o', 'whichwrap', 'b,<,>,[,],l,h')
+opt('o', 'wildmenu', true)
 
 -- window
 opt('w', 'breakindent', true)
-opt('w', 'foldmethod', 'indent')
-opt('w', 'foldnestmax', 5)
+opt('w', 'foldmethod', 'expr')
+opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
+opt('w', 'foldnestmax', 10)
 opt('w', 'number', true)
 opt('w', 'relativenumber', true)
 opt('w', 'wrap', false)
