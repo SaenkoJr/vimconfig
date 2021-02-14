@@ -1,5 +1,6 @@
 require 'lsp-config.completion'
 require 'lsp-config.diagnostic'
+require 'lsp-config.snippets'
 
 local lsp_config = require 'lspconfig'
 
@@ -9,6 +10,7 @@ local servers = {
   css  = 'cssls',
   html = 'html',
   js   = 'tsserver',
+  json = 'json',
   lua  = 'sumneko_lua',
   ruby = 'solargraph',
   efm  = 'efm'

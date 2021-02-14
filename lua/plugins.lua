@@ -26,13 +26,13 @@ return require('packer').startup(
     -- use { 'mattn/vim-lsp-settings' }
     use { 'RishabhRD/nvim-lsputils', requires = {{ 'RishabhRD/popfix' }} }
     use { 'glepnir/lspsaga.nvim' }
+    use { 'hrsh7th/vim-vsnip' }
+    use { 'hrsh7th/vim-vsnip-integ' }
     use { 'neovim/nvim-lspconfig' }
     use { 'nvim-lua/completion-nvim' }
-    use { 'steelsojka/completion-buffers' }
-    use { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate all' }
     use { 'nvim-treesitter/completion-treesitter' }
-    use { 'Shougo/neosnippet.vim' }
-    -- use { 'tsuyoshicho/vim-efm-langserver-settings' }
+    use { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate all' }
+    use { 'steelsojka/completion-buffers' }
 
     -- telescope
     use {
@@ -50,44 +50,45 @@ return require('packer').startup(
     use { 'dyng/ctrlsf.vim' }
 
     --  utils
-    use { 'tweekmonster/startuptime.vim' }
+    -- use { 'Shougo/echodoc.vim' }
     use { 'AndrewRadev/splitjoin.vim' }
     use { 'RRethy/vim-illuminate' } -- highlights
-    -- use { 'Shougo/echodoc.vim' }
     use { 'Yggdroot/indentLine' }
     use { 'airblade/vim-rooter' }
     use { 'easymotion/vim-easymotion' }
     use { 'farmergreg/vim-lastplace' }
     use { 'francoiscabrol/ranger.vim' } -- file manager
+    use { 'glts/vim-textobj-comment' } -- dac dic yic cic
+    use { 'jiangmiao/auto-pairs' }
     use { 'junegunn/limelight.vim' } -- highlight blocks
     use { 'junegunn/vim-easy-align' }
-    use { 'glts/vim-textobj-comment' } -- dac dic yic cic
     use { 'kana/vim-textobj-function' }
     use { 'kana/vim-textobj-indent' }  -- dii cai
     use { 'kana/vim-textobj-user' }
-    use { 'nelstrom/vim-textobj-rubyblock' }
     use { 'matze/vim-move' }
+    use { 'mbbill/undotree' }
     use { 'mhinz/vim-startify' }
+    use { 'nelstrom/vim-textobj-rubyblock' }
     use { 'ntpeters/vim-better-whitespace' }
     use { 'preservim/nerdcommenter' }
     use { 'rbgrouleff/bclose.vim' }
     use { 'rhysd/clever-f.vim' }
     use { 'schickling/vim-bufonly' }
     use { 'skywind3000/asyncrun.vim' }
+    use { 'szw/vim-maximizer' }
     use { 'talek/obvious-resize' }
     use { 'tpope/vim-dispatch' }
     use { 'tpope/vim-eunuch' }          -- shell commands
+    use { 'tpope/vim-jdaddy', ft = { 'json' } }
     use { 'tpope/vim-ragtag' }
     use { 'tpope/vim-repeat' }
     use { 'tpope/vim-speeddating' }
     use { 'tpope/vim-surround' }
     use { 'tpope/vim-unimpaired' }
-    use { 'tpope/vim-jdaddy', ft = { 'json' } }
     use { 'troydm/easybuffer.vim' }
+    use { 'tweekmonster/startuptime.vim' }
     use { 'voldikss/vim-floaterm' }
     use { 'wellle/targets.vim' }
-    use { 'mbbill/undotree' }
-    use { 'szw/vim-maximizer' }
 
     -- html
     use { 'alvan/vim-closetag', ft = { 'ruby', 'eruby', 'html' } } -- auto close tags

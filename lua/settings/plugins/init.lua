@@ -1,5 +1,6 @@
 require 'settings.plugins.airline'
 require 'settings.plugins.asyncrun'
+require 'settings.plugins.auto-pairs'
 require 'settings.plugins.ctrlsf-vim'
 require 'settings.plugins.easymotion'
 require 'settings.plugins.indentline'

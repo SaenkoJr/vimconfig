@@ -1,4 +1,10 @@
 au('BufEnter', '*', 'lua require("completion").on_attach()')
+vim.cmd [[
+  augroup CompletionTriggerCharacter
+    autocmd BufEnter * let g:completion_trigger_character = ['.', '/']
+    autocmd BufEnter *.rb,*.rake let g:completion_trigger_character = ['.', '::', ':']
+  augroup end
+]]
 
 vim.g.completion_items_priority = {
   Field      = 10,
@@ -11,7 +17,7 @@ vim.g.completion_items_priority = {
   Interfaces = 8,
   Class      = 8,
   Struct     = 7,
-  Keyword    = 7,
+  Keyword    = 9,
   Treesitter = 7,
   Buffers    = 6,
   Text       = 5,
@@ -19,46 +25,62 @@ vim.g.completion_items_priority = {
   File       = 5,
 }
 
-vim.g.completion_confirm_key            = "<C-l>"
+vim.g.completion_confirm_key            = "<C-y>"
 vim.g.completion_enable_auto_popup      = 0
-vim.g.completion_matching_smart_case    = 1
+vim.g.completion_matching_smart_case    = 0
 vim.g.completion_trigger_on_delete      = 1
-vim.g.completion_enable_snippet         = 'Neosnippet'
-vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
-vim.g.completion_chain_complete_list = {
+vim.g.completion_auto_change_source     = 1
+vim.g.completion_matching_ignore_case   = 0
+vim.g.completion_menu_length            = 100
+vim.g.completion_timer_cycle            = 50
+vim.g.completion_matching_strategy_list = { 'exact', 'substring' }
+vim.g.completion_chain_complete_list    = {
   default = {
     { complete_items = { 'lsp' } },
     { complete_items = { 'ts', 'buffers' } },
     { complete_items = { 'snippet' } },
+    -- { complete_items = { 'snippet' } },
     -- { complete_items = { 'buffers' } },
   }
 }
 
 vim.g.completion_customize_lsp_label = {
-  Field      = ' [field]',
-  Method     = ' [method]',
-  Function   = ' [function]',
-  Variables  = ' [variables]',
-  Variable   = ' [variable]',
-  Constant   = ' [const]',
-  Interfaces = ' [interface]',
-  Class      = ' [class]',
-  Struct     = ' [struct]',
-  Keyword    = ' [keyword]',
-  Treesitter = ' [treesitter]',
-  Snippet    = ' [snippets]',
-  TabNine    = ' [tabnine]',
-  Buffers    = ' [buffers]',
-  Text       = ' [text]',
-  File       = ' [file]',
-  Enum       = ' [enum]',
+  Field         = 'ﰠ [field]',
+  Method        = ' [method]',
+  Function      = ' [function]',
+  Variable      = ' [variable]',
+  Constant      = ' [const]',
+  Interfaces    = ' [interface]',
+  Class         = ' [class]',
+  Struct        = ' [struct]',
+  Keyword       = ' [keyword]',
+  Treesitter    = ' [treesitter]',
+  ['v']         = ' [treesitter]',
+  Snippet       = ' [snippets]',
+  ['vim-vsnip'] = ' [snippets]',
+  TabNine       = ' [tabnine]',
+  Buffers       = ' [buffers]',
+  Text          = 'ﮜ [text]',
+  File          = ' [file]',
+  Enum          = ' [enum]',
+  Folder        = ' [folder]',
 }
 
-vim.g['neosnippet#snippets_directory'] = vim.fn.stdpath('data') .. '/.config/nvim/private-snips'
-vim.g['neosnippet#enable_snipmate_compatibility'] = 1
-vim.g['neosnippet#disable_runtime_snippets'] = {
-  ['_'] = 1
-}
+-- 'Function':  '',
+-- 'Method':    '',
+-- 'Reference': '',
+-- 'Enum':      '',
+-- 'Field':     'ﰠ',
+-- 'Keyword':   '',
+-- 'Variable':  '',
+-- 'Folder':    '',
+-- 'Snippet':   '',
+-- 'Operator':  '',
+-- 'Module':    '',
+-- 'Text':      'ﮜ',
+-- 'Buffers':   '',
+-- 'Class':     '',
+-- 'Interface': ''
 
     -- "keyword":       "\uf1de",
     -- "variable":      "\ue79b",

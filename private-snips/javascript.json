@@ -1,0 +1,115 @@
+{
+  "import React" : {
+    "prefix": "ir",
+    "body": "import React from 'react';$0"
+  },
+  "import module from 'module'": {
+    "prefix": "im",
+    "body": "import ${2:module} from '${1:module}';$0"
+  },
+  "import { module } from 'module'": {
+    "prefix": ["imm"],
+    "body": [
+      "import { ${2:module} } from '${1:module}';$0"
+    ]
+  },
+  "import/export'": {
+    "prefix": ["ime"],
+    "body": [
+      "import ${2:module} from '${1:file}';",
+      "${0}",
+      "export default $2;"
+    ]
+  },
+  "const": {
+    "prefix": ["cn"],
+    "body": [
+      "const ${1:name} = ${0:value};"
+    ]
+  },
+  "let": {
+    "prefix": ["lt"],
+    "body": [
+      "let ${1:name} = ${0:value};"
+    ]
+  },
+  "arrow fn inline": {
+    "prefix": ["claf"],
+    "body": [
+      "const ${1:name} = ${2:args} => ${0:body};"
+    ]
+  },
+  "anonymous arrow fn": {
+    "prefix": ["af"],
+    "body": [
+      "(${1:args}) => ${0:body}"
+    ]
+  },
+  "arrow fn": {
+    "prefix": ["caf"],
+    "body": [
+      "const ${1:name} = ${2:args} => {",
+        "\t${0:body}",
+        "};"
+    ]
+  },
+  "export default": {
+    "prefix": ["ed"],
+    "body": [
+      "export default ${0:module};"
+    ]
+  },
+  "export": {
+    "prefix": ["ex"],
+    "body": [
+      "export ${0:module};"
+    ]
+  },
+  "if": {
+    "prefix": ["if"],
+    "body": [
+      "if (${1:cond}) {",
+        "\t${0:body}",
+        "}"
+    ]
+  },
+  "return": {
+    "prefix": ["rt"],
+    "body": [
+      "return ${0};"
+    ]
+  },
+  "console.log()": {
+    "prefix": ["cl"],
+    "body": [
+      "console.log(${0});"
+    ]
+  },
+  "console.log('---------')": {
+    "prefix": ["cll"],
+    "body": [
+      "console.log('----------------------------------------');"
+    ]
+  },
+  "log": {
+    "prefix": ["log"],
+    "body": "console.log(${1:$TM_SELECTED_TEXT});"
+  },
+  "component": {
+    "prefix": ["rfc"],
+    "body": [
+      "const ${1:name} = (${2:props}) => {",
+      "\t${0:body}",
+      "};",
+      "",
+      "export default $1;"
+    ],
+    "description": "React func component"
+  },
+  "useState": {
+    "prefix": ["us"],
+    "body": [
+      "  const [${1:state}, ${2:setState}] = useState(${3});${0}"
+    ]
+  }
+}
