@@ -42,7 +42,7 @@
   "anonymous arrow fn": {
     "prefix": ["af"],
     "body": [
-      "(${1:args}) => ${0:body}"
+      "(${1}) => ${0:body}"
     ]
   },
   "arrow fn": {
@@ -74,7 +74,7 @@
     ]
   },
   "return": {
-    "prefix": ["rt"],
+    "prefix": ["ret"],
     "body": [
       "return ${0};"
     ]
@@ -109,7 +109,59 @@
   "useState": {
     "prefix": ["us"],
     "body": [
-      "  const [${1:state}, ${2:setState}] = useState(${3});${0}"
+      "const [${1:state}, ${2:setState}] = useState(${3});${0}"
+    ]
+  },
+  "useEffect": {
+    "prefix": ["ue"],
+    "body": [
+      "useEffect(() => {",
+      "${1:effect}",
+      "}, ${2});${0}"
+    ]
+  },
+  "makeStyles": {
+    "prefix": ["mks"],
+    "body": [
+      "import { makeStyles } from '@material-ui/core/styles';",
+      "",
+      "const useStyles = makeStyles(() => ({",
+      "\t${0}",
+      "}));",
+      "",
+      "export default useStyles;"
+    ]
+  },
+  "Class": {
+    "prefix": ["cls"],
+    "body": [
+      "class ${1:Name} {",
+      "\t${0}",
+      "};"
+    ]
+  },
+  "Class extends": {
+    "prefix": ["clse"],
+    "body": [
+      "class ${1:Name} extends ${2:Parent} {",
+      "\t${0}",
+      "};"
+    ]
+  },
+  "React component": {
+    "prefix": ["rc"],
+    "body": [
+      "class ${1:Name} extends React.Component {",
+      "\t${0}",
+      "};"
+    ]
+  },
+  "constructor": {
+    "prefix": ["ctor"],
+    "body": [
+      "constructor(${1:params}) {",
+      "\t${0}",
+      "}"
     ]
   }
 }

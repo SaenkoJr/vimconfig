@@ -11,37 +11,26 @@ vim.python3_host_prog = '$HOME/.asdf/shims/python3'
 vim.loaded_netrw       = 1
 vim.loaded_netrwPlugin = 1
 
-local rg_opts = [[
-  rg --column
-    --line-number
-    --no-heading
-    --color=always
-    --fixed-strings
-    --smart-case
-    --hidden
-    --follow
-    --g "!yarn.lock"
-    --g "!.git"
-    --g "!node_modules"
-]]
+local rg_opts = 'rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow -g "!yarn.lock" -g "!.git" -g "!node_modules" -- '
+
+vim.cmd (
+  "command! -bang -nargs=* Rg call fzf#vim#grep('"
+  .. rg_opts ..
+  "'.shellescape(<q-args>), 1, <bang>0 ? fzf#vim#with_preview('up:65%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)"
+)
 
 vim.cmd 'filetype plugin indent on'
 vim.cmd 'syntax sync minlines=256'
 vim.cmd 'colorscheme paper'
 opt('o', 'background', 'light')
 
-vim.cmd (
-  "command! -bang -nargs=* Rg call fzf#vim#grep('"
-  .. rg_opts ..
-  " '.shellescape(<q-args>), 1, <bang>0 ? fzf#vim#with_preview('up:65%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)"
-)
-
 -- global
 opt('o', 'autoread', true)
 opt('o', 'backspace', 'indent,eol,start')
 opt('o', 'backup', false)
 opt('o', 'clipboard', 'unnamedplus')
-opt('o', 'completeopt', 'menuone,noinsert,noselect')
+-- opt('o', 'completeopt', 'menuone,noinsert,noselect')
+opt('o', 'completeopt', 'menuone,noselect') -- for nvim-compe
 opt('o', 'encoding', 'UTF-8')
 opt('o', 'fillchars', 'vert:|')
 opt('o', 'foldlevelstart', 99)
@@ -56,6 +45,7 @@ opt('o', 'scrolloff', 3)
 opt('o', 'shortmess', scopes.o.shortmess .. 'c')
 opt('o', 'showcmd', true)
 opt('o', 'sidescrolloff', 10)
+opt('o', 'pumheight', 30)
 opt('o', 'smartcase', true)
 opt('o', 'smarttab', true)
 opt('o', 'splitbelow', true)

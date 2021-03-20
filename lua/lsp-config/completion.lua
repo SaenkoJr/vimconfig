@@ -1,48 +1,59 @@
 au('BufEnter', '*', 'lua require("completion").on_attach()')
+
 vim.cmd [[
   augroup CompletionTriggerCharacter
     autocmd BufEnter * let g:completion_trigger_character = ['.', '/']
-    autocmd BufEnter *.rb,*.rake let g:completion_trigger_character = ['.', '::', ':']
+    autocmd BufEnter *.rb,*.rake let g:completion_trigger_character = ['.', '::', ':', '@']
   augroup end
 ]]
 
 vim.g.completion_items_priority = {
-  Field      = 10,
-  Method     = 10,
-  Function   = 10,
-  Variables  = 9,
-  Variable   = 9,
-  Constant   = 9,
+  Variables  = 10,
+  Variable   = 10,
+  Constant   = 10,
+  Keyword    = 9,
+  Field      = 9,
+  Method     = 9,
+  Function   = 9,
   Enum       = 9,
   Interfaces = 8,
   Class      = 8,
   Struct     = 7,
-  Keyword    = 9,
   Treesitter = 7,
   Buffers    = 6,
   Text       = 5,
-  TabNine    = 3,
   File       = 5,
+  TabNine    = 3,
 }
 
-vim.g.completion_confirm_key            = "<C-y>"
-vim.g.completion_enable_auto_popup      = 0
-vim.g.completion_matching_smart_case    = 0
-vim.g.completion_trigger_on_delete      = 1
-vim.g.completion_auto_change_source     = 1
-vim.g.completion_matching_ignore_case   = 0
-vim.g.completion_menu_length            = 100
-vim.g.completion_timer_cycle            = 50
-vim.g.completion_matching_strategy_list = { 'exact', 'substring' }
+
+vim.g.completion_enable_snippet       = 'vim-vsnip'
+vim.g.completion_confirm_key          = "<C-y>"
+vim.g.completion_enable_auto_popup    = 0
+vim.g.completion_matching_smart_case  = 0
+vim.g.completion_trigger_on_delete    = 1
+vim.g.completion_auto_change_source   = 1
+vim.g.completion_matching_ignore_case = 0
+vim.g.completion_menu_length          = 100
+vim.g.completion_timer_cycle          = 50
+vim.g.completion_items_duplicate      = {
+  ['lsp'] = 0,
+  ['vim-vsnip'] = 0,
+  ['treesitter'] = 0,
+}
+vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
 vim.g.completion_chain_complete_list    = {
   default = {
     { complete_items = { 'lsp' } },
     { complete_items = { 'ts', 'buffers' } },
     { complete_items = { 'snippet' } },
-    -- { complete_items = { 'snippet' } },
     -- { complete_items = { 'buffers' } },
   }
 }
+
+map('i', '<C-Space>', '<Plug>(completion_trigger)', { noremap = false })
+map('i', '<m-k>', '<Plug>(completion_prev_source)', { noremap = false })
+map('i', '<m-j>', '<Plug>(completion_next_source)', { noremap = false })
 
 vim.g.completion_customize_lsp_label = {
   Field         = 'ﰠ [field]',
@@ -52,16 +63,17 @@ vim.g.completion_customize_lsp_label = {
   Constant      = ' [const]',
   Interfaces    = ' [interface]',
   Class         = ' [class]',
-  Struct        = ' [struct]',
+  Struct        = '  [struct]',
   Keyword       = ' [keyword]',
-  Treesitter    = ' [treesitter]',
-  ['v']         = ' [treesitter]',
+  Module        = ' [module]',
+  Treesitter    = '𐂷 [treesitter]',
+  ['v']         = '𐂷 [treesitter]',
   Snippet       = ' [snippets]',
   ['vim-vsnip'] = ' [snippets]',
-  TabNine       = ' [tabnine]',
+  TabNine       = '  [tabnine]',
   Buffers       = ' [buffers]',
   Text          = 'ﮜ [text]',
-  File          = ' [file]',
+  File          = ' [file]',
   Enum          = ' [enum]',
   Folder        = ' [folder]',
 }

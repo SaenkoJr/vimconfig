@@ -1,7 +1,7 @@
 local execute = vim.api.nvim_command
 local fn, cmd = vim.fn, vim.cmd
 
-local install_path = fn.stdpath('data')..'/site/pack/packer/opt/packer.nvim'
+local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
   execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
@@ -10,28 +10,29 @@ end
 
 cmd [[ packadd packer.nvim ]]
 
--- cmd [[ autocmd BufWritePost plugins.lua lua reload() ]]
+-- cmd [[ autocmd BufWritePost plugins.lua lua reload_config() ]]
 -- cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
-cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua lua reload_config() ]]
-cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua PackerCompile ]]
+
+-- cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua lua reload_config() ]]
+-- cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua PackerCompile ]]
 
 return require('packer').startup(
 {
   function(use)
     -- packer can manage itself as an optional plugin
-    use { "wbthomason/packer.nvim", opt = true }
+    use { 'wbthomason/packer.nvim', opt = true }
 
     -- lsp
-    -- use { 'hrsh7th/nvim-compe' }
-    -- use { 'mattn/vim-lsp-settings' }
     use { 'RishabhRD/nvim-lsputils', requires = {{ 'RishabhRD/popfix' }} }
     use { 'glepnir/lspsaga.nvim' }
-    use { 'hrsh7th/vim-vsnip' }
-    use { 'hrsh7th/vim-vsnip-integ' }
+    use { 'hrsh7th/vim-vsnip', requires = 'hrsh7th/vim-vsnip-integ' }
     use { 'neovim/nvim-lspconfig' }
+    use { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate all' }
+
+    -- completion
+    use { 'hrsh7th/nvim-compe' }
     use { 'nvim-lua/completion-nvim' }
     use { 'nvim-treesitter/completion-treesitter' }
-    use { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate all' }
     use { 'steelsojka/completion-buffers' }
 
     -- telescope
@@ -44,7 +45,7 @@ return require('packer').startup(
       }
     }
 
-    -- FZF
+    -- fzf
     use { 'junegunn/fzf', run = './install --bin' }
     use { 'junegunn/fzf.vim' }
     use { 'dyng/ctrlsf.vim' }
@@ -52,6 +53,7 @@ return require('packer').startup(
     --  utils
     -- use { 'Shougo/echodoc.vim' }
     use { 'AndrewRadev/splitjoin.vim' }
+    use { 'RRethy/vim-hexokinase', run = 'make hexokinase' } -- display colours
     use { 'RRethy/vim-illuminate' } -- highlights
     use { 'Yggdroot/indentLine' }
     use { 'airblade/vim-rooter' }
@@ -86,13 +88,9 @@ return require('packer').startup(
     use { 'tpope/vim-surround' }
     use { 'tpope/vim-unimpaired' }
     use { 'troydm/easybuffer.vim' }
-    use { 'tweekmonster/startuptime.vim' }
     use { 'voldikss/vim-floaterm' }
     use { 'wellle/targets.vim' }
-
-    -- html
-    use { 'alvan/vim-closetag', ft = { 'ruby', 'eruby', 'html' } } -- auto close tags
-    use { 'AndrewRadev/tagalong.vim', ft = { 'ruby', 'eruby', 'html' } } -- auto change html tags
+    use { 'janko-m/vim-test' }
 
     -- airline
     use { 'edkolev/tmuxline.vim' }
@@ -103,9 +101,16 @@ return require('packer').startup(
     use { 'tpope/vim-fugitive' }
     use { 'airblade/vim-gitgutter' }
 
+    -- html
+    use { 'AndrewRadev/tagalong.vim' } -- auto change html tags
+    use { 'alvan/vim-closetag' }
+
     -- ruby
     use { 'tpope/vim-rails', ft = { 'ruby', 'eruby', 'slim', 'haml', 'coffee', 'javascript' } }
     use { 'tpope/vim-endwise', ft = { 'ruby', 'haml', 'eruby', 'slim' } }
+
+    -- debug
+    use { 'tweekmonster/startuptime.vim' }
 
     -- colors
     use { 'NLKNguyen/papercolor-theme' }

@@ -6,5 +6,71 @@
       "pp ${0}",
       "pp '=================================================='"
     ]
+  },
+  "Controller test": {
+    "prefix": ["ct"],
+    "body": [
+      "require 'test_helper'",
+      "",
+      "class Api::V1::${1:ControllerTest} < ActionController::TestCase",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "test aciton": {
+    "prefix": ["ta"],
+    "body": [
+      "test '${1:description}' do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "assert_response": {
+    "prefix": ["ar"],
+    "body": [
+      "assert_response ${0}"
+    ]
+  },
+  "controller": {
+    "prefix": ["cc"],
+    "body": [
+      "class ${1:Controller} < ${2:ApplicationController}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "Class": {
+    "prefix": ["cl"],
+    "body": [
+      "class ${1:Name}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "def": {
+    "prefix": ["df"],
+    "body": [
+      "def ${1:name}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "respond_with": {
+    "prefix": ["rw"],
+    "body": [
+      "respond_with(${0})"
+    ]
+  },
+  "assert_equal": {
+    "prefix": ["aeq"],
+    "body": [
+      "assert_equal ${0}"
+    ]
+  },
+  "require": {
+    "prefix": ["req"],
+    "body": [
+      "require '${0}'"
+    ]
   }
 }

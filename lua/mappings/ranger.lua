@@ -1,2 +1,2 @@
 map('n', '<C-n>', ':Ranger<cr>')
-map('n', '<F9>', ':RangerWorkingDirectory<cr>')
+map('n', '<C-S-n>', ':RangerWorkingDirectory<cr>')

@@ -1,4 +1,5 @@
-require 'lsp-config.completion'
+-- require 'lsp-config.completion'
+require 'lsp-config.nvim-compe'
 require 'lsp-config.diagnostic'
 require 'lsp-config.snippets'
 
@@ -27,7 +28,7 @@ lsp.handlers['textDocument/references']     = require('lsputil.locations').refer
 lsp.handlers['textDocument/typeDefinition'] = require('lsputil.locations').typeDefinition_handler
 
 local on_attach = function(client, bufnr)
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  -- vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   if client.resolved_capabilities.hover then
     bmap(bufnr, 'n', 'K',  ':Lspsaga hover_doc<cr>')

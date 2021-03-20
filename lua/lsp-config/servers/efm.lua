@@ -1,10 +1,10 @@
 return function(config, on_attach)
   local luaFormat = {
-    formatCommand = 'npx luafmt --stdin --indent-count 2',
+    formatCommand = 'npx luafmt --indent-count 2 --stdin',
     formatStdin = true
   }
 
-  local eslint = {
+  local eslint_d = {
     lintCommand        = 'eslint_d -f unix --stdin --stdin-filename ${INPUT}',
     lintStdin          = true,
     lintFormats        = { '%f:%l:%c: %m' },
@@ -15,10 +15,10 @@ return function(config, on_attach)
 
   local languages = {
     lua             = { luaFormat },
-    javascript      = { eslint },
-    typescript      = { eslint },
-    javascriptreact = { eslint },
-    typescriptreact = { eslint },
+    javascript      = { eslint_d },
+    typescript      = { eslint_d },
+    javascriptreact = { eslint_d },
+    typescriptreact = { eslint_d },
   }
 
   config.efm.setup {
@@ -42,6 +42,7 @@ return function(config, on_attach)
     },
     settings = {
       languages = languages,
+      lintDebounce = 500,
     },
     on_attach = on_attach
   }
