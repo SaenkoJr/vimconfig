@@ -9,17 +9,34 @@
 -- return map(files, "{'line': v:val, 'path': v:val}")
 -- endfunction
 
+vim.g.startify_session_sort = 1
 vim.g.startify_session_persistence = 1
-
 vim.g.startify_session_dir = '$HOME/.vim/sessions'
+
 vim.g.startify_fortune_use_unicode = 1
 vim.g.startify_change_to_dir = 0
 vim.g.startify_lists = {
   { type = 'dir',       header = { '   ---------------------  MRU Current Dir ---------------------' } },
--- { 'type': function('s:gitModified'),  'header': ['   ---------------------  GIT Modified ---------------------']},
--- { 'type': function('s:gitUntracked'), 'header': ['   ---------------------  GIT Untracked --------------------']},
   { type = 'files',     header = { '   ---------------------  MRU ---------------------' } },
   { type = 'sessions',  header = { '   ---------------------  Sessions ---------------------' } },
-  { type = 'bookmarks', header = { '   --------------------- Bookmarks ---------------------' } },
-  { type = 'commands',  header = { '   --------------------- Commands ---------------------' } },
+  { type = 'bookmarks', header = { '   ---------------------  Bookmarks ---------------------' } },
+  { type = 'commands',  header = { '   --------------------- גּ Commands ---------------------' } },
+-- { 'type': function('s:gitModified'),  'header': ['   ---------------------  GIT Modified ---------------------']},
+-- { 'type': function('s:gitUntracked'), 'header': ['   ---------------------  GIT Untracked --------------------']},
 }
+
+vim.g.startify_commands = {
+  { h = { "Check Vim health", ":checkhealth"  } },
+  { u = { "Update Plugin",    ":PackerUpdate" } },
+  { c = { "Clean Plugin",     ":PackerClean" } },
+  { s = { "Sync Plugin",      ":PackerSync" } },
+  { S = { "Start Time",       ":StartupTime" } },
+}
+
+vim.g.startify_bookmarks = {
+  { n = "~/.config/nvim/init.lua" },
+  { t = "~/.tmux.conf" },
+  { z = "~/.zshrc" },
+  { d = "~/dotfiles" },
+}
+
