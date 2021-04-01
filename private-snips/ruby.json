@@ -47,8 +47,16 @@
       "end"
     ]
   },
-  "def": {
+  "df": {
     "prefix": ["df"],
+    "body": [
+      "def ${1:name}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "def": {
+    "prefix": ["def"],
     "body": [
       "def ${1:name}",
       "\t${0}",
@@ -71,6 +79,22 @@
     "prefix": ["req"],
     "body": [
       "require '${0}'"
+    ]
+  },
+  "constructor": {
+    "prefix": ["init"],
+    "body": [
+      "def initialize",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "constructor with params": {
+    "prefix": ["initp"],
+    "body": [
+      "def initialize(${1})",
+      "\t${2} = $1 ${0}",
+      "end"
     ]
   }
 }
