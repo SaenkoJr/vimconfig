@@ -13,9 +13,6 @@ cmd [[ packadd packer.nvim ]]
 -- cmd [[ autocmd BufWritePost plugins.lua lua reload_config() ]]
 -- cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
 
--- cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua lua reload_config() ]]
--- cmd [[ autocmd BufWritePost **/nvim/lua/plugins/*.lua PackerCompile ]]
-
 return require('packer').startup(
 {
   function(use)
@@ -106,7 +103,7 @@ return require('packer').startup(
 
     -- ruby
     use { 'tpope/vim-rails', ft = { 'ruby', 'eruby', 'slim', 'haml', 'coffee', 'javascript' } }
-    use { 'tpope/vim-endwise', ft = { 'ruby', 'haml', 'eruby', 'slim' } }
+    use { 'tpope/vim-endwise' }
 
     -- debug
     use { 'tweekmonster/startuptime.vim' }

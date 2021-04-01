@@ -7,7 +7,7 @@ return function(config, on_attach)
         diagnostics = true
       },
     },
-    root_dir = config.util.root_pattern('Gemfile', '.git', 'package.json'),
+    -- root_dir = config.util.root_pattern('Gemfile', '.git', 'package.json'),
     on_attach = on_attach
   }
 end

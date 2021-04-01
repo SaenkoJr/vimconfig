@@ -367,13 +367,13 @@ vim.cmd [[command! -nargs=* -range -bang -complete=file TSUpdate all lua require
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
-vim.cmd [[au FileType slim ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "slim" }, _G.packer_plugins)]]
-vim.cmd [[au FileType haml ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "haml" }, _G.packer_plugins)]]
-vim.cmd [[au FileType coffee ++once lua require("packer.load")({'vim-rails'}, { ft = "coffee" }, _G.packer_plugins)]]
 vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-jdaddy'}, { ft = "json" }, _G.packer_plugins)]]
+vim.cmd [[au FileType eruby ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "eruby" }, _G.packer_plugins)]]
 vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "ruby" }, _G.packer_plugins)]]
 vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-rails'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType eruby ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "eruby" }, _G.packer_plugins)]]
+vim.cmd [[au FileType coffee ++once lua require("packer.load")({'vim-rails'}, { ft = "coffee" }, _G.packer_plugins)]]
+vim.cmd [[au FileType slim ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "slim" }, _G.packer_plugins)]]
+vim.cmd [[au FileType haml ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "haml" }, _G.packer_plugins)]]
 vim.cmd("augroup END")
 END
 

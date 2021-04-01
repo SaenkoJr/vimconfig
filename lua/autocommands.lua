@@ -4,13 +4,13 @@ api.nvim_exec([[ au TextYankPost * lua vim.highlight.on_yank { on_visual = false
 
 api.nvim_exec(
   [[
-    au BufReadPost *.rkt,*.rktl set filetype=racket
-    au filetype racket set lisp
-    au filetype racket set autoindent
+    au BufReadPost *.rkt,*.rktl setlocal filetype=racket
+    au filetype racket setlocal lisp
+    au filetype racket setlocal autoindent
 
     au BufNewFile,BufRead *.slim setlocal filetype=slim
-    au bufnewfile,bufread *.jsx set filetype=javascript.jsx
-    au bufnewfile,bufread *.tsx set filetype=typescript.tsx
+    au bufnewfile,bufread *.jsx setlocal filetype=javascript.jsx
+    au bufnewfile,bufread *.tsx setlocal filetype=typescript.tsx
   ]]
   , false
 )

@@ -5,9 +5,7 @@ require 'compe'.setup {
   autocomplete         = false;
   preselect            = 'disable';
   allow_prefix_unmatch = false;
-  -- throttle_time        = 40;
   source_timeout       = 200;
-  -- incomplete_delay     = 200;
   documentation        = true,
 
   source = {
@@ -16,7 +14,7 @@ require 'compe'.setup {
     vsnip      = { menu = ' [snippet]', priority = 1 };
     nvim_lsp   = { menu = ' [lsp]',     priority = 3 };
     nvim_lua   = { menu = ' [lua]' };
-    -- omni       = { menu = '𐂷 [omni]' };
+    omni       = { menu = '𐂷 [omni]' };
     treesitter = {
       menu = '𐂷 [treesitter]',
       ignored_filetypes = { 'yaml', 'yml' },
