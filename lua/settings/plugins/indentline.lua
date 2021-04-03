@@ -7,6 +7,7 @@ vim.g.indentLine_fileType     = {
   'yaml',
   'yml',
   'sass',
+  'ruby',
 }
 vim.g.indentLine_char         = '┆'
 vim.g.indentLine_conceallevel = 2
