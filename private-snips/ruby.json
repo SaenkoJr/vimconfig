@@ -96,5 +96,27 @@
       "\t${2} = $1 ${0}",
       "end"
     ]
+  },
+  "return": {
+    "prefix": ["ret"],
+    "body": [
+      "return ${0}"
+    ]
+  },
+  "do": {
+    "prefix": ["do"],
+    "body": [
+      "do",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "do |x|": {
+    "prefix": ["doa"],
+    "body": [
+      "do |${1}|",
+      "\t${0}",
+      "end"
+    ]
   }
 }
