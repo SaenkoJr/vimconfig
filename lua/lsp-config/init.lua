@@ -7,7 +7,7 @@ local lsp_config = require 'lspconfig'
 
 local lsp = vim.lsp
 local servers = {
-  bash = 'bashls',
+  -- bash = 'bashls',
   css  = 'cssls',
   html = 'html',
   js   = 'tsserver',
