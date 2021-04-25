@@ -46,6 +46,7 @@ vim.g.startify_lists = {
 
 vim.g.startify_commands = {
   { h = { "Check Vim health", ":checkhealth"  } },
+  { g = { "Git status",       ":G" } },
   { u = { "Update Plugin",    ":PackerUpdate" } },
   { c = { "Clean Plugin",     ":PackerClean" } },
   { s = { "Sync Plugin",      ":PackerSync" } },
