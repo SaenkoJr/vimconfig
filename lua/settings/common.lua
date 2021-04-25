@@ -61,8 +61,9 @@ opt('o', 'wildmenu', true)
 
 -- window
 opt('w', 'breakindent', true)
-opt('w', 'foldmethod', 'expr')
-opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
+-- opt('w', 'foldmethod', 'syntax')
+-- opt('w', 'foldmethod', 'expr')
+-- opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
 opt('w', 'foldnestmax', 10)
 opt('w', 'number', true)
 opt('w', 'relativenumber', true)

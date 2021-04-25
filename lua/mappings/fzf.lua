@@ -8,3 +8,4 @@ map('n', '<leader>ff', '<cmd>Files<cr>')
 map('n', '<leader>FF', '<cmd>Files ~<cr>')
 
 map('n', '<leader>ds', '<cmd>Telescope lsp_document_symbols<cr>')
+map('n', '<leader>lg', '<cmd>Telescope live_grep<cr>')

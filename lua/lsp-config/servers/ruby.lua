@@ -1,7 +1,7 @@
 return function(config, on_attach)
   config.solargraph.setup {
     -- cmd = { 'solargraph' },
-    filetypes = { 'eruby', 'ruby', 'haml', 'slim' },
+    -- filetypes = { 'ruby', 'haml', 'slim' },
     settings = {
       solargraph = {
         diagnostics = true

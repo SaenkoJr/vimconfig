@@ -93,7 +93,7 @@
     "prefix": ["initp"],
     "body": [
       "def initialize(${1})",
-      "\t${2} = $1 ${0}",
+      "\t${2} = $1",
       "end"
     ]
   },
@@ -117,6 +117,31 @@
       "do |${1}|",
       "\t${0}",
       "end"
+    ]
+  },
+  "if": {
+    "prefix": ["if"],
+    "body": [
+      "if ${1:condition}",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "if else": {
+    "prefix": ["ife"],
+    "body": [
+      "if ${1:condition}",
+      "\t${2}",
+      "else",
+      "\t${0}",
+      "end"
+    ]
+  },
+  "elsif": {
+    "prefix": ["eif"],
+    "body": [
+      "elsif ${1:condition}",
+      "\t${0}"
     ]
   }
 }

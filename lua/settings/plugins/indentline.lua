@@ -6,8 +6,14 @@ vim.g.indentLine_fileType     = {
   'html',
   'yaml',
   'yml',
+  'css',
   'sass',
+  'scss',
   'ruby',
+  'eruby',
+  'jsx',
+  'javascript.jsx',
+  'javascript.react',
 }
 vim.g.indentLine_char         = '┆'
 vim.g.indentLine_conceallevel = 2

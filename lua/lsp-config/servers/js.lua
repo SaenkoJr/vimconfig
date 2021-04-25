@@ -8,6 +8,7 @@ return function(config, on_attach)
       'typescript',
       'typescriptreact',
       'typescript.tsx',
+      '*.js.erb',
     },
     root_dir = config.util.root_pattern('package.json', 'tsconfig.json', 'jsconfig.json', '.git', vim.fn.getcwd()),
     on_attach = function(client, bufnr)

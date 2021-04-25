@@ -41,10 +41,13 @@ return require('packer').startup(
       }
     }
 
-    -- fzf
+    -- file managment
     use { 'junegunn/fzf', run = './install --bin' }
     use { 'junegunn/fzf.vim' }
     use { 'dyng/ctrlsf.vim' }
+    use { 'kyazdani42/nvim-web-devicons' }
+    use { 'kyazdani42/nvim-tree.lua' }
+    use { 'francoiscabrol/ranger.vim' }
 
     --  utils
     -- use { 'Shougo/echodoc.vim' }
@@ -55,7 +58,6 @@ return require('packer').startup(
     use { 'airblade/vim-rooter' }
     use { 'easymotion/vim-easymotion' }
     use { 'farmergreg/vim-lastplace' }
-    use { 'francoiscabrol/ranger.vim' } -- file manager
     use { 'glts/vim-textobj-comment' } -- dac dic yic cic
     use { 'jiangmiao/auto-pairs' }
     use { 'junegunn/limelight.vim' } -- highlight blocks
@@ -87,6 +89,8 @@ return require('packer').startup(
     use { 'voldikss/vim-floaterm' }
     use { 'wellle/targets.vim' }
     use { 'janko-m/vim-test' }
+    use { 'mattn/emmet-vim' }
+    use { 'andymass/vim-matchup' }
 
     -- airline
     use { 'edkolev/tmuxline.vim' }
@@ -102,8 +106,11 @@ return require('packer').startup(
     use { 'alvan/vim-closetag' }
 
     -- ruby
-    use { 'tpope/vim-rails', ft = { 'ruby', 'eruby', 'slim', 'haml', 'coffee', 'javascript' } }
+    use { 'tpope/vim-rails' }
     use { 'tpope/vim-endwise' }
+
+    -- js
+    use { 'maxmellon/vim-jsx-pretty' }
 
     -- debug
     use { 'tweekmonster/startuptime.vim' }

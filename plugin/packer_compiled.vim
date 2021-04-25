@@ -12,6 +12,41 @@ packadd packer.nvim
 try
 
 lua << END
+  local time
+  local profile_info
+  local should_profile = false
+  if should_profile then
+    local hrtime = vim.loop.hrtime
+    profile_info = {}
+    time = function(chunk, start)
+      if start then
+        profile_info[chunk] = hrtime()
+      else
+        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
+      end
+    end
+  else
+    time = function(chunk, start) end
+  end
+  
+local function save_profiles(threshold)
+  local sorted_times = {}
+  for chunk_name, time_taken in pairs(profile_info) do
+    sorted_times[#sorted_times + 1] = {chunk_name, time_taken}
+  end
+  table.sort(sorted_times, function(a, b) return a[2] > b[2] end)
+  local results = {}
+  for i, elem in ipairs(sorted_times) do
+    if not threshold or threshold and elem[2] > threshold then
+      results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
+    end
+  end
+
+  _G._packer = _G._packer or {}
+  _G._packer.profile_output = results
+end
+
+time("Luarocks path setup", true)
 local package_path_str = "/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -22,6 +57,8 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
+time("Luarocks path setup", false)
+time("try_loadstring definition", true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
@@ -31,6 +68,8 @@ local function try_loadstring(s, component, name)
   return result
 end
 
+time("try_loadstring definition", false)
+time("Defining packer_plugins", true)
 _G.packer_plugins = {
   ["asyncrun.vim"] = {
     loaded = true,
@@ -71,6 +110,10 @@ _G.packer_plugins = {
   ["easybuffer.vim"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/easybuffer.vim"
+  },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
   fzf = {
     loaded = true,
@@ -120,11 +163,19 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
   },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
   ["nvim-treesitter"] = {
     commands = { "TSUpdate all" },
     loaded = false,
     needs_bufread = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["obvious-resize"] = {
     loaded = true,
@@ -244,9 +295,8 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-easymotion"
   },
   ["vim-endwise"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/vim-endwise"
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-endwise"
   },
   ["vim-eunuch"] = {
     loaded = true,
@@ -277,9 +327,17 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/vim-jdaddy"
   },
+  ["vim-jsx-pretty"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
+  },
   ["vim-lastplace"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-lastplace"
+  },
+  ["vim-matchup"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-matchup"
   },
   ["vim-maximizer"] = {
     loaded = true,
@@ -294,9 +352,8 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-ragtag"
   },
   ["vim-rails"] = {
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/vim-rails"
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-rails"
   },
   ["vim-repeat"] = {
     loaded = true,
@@ -360,21 +417,22 @@ _G.packer_plugins = {
   }
 }
 
+time("Defining packer_plugins", false)
 
 -- Command lazy-loads
+time("Defining lazy-load commands", true)
 vim.cmd [[command! -nargs=* -range -bang -complete=file TSUpdate all lua require("packer.load")({'nvim-treesitter'}, { cmd = "TSUpdate all", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
+time("Defining lazy-load commands", false)
 
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
+time("Defining lazy-load filetype autocommands", true)
 vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-jdaddy'}, { ft = "json" }, _G.packer_plugins)]]
-vim.cmd [[au FileType eruby ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "eruby" }, _G.packer_plugins)]]
-vim.cmd [[au FileType ruby ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "ruby" }, _G.packer_plugins)]]
-vim.cmd [[au FileType javascript ++once lua require("packer.load")({'vim-rails'}, { ft = "javascript" }, _G.packer_plugins)]]
-vim.cmd [[au FileType coffee ++once lua require("packer.load")({'vim-rails'}, { ft = "coffee" }, _G.packer_plugins)]]
-vim.cmd [[au FileType slim ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "slim" }, _G.packer_plugins)]]
-vim.cmd [[au FileType haml ++once lua require("packer.load")({'vim-rails', 'vim-endwise'}, { ft = "haml" }, _G.packer_plugins)]]
+time("Defining lazy-load filetype autocommands", false)
 vim.cmd("augroup END")
+if should_profile then save_profiles() end
+
 END
 
 catch

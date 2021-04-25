@@ -14,7 +14,8 @@ require 'compe'.setup {
     vsnip      = { menu = ' [snippet]', priority = 1 };
     nvim_lsp   = { menu = ' [lsp]',     priority = 3 };
     nvim_lua   = { menu = ' [lua]' };
-    omni       = { menu = '𐂷 [omni]' };
+    -- omni    = { menu = '𐂷 [omni]' };
+    omni       = false;
     treesitter = {
       menu = '𐂷 [treesitter]',
       ignored_filetypes = { 'yaml', 'yml' },
@@ -24,9 +25,7 @@ require 'compe'.setup {
 
 map('i', '<C-space>', 'compe#complete()', { expr = true })
 map('i', '<C-y>', 'compe#confirm("<CR>")', { expr = true })
-map('i', '<C-e>', 'compe#close("<C-e>")', { expr = true })
-map('i', '<C-f>', 'compe#scroll({ "delta": +4 })', { expr = true })
-map('i', '<C-d>', 'compe#scroll({ "delta": -4 })', { expr = true })
+map('i', '<C-c>', 'compe#close("<C-c>")', { expr = true })
 
 protocol.CompletionItemKind = {
   "ﮜ [text]",

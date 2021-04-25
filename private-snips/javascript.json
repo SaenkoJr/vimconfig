@@ -3,6 +3,27 @@
     "prefix": "ir",
     "body": "import React from 'react';$0"
   },
+  "import ReactDOM": {
+    "prefix": ["ird"],
+    "body": [
+      "import ReactDOM from 'react-dom';"
+    ]
+  },
+  "mount react": {
+    "prefix": ["mr"],
+    "body": [
+      "document.addEventListener('${1:listener}', () => {",
+      "  const elem = document.getElementById('${2:id}');",
+      "  ReactDOM.render(${3:<Component />}, elem);",
+      "});${0}"
+    ]
+  },
+  "this.setState": {
+    "prefix": ["tss"],
+    "body": [
+      "this.setState(${0});"
+    ]
+  },
   "import module from 'module'": {
     "prefix": "im",
     "body": "import ${2:module} from '${1:module}';$0"
@@ -99,10 +120,10 @@
     "prefix": ["rfc"],
     "body": [
       "const ${1:name} = (${2:props}) => {",
-      "\t${0:body}",
-      "};",
-      "",
-      "export default $1;"
+        "\t${0:body}",
+        "};",
+        "",
+        "export default $1;"
     ],
     "description": "React func component"
   },
@@ -116,8 +137,8 @@
     "prefix": ["ue"],
     "body": [
       "useEffect(() => {",
-      "${1:effect}",
-      "}, ${2});${0}"
+        "${1:effect}",
+        "}, ${2});${0}"
     ]
   },
   "makeStyles": {
@@ -126,26 +147,26 @@
       "import { makeStyles } from '@material-ui/core/styles';",
       "",
       "const useStyles = makeStyles(() => ({",
-      "\t${0}",
-      "}));",
-      "",
-      "export default useStyles;"
+        "\t${0}",
+        "}));",
+        "",
+        "export default useStyles;"
     ]
   },
   "Class": {
     "prefix": ["cls"],
     "body": [
       "class ${1:Name} {",
-      "\t${0}",
-      "};"
+        "\t${0}",
+        "};"
     ]
   },
   "Class extends": {
     "prefix": ["clse"],
     "body": [
       "class ${1:Name} extends ${2:Parent} {",
-      "\t${0}",
-      "};"
+        "\t${0}",
+        "};"
     ]
   },
   "React component": {
@@ -153,15 +174,17 @@
     "body": [
       "class ${1:Name} extends React.Component {",
       "\t${0}",
-      "};"
+      "};",
+      "",
+      "export default $1;"
     ]
   },
   "constructor": {
     "prefix": ["ctor"],
     "body": [
       "constructor(${1:params}) {",
-      "\t${0}",
-      "}"
+        "\t${0}",
+        "}"
     ]
   }
 }
