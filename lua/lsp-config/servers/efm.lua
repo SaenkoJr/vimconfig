@@ -37,8 +37,8 @@ return function(config, on_attach)
       'lua',
       'css',
       'html',
-      'ruby',
-      'eruby',
+      -- 'ruby',
+      -- 'eruby',
     },
     settings = {
       languages = languages,

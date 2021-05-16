@@ -4,7 +4,7 @@ local fn, cmd = vim.fn, vim.cmd
 local install_path = fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
 
 if fn.empty(fn.glob(install_path)) > 0 then
-  execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
+  fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
   execute 'packadd packer.nvim'
 end
 
@@ -53,7 +53,7 @@ return require('packer').startup(
     -- use { 'Shougo/echodoc.vim' }
     use { 'AndrewRadev/splitjoin.vim' }
     use { 'RRethy/vim-hexokinase', run = 'make hexokinase' } -- display colours
-    use { 'RRethy/vim-illuminate' } -- highlights
+    -- use { 'RRethy/vim-illuminate' } -- highlights
     use { 'Yggdroot/indentLine' }
     use { 'airblade/vim-rooter' }
     use { 'easymotion/vim-easymotion' }
@@ -72,8 +72,8 @@ return require('packer').startup(
     use { 'ntpeters/vim-better-whitespace' }
     use { 'preservim/nerdcommenter' }
     use { 'rbgrouleff/bclose.vim' }
+    use { 'moll/vim-bbye' }
     use { 'rhysd/clever-f.vim' }
-    use { 'schickling/vim-bufonly' }
     use { 'skywind3000/asyncrun.vim' }
     use { 'szw/vim-maximizer' }
     use { 'talek/obvious-resize' }
@@ -85,6 +85,7 @@ return require('packer').startup(
     use { 'tpope/vim-speeddating' }
     use { 'tpope/vim-surround' }
     use { 'tpope/vim-unimpaired' }
+    use { 'schickling/vim-bufonly' }
     use { 'troydm/easybuffer.vim' }
     use { 'voldikss/vim-floaterm' }
     use { 'wellle/targets.vim' }
@@ -92,10 +93,15 @@ return require('packer').startup(
     use { 'mattn/emmet-vim' }
     use { 'andymass/vim-matchup' }
 
-    -- airline
+    -- statusline
     use { 'edkolev/tmuxline.vim' }
-    use { 'vim-airline/vim-airline' }
+    use { 'vim-airline/vim-airline', disable = true }
     use { 'vim-airline/vim-airline-themes' }
+    use {
+      'glepnir/galaxyline.nvim',
+      branch = 'main',
+      config = function() require('settings.plugins.galaxyline') end,
+    }
 
     -- git
     use { 'tpope/vim-fugitive' }
@@ -111,6 +117,13 @@ return require('packer').startup(
 
     -- js
     use { 'maxmellon/vim-jsx-pretty' }
+
+    -- markdown
+    use {
+      'iamcco/markdown-preview.nvim',
+      run = 'cd app && yarn install',
+      config = require('settings.plugins.markdown')
+    }
 
     -- debug
     use { 'tweekmonster/startuptime.vim' }
@@ -128,6 +141,7 @@ return require('packer').startup(
     use { 'rflban/homecolors.vim' }
     use { 'thenewvu/vim-colors-sketching' }
     use { 'wolverian/minimal' }
+    use { 'altercation/vim-colors-solarized', config = require('settings.plugins.solarized') }
   end,
   config = {
     display = {

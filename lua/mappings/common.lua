@@ -16,10 +16,10 @@ map('x', '<leader>p', '"0p')
 map('n', '=G', ':normal! gg=G``<CR>')
 
 map('n', '<localleader>q', ':quit<CR>')
-map('n', '<localleader>Q', ':bd<CR>')
+map('n', '<localleader>Q', ':Bdelete<CR>')
 map('n', '<localleader>w', ':write<CR>')
 map('n', '<localleader>W', ':wa<CR>')
-map('n', '<localleader>e', ':e<CR>')
+map('n', '<localleader>e', ':w<CR>:e<CR>')
 
 map('n', '<Leader>/', ':noh<CR>')
 
@@ -30,3 +30,5 @@ map('i', '<M-l>', '<Right>')
 
 map('i', '<C-k>', 'pumvisible() ? "\\<C-p>" : "\\<C-k>"', { expr = true })
 map('i', '<C-j>', 'pumvisible() ? "\\<C-n>" : "\\<C-j>"', { expr = true })
+
+map('t', '<c-o>', '<c-\\><c-n>')

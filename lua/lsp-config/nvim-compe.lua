@@ -10,16 +10,18 @@ require 'compe'.setup {
 
   source = {
     path       = { menu = ' [path]' };
-    buffer     = { menu = ' [buffer]',  priority = 2 },
+    -- buffer     = { menu = ' [buffer]',  priority = 2 },
+    buffer     = false,
     vsnip      = { menu = ' [snippet]', priority = 1 };
-    nvim_lsp   = { menu = ' [lsp]',     priority = 3 };
+    nvim_lsp   = { menu = ' [lsp]',     priority = 2 };
     nvim_lua   = { menu = ' [lua]' };
     -- omni    = { menu = '𐂷 [omni]' };
     omni       = false;
-    treesitter = {
-      menu = '𐂷 [treesitter]',
-      ignored_filetypes = { 'yaml', 'yml' },
-    };
+    -- treesitter = {
+    --   menu = '𐂷 [treesitter]',
+    --   ignored_filetypes = { 'yaml', 'yml' },
+    --   priority = 3
+    -- };
   }
 }
 

@@ -21,7 +21,7 @@ vim.cmd (
 
 vim.cmd 'filetype plugin indent on'
 vim.cmd 'syntax sync minlines=256'
-vim.cmd 'colorscheme paper'
+vim.cmd 'colorscheme pap'
 opt('o', 'background', 'light')
 
 -- global
@@ -43,13 +43,14 @@ opt('o', 'mouse', 'a')
 opt('o', 'regexpengine', 1)
 opt('o', 'scrolloff', 3)
 opt('o', 'shortmess', scopes.o.shortmess .. 'c')
-opt('o', 'showcmd', true)
+opt('o', 'showcmd', false)
+opt('o', 'showmode', false)
 opt('o', 'sidescrolloff', 10)
 opt('o', 'pumheight', 30)
 opt('o', 'smartcase', true)
 opt('o', 'smarttab', true)
 opt('o', 'splitbelow', true)
-opt('o', 'lazyredraw', true)
+opt('o', 'lazyredraw', false)
 opt('o', 'splitright', true)
 opt('o', 'swapfile', false)
 opt('o', 'termguicolors', true)
@@ -62,8 +63,8 @@ opt('o', 'wildmenu', true)
 -- window
 opt('w', 'breakindent', true)
 -- opt('w', 'foldmethod', 'syntax')
--- opt('w', 'foldmethod', 'expr')
--- opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
+opt('w', 'foldmethod', 'expr')
+opt('w', 'foldexpr', 'nvim_treesitter#foldexpr()')
 opt('w', 'foldnestmax', 10)
 opt('w', 'number', true)
 opt('w', 'relativenumber', true)

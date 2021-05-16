@@ -143,5 +143,13 @@
       "elsif ${1:condition}",
       "\t${0}"
     ]
+  },
+  "strong params": {
+    "prefix": ["sp"],
+    "body": [
+      "def ${1:name}",
+      "  params.require(${2:require}).permit(${0})",
+      "end"
+    ]
   }
 }

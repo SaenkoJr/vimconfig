@@ -1,4 +1,3 @@
-require 'settings.plugins.airline'
 require 'settings.plugins.asyncrun'
 require 'settings.plugins.auto-pairs'
 require 'settings.plugins.closetag'
