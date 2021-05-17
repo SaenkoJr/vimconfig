@@ -157,15 +157,27 @@ section.short_line_left[4] = {
 
 -------------- Right secion --------------
 section.right[1] = {
+  FileTypeName = {
+    provider = function ()
+      return vim.bo.filetype
+    end,
+    separator = " ",
+    -- condition = require("galaxyline.provider_vcs").check_git_workspace,
+    -- separator_highlight = {nord_colors.purple, nord_colors.bg},
+    highlight = {nord_colors.orange, nord_colors.line_bg, "bold"}
+  }
+}
+section.right[2] = {
   GitBranch = {
     provider = "GitBranch",
     icon = ' ',
+    separator = " ",
     condition = require("galaxyline.provider_vcs").check_git_workspace,
     separator_highlight = {nord_colors.purple, nord_colors.bg},
     highlight = {nord_colors.orange, nord_colors.line_bg, "bold"}
   }
 }
-section.right[2] = {
+section.right[3] = {
   FileEncode = {
     provider = function()
       local encode = vim.bo.fenc ~= '' and vim.bo.fenc or vim.o.enc
@@ -175,7 +187,7 @@ section.right[2] = {
     separator = " ",
   }
 }
-section.right[3] = {
+section.right[4] = {
   FileFormat = {
     provider = function()
       return vim.bo.fileformat
@@ -184,7 +196,7 @@ section.right[3] = {
     separator = " ",
   }
 }
-section.right[4] = {
+section.right[5] = {
   LineInfo = {
     provider = "LineColumn",
     separator = " ",

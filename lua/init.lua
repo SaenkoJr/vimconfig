@@ -1,6 +1,7 @@
-require 'globals'
 require 'settings'
-require 'autocommands'
+require 'globals'
 require 'mappings'
-require 'plugins'
+require 'autocommands'
 require 'lsp-config'
+
+-- vim.g['conjure#client#fennel#aniseed#aniseed_module_prefix'] = "aniseed."

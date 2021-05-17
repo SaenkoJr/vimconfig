@@ -40,8 +40,8 @@ vim.g.startify_lists = {
   { type = 'sessions',  header = { '   ---------------------  Sessions ---------------------' } },
   { type = 'bookmarks', header = { '   ---------------------  Bookmarks ---------------------' } },
   { type = 'commands',  header = { '   --------------------- גּ Commands ---------------------' } },
--- { 'type': function('s:gitModified'),  'header': ['   ---------------------  GIT Modified ---------------------']},
--- { 'type': function('s:gitUntracked'), 'header': ['   ---------------------  GIT Untracked --------------------']},
+  -- { 'type': function('s:gitModified'),  'header': ['   ---------------------  GIT Modified ---------------------']},
+  -- { 'type': function('s:gitUntracked'), 'header': ['   ---------------------  GIT Untracked --------------------']},
 }
 
 vim.g.startify_commands = {
@@ -59,4 +59,3 @@ vim.g.startify_bookmarks = {
   { z = "~/.zshrc" },
   { d = "~/dotfiles" },
 }
-

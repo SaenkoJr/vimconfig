@@ -71,6 +71,10 @@ end
 time("try_loadstring definition", false)
 time("Defining packer_plugins", true)
 _G.packer_plugins = {
+  aniseed = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/aniseed"
+  },
   ["asyncrun.vim"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/asyncrun.vim"
@@ -91,17 +95,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/clever-f.vim"
   },
-  ["completion-buffers"] = {
+  conjure = {
     loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/completion-buffers"
-  },
-  ["completion-nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/completion-nvim"
-  },
-  ["completion-treesitter"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/completion-treesitter"
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/conjure"
   },
   ["ctrlsf.vim"] = {
     loaded = true,
@@ -124,7 +120,6 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/fzf.vim"
   },
   ["galaxyline.nvim"] = {
-    config = { "\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 settings.plugins.galaxyline\frequire\0" },
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
   },
@@ -145,7 +140,6 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["markdown-preview.nvim"] = {
-    config = { "\27LJ\2\nc\0\0\2\0\5\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\4\0K\0\1\0\20mkdp_auto_close\25google-chrome-stable\17mkdp_browser\6g\bvim\0" },
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
   },
@@ -178,10 +172,8 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    commands = { "TSUpdate all" },
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -192,9 +184,8 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/obvious-resize"
   },
   ["packer.nvim"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["paper.vim"] = {
     loaded = true,
@@ -259,10 +250,6 @@ _G.packer_plugins = {
   undotree = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/undotree"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-airline-themes"
   },
   ["vim-bbye"] = {
     loaded = true,
@@ -433,20 +420,6 @@ time("Defining packer_plugins", false)
 time("Config for vim-colors-solarized", true)
 try_loadstring("\27LJ\2\nX\0\0\3\0\5\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0)\1\0\1=\1\4\0K\0\1\0\25solarized_termcolors\6g\18syntax enable\bcmd\bvim\0", "config", "vim-colors-solarized")
 time("Config for vim-colors-solarized", false)
--- Config for: galaxyline.nvim
-time("Config for galaxyline.nvim", true)
-try_loadstring("\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 settings.plugins.galaxyline\frequire\0", "config", "galaxyline.nvim")
-time("Config for galaxyline.nvim", false)
--- Config for: markdown-preview.nvim
-time("Config for markdown-preview.nvim", true)
-try_loadstring("\27LJ\2\nc\0\0\2\0\5\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\4\0K\0\1\0\20mkdp_auto_close\25google-chrome-stable\17mkdp_browser\6g\bvim\0", "config", "markdown-preview.nvim")
-time("Config for markdown-preview.nvim", false)
-
--- Command lazy-loads
-time("Defining lazy-load commands", true)
-vim.cmd [[command! -nargs=* -range -bang -complete=file TSUpdate all lua require("packer.load")({'nvim-treesitter'}, { cmd = "TSUpdate all", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-time("Defining lazy-load commands", false)
-
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
