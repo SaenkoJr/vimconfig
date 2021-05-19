@@ -4,13 +4,7 @@ exec ([[
   autocmd BufWritePost plugins.lua PackerCompile
 ]], false)
 
-
-require 'init'
-require 'lua-build.init'
-
-vim.g['aniseed#env'] = {
-  output = 'lua-build'
-}
+vim.cmd([[ let g:aniseed#env = v:true ]])
 
 return require('packer').startup(
 {
@@ -117,7 +111,8 @@ return require('packer').startup(
 
     -- clojure/fennel
     use { 'Olical/conjure' }
-    use { 'Olical/aniseed' }
+    use { 'Olical/aniseed', branch = 'develop' }
+    use { 'eraserhd/parinfer-rust', run = 'cargo build --release' }
 
     -- markdown
     use {
@@ -141,7 +136,7 @@ return require('packer').startup(
     use { 'rflban/homecolors.vim' }
     use { 'thenewvu/vim-colors-sketching' }
     use { 'wolverian/minimal' }
-    use { 'altercation/vim-colors-solarized', config = require('settings.plugins.solarized') }
+    use { 'altercation/vim-colors-solarized' }
   end,
   config = {
     display = {
@@ -150,4 +145,3 @@ return require('packer').startup(
   }
 }
 )
-

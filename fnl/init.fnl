@@ -1,4 +1,3 @@
 (module init
-  {autoload { a aniseed.core }})
-
-(a.println "Hello, World!")
+  {require {: settings
+            : mapping}})

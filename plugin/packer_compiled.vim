@@ -195,6 +195,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/papercolor-theme"
   },
+  ["parinfer-rust"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/parinfer-rust"
+  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/plenary.nvim"
@@ -276,7 +280,6 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-colors-sketching"
   },
   ["vim-colors-solarized"] = {
-    config = { "\27LJ\2\nX\0\0\3\0\5\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0)\1\0\1=\1\4\0K\0\1\0\25solarized_termcolors\6g\18syntax enable\bcmd\bvim\0" },
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-colors-solarized"
   },
@@ -416,10 +419,6 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
--- Config for: vim-colors-solarized
-time("Config for vim-colors-solarized", true)
-try_loadstring("\27LJ\2\nX\0\0\3\0\5\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0)\1\0\1=\1\4\0K\0\1\0\25solarized_termcolors\6g\18syntax enable\bcmd\bvim\0", "config", "vim-colors-solarized")
-time("Config for vim-colors-solarized", false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
