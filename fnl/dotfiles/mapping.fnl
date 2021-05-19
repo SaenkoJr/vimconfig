@@ -1,6 +1,6 @@
-(module mapping
+(module dotfiles.mapping
   {require {nvim aniseed.nvim
-            : utils}})
+            utils dotfiles.utils}})
 
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")
@@ -26,7 +26,7 @@
 (utils.noremap :n :<c-k> :<c-w>k)
 (utils.noremap :n :<c-l> :<c-w>l)
 
-(utils.nnoremap :/ :noh)
+(utils.noremap :n :<leader>/ ":noh<cr>")
 
 (nvim.set_keymap :n :<A-/> "<plug>NERDCommenterToggle" {:noremap false :silent true})
 (nvim.set_keymap :v :<A-/> "<plug>NERDCommenterToggle" {:noremap false :silent true})

@@ -1,7 +1,7 @@
-(module settings
+(module dotfiles.settings
   {require {nvim aniseed.nvim
             core aniseed.core
-            : utils}})
+            utils dotfiles.utils}})
 
 (utils.set_var :g :python_host_prog  "$HOME/.asdf/shims/python2")
 (utils.set_var :g :python3_host_prog "$HOME/.asdf/shims/python3")
@@ -10,8 +10,8 @@
 (utils.set_var :g :loaded_netrwPlugin 1)
 
 (utils.set_var :g :conjure#client#fennel#aniseed#aniseed_module_prefix "aniseed.")
-
-(utils.set_var :g :EasyMotion_do_mapping 0)
+(utils.set_var :g :conjure#eval#result_register "*")
+(utils.set_var :g :conjure#log#botright true)
 
 (utils.set_var :g :user_emmet_mode "i")
 (utils.set_var :g :user_emmet_leader_key "<c-e>")
@@ -27,6 +27,7 @@
 
 (def- global_opts
   {:background     :light
+   ;:termguicolors  true
    :clipboard      :unnamedplus
    :autoread       true
    :backup         false
@@ -78,7 +79,6 @@
    :smartindent true
    :synmaxcol   200
    :textwidth   100})
-
 
 (utils.set_options :global global_opts)
 (utils.set_options :window window_opts)
