@@ -75,45 +75,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/aniseed"
   },
-  ["asyncrun.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/asyncrun.vim"
-  },
-  ["auto-pairs"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/auto-pairs"
-  },
-  ["bclose.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/bclose.vim"
-  },
-  ["clever-f.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/clever-f.vim"
-  },
-  ["compe-conjure"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/compe-conjure"
-  },
   conjure = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/conjure"
-  },
-  ["ctrlsf.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/ctrlsf.vim"
-  },
-  ["easybuffer.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/easybuffer.vim"
-  },
-  ["echodoc.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/echodoc.vim"
-  },
-  ["emmet-vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
   fzf = {
     loaded = true,
@@ -123,55 +87,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/fzf.vim"
   },
-  ["galaxyline.nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/galaxyline.nvim"
-  },
-  indentLine = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/indentLine"
-  },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
-  },
-  ["markdown-preview.nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/markdown-preview.nvim"
-  },
   nerdcommenter = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nerdcommenter"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-compe"
-  },
-  ["nvim-lspconfig"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
-  },
-  ["nvim-lsputils"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
-  },
-  ["nvim-treesitter"] = {
-    commands = { "TSUpdate all" },
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
-  },
-  ["nvim-web-devicons"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
-  },
-  ["obvious-resize"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/obvious-resize"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -185,85 +103,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/parinfer-rust"
   },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/plenary.nvim"
-  },
-  popfix = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/popfix"
-  },
-  ["popup.nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/popup.nvim"
-  },
-  ["ranger.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/ranger.vim"
-  },
-  ["startuptime.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/startuptime.vim"
-  },
-  ["tagalong.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/tagalong.vim"
-  },
-  ["targets.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/targets.vim"
-  },
-  ["telescope-fzy-native.nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
-  },
-  ["telescope.nvim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["tmuxline.vim"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/tmuxline.vim"
-  },
-  ["vim-bbye"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-bbye"
-  },
-  ["vim-better-whitespace"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-better-whitespace"
-  },
-  ["vim-bufonly"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-bufonly"
-  },
-  ["vim-closetag"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-closetag"
-  },
-  ["vim-dispatch"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-dispatch"
-  },
   ["vim-easy-align"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-easy-align"
-  },
-  ["vim-easymotion"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-easymotion"
-  },
-  ["vim-endwise"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-endwise"
-  },
-  ["vim-eunuch"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-eunuch"
-  },
-  ["vim-floaterm"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-floaterm"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -273,119 +115,17 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
   },
-  ["vim-hexokinase"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-hexokinase"
-  },
-  ["vim-jdaddy"] = {
-    loaded = false,
-    needs_bufread = false,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/vim-jdaddy"
-  },
-  ["vim-jsx-pretty"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-jsx-pretty"
-  },
-  ["vim-lastplace"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-lastplace"
-  },
-  ["vim-matchup"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-matchup"
-  },
-  ["vim-maximizer"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-maximizer"
-  },
-  ["vim-move"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-move"
-  },
-  ["vim-ragtag"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-ragtag"
-  },
-  ["vim-rails"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-rails"
-  },
-  ["vim-repeat"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-repeat"
-  },
-  ["vim-rooter"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-rooter"
-  },
-  ["vim-sexp"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-sexp"
-  },
-  ["vim-speeddating"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-speeddating"
-  },
   ["vim-startify"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-startify"
   },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-surround"
-  },
-  ["vim-test"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-test"
-  },
-  ["vim-textobj-comment"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-comment"
-  },
-  ["vim-textobj-function"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-function"
-  },
-  ["vim-textobj-indent"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-indent"
-  },
-  ["vim-textobj-rubyblock"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-rubyblock"
-  },
-  ["vim-textobj-user"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-user"
-  },
   ["vim-unimpaired"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
-  },
-  ["vim-vsnip"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
   }
 }
 
 time("Defining packer_plugins", false)
-
--- Command lazy-loads
-time("Defining lazy-load commands", true)
-vim.cmd [[command! -nargs=* -range -bang -complete=file TSUpdate all lua require("packer.load")({'nvim-treesitter'}, { cmd = "TSUpdate all", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-time("Defining lazy-load commands", false)
-
-vim.cmd [[augroup packer_load_aucmds]]
-vim.cmd [[au!]]
-  -- Filetype lazy-loads
-time("Defining lazy-load filetype autocommands", true)
-vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-jdaddy'}, { ft = "json" }, _G.packer_plugins)]]
-time("Defining lazy-load filetype autocommands", false)
-vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 END

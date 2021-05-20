@@ -25,7 +25,7 @@
     (match mode
       :global (tset vim.o name value)
       :window (tset vim.wo name value)
-      :buffer (tset vim.bo name value))))
+      :buffer (tset nvim.bo name value))))
 
 (defn set_var [mode name value]
   "Set global or local vars

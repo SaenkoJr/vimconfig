@@ -21,20 +21,23 @@
   "html,css,scss,erb,eruby,html.erb,javascript.jsx,jsx"
   :EmmetInstall)
 
+(nvim.ex.autocmd
+  :BufReadPost
+  "*.fnl setlocal filetype=fennel")
+
 (nvim.ex.filetype "plugin indent on")
 (nvim.ex.syntax "sync minlines=256")
 (nvim.ex.colorscheme :PaperColor)
 
 (def- global_opts
   {:background     :light
-   ;:termguicolors  true
    :clipboard      :unnamedplus
    :autoread       true
    :backup         false
    :backspace      "indent,eol,start"
    :completeopt    "menuone,noselect"
    :encoding       "UTF-8"
-   :fillchars      "vert:|"
+   :fillchars      "stlnc:-,vert:|"
    :foldlevelstart 99
    :hidden         true
    :hlsearch       true
@@ -42,6 +45,8 @@
    :incsearch      true
    :joinspaces     false
    :mouse          :a
+   :ttyfast        true
+   :autowrite      true
    :regexpengine   1
    :scrolloff      3
    :shortmess      (.. nvim.o.shortmess "c")
@@ -59,8 +64,8 @@
    :ttyfast        true
    :updatetime     300
    :viewoptions    :options
-   :whichwrap      "b,<,>,[,],l,h"
-   :wildmenu       true})
+   :whichwrap      "b,<,>,[,],l,h"})
+   ;:wildmenu       true})
 
 (def- window_opts
   {:breakindent    true
@@ -72,9 +77,9 @@
    :wrap           false})
 
 (def- buffer_opts
-  {:tabstop     2
+  {:cindent     true
    :shiftwidth  2
-   :cindent     true
+   :tabstop     2
    :expandtab   true
    :smartindent true
    :synmaxcol   200
