@@ -47,7 +47,7 @@
    :mouse          :a
    :ttyfast        true
    :autowrite      true
-   :regexpengine   1
+   :regexpengine   0
    :scrolloff      3
    :shortmess      (.. nvim.o.shortmess "c")
    :showcmd        true
