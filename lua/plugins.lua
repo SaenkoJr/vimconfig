@@ -103,6 +103,8 @@ return require('packer').startup(
       config = function() require('settings.plugins.galaxyline') end,
     }
 
+    use { 'jpalardy/vim-slime' }
+
     -- git
     use { 'tpope/vim-fugitive' }
     use { 'airblade/vim-gitgutter' }
