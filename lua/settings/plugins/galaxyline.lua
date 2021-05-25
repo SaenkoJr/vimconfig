@@ -74,7 +74,10 @@ section.left[2] = {
         [""] = "VISUAL",
         v = "VISUAL",
         R = "REPLACE",
-        t = "TERMINAL"
+        t = "TERMINAL",
+        s = 'INSERT',
+        S = 'INSERT',
+        [""] = 'INSERT',
       }
 
       cmd("hi GalaxyViMode guifg=" .. mode_color[fn.mode()])

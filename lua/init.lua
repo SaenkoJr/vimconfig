@@ -1,6 +1,6 @@
 require 'globals'
-require 'settings'
-require 'autocommands'
 require 'mappings'
 require 'plugins'
+require 'settings'
+require 'autocommands'
 require 'lsp-config'
