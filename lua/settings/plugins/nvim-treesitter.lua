@@ -13,6 +13,7 @@ require'nvim-treesitter.configs'.setup {
     'supercollider'
   },
   highlight = {
-    enable = true
+    enable = true,
+    additional_vim_regex_highlighting = { ruby=true },
   },
 }

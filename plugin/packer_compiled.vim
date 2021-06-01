@@ -433,6 +433,10 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
+-- Config for: markdown-preview.nvim
+time("Config for markdown-preview.nvim", true)
+try_loadstring("\27LJ\2\nc\0\0\2\0\5\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\4\0K\0\1\0\20mkdp_auto_close\25google-chrome-stable\17mkdp_browser\6g\bvim\0", "config", "markdown-preview.nvim")
+time("Config for markdown-preview.nvim", false)
 -- Config for: vim-colors-solarized
 time("Config for vim-colors-solarized", true)
 try_loadstring("\27LJ\2\nX\0\0\3\0\5\0\t6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\3\0)\1\0\1=\1\4\0K\0\1\0\25solarized_termcolors\6g\18syntax enable\bcmd\bvim\0", "config", "vim-colors-solarized")
@@ -441,10 +445,6 @@ time("Config for vim-colors-solarized", false)
 time("Config for galaxyline.nvim", true)
 try_loadstring("\27LJ\2\n;\0\0\3\0\2\0\0046\0\0\0'\2\1\0B\0\2\1K\0\1\0 settings.plugins.galaxyline\frequire\0", "config", "galaxyline.nvim")
 time("Config for galaxyline.nvim", false)
--- Config for: markdown-preview.nvim
-time("Config for markdown-preview.nvim", true)
-try_loadstring("\27LJ\2\nc\0\0\2\0\5\0\t6\0\0\0009\0\1\0'\1\3\0=\1\2\0006\0\0\0009\0\1\0)\1\0\0=\1\4\0K\0\1\0\20mkdp_auto_close\25google-chrome-stable\17mkdp_browser\6g\bvim\0", "config", "markdown-preview.nvim")
-time("Config for markdown-preview.nvim", false)
 
 -- Command lazy-loads
 time("Defining lazy-load commands", true)
