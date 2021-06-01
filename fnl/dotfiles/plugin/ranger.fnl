@@ -1,5 +1,5 @@
 (module dotfiles.plugin.ranger
-  {require {utils dotfiles.utils}})
+  {require {utils dotfiles.util}})
 
 (utils.set_var :g :ranger_map_keys 0)
 (utils.set_var :g :ranger_replace_netrw 1)

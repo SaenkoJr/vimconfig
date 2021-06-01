@@ -1,6 +1,6 @@
 (module dotfiles.mapping
   {require {nvim aniseed.nvim
-            utils dotfiles.utils}})
+            utils dotfiles.util}})
 
 (set nvim.g.mapleader " ")
 (set nvim.g.maplocalleader ",")

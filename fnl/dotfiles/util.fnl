@@ -1,9 +1,10 @@
-(module dotfiles.utils
+(module dotfiles.util
   {require {nvim aniseed.nvim
             core aniseed.core}})
 
 (defn noremap [mode from to ?options]
   "Sets a mapping with {:noremap true :silent true}."
+  (print (.. from " " to))
   (nvim.set_keymap mode from to (core.merge
                                   {:noremap true :silent true}
                                   ?options)))

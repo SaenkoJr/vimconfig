@@ -1,15 +1,13 @@
-(module dotfiles.plugins
+(module dotfiles.plugin
   {require {nvim aniseed.nvim
             a aniseed.core
-            util dotfiles.utils
+            util dotfiles.util
             packer packer}})
 
 (defn safe-require-plugin-config [name]
   (let [(ok? val-or-err) (pcall require (.. :dotfiles.plugin. name))]
     (when (not ok?)
       (print (.. "dotfiles error: " val-or-err)))))
-
-(pcall require (.. :dotfiles.plugin. :ranger))
 
 (defn- use [...]
   "Iterates through the arguments as pairs and calls packer's use function for
@@ -44,12 +42,12 @@
   ;:nvim-treesitter/completion-treesitter {}
 
   ;; file managment
-  :junegunn/fzf {:mode :fzf :run "./install --bin"}
+  :junegunn/fzf {:mod :fzf}
   :junegunn/fzf.vim {}
   ;:dyng/ctrlsf.vim {}
   ;:kyazdani42/nvim-web-devicons {}
   ;:kyazdani42/nvim-tree.lua {}
-  :francoiscabrol/ranger.vim {:mode :ranger}
+  :francoiscabrol/ranger.vim {:mod :ranger}
 
   ;; telescope
   ;:nvim-telescope/telescope.nvim {:requires

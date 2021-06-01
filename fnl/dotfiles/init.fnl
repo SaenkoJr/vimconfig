@@ -1,5 +1,5 @@
 (module dotfiles.init)
 
 (require :dotfiles.mapping)
-(require :dotfiles.settings)
-(require :dotfiles.plugins)
+(require :dotfiles.plugin)
+(require :dotfiles.setting)
