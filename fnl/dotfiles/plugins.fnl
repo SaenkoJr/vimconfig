@@ -9,6 +9,8 @@
     (when (not ok?)
       (print (.. "dotfiles error: " val-or-err)))))
 
+(pcall require (.. :dotfiles.plugin. :ranger))
+
 (defn- use [...]
   "Iterates through the arguments as pairs and calls packer's use function for
   each of them. Works around Fennel not liking mixed associative and sequential
@@ -47,7 +49,7 @@
   ;:dyng/ctrlsf.vim {}
   ;:kyazdani42/nvim-web-devicons {}
   ;:kyazdani42/nvim-tree.lua {}
-  ;:francoiscabrol/ranger.vim {:mode :ranger}
+  :francoiscabrol/ranger.vim {:mode :ranger}
 
   ;; telescope
   ;:nvim-telescope/telescope.nvim {:requires
@@ -55,13 +57,13 @@
                                    ;:nvim-telescope/telescope-fzy-native.nvim]}
 
   ;; utils
-  ;:Shougo/echodoc.vim {}
-  ;:jiangmiao/auto-pairs {}
+  :Shougo/echodoc.vim {}
+  :jiangmiao/auto-pairs {}
   ; :RRethy/vim-hexokinase {:run "make hexokinase"}
   ;:easymotion/vim-easymotion {:mod :easymotion}
   ;:Yggdroot/indentLine {:mod :indentline}
-  ;:airblade/vim-rooter {}
-  ;:farmergreg/vim-lastplace {}
+  :airblade/vim-rooter {}
+  :farmergreg/vim-lastplace {}
   :junegunn/vim-easy-align {}
   ;;:junegunn/limelight.vim {}
   ;:glts/vim-textobj-comment {}
@@ -74,22 +76,22 @@
   ;;:mbbill/undotree {}
   :mhinz/vim-startify {}
   :preservim/nerdcommenter {}
-  ;:rbgrouleff/bclose.vim {}
-  ;:moll/vim-bbye {}
+  :rbgrouleff/bclose.vim {}
+  :moll/vim-bbye {}
   ;:rhysd/clever-f.vim {}
   ;:skywind3000/asyncrun.vim {}
   ;:szw/vim-maximizer {}
   ;:talek/obvious-resize {}
-  ;:tpope/vim-dispatch {}
-  ;:tpope/vim-eunuch {}
-  ;:tpope/vim-jdaddy {:ft :json}
-  ;:tpope/vim-ragtag {}
-  ;:tpope/vim-repeat {}
-  ;:tpope/vim-speeddating {}
-  ;:tpope/vim-surround {}
+  :tpope/vim-dispatch {}
+  :tpope/vim-eunuch {}
+  :tpope/vim-jdaddy {:ft :json}
+  :tpope/vim-ragtag {}
+  :tpope/vim-repeat {}
+  :tpope/vim-speeddating {}
+  :tpope/vim-surround {}
   :tpope/vim-unimpaired {}
-  ;:schickling/vim-bufonly {}
-  ;:troydm/easybuffer.vim {}
+  :schickling/vim-bufonly {}
+  :troydm/easybuffer.vim {}
   ;:voldikss/vim-floaterm {}
   ;:wellle/targets.vim {}
   ;:janko-m/vim-test {}

@@ -75,9 +75,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/aniseed"
   },
+  ["auto-pairs"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/auto-pairs"
+  },
+  ["bclose.vim"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/bclose.vim"
+  },
   conjure = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/conjure"
+  },
+  ["easybuffer.vim"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/easybuffer.vim"
+  },
+  ["echodoc.vim"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/echodoc.vim"
   },
   fzf = {
     loaded = true,
@@ -103,9 +119,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/parinfer-rust"
   },
+  ["ranger.vim"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/ranger.vim"
+  },
+  ["vim-bbye"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-bbye"
+  },
+  ["vim-bufonly"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-bufonly"
+  },
+  ["vim-dispatch"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-dispatch"
+  },
   ["vim-easy-align"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-easy-align"
+  },
+  ["vim-eunuch"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-eunuch"
   },
   ["vim-fugitive"] = {
     loaded = true,
@@ -115,9 +151,38 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
   },
+  ["vim-jdaddy"] = {
+    loaded = false,
+    needs_bufread = false,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/vim-jdaddy"
+  },
+  ["vim-lastplace"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-lastplace"
+  },
+  ["vim-ragtag"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-ragtag"
+  },
+  ["vim-repeat"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-repeat"
+  },
+  ["vim-rooter"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-rooter"
+  },
+  ["vim-speeddating"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-speeddating"
+  },
   ["vim-startify"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-startify"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-surround"
   },
   ["vim-unimpaired"] = {
     loaded = true,
@@ -126,6 +191,13 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time("Defining lazy-load filetype autocommands", true)
+vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-jdaddy'}, { ft = "json" }, _G.packer_plugins)]]
+time("Defining lazy-load filetype autocommands", false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 END
