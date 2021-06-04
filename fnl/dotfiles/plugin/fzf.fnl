@@ -1,16 +1,24 @@
 (module dotfiles.plugin.fzf
-  {require {util dotfiles.util}})
+  {require {nvim aniseed.nvim
+            util dotfiles.util}})
 
-;(nvim.ex.command_
-  ;"-bang -nargs=* Rg call fzf#vim#grep('"
-  ;"rg --column --line-number --no-heading --color=always --fixed-strings --smart-case --hidden --follow -g '!yarn.lock' -g '!.git' -g '!node_modules' -- "
-  ;"'.shellescape(<q-args>), 1, <bang>0 ? fzf#vim#with_preview('up:65%') : fzf#vim#with_preview('right:50%:hidden', '?'), <bang>0)")
+(local rg_opts
+  (.. "rg --column --line-number --no-heading --color=always "
+      "--fixed-strings --smart-case --hidden --follow "
+      "-g \"!yarn.lock\" -g \"!.git\" -g \"!node_modules\" -- "))
+
+(nvim.ex.command_
+  (.. "-bang -nargs=* Rg call fzf#vim#grep(\""
+      rg_opts
+      "\".shellescape(<q-args>), 1,"
+      "<bang>0 ? fzf#vim#with_preview(\"up:65%\") : fzf#vim#with_preview(\"right:50%:hidden\", \"?\"), "
+      "<bang>0)"))
 
 ;(utils.noremap :n :<leader>ff "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files <cr>")
 (util.noremap :n :<leader>fb "<cmd>Telescope buffers<cr>")
 
 (util.noremap :n :<leader>fn "<cmd>Rg <c-r><c-w><cr>")
-(util.noremap :n :<leader>fN "<cmd>Telescope grep_string<cr>")
+(util.noremap :n :<leader>FN "<cmd>Telescope grep_string<cr>")
 
 (util.noremap :n :<leader>ff "<cmd>Files<cr>")
 (util.noremap :n :<leader>FF "<cmd>Files ~<cr>")

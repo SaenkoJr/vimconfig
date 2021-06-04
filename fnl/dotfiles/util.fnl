@@ -4,10 +4,20 @@
 
 (defn noremap [mode from to ?options]
   "Sets a mapping with {:noremap true :silent true}."
-  (print (.. from " " to))
   (nvim.set_keymap mode from to (core.merge
                                   {:noremap true :silent true}
                                   ?options)))
+
+(defn bnoremap [bufnr mode from to ?options]
+  (vim.api.nvim_buf_set_keymap bufnr mode from to (core.merge
+                                                    {:noremap true :silent true}
+                                                    ?options)))
+
+(defn inoremap [from to ?options]
+  "Sets a insert mapping with {:noremap true :silent true} by default."
+  (nvim.set_keymap :i from to (core.merge
+                                {:noremap true :silent true}
+                                ?options)))
 
 (defn nnoremap [from to]
   (nvim.set_keymap
@@ -19,23 +29,23 @@
 (defn set_options [mode options]
   "Set global or local options
   Modes:
-    - :global
-    - :window
-    - :buffer"
+  - :global
+  - :window
+  - :buffer"
   (each [name value (pairs options)]
     (match mode
       :global (tset vim.o name value)
       :window (tset vim.wo name value)
-      :buffer (tset nvim.bo name value))))
+      :buffer (nvim.set_option name value))))
 
-(defn set_var [mode name value]
+(defn set-var [mode name value]
   "Set global or local vars
   Modes:
-    - :g
-    - :w
-    - :b
-    - :t
-    - :v"
+  - :g
+  - :w
+  - :b
+  - :t
+  - :v"
   (match mode
     :g (tset nvim.g name value)
     :v (tset nvim.v name value)

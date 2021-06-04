@@ -1,0 +1,21 @@
+{
+  "module": {
+    "prefix": ["md"],
+    "body": [
+      "(module ${0})"
+    ]
+  },
+  "require": {
+    "prefix": ["req"],
+    "body": [
+      "{require {${1:name} ${0}}}"
+    ]
+  },
+  "require utils": {
+    "prefix": ["mdu"],
+    "body": [
+      "(module dotfiles.plugin.${0}",
+      "  {require {util dotfiles.util}})"
+    ]
+  }
+}

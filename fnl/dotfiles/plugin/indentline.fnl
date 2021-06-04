@@ -1,11 +1,11 @@
 (module dotfiles.plugin.indentline
-  {require {utils dotfiles.utils}})
+  {require {util dotfiles.util}})
 
-(utils.set_var :g :indentline_fileType [:pug :slim :slime :html.slim
-                                        :html :yaml :yml :css :sass
-                                        :scss :ruby :eruby :jsx
-                                        :javascript.jsx :javascript.react])
+(util.set-var :g :indentLine_fileType [:pug :slim :slime :html.slim
+                                       :html :yaml :yml :css :sass
+                                       :scss :ruby :eruby :jsx
+                                       :javascript.jsx :javascript.react])
 
-(utils.set_var :g :indentLine_char "┆")
-(utils.set_var :g :indentLine_conceallevel 2)
-(utils.set_var :g :vim_json_syntax_conceal 0)
+(util.set-var :g :indentLine_char "┆")
+(util.set-var :g :indentLine_conceallevel 2)
+(util.set-var :g :vim_json_syntax_conceal 0)

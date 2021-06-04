@@ -1,8 +1,16 @@
-;(module dotfiles.plugin.treesitter
-  ;{require {utils dotfiles.utils}})
+(module dotfiles.plugin.treesitter
+  {require {nvim aniseed.nvim
+            utils dotfiles.util}})
 
-;(utils.set_var :g :ranger_map_keys 0)
-;(utils.set_var :g :ranger_replace_netrw 1)
+(nvim.ex.packadd_ :nvim-treesitter)
 
-;(utils.noremap :n :<c-n> ":Ranger<cr>")
-;(utils.noremap :n :<F12> ":RangerWorkingDirectory<cr>")
+(def- config {:ensure_installed :maintained
+              :ignore_install [:nix :erlang :devicetree
+                               :gdscript :ocamllex :ledger
+                               :supercollider]
+              :highlight {:enable true}})
+
+(vim.schedule
+  (fn []
+    (def- treesitter (require "nvim-treesitter.configs"))
+    (treesitter.setup config)))

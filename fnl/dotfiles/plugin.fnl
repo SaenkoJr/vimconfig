@@ -27,159 +27,123 @@
   :wbthomason/packer.nvim {}
 
   ;; lsp
-  ;:RishabhRD/nvim-lsputils {:requires :RishabhRD/popfix}
-  ;:glepnir/lspsaga.nvim {}
-  ;:hrsh7th/vim-vsnip {:requires :hrsh7th/vim-vsnip-integ}
-  ;:neovim/nvim-lspconfig {}
-  ;:nvim-treesitter/nvim-treesitter {:mod :treesitter :cmd "TSUpdate all"}
+  :RishabhRD/nvim-lsputils {:mod :lsp-utils :requires :RishabhRD/popfix}
+  :glepnir/lspsaga.nvim {:mod :lsp-saga}
+  :hrsh7th/vim-vsnip {:requires :hrsh7th/vim-vsnip-integ}
+  :neovim/nvim-lspconfig {}
+  :nvim-treesitter/nvim-treesitter {:mod :treesitter :cmd "TSUpdate all"}
 
   ;; completion
-  ; :hrsh7th/nvim-compe {}
-  ; :tami5/compe-conjure {}
-
-  ;:nvim-lua/completion-nvim {}
-  ;:steelsojka/completion-buffers {}
-  ;:nvim-treesitter/completion-treesitter {}
+  :hrsh7th/nvim-compe {:mod :compe}
+  :tami5/compe-conjure {}
 
   ;; file managment
   :junegunn/fzf {:mod :fzf}
   :junegunn/fzf.vim {}
-  ;:dyng/ctrlsf.vim {}
-  ;:kyazdani42/nvim-web-devicons {}
-  ;:kyazdani42/nvim-tree.lua {}
+  :dyng/ctrlsf.vim {:mod :ctrlsf}
+  :kyazdani42/nvim-web-devicons {}
+  :kyazdani42/nvim-tree.lua {:mod :nvim-tree}
   :francoiscabrol/ranger.vim {:mod :ranger}
 
   ;; telescope
-  ;:nvim-telescope/telescope.nvim {:requires
-                                  ;[:nvim-lua/popup.nvim :nvim-lua/plenary.nvim
-                                   ;:nvim-telescope/telescope-fzy-native.nvim]}
+  :nvim-telescope/telescope.nvim {:mod :telescope
+                                  :requires [:nvim-lua/popup.nvim
+                                             :nvim-lua/plenary.nvim
+                                             :nvim-telescope/telescope-fzy-native.nvim]}
 
   ;; utils
   :Shougo/echodoc.vim {}
-  :jiangmiao/auto-pairs {}
+  :jiangmiao/auto-pairs {:mod :auto-pairs}
   ; :RRethy/vim-hexokinase {:run "make hexokinase"}
-  ;:easymotion/vim-easymotion {:mod :easymotion}
-  ;:Yggdroot/indentLine {:mod :indentline}
-  :airblade/vim-rooter {}
+  :easymotion/vim-easymotion {:mod :easymotion}
+  :Yggdroot/indentLine {:mod :indentline}
+  :airblade/vim-rooter {:mod :rooter}
   :farmergreg/vim-lastplace {}
-  :junegunn/vim-easy-align {}
-  ;;:junegunn/limelight.vim {}
-  ;:glts/vim-textobj-comment {}
-  ;:kana/vim-textobj-function {}
-  ;:kana/vim-textobj-indent {}
-  ;:kana/vim-textobj-user {}
-  ;:nelstrom/vim-textobj-rubyblock {}
-  ;:ntpeters/vim-better-whitespace {}
-  ;:matze/vim-move {}
+  :junegunn/vim-easy-align {:mod :easyalign}
+  :junegunn/limelight.vim {:mod :limelight}
+  :glts/vim-textobj-comment {}
+  :kana/vim-textobj-function {}
+  :kana/vim-textobj-indent {}
+  :kana/vim-textobj-user {}
+  :nelstrom/vim-textobj-rubyblock {}
+  :ntpeters/vim-better-whitespace {:mod :better-whitespace}
+  :matze/vim-move {}
+  :AndrewRadev/splitjoin.vim {}
   ;;:mbbill/undotree {}
-  :mhinz/vim-startify {}
-  :preservim/nerdcommenter {}
+  :mhinz/vim-startify {:mod :startify}
+  :preservim/nerdcommenter {:mod :nerdcommenter}
   :rbgrouleff/bclose.vim {}
   :moll/vim-bbye {}
-  ;:rhysd/clever-f.vim {}
-  ;:skywind3000/asyncrun.vim {}
-  ;:szw/vim-maximizer {}
-  ;:talek/obvious-resize {}
+  :rhysd/clever-f.vim {:mod :clever-f}
+  :skywind3000/asyncrun.vim {:mod :asyncrun}
+  :szw/vim-maximizer {}
+  :talek/obvious-resize {:mod :obvious-resize}
   :tpope/vim-dispatch {}
   :tpope/vim-eunuch {}
   :tpope/vim-jdaddy {:ft :json}
-  :tpope/vim-ragtag {}
+  :tpope/vim-ragtag {:mod :ragtag}
   :tpope/vim-repeat {}
   :tpope/vim-speeddating {}
-  :tpope/vim-surround {}
+  :tpope/vim-surround {:mod :surround}
   :tpope/vim-unimpaired {}
+  ; :tpope/vim-sleuth {}
+  :tpope/vim-dotenv {:mod :vim-dotenv}
   :schickling/vim-bufonly {}
   :troydm/easybuffer.vim {}
-  ;:voldikss/vim-floaterm {}
-  ;:wellle/targets.vim {}
-  ;:janko-m/vim-test {}
-  ;:mattn/emmet-vim {}
-  ;:andymass/vim-matchup {}
+  :voldikss/vim-floaterm {:mod :floaterm}
+  :wellle/targets.vim {}
+  :janko-m/vim-test {:mod :test}
+  :mattn/emmet-vim {:mod :emmet}
+  :andymass/vim-matchup {:mod :matchup}
+
+  ;; database
+  :tpope/vim-dadbod {:mod :database}
+  :kristijanhusak/vim-dadbod-ui {:requires [:kristijanhusak/vim-dadbod-completion]}
 
   ; statusline
   ;:edkolev/tmuxline.vim {}
-  ;:glepnir/galaxyline.nvim {:branch :main}
+  :glepnir/galaxyline.nvim {:mod :galaxyline :branch :main}
 
   ; git
-  :tpope/vim-fugitive {}
+  :tpope/vim-fugitive {:mod :git}
   :airblade/vim-gitgutter {}
 
   ; html
-  ;:AndrewRadev/tagalong.vim {}
-  ;:alvan/vim-closetag {}
+  :AndrewRadev/tagalong.vim {:mod :tagalong}
+  :alvan/vim-closetag {:mod :closetag}
 
   ;; ruby
-  ;:tpope/vim-rails {}
-  ;:tpope/vim-endwise {}
+  :tpope/vim-rails {}
+  :tpope/vim-endwise {}
 
   ;; js
-  ;:maxmellon/vim-jsx-pretty {}
+  :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}
 
-  ;;; clojure / fennel
+  ;; clojure / fennel
   :Olical/aniseed {:branch :develop}
-  :Olical/conjure {:branch :develop}
+  :Olical/conjure {:mod :conjure :branch :develop}
   :eraserhd/parinfer-rust {:run "cargo build --release"}
+  :wlangstroth/vim-racket {}
   ;:guns/vim-sexp {}
 
   ;; markdown
-  ;:iamcco/markdown-preview.nvim {:run "cd app && yarn install"}
+  :iamcco/markdown-preview.nvim {:mod :markdown :run "cd app && yarn install"}
 
   ;; debug
-  ;:tweekmonster/startuptime.vim {}
+  :tweekmonster/startuptime.vim {}
 
-  ;;; colours
-  :NLKNguyen/papercolor-theme {})
-
-  ;; --use { 'NLKNguyen/papercolor-theme' }
-  ;; --use { 'arcticicestudio/nord-vim' }
-  ;; --use { 'ayu-theme/ayu-vim' }
-  ;; --use { 'casperstorm/sort-hvid.vim' }
-  ;; --use { 'equt/paper.vim' }
-  ;; --use { 'lifepillar/vim-colortemplate' }
-  ;; --use { 'logico/typewriter-vim' }
-  ;; --use { 'mikker/vim-colors-pap' }
-  ;; --use { 'pgdouyon/vim-yin-yang' }
-  ;; --use { 'rflban/homecolors.vim' }
-  ;; --use { 'thenewvu/vim-colors-sketching' }
-  ;; --use { 'wolverian/minimal' }
-  ;; --use { 'altercation/vim-colors-solarized' }
-  ;:HerringtonDarkholme/yats.vim {}
-  ;:LnL7/vim-nix {}
-  ;:Olical/AnsiEsc {}
-  ;:Olical/nvim-local-fennel {}
-  ;:Olical/vim-enmasse {}
-  ;:PeterRincker/vim-argumentative {}
-  ;:airblade/vim-gitgutter {}
-  ;:clojure-vim/clojure.vim {}
-  ;:clojure-vim/vim-jack-in {}
-  ;:dag/vim-fish {}
-  ;:hashivim/vim-terraform {}
-  ;:hrsh7th/nvim-compe {:mod :compe}
-  ;:hylang/vim-hy {}
-  ;:itchyny/lightline.vim {:mod :lightline}
-  ;:janet-lang/janet.vim {}
-  ;:lambdalisue/suda.vim {}
-  ;:liuchengxu/vim-better-default {:mod :better-default}
-  ;:maxmellon/vim-jsx-pretty {}
-  ;:mbbill/undotree {:mod :undotree}
-  ;:norcalli/nvim-colorizer.lua {:mod :colorizer}
-  ;:pangloss/vim-javascript {}
-  ;:prettier/vim-prettier {:ft :javascript}
-  ;:radenling/vim-dispatch-neovim {}
-  ;:srcery-colors/srcery-vim {:mod :srcery}
-  ;:tpope/vim-abolish {}
-  ;:tpope/vim-commentary {}
-  ;:tpope/vim-dadbod {}
-  ;:tpope/vim-dispatch {}
-  ;:tpope/vim-eunuch {}
-  ;:tpope/vim-fugitive {:mod :fugitive}
-  ;:tpope/vim-repeat {}
-  ;:tpope/vim-sexp-mappings-for-regular-people {}
-  ;:tpope/vim-sleuth {}
-  ;:tpope/vim-surround {}
-  ;:tpope/vim-unimpaired {}
-  ;:tpope/vim-vinegar {}
-  ;:tweekmonster/startuptime.vim {}
-  ;:w0rp/ale {:mod :ale}
-  ;:wbthomason/packer.nvim {}
-  ;:wlangstroth/vim-racket {}
+  ;; colours
+  :NLKNguyen/papercolor-theme {}
+  :arcticicestudio/nord-vim {}
+  :ayu-theme/ayu-vim {}
+  :casperstorm/sort-hvid.vim {}
+  :equt/paper.vim {}
+  :lifepillar/vim-colortemplate {}
+  :logico/typewriter-vim {}
+  :mikker/vim-colors-pap {}
+  :pgdouyon/vim-yin-yang {}
+  :rflban/homecolors.vim {}
+  :thenewvu/vim-colors-sketching {}
+  :wolverian/minimal {}
+  :altercation/vim-colors-solarized {}
+  :rakr/vim-two-firewatch {})

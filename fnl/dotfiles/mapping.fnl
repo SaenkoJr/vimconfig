@@ -8,8 +8,6 @@
 (utils.noremap :i :jj :<esc>)
 (utils.noremap :t :<c-o> :<c-\><c-n>)
 
-(utils.noremap :n :<c-n> ":Ranger<cr>")
-
 (utils.noremap :n :<localleader>q ":q<cr>")
 (utils.noremap :n :<localleader>Q ":Bdelete<cr>")
 (utils.noremap :n :<localleader>w ":w!<cr>")
@@ -26,7 +24,6 @@
 (utils.noremap :n :<c-k> :<c-w>k)
 (utils.noremap :n :<c-l> :<c-w>l)
 
-(utils.noremap :n :<leader>/ ":noh<cr>")
+(utils.noremap :n :=G ":normal! gg=G``<CR>")
 
-(nvim.set_keymap :n :<A-/> "<plug>NERDCommenterToggle" {:noremap false :silent true})
-(nvim.set_keymap :v :<A-/> "<plug>NERDCommenterToggle" {:noremap false :silent true})
+(utils.noremap :n :<leader>/ ":noh<cr>")

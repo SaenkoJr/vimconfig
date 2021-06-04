@@ -37,3 +37,7 @@ install-efm-lsp:
 install-solargraph-lsp:
 	gem install solargraph
 	asdf reshim ruby
+
+install-racket:
+	asdf plugin-add racket
+	asdf install racket latest
