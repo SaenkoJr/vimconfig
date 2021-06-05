@@ -16,7 +16,7 @@
 (utils.set-var :g :ayucolor :dark)
 
 (def- global_opts
-  {:background     :light
+  {;:background     :light
    :termguicolors  true
    :clipboard      :unnamedplus
    :backup         false

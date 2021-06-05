@@ -4,7 +4,8 @@
 (util.set-var :g :indentLine_fileType [:pug :slim :slime :html.slim
                                        :html :yaml :yml :css :sass
                                        :scss :ruby :eruby :jsx
-                                       :javascript.jsx :javascript.react])
+                                       :javascript.jsx :javascript.react
+                                       :NvimTree])
 
 (util.set-var :g :indentLine_char "┆")
 (util.set-var :g :indentLine_conceallevel 2)
