@@ -31,7 +31,7 @@
   :glepnir/lspsaga.nvim {:mod :lsp-saga}
   :hrsh7th/vim-vsnip {:requires :hrsh7th/vim-vsnip-integ}
   :neovim/nvim-lspconfig {}
-  :nvim-treesitter/nvim-treesitter {:mod :treesitter :cmd "TSUpdate all"}
+  :nvim-treesitter/nvim-treesitter {:mod :treesitter :run "TSUpdate"}
 
   ;; completion
   :hrsh7th/nvim-compe {:mod :compe}

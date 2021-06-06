@@ -184,10 +184,8 @@ _G.packer_plugins = {
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
-    commands = { "TSUpdate all" },
-    loaded = false,
-    needs_bufread = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/nvim-treesitter"
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -457,12 +455,6 @@ _G.packer_plugins = {
 }
 
 time("Defining packer_plugins", false)
-
--- Command lazy-loads
-time("Defining lazy-load commands", true)
-vim.cmd [[command! -nargs=* -range -bang -complete=file TSUpdate all lua require("packer.load")({'nvim-treesitter'}, { cmd = "TSUpdate all", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args> }, _G.packer_plugins)]]
-time("Defining lazy-load commands", false)
-
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
