@@ -95,6 +95,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/clever-f.vim"
   },
+  ["clojure.vim"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/clojure.vim"
+  },
   ["compe-conjure"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/compe-conjure"

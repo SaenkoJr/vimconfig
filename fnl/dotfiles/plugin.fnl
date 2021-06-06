@@ -125,6 +125,7 @@
   :eraserhd/parinfer-rust {:run "cargo build --release"}
   :wlangstroth/vim-racket {}
   ; :guns/vim-sexp {}
+  :clojure-vim/clojure.vim {}
   :tpope/vim-salve {}
   :tpope/vim-classpath {}
   :clojure-vim/vim-jack-in {:mod :vim-jack-in}
