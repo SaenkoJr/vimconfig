@@ -115,6 +115,7 @@
   ;; ruby
   :tpope/vim-rails {}
   :tpope/vim-endwise {}
+  :slim-template/vim-slim {}
 
   ;; js
   :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}
