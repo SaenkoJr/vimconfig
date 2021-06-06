@@ -269,6 +269,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-bufonly"
   },
+  ["vim-classpath"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-classpath"
+  },
   ["vim-closetag"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-closetag"
@@ -337,6 +341,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-gitgutter"
   },
+  ["vim-jack-in"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-jack-in"
+  },
   ["vim-jdaddy"] = {
     loaded = false,
     needs_bufread = false,
@@ -381,6 +389,10 @@ _G.packer_plugins = {
   ["vim-rooter"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-rooter"
+  },
+  ["vim-salve"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-salve"
   },
   ["vim-speeddating"] = {
     loaded = true,

@@ -124,7 +124,11 @@
   :Olical/conjure {:mod :conjure :branch :develop}
   :eraserhd/parinfer-rust {:run "cargo build --release"}
   :wlangstroth/vim-racket {}
-  ;:guns/vim-sexp {}
+  ; :guns/vim-sexp {}
+  :tpope/vim-salve {}
+  :tpope/vim-classpath {}
+  :clojure-vim/vim-jack-in {:mod :vim-jack-in}
+  ; :radenling/vim-dispatch-neovim {}
 
   ;; markdown
   :iamcco/markdown-preview.nvim {:mod :markdown :run "cd app && yarn install"}

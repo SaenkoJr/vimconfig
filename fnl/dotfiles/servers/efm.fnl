@@ -1,8 +1,13 @@
 (module dotfiles.servers.efm)
 
 (def lua-format
-  {:formatCommand "npx luafmt --indent-count 2 --stdin"
+  ;:formatCommand "npx luafmt --indent-count 2 --stdin"
+  {:formatCommand "lua-format -i"
    :formatStdin true})
+
+(def clj-kondo
+  {:lintCommand "clj-kondo --lint -"
+   :lintStdin true})
 
 (def eslint_d
   {:lintCommand        "eslint_d -f unix --stdin --stdin-filename ${INPUT}"
@@ -17,7 +22,8 @@
    :javascript      [eslint_d]
    :typescript      [eslint_d]
    :javascriptreact [eslint_d]
-   :typescriptreact [eslint_d]})
+   :typescriptreact [eslint_d]
+   :clojure         [clj-kondo]})
 
 (defn setup [config on-attach]
   (config.efm.setup
@@ -28,7 +34,7 @@
                     :codeAction true}
      :filetypes [:javascript :typescript
                  :typescriptreact :javascriptreact
-                 :lua :css :html :fennel]
+                 :lua :css :html :fennel :clojure]
      :settings {:lintDebounce 500
                 :languages languages}
      :on_attach on-attach}))

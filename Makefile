@@ -9,6 +9,9 @@ install-lsp-servers:
 	make install-css-lsp
 	make install-json-lsp
 
+clojure:
+	yay -S clj-kondo-bin
+
 install-docker-lsp:
 	npm i -g dockerfile-language-server-nodejs
 
