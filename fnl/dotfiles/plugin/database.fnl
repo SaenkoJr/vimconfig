@@ -7,4 +7,4 @@
 (util.set-var :g :db_ui_winwidth 60)
 (util.set-var :g :vim_dadbod_completion_mark " [dadbob]")
 
-(util.noremap :n :<F4> ":DBUIToggle<cr>")
+(util.noremap :n :<F4> ":tabedit<cr>:DBUIToggle<cr>")

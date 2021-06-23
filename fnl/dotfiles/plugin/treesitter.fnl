@@ -8,7 +8,8 @@
               :ignore_install [:nix :erlang :devicetree
                                :gdscript :ocamllex :ledger
                                :supercollider]
-              :highlight {:enable true}})
+              :highlight {:enable true
+                          :disable [:slim :yaml :yml]}})
 
 (vim.schedule
   (fn []

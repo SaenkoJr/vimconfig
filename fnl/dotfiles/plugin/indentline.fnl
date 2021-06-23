@@ -3,7 +3,7 @@
 
 (util.set-var :g :indentLine_fileType [:pug :slim :slime :html.slim
                                        :html :yaml :yml :css :sass
-                                       :scss :ruby :eruby :jsx
+                                       :scss :ruby :eruby :eruby.yaml :jsx
                                        :javascript.jsx :javascript.react
                                        :NvimTree])
 

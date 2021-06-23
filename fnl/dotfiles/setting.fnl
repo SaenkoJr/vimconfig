@@ -15,7 +15,7 @@
 
 (utils.set-var :g :ayucolor :dark)
 
-(def- global_opts
+(def- global-opts
   {;:background     :light
    :termguicolors  true
    :clipboard      :unnamedplus
@@ -51,7 +51,7 @@
    :whichwrap      "b,<,>,[,],l,h"
    :wildmenu       true})
 
-(def- window_opts
+(def- window-opts
   {:breakindent    true
    :foldmethod     :expr
    :foldexpr       "nvim_treesitter#foldexpr()"
@@ -60,15 +60,16 @@
    :relativenumber true
    :wrap           false})
 
-(def buffer_opts
-  {:cindent     true
-   :shiftwidth  2
+(def buffer-opts
+  {:shiftwidth  2
    :tabstop     2
-   :expandtab   true
-   :smartindent true
    :synmaxcol   200
    :textwidth   100})
 
-(utils.set_options :global global_opts)
-(utils.set_options :window window_opts)
-(utils.set_options :buffer buffer_opts)
+(nvim.ex.set :cindent)
+(nvim.ex.set :expandtab)
+(nvim.ex.set :smartindent)
+
+(utils.set-options :global global-opts)
+(utils.set-options :window window-opts)
+(utils.set-options :buffer buffer-opts)

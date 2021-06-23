@@ -12,7 +12,7 @@
    :allow_prefix_unmatch false
    :source_timeout 200
    :documentation true
-   :source {:source {:menu " [path]"}
+   :source {:path {:menu " [path]"}
             ; :buffer {:menu " [buffer]" :priority 4}
             :vsnip {:menu " [snippet]" :priority 1}
             :nvim_lsp {:menu " [lsp]" :priority 2}

@@ -7,6 +7,12 @@
       "pp '=================================================='"
     ]
   },
+  "debbuger": {
+    "prefix": ["d"],
+    "body": [
+      "debugger"
+    ]
+  },
   "Controller test": {
     "prefix": ["ct"],
     "body": [

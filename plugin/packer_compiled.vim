@@ -46,7 +46,7 @@ local function save_profiles(threshold)
   _G._packer.profile_output = results
 end
 
-time("Luarocks path setup", true)
+time([[Luarocks path setup]], true)
 local package_path_str = "/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
 local install_cpath_pattern = "/home/maksim/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
@@ -57,23 +57,25 @@ if not string.find(package.cpath, install_cpath_pattern, 1, true) then
   package.cpath = package.cpath .. ';' .. install_cpath_pattern
 end
 
-time("Luarocks path setup", false)
-time("try_loadstring definition", true)
+time([[Luarocks path setup]], false)
+time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
   local success, result = pcall(loadstring(s))
   if not success then
-    print('Error running ' .. component .. ' for ' .. name)
-    error(result)
+    vim.schedule(function()
+      vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
+    end)
   end
   return result
 end
 
-time("try_loadstring definition", false)
-time("Defining packer_plugins", true)
+time([[try_loadstring definition]], false)
+time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   aniseed = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/aniseed"
+    loaded = false,
+    needs_bufread = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/opt/aniseed"
   },
   ["asyncrun.vim"] = {
     loaded = true,
@@ -167,6 +169,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nord-vim"
   },
+  ["nvim-bufferline.lua"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
+  },
   ["nvim-compe"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-compe"
@@ -178,10 +184,6 @@ _G.packer_plugins = {
   ["nvim-lsputils"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
-  },
-  ["nvim-tree.lua"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
@@ -458,13 +460,20 @@ _G.packer_plugins = {
   }
 }
 
-time("Defining packer_plugins", false)
+time([[Defining packer_plugins]], false)
 vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Filetype lazy-loads
-time("Defining lazy-load filetype autocommands", true)
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType fnl ++once lua require("packer.load")({'aniseed'}, { ft = "fnl" }, _G.packer_plugins)]]
+vim.cmd [[au FileType fennel ++once lua require("packer.load")({'aniseed'}, { ft = "fennel" }, _G.packer_plugins)]]
 vim.cmd [[au FileType json ++once lua require("packer.load")({'vim-jdaddy'}, { ft = "json" }, _G.packer_plugins)]]
-time("Defining lazy-load filetype autocommands", false)
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
+vim.cmd [[augroup filetypedetect]]
+time([[Sourcing ftdetect script at: /home/maksim/.local/share/nvim/site/pack/packer/opt/aniseed/ftdetect/fennel.vim]], true)
+vim.cmd [[source /home/maksim/.local/share/nvim/site/pack/packer/opt/aniseed/ftdetect/fennel.vim]]
+time([[Sourcing ftdetect script at: /home/maksim/.local/share/nvim/site/pack/packer/opt/aniseed/ftdetect/fennel.vim]], false)
 vim.cmd("augroup END")
 if should_profile then save_profiles() end
 

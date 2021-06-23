@@ -9,9 +9,9 @@
                                   ?options)))
 
 (defn bnoremap [bufnr mode from to ?options]
-  (vim.api.nvim_buf_set_keymap bufnr mode from to (core.merge
-                                                    {:noremap true :silent true}
-                                                    ?options)))
+  (nvim.buf_set_keymap bufnr mode from to (core.merge
+                                            {:noremap true :silent true}
+                                            ?options)))
 
 (defn inoremap [from to ?options]
   "Sets a insert mapping with {:noremap true :silent true} by default."
@@ -26,7 +26,7 @@
     (.. ":" to "<cr>")
     {:noremap true}))
 
-(defn set_options [mode options]
+(defn set-options [mode options]
   "Set global or local options
   Modes:
   - :global
@@ -36,7 +36,10 @@
     (match mode
       :global (tset vim.o name value)
       :window (tset vim.wo name value)
-      :buffer (nvim.set_option name value))))
+      ;; TODO: vim.o for buffers ???
+      ; :buffer (tset vim.o name value)
+      ; :buffer (nvim.set_option name value)
+      :buffer (nvim.ex.set (.. name "=" value)))))
 
 (defn set-var [mode name value]
   "Set global or local vars

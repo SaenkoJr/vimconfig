@@ -1,4 +1,5 @@
 .netrwhist
 inittest.vim
-/lua/
+backup/
+lua/
 /plugin/packer_compiled.vim

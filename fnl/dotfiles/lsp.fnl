@@ -1,6 +1,7 @@
 (module dotfiles.lsp
   {require {util dotfiles.util
             core aniseed.core
+            nvim aniseed.nvim
             lsp-config lspconfig}})
 
 (let [code-action (require "lsputil.codeAction")

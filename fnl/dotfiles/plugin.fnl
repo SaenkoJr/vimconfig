@@ -42,7 +42,7 @@
   :junegunn/fzf.vim {}
   :dyng/ctrlsf.vim {:mod :ctrlsf}
   :kyazdani42/nvim-web-devicons {}
-  :kyazdani42/nvim-tree.lua {:mod :nvim-tree}
+  ; :kyazdani42/nvim-tree.lua {:mod :nvim-tree}
   :francoiscabrol/ranger.vim {:mod :ranger}
 
   ;; telescope
@@ -103,6 +103,7 @@
   ; statusline
   ;:edkolev/tmuxline.vim {}
   :glepnir/galaxyline.nvim {:mod :galaxyline :branch :main}
+  :akinsho/nvim-bufferline.lua {:mod :bufferline}
 
   ; git
   :tpope/vim-fugitive {:mod :git}
@@ -113,7 +114,7 @@
   :alvan/vim-closetag {:mod :closetag}
 
   ;; ruby
-  :tpope/vim-rails {}
+  :tpope/vim-rails {:mod :rails}
   :tpope/vim-endwise {}
   :slim-template/vim-slim {}
 
@@ -121,7 +122,8 @@
   :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}
 
   ;; clojure / fennel
-  :Olical/aniseed {:branch :develop}
+  :Olical/aniseed {:branch :develop
+                   :ft [:fennel :fnl]}
   :Olical/conjure {:mod :conjure :branch :develop}
   :eraserhd/parinfer-rust {:run "cargo build --release"}
   :wlangstroth/vim-racket {}
