@@ -157,5 +157,66 @@
       "  params.require(${2:require}).permit(${0})",
       "end"
     ]
+  },
+  "crud -> show": {
+    "prefix": ["crs"],
+    "body": [
+      "def show",
+      "  @${1:entity} = @${2:Model}.find(params[:id])",
+      "end"
+    ]
+  },
+  "crud -> edit": {
+    "prefix": ["cre"],
+    "body": [
+      "def edit",
+      "  @${1:entity} = @${2:Model}.find(params[:id])",
+      "end"
+    ]
+  },
+  "crud -> create": {
+    "prefix": ["crc"],
+    "body": [
+      "def create",
+      "  @${1:entity} = ${2:model}.new(${3:params})",
+      "  if @$1.save",
+      "    flash[:notice] = '$2 has been successfully created'",
+      "    redirect_to $1_path(@$1)",
+      "  else",
+      "    flash[:notice] = '$2 has been successfully created'",
+      "    render :new",
+      "  end",
+      "end"
+    ]
+  },
+  "crud -> update": {
+    "prefix": ["cru"],
+    "body": [
+      "def update",
+      "  @${1:entity} = ${2:model}.find(params[:id])",
+      "  if @$1.update(${3:params})",
+      "    flash[:notice] = '$2 has been successfully updated'",
+      "    redirect_to $1_path(@$1)",
+      "  else",
+      "    flash[:notice] = '$2 has not been updated'",
+      "    render :edit",
+      "  end",
+      "end"
+    ]
+  },
+  "crud -> destroy": {
+    "prefix": ["crd"],
+    "body": [
+      "def destroy",
+      "  @${1:entity} = ${2:model}.find(params[:id])",
+      "  if @$1.destroy",
+      "    flash[:notice] = '$2 has been successfully deleted'",
+      "    redirect_to $1s_path",
+      "  else",
+      "    flash[:notice] = '$2 has not been deleted'",
+      "    render $1_path(@$1)",
+      "  end",
+      "end"
+    ]
   }
 }
