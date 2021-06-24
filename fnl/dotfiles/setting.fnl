@@ -1,7 +1,8 @@
 (module dotfiles.setting
   {require {nvim aniseed.nvim
             core aniseed.core
-            utils dotfiles.util}})
+            utils dotfiles.util
+            _ dotfiles.colors}})
 
 (utils.set-var :g :python_host_prog  "$HOME/.asdf/shims/python2")
 (utils.set-var :g :python3_host_prog "$HOME/.asdf/shims/python3")
@@ -11,9 +12,6 @@
 
 (nvim.ex.filetype "plugin indent on")
 (nvim.ex.syntax "sync minlines=256")
-(nvim.ex.colorscheme :paper)
-
-(utils.set-var :g :ayucolor :dark)
 
 (def- global-opts
   {;:background     :light
