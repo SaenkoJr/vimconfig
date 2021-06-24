@@ -9,6 +9,9 @@ install-lsp-servers:
 	make install-css-lsp
 	make install-json-lsp
 
+clojure:
+	yay -S clj-kondo-bin
+
 install-docker-lsp:
 	npm i -g dockerfile-language-server-nodejs
 
@@ -37,3 +40,7 @@ install-efm-lsp:
 install-solargraph-lsp:
 	gem install solargraph
 	asdf reshim ruby
+
+install-racket:
+	asdf plugin-add racket
+	asdf install racket latest

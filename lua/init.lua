@@ -1,6 +1,0 @@
-require 'globals'
-require 'mappings'
-require 'plugins'
-require 'settings'
-require 'autocommands'
-require 'lsp-config'
