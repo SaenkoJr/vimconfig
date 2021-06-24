@@ -3,7 +3,7 @@
    `(do
       (nvim.ex.augroup ,(tostring name))
       (nvim.ex.autocmd_)
-      ,...
+      ,(list `do ...)
       (nvim.ex.augroup :END)))
 
  :autocmd
