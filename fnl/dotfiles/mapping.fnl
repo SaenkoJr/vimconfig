@@ -27,3 +27,11 @@
 (utils.noremap :n :=G ":normal! gg=G``<CR>")
 
 (utils.noremap :n :<leader>/ ":noh<cr>")
+
+(utils.noremap :n :c "\"_c")
+(utils.noremap :x :c "\"_c")
+(utils.noremap :n :C "\"_C")
+
+(utils.noremap :i :<C-v> :<Esc>pa)
+(utils.noremap :n :<leader>P "\"0P")
+(utils.noremap :x :<leader>p "\"0p")
