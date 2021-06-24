@@ -14,7 +14,7 @@
   "require utils": {
     "prefix": ["mdu"],
     "body": [
-      "(module dotfiles.plugin.${0}",
+      "(module dotfiles.${0}",
       "  {require {util dotfiles.util}})"
     ]
   }
