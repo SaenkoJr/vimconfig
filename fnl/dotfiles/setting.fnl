@@ -1,8 +1,9 @@
 (module dotfiles.setting
   {require {nvim aniseed.nvim
             core aniseed.core
-            utils dotfiles.util
-            _ dotfiles.colors}})
+            utils dotfiles.util}})
+
+(require :dotfiles.colors)
 
 (utils.set-var :g :python_host_prog  "$HOME/.asdf/shims/python2")
 (utils.set-var :g :python3_host_prog "$HOME/.asdf/shims/python3")
