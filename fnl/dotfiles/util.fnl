@@ -19,36 +19,22 @@
                                 {:noremap true :silent true}
                                 ?options)))
 
-(defn nnoremap [from to]
-  (nvim.set_keymap
-    :n
-    (.. "<leader>" from)
-    (.. ":" to "<cr>")
-    {:noremap true}))
+(defn nvim-set [opts]
+  (each [_ opt (ipairs opts)]
+    (nvim.ex.set opt)))
 
-(defn set-options [mode options]
-  "Set global or local options
-  Modes:
-  - :global
-  - :window
-  - :buffer"
+(defn set-options [options]
   (each [name value (pairs options)]
-    (match mode
-      :global (tset vim.o name value)
-      :window (tset vim.wo name value)
-      ;; TODO: vim.o for buffers ???
-      ; :buffer (tset vim.o name value)
-      ; :buffer (nvim.set_option name value)
-      :buffer (nvim.ex.set (.. name "=" value)))))
+    (tset nvim.o name value)))
 
 (defn set-var [mode name value]
-  "Set global or local vars
-  Modes:
-  - :g
-  - :w
-  - :b
-  - :t
-  - :v"
+  "Set global or local vars.
+   Modes:
+     - :g
+     - :w
+     - :b
+     - :t
+     - :v"
   (match mode
     :g (tset nvim.g name value)
     :v (tset nvim.v name value)

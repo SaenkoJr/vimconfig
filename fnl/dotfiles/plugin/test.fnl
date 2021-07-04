@@ -2,7 +2,7 @@
   {require {util dotfiles.util}})
 
 (util.set-var :g :test#strategy {:file :basic
-                                 :nearest :asyncrun
+                                 :nearest :floaterm
                                  :suite :basic})
 
 (util.noremap :n :<leader>tn ":TestNearest<CR>")

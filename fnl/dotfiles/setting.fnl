@@ -1,7 +1,8 @@
 (module dotfiles.setting
   {require {nvim aniseed.nvim
             core aniseed.core
-            utils dotfiles.util}})
+            utils dotfiles.util}
+   require-macros [dotfiles.macros]})
 
 (require :dotfiles.colors)
 
@@ -14,61 +15,52 @@
 (nvim.ex.filetype "plugin indent on")
 (nvim.ex.syntax "sync minlines=256")
 
+(augroup YankHighlight
+         (autocmd :TextYankPost :* :silent! "lua vim.highlight.on_yank()"))
+
 (def- global-opts
-  {;:background     :light
-   :termguicolors  true
+  {:background     :light
    :clipboard      :unnamedplus
-   :backup         false
    :backspace      "indent,eol,start"
    :completeopt    "menuone,noselect"
    :encoding       "UTF-8"
    :fillchars      "stlnc:-,vert:|"
    :foldlevelstart 99
-   :hidden         true
-   :hlsearch       true
-   :ignorecase     true
-   :incsearch      true
-   :joinspaces     false
    :mouse          :a
-   :autowrite      true
    :scrolloff      3
    :shortmess      (.. nvim.o.shortmess "c")
-   :showcmd        true
-   :showmode       false
    :sidescrolloff  10
    :pumheight      30
    :regexpengine   0
-   :smartcase      true
-   :smarttab       true
-   :splitbelow     true
-   :lazyredraw     true
-   :splitright     true
-   :swapfile       false
-   :lazyredraw     false
    :updatetime     300
    :viewoptions    :options
-   :whichwrap      "b,<,>,[,],l,h"
-   :wildmenu       true})
+   :whichwrap      "b,<,>,[,],l,h"})
 
 (def- window-opts
-  {:breakindent    true
-   :foldmethod     :expr
-   :foldexpr       "nvim_treesitter#foldexpr()"
-   :foldnestmax    10
-   :number         true
-   :relativenumber true
-   :wrap           false})
+  {:foldmethod  :expr
+   :foldexpr    "nvim_treesitter#foldexpr()"
+   :foldnestmax 10})
 
 (def buffer-opts
-  {:shiftwidth  2
-   :tabstop     2
-   :synmaxcol   200
-   :textwidth   100})
+  {:shiftwidth 2
+   :tabstop    2
+   :synmaxcol  200
+   :textwidth  100})
 
-(nvim.ex.set :cindent)
-(nvim.ex.set :expandtab)
-(nvim.ex.set :smartindent)
+(def- enabled [:cindent     :termguicolors :expandtab
+               :smartindent :smartcase     :smarttab
+               :splitbelow  :lazyredraw    :splitright
+               :hidden      :hlsearch      :ignorecase
+               :incsearch   :autowrite     :showcmd
+               :breakindent :number        :relativenumber
+               :wildmenu])
 
-(utils.set-options :global global-opts)
-(utils.set-options :window window-opts)
-(utils.set-options :buffer buffer-opts)
+(def- disabled [:nobk :nojs :nosmd :noswapfile :nolz
+                :nowrap])
+
+(utils.nvim-set enabled)
+(utils.nvim-set disabled)
+
+(utils.set-options global-opts)
+(utils.set-options window-opts)
+(utils.set-options buffer-opts)

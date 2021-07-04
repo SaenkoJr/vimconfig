@@ -27,11 +27,13 @@
   :wbthomason/packer.nvim {}
 
   ;; lsp
-  :RishabhRD/nvim-lsputils {:mod :lsp-utils :requires :RishabhRD/popfix}
+  :RishabhRD/nvim-lsputils {:mod :lsp-utils
+                            :requires :RishabhRD/popfix}
   :glepnir/lspsaga.nvim {:mod :lsp-saga}
   :hrsh7th/vim-vsnip {:requires :hrsh7th/vim-vsnip-integ}
   :neovim/nvim-lspconfig {}
   :nvim-treesitter/nvim-treesitter {:mod :treesitter :run "TSUpdate"}
+  :p00f/nvim-ts-rainbow {}
 
   ;; completion
   :hrsh7th/nvim-compe {:mod :compe}
@@ -56,7 +58,7 @@
   :jiangmiao/auto-pairs {:mod :auto-pairs}
   ; :RRethy/vim-hexokinase {:run "make hexokinase"}
   :easymotion/vim-easymotion {:mod :easymotion}
-  :Yggdroot/indentLine {:mod :indentline}
+  :lukas-reineke/indent-blankline.nvim {:mod :indentline}
   :airblade/vim-rooter {:mod :rooter}
   :farmergreg/vim-lastplace {}
   :junegunn/vim-easy-align {:mod :easyalign}
@@ -105,11 +107,11 @@
   :glepnir/galaxyline.nvim {:mod :galaxyline :branch :main}
   :akinsho/nvim-bufferline.lua {:mod :bufferline}
 
-  ; git
+  ;; git
   :tpope/vim-fugitive {:mod :git}
   :airblade/vim-gitgutter {}
 
-  ; html
+  ;; html
   :AndrewRadev/tagalong.vim {:mod :tagalong}
   :alvan/vim-closetag {:mod :closetag}
 
@@ -122,8 +124,7 @@
   :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}
 
   ;; clojure / fennel
-  :Olical/aniseed {:branch :develop
-                   :ft [:fennel :fnl]}
+  :Olical/aniseed {}
   :Olical/conjure {:mod :conjure :branch :develop}
   :eraserhd/parinfer-rust {:run "cargo build --release"}
   :wlangstroth/vim-racket {}
