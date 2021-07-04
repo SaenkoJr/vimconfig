@@ -8,7 +8,6 @@
    :lintStdin     true})
 
 (def lua-format
-  ;:formatCommand "npx luafmt --indent-count 2 --stdin"
   {:formatCommand "lua-format -i"
    :formatStdin true})
 
