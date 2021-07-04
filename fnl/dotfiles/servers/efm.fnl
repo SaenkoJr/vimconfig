@@ -1,5 +1,12 @@
 (module dotfiles.servers.efm)
 
+(def rubocop
+  {:formatCommand "rubocop -a -f quiet --stderr -s ${INPUT}"
+   :formatStdin   true
+   :lintCommand   "rubocop --format emacs --force-exclusion --stdin ${INPUT}"
+   :lintFormats   ["%f:%l:%c: %m"]
+   :lintStdin     true})
+
 (def lua-format
   ;:formatCommand "npx luafmt --indent-count 2 --stdin"
   {:formatCommand "lua-format -i"
@@ -23,6 +30,7 @@
    :typescript      [eslint_d]
    :javascriptreact [eslint_d]
    :typescriptreact [eslint_d]
+   :ruby            [rubocop]
    :clojure         [clj-kondo]})
 
 (defn setup [config on-attach]
@@ -31,10 +39,11 @@
      :root_dir (config.util.root_pattern ".git" (vim.fn.getcwd))
      :log_level vim.lsp.protocol.MessageType.Info
      :init_options {:documentFormatting true
-                    :codeAction true}
-     :filetypes [:javascript :typescript
-                 :typescriptreact :javascriptreact
-                 :lua :css :html :fennel :clojure]
+                    :codeAction true
+                    :hover true}
+     :filetypes [:javascript :typescript :typescriptreact
+                 :javascriptreact :lua :css :html :fennel
+                 :clojure :ruby]
      :settings {:lintDebounce 500
                 :languages languages}
      :on_attach on-attach}))
