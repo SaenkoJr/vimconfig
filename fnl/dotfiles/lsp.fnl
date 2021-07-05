@@ -17,8 +17,6 @@
   (tset vim.lsp.handlers :textDocument/references     locations.references_handler)
   (tset vim.lsp.handlers :textDocument/typeDefinition locations.typeDefinition_handler))
 
-(vim.lsp.set_log_level :debug)
-
 (defn on-attach [client bufnr]
   (set nvim.b.omnifunc :lua.vim.lsp.omnifunc)
 
