@@ -45,7 +45,7 @@
   :dyng/ctrlsf.vim {:mod :ctrlsf}
   :kyazdani42/nvim-web-devicons {}
   ; :kyazdani42/nvim-tree.lua {:mod :nvim-tree}
-  :francoiscabrol/ranger.vim {:mod :ranger}
+  :kevinhwang91/rnvimr {:mod :ranger}
 
   ;; telescope
   :nvim-telescope/telescope.nvim {:mod :telescope
