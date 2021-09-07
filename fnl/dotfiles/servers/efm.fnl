@@ -16,6 +16,11 @@
   {:lintCommand "clj-kondo --lint -"
    :lintStdin true})
 
+(def slimlint
+  {:lintCommand "slim-lint -c '~/.config/rubocop/.slim-lint.yml' --stdin-file-path ${INPUT}"
+   :lintFormats ["%f:%l:%c: %m"]
+   :lintStdin   true})
+
 (def eslint_d
   {:lintCommand        "eslint_d -f unix --stdin --stdin-filename ${INPUT}"
    :lintStdin          true
@@ -31,22 +36,22 @@
    :javascriptreact [eslint_d]
    :typescriptreact [eslint_d]
    :ruby            [rubocop]
+   :slim            [slimlint]
    :clojure         [clj-kondo]})
 
-(defn setup [config on-attach]
+(defn setup [config on-attach capabilities]
   (config.efm.setup
-    {:cmd ["efm-langserver"
-           "-logfile" "/home/maksim/.cache/nvim/efm.log"]
-           ; "-c" "/home/maksim/.config/efm-langserver/config.yaml"]
-     ; :root_dir (config.util.root_pattern ".git" (vim.fn.getcwd))
+    {:cmd ["efm-langserver" "-logfile" "/tmp/efm.log"]
+     :root_dir (config.util.root_pattern ".git" (vim.fn.getcwd))
      :log_level vim.lsp.protocol.MessageType.Error
      :init_options {:documentFormatting true
                     :codeAction true
                     :hover true}
      :filetypes [:javascript :typescript
                  :typescriptreact :javascriptreact
-                 :lua :css :html
-                 :clojure :ruby]
+                 :lua :css :html :slim :html.slim :erb
+                 :clojure]
      :settings {:lintDebounce 500
                 :languages languages}
+     :capabilities capabilities
      :on_attach on-attach}))

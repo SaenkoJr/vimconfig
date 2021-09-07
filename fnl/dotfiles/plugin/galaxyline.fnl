@@ -7,7 +7,8 @@
             vcs galaxyline.provider_vcs
             condition galaxyline.condition}})
 
-(set gl.short_line_list ["LuaTree" "packager" "Floaterm"])
+(set gl.short_line_list [:LuaTree :packager :Floaterm :fugitive
+                         :UltestSummary])
 
 (def colors
   {:bg "#f2f2f2"
@@ -132,6 +133,3 @@
                                       :icon " "
                                       :highlight [colors.blue colors.lbg]
                                       :separator_highlight [colors.bg colors.lbg]}}])
-
-(set-config :short_line_right {:BufferIcon {:provider :BufferIcon
-                                            :highlight [colors.fg colors.lbg]}})

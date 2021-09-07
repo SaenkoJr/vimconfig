@@ -1,0 +1,10 @@
+{
+  "simple_form": {
+    "prefix": ["sff"],
+    "body": [
+      "= simple_form_for ${1:entity}${2} do |f|",
+      " = f.input ${0}",
+      " = f.button :submit"
+    ]
+  }
+}

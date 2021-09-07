@@ -2,6 +2,7 @@
   {require {util dotfiles.util
             core aniseed.core
             nvim aniseed.nvim
+            cmplsp cmp_nvim_lsp
             lsp-config lspconfig}})
 
 (let [code-action (require "lsputil.codeAction")
@@ -17,8 +18,14 @@
   (tset vim.lsp.handlers :textDocument/references     locations.references_handler)
   (tset vim.lsp.handlers :textDocument/typeDefinition locations.typeDefinition_handler))
 
+(tset vim.lsp.handlers
+      :textDocument/publishDiagnostics
+      (vim.lsp.with
+        vim.lsp.diagnostic.on_publish_diagnostics
+        {:virtual_text {:prefix "⯀"}}))
+
 (defn on-attach [client bufnr]
-  (set nvim.b.omnifunc :lua.vim.lsp.omnifunc)
+  ; (set nvim.b.omnifunc :lua.vim.lsp.omnifunc)
 
   (if client.resolved_capabilities.hover
     (do
@@ -68,7 +75,11 @@
 (defn require-server [name]
   (require (.. "dotfiles.servers." name)))
 
+(def capabilities
+  (cmplsp.update_capabilities
+    (vim.lsp.protocol.make_client_capabilities)))
+
 (def servers [:ruby :efm :lua :js])
 (each [_ server (ipairs (core.map require-server servers))]
-  (server.setup lsp-config on-attach))
+  (server.setup lsp-config on-attach capabilities))
 

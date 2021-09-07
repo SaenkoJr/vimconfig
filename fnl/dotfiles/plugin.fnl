@@ -1,7 +1,5 @@
 (module dotfiles.plugin
-  {require {nvim aniseed.nvim
-            a aniseed.core
-            util dotfiles.util
+  {require {a aniseed.core
             packer packer}})
 
 (defn safe-require-plugin-config [name]
@@ -26,34 +24,40 @@
 (use
   :wbthomason/packer.nvim {}
 
-  ;; lsp
+  ;; lsp ---------------------------
   :RishabhRD/nvim-lsputils {:mod :lsp-utils
                             :requires :RishabhRD/popfix}
   :glepnir/lspsaga.nvim {:mod :lsp-saga}
-  :hrsh7th/vim-vsnip {:requires :hrsh7th/vim-vsnip-integ}
   :neovim/nvim-lspconfig {}
-  :nvim-treesitter/nvim-treesitter {:mod :treesitter :run "TSUpdate"}
+  :nvim-treesitter/nvim-treesitter {:mod :treesitter
+                                    :run "TSUpdate"
+                                    :requires [:nvim-treesitter/nvim-treesitter-textobjects]}
   :p00f/nvim-ts-rainbow {}
 
-  ;; completion
-  :hrsh7th/nvim-compe {:mod :compe}
-  :tami5/compe-conjure {}
+  ;; completion ---------------------------
+  :hrsh7th/nvim-cmp {:mod :nvim-compe
+                     :requires [:hrsh7th/cmp-buffer
+                                :hrsh7th/cmp-nvim-lsp
+                                :hrsh7th/cmp-path
+                                :hrsh7th/cmp-vsnip
+                                :PaterJason/cmp-conjure]}
+  :hrsh7th/vim-vsnip {:requires :hrsh7th/vim-vsnip-integ}
 
-  ;; file managment
+  ;; file managment ---------------------------
   :junegunn/fzf {:mod :fzf}
   :junegunn/fzf.vim {}
   :dyng/ctrlsf.vim {:mod :ctrlsf}
   :kyazdani42/nvim-web-devicons {}
-  ; :kyazdani42/nvim-tree.lua {:mod :nvim-tree}
+  :kyazdani42/nvim-tree.lua {:mod :nvim-tree}
   :kevinhwang91/rnvimr {:mod :ranger}
 
-  ;; telescope
+  ;; telescope ---------------------------
   :nvim-telescope/telescope.nvim {:mod :telescope
                                   :requires [:nvim-lua/popup.nvim
                                              :nvim-lua/plenary.nvim
                                              :nvim-telescope/telescope-fzy-native.nvim]}
 
-  ;; utils
+  ;; utils ---------------------------
   :Shougo/echodoc.vim {}
   :jiangmiao/auto-pairs {:mod :auto-pairs}
   ; :RRethy/vim-hexokinase {:run "make hexokinase"}
@@ -67,7 +71,6 @@
   :kana/vim-textobj-function {}
   :kana/vim-textobj-indent {}
   :kana/vim-textobj-user {}
-  :nelstrom/vim-textobj-rubyblock {}
   :ntpeters/vim-better-whitespace {:mod :better-whitespace}
   :matze/vim-move {}
   :AndrewRadev/splitjoin.vim {}
@@ -83,7 +86,7 @@
   :tpope/vim-dispatch {}
   :tpope/vim-eunuch {}
   :tpope/vim-jdaddy {:ft :json}
-  :tpope/vim-ragtag {:mod :ragtag}
+  :tpope/vim-ragtag {}
   :tpope/vim-repeat {}
   :tpope/vim-speeddating {}
   :tpope/vim-surround {:mod :surround}
@@ -94,37 +97,40 @@
   :troydm/easybuffer.vim {}
   :voldikss/vim-floaterm {:mod :floaterm}
   :wellle/targets.vim {}
-  :janko-m/vim-test {:mod :test}
   :mattn/emmet-vim {:mod :emmet}
-  :andymass/vim-matchup {:mod :matchup}
+  ; :andymass/vim-matchup {:mod :matchup}
 
-  ;; database
+  ;; testing ---------------------------
+  :rcarriga/vim-ultest {:requires [:janko-m/vim-test]
+                        :run ":UpdateRemotePlugins"
+                        :mod :test}
+
+  ;; database ---------------------------
   :tpope/vim-dadbod {:mod :database}
   :kristijanhusak/vim-dadbod-ui {:requires [:kristijanhusak/vim-dadbod-completion]}
 
-  ; statusline
-  ;:edkolev/tmuxline.vim {}
+  ; statusline ---------------------------
   :glepnir/galaxyline.nvim {:mod :galaxyline :branch :main}
   :akinsho/nvim-bufferline.lua {:mod :bufferline}
 
-  ;; git
+  ;; git ---------------------------
   :tpope/vim-fugitive {:mod :git}
   :airblade/vim-gitgutter {}
 
-  ;; html
+  ;; html ---------------------------
   :AndrewRadev/tagalong.vim {:mod :tagalong}
   :alvan/vim-closetag {:mod :closetag}
 
-  ;; ruby
+  ;; ruby ---------------------------
   :tpope/vim-rails {:mod :rails}
   :tpope/vim-endwise {}
   :slim-template/vim-slim {}
 
-  ;; js
+  ;; js ---------------------------
   :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}
 
-  ;; clojure / fennel
-  :Olical/aniseed {}
+  ;; clojure / fennel ---------------------------
+  :Olical/aniseed {:branch :develop}
   :Olical/conjure {:mod :conjure :branch :develop}
   :eraserhd/parinfer-rust {:run "cargo build --release"}
   :wlangstroth/vim-racket {}
@@ -135,13 +141,14 @@
   :clojure-vim/vim-jack-in {:mod :vim-jack-in}
   ; :radenling/vim-dispatch-neovim {}
 
-  ;; markdown
+  ;; markdown ---------------------------
   :iamcco/markdown-preview.nvim {:mod :markdown :run "cd app && yarn install"}
 
-  ;; debug
+  ;; debug ---------------------------
   :tweekmonster/startuptime.vim {}
 
-  ;; colours
+  ;; colours ---------------------------
+  :norcalli/nvim-colorizer.lua {:mod :nvim-colorizer}
   :NLKNguyen/papercolor-theme {}
   :arcticicestudio/nord-vim {}
   :ayu-theme/ayu-vim {}

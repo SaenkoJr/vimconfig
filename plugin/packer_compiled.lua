@@ -7,7 +7,7 @@ end
 
 vim.api.nvim_command('packadd packer.nvim')
 
-local no_errors = pcall(function()
+local no_errors, error_msg = pcall(function()
 
   local time
   local profile_info
@@ -97,9 +97,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/clojure.vim"
   },
-  ["compe-conjure"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/compe-conjure"
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-conjure"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/cmp-conjure"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
   conjure = {
     loaded = true,
@@ -137,9 +153,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/homecolors.vim"
   },
-  indentLine = {
+  ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/indentLine"
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
   },
   ["limelight.vim"] = {
     loaded = true,
@@ -169,9 +185,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
   },
-  ["nvim-compe"] = {
+  ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
+  ["nvim-colorizer.lua"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -180,6 +200,22 @@ _G.packer_plugins = {
   ["nvim-lsputils"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-lsputils"
+  },
+  ["nvim-tree.lua"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
+  ["nvim-treesitter-textobjects"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-treesitter-textobjects"
+  },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -217,9 +253,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
-  ["ranger.vim"] = {
+  rnvimr = {
     loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/ranger.vim"
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/rnvimr"
   },
   ["sort-hvid.vim"] = {
     loaded = true,
@@ -354,10 +390,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-lastplace"
   },
-  ["vim-matchup"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-matchup"
-  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-maximizer"
@@ -422,10 +454,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-indent"
   },
-  ["vim-textobj-rubyblock"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-rubyblock"
-  },
   ["vim-textobj-user"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-textobj-user"
@@ -433,6 +461,10 @@ _G.packer_plugins = {
   ["vim-two-firewatch"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-two-firewatch"
+  },
+  ["vim-ultest"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-ultest"
   },
   ["vim-unimpaired"] = {
     loaded = true,
@@ -465,5 +497,5 @@ if should_profile then save_profiles() end
 end)
 
 if not no_errors then
-  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: ".v:exception | echom "Please check your config for correctness" | echohl None')
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
 end

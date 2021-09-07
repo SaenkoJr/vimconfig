@@ -15,10 +15,10 @@
 
 (defn set-diagnostic-colors []
   (each [name color (pairs diagnostic-colors)]
-    (_: hi (.. :LspDiagnosticsDefault     name) (.. :guifg= color) :guibg=none)
-    (_: hi (.. :LspDiagnosticsVirtualText name) (.. :guifg= color) :guibg=none)
-    (_: hi (.. :LspDiagnosticsFloating    name) (.. :guifg= color) :guibg=none)
-    (_: hi (.. :LspDiagnosticsSign        name) (.. :guifg= color) :guibg=none)))
+    (ex hi (.. :LspDiagnosticsDefault     name) (.. :guifg= color) :guibg=none)
+    (ex hi (.. :LspDiagnosticsVirtualText name) (.. :guifg= color) :guibg=none)
+    (ex hi (.. :LspDiagnosticsFloating    name) (.. :guifg= color) :guibg=none)
+    (ex hi (.. :LspDiagnosticsSign        name) (.. :guifg= color) :guibg=none)))
 
 (augroup lsp_diagnostics
          (autocmd :ColorScheme :* (viml->fn set-diagnostic-colors)))

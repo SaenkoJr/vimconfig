@@ -1,6 +1,7 @@
 (module dotfiles.plugin.floaterm
   {require {util dotfiles.util}})
 
+(util.set-var :g :floaterm_keymap_new "<F10>")
 (util.set-var :g :floaterm_keymap_toggle "<c-\\>")
 (util.set-var :g :floaterm_keymap_next :<F11>)
 (util.set-var :g :floaterm_title "Shell $1/$2")
