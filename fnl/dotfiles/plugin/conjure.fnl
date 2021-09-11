@@ -6,6 +6,7 @@
 (util.set-var :g :conjure#eval#result_register "*")
 (util.set-var :g :conjure#log#botright true)
 (util.set-var :g :conjure#extract#tree_sitter#enabled true)
+(util.set-var :g :conjure#highlight#enabled true)
 
 (util.set-var :g :conjure#log#hud#height 0.7)
 

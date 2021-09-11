@@ -15,10 +15,11 @@ function ensure (user, repo, branch)
 end
 
 -- Bootstrap essential plugins required for installing and loading the rest.
-ensure("wbthomason", "packer.nvim", "master")
+-- ensure("wbthomason", "packer.nvim", "master")
 -- ensure("Olical", "aniseed", "develop")
 
 -- Enable Aniseed's automatic compilation and loading of Fennel source code.
 vim.g["aniseed#env"] = {
   module = "dotfiles.init",
+  compile = true
 }

@@ -1,28 +1,17 @@
-(module dotfiles.lsp
+(module dotfiles.lsp.utils
   {require {util dotfiles.util
-            core aniseed.core
             nvim aniseed.nvim
-            cmplsp cmp_nvim_lsp
-            lsp-config lspconfig}})
+            cmplsp cmp_nvim_lsp}})
 
-(let [code-action (require "lsputil.codeAction")
-      symbols (require "lsputil.symbols")
-      locations (require "lsputil.locations")]
-  (tset vim.lsp.handlers :textDocument/codeAction     code-action.code_action_handler)
-  (tset vim.lsp.handlers :textDocument/documentSymbol symbols.document_handler)
-  (tset vim.lsp.handlers :textDocument/symbol         symbols.workspace_handler)
-  (tset vim.lsp.handlers :textDocument/symbol         symbols.workspace_handler)
-  (tset vim.lsp.handlers :textDocument/declaration    locations.declaration_handler)
-  (tset vim.lsp.handlers :textDocument/definition     locations.definition_handler)
-  (tset vim.lsp.handlers :textDocument/implementation locations.implementation_handler)
-  (tset vim.lsp.handlers :textDocument/references     locations.references_handler)
-  (tset vim.lsp.handlers :textDocument/typeDefinition locations.typeDefinition_handler))
+(defn safe-require-server-config [name]
+  (let [(ok? conf-or-err) (pcall require (.. "dotfiles.lsp.servers." name))]
+    (if (not ok?)
+      (print (.. "server config error: " conf-or-err))
+      conf-or-err)))
 
-(tset vim.lsp.handlers
-      :textDocument/publishDiagnostics
-      (vim.lsp.with
-        vim.lsp.diagnostic.on_publish_diagnostics
-        {:virtual_text {:prefix "⯀"}}))
+(def capabilities
+  (cmplsp.update_capabilities
+    (vim.lsp.protocol.make_client_capabilities)))
 
 (defn on-attach [client bufnr]
   ; (set nvim.b.omnifunc :lua.vim.lsp.omnifunc)
@@ -71,15 +60,4 @@
   ; (util.noremap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
 
   (print (.. "'" client.name "' server attached.")))
-
-(defn require-server [name]
-  (require (.. "dotfiles.servers." name)))
-
-(def capabilities
-  (cmplsp.update_capabilities
-    (vim.lsp.protocol.make_client_capabilities)))
-
-(def servers [:ruby :efm :lua :js])
-(each [_ server (ipairs (core.map require-server servers))]
-  (server.setup lsp-config on-attach capabilities))
 

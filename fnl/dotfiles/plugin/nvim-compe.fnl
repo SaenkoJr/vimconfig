@@ -1,11 +1,10 @@
 (module dotfiles.plugin.nvim-compe
   {require {cmp cmp
-            core aniseed.core
-            nvim aniseed.nvim
             util dotfiles.util}})
 
 (def- menu_icons {:path     " [path]"
                   :vsnip    " [snippet]"
+                  :luasnip  " [snippet]"
                   :nvim_lsp " [lsp]"
                   :conjure  " [conjure]"
                   :buffer   " [buffer]"
@@ -42,11 +41,13 @@
   {:mapping {:<c-space> (cmp.mapping.complete)
              :<c-y>     (cmp.mapping.confirm {:select true})
              :<c-e>     (cmp.mapping.abort)
-             :<c-m>     (cmp.mapping.confirm {:behavior cmp.ConfirmBehavior.Replace
+             :<c-l>     (cmp.mapping.confirm {:behavior cmp.ConfirmBehavior.Replace
                                               :select false})}
+   :snippet {:expand (fn [args]
+                       ((. (require :luasnip) :lsp_expand) args.body))}
    :sources [{:name :nvim_lsp}
              {:name :buffer}
-             {:name :vsnip}
+             {:name :luasnip}
              {:name :nvim_lua}
              {:name :conjure}
              {:name :path}]
@@ -57,17 +58,3 @@
 
 (util.inoremap :<c-k> "pumvisible() ? '<c-p>' : '<c-k>'" {:expr true})
 (util.inoremap :<c-j> "pumvisible() ? '<c-n>' : '<c-j>'" {:expr true})
-
-;; --------------- Snippets
-(util.set-var :g :vsnip_snippet_dir (.. (os.getenv :HOME) "/.config/nvim/private-snips"))
-
-(util.inoremap :<C-l> "vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-l>'" {:expr true :noremap false})
-(util.noremap :s :<C-l> "vsnip#expandable() ? '<Plug>(vsnip-expand)' : '<C-l>'" {:expr true :noremap false})
-
-(util.inoremap :<Tab> "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'" {:expr true :noremap false})
-(util.noremap :s :<Tab>  "vsnip#jumpable(1) ? '<Plug>(vsnip-jump-next)' : '<Tab>'" {:expr true :noremap false})
-
-(util.inoremap :<S-Tab> "vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'" {:expr true :noremap false})
-(util.noremap :s :<S-Tab>  "vsnip#jumpable(-1) ? '<Plug>(vsnip-jump-prev)' : '<S-Tab>'" {:expr true :noremap false})
-
-(util.noremap :v :<leader>s ":VsnipYank<cr>")

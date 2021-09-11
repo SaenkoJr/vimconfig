@@ -1,4 +1,4 @@
-(module dotfiles.plugin.surrond
+(module dotfiles.plugin.test
   {require {util dotfiles.util}})
 
 (util.set-var :g :test#strategy {:file :basic
@@ -9,11 +9,11 @@
 (util.set-var :g :ultest_output_rows 100)
 (util.set-var :g :ultest_disable_grouping ["ruby#rails"])
 
-(util.noremap :n :<leader>tf ":Ultest<CR>")
-(util.noremap :n :<leader>tn ":UltestNearest<CR>")
-(util.noremap :n :<leader>ts ":UltestSummary<CR>")
+(util.noremap :n :<leader>TN ":UltestNearest<CR>")
+(util.noremap :n :<leader>TS ":UltestSummary<CR>")
 (util.noremap :n :<leader>to ":UltestOutput<CR>")
-(util.noremap :n :<leader>TF ":TestFile<cr>")
+(util.noremap :n :<leader>tf ":TestFile<cr>")
+(util.noremap :n :<leader>tn ":TestNearest<cr>")
 (util.noremap :n :<leader>tl ":TestLast<cr>")
 (util.noremap :n :<leader>tv ":TestVisit<CR>")
 

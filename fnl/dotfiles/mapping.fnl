@@ -34,4 +34,4 @@
 
 (utils.noremap :i :<C-v> :<Esc>pa)
 (utils.noremap :n :<leader>P "\"0P")
-(utils.noremap :x :<leader>p "\"0p")
+(utils.noremap :x :<leader>P "\"0P")

@@ -117,6 +117,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/cmp-vsnip"
   },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/cmp_luasnip"
+  },
   conjure = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/conjure"
@@ -192,6 +196,10 @@ _G.packer_plugins = {
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -285,6 +293,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
+  telescope_hoogle = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/telescope_hoogle"
+  },
   ["typewriter-vim"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/typewriter-vim"
@@ -341,6 +353,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-dispatch"
   },
+  ["vim-dispatch-neovim"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-dispatch-neovim"
+  },
   ["vim-dotenv"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-dotenv"
@@ -390,6 +406,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-lastplace"
   },
+  ["vim-matchup"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-matchup"
+  },
   ["vim-maximizer"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-maximizer"
@@ -421,6 +441,10 @@ _G.packer_plugins = {
   ["vim-salve"] = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-salve"
+  },
+  ["vim-sleuth"] = {
+    loaded = true,
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-sleuth"
   },
   ["vim-slim"] = {
     loaded = true,
@@ -470,13 +494,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-unimpaired"
   },
-  ["vim-vsnip"] = {
+  ["vim-wordmotion"] = {
     loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-vsnip"
-  },
-  ["vim-vsnip-integ"] = {
-    loaded = true,
-    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-vsnip-integ"
+    path = "/home/maksim/.local/share/nvim/site/pack/packer/start/vim-wordmotion"
   },
   ["vim-yin-yang"] = {
     loaded = true,
