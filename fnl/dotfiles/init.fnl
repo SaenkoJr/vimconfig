@@ -2,5 +2,7 @@
 
 (require :dotfiles.mapping)
 (require :dotfiles.setting)
-(require :dotfiles.plugins)
-; (require :dotfiles.lsp.init)
+(require :dotfiles.ft-settings)
+(require :dotfiles.pkgs)
+(require :dotfiles.colors)
+(require :dotfiles.lsp.init)

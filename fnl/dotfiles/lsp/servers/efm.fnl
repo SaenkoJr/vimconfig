@@ -1,4 +1,5 @@
-(module dotfiles.lsp.servers.efm)
+(module dotfiles.lsp.servers.efm
+  {require {core aniseed.core}})
 
 (def- rubocop
   {:formatCommand      "rubocop -a --fail-level error -f quiet --stderr -s ${INPUT}"
@@ -17,9 +18,11 @@
    :lintStdin true})
 
 (def- slimlint
-  {:lintCommand "slim-lint -c '~/.config/rubocop/.slim-lint.yml' --stdin-file-path ${INPUT}"
-   :lintFormats ["%f:%l:%c: %m"]
-   :lintStdin   true})
+  {:lintCommand        "slim-lint -c '$HOME/.config/rubocop/.slim-lint.yml' -r emacs --stdin-file-path ${INPUT}"
+   :lintFormats        ["%f:%l:%c: %m"]
+   :lintIgnoreExitCode true
+   :formatStdin        true
+   :lintStdin          true})
 
 (def- eslint_d
   {:lintCommand        "eslint_d -f unix --stdin --stdin-filename ${INPUT}"
@@ -45,10 +48,7 @@
    :init_options {:documentFormatting true
                   :codeAction true
                   :hover true}
-   :filetypes [:javascript :typescript
-               :typescriptreact :javascriptreact
-               :lua :css :html :slim :html.slim
-               :clojure]
+   :filetypes (core.keys languages)
    :settings {:lintDebounce 500
               :languages languages}
    :capabilities capabilities

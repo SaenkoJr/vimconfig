@@ -6,6 +6,7 @@
 
 (nvim.ex.colorscheme :paper)
 (utils.set-var :g :ayucolor :dark)
+(core.assoc-in nvim [:o :background] :light)
 
 (def- diagnostic-colors
   {:Hint        :Red

@@ -25,7 +25,7 @@
 
 (defn set-options [options]
   (each [name value (pairs options)]
-    (tset nvim.o name value)))
+    (core.assoc-in nvim [:o name] value)))
 
 (defn set-var [mode name value]
   "Set global or local vars.

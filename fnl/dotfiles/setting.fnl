@@ -4,8 +4,6 @@
             utils dotfiles.util}
    require-macros [dotfiles.macros]})
 
-(require :dotfiles.colors)
-
 (utils.set-var :g :python_host_prog  "$HOME/.asdf/shims/python2")
 (utils.set-var :g :python3_host_prog "$HOME/.asdf/shims/python3")
 
@@ -18,9 +16,13 @@
 (augroup YankHighlight
          (autocmd :TextYankPost :* :silent! "lua vim.highlight.on_yank()"))
 
+(augroup SyntaxHighlight
+         (autocmd :FileType
+                  "slim"
+                  "set syntax=off"))
+
 (def- global-opts
-  {:background     :light
-   :clipboard      :unnamedplus
+  {:clipboard      :unnamedplus
    :backspace      "indent,eol,start"
    :completeopt    "menuone,noselect"
    :encoding       "UTF-8"
@@ -47,16 +49,17 @@
    :synmaxcol  200
    :textwidth  100})
 
-(def- enabled [:cindent     :termguicolors :expandtab
-               :smartindent :smartcase     :smarttab
-               :splitbelow  :lazyredraw    :splitright
-               :hidden      :hlsearch      :ignorecase
-               :incsearch   :autowrite     :showcmd
-               :breakindent :number        :relativenumber
-               :wildmenu])
+(def- enabled
+  [:cindent     :termguicolors :expandtab
+   :smartindent :smartcase     :smarttab
+   :splitbelow  :lazyredraw    :splitright
+   :hidden      :hlsearch      :ignorecase
+   :incsearch   :autowrite     :showcmd
+   :breakindent :number        :relativenumber
+   :wildmenu])
 
-(def- disabled [:nobk :nojs :nosmd :noswapfile :nolz
-                :nowrap])
+(def- disabled
+  [:nobk :nojs :nosmd :noswapfile :nolz :nowrap])
 
 (utils.nvim-set enabled)
 (utils.nvim-set disabled)
