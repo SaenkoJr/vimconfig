@@ -20,7 +20,8 @@
           (let [name (. pkgs i)
                 opts (. pkgs (+ i 1))]
             (-?> (. opts :mod) (safe-require-plugin-config))
-            (p-use (core.assoc opts 1 name))))))))
+            (p-use (core.assoc opts 1 name)))))))
+  nil)
 
 ;; Plugins to be managed by packer.
 (use
@@ -102,7 +103,6 @@
   :tpope/vim-speeddating {}
   :tpope/vim-surround {:mod :surround}
   :tpope/vim-unimpaired {}
-  ; :tpope/vim-sleuth {}
   :tpope/vim-dotenv {:mod :vim-dotenv}
   :schickling/vim-bufonly {}
   :troydm/easybuffer.vim {}
@@ -134,13 +134,12 @@
 
   ; ruby ---------------------------
   :tpope/vim-rails {:mod :rails}
-  :tpope/vim-endwise {}
   :slim-template/vim-slim {}
 
   ; js ---------------------------
   :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}
 
-  ; lisps ---------------------------
+  ; lisp ---------------------------
   :eraserhd/parinfer-rust {:run "cargo build --release"
                            :ft [:fennel :clojure :racket :scheme]}
   :wlangstroth/vim-racket {}
