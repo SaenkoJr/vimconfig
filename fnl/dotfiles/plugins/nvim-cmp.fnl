@@ -1,6 +1,7 @@
 (module dotfiles.plugins.nvim-cmp
   {require {cmp cmp
-            util dotfiles.util}})
+            util dotfiles.util
+            core aniseed.core}})
 
 (def- menu_icons {:path     " [path]"
                   :vsnip    " [snippet]"
@@ -38,15 +39,11 @@
                  :TypeParameter "⌂ [type]"})
 
 (cmp.setup
-  {:mapping {:<c-space> (cmp.mapping.complete)
-             :<c-j> (fn [fallback]
-                      (if (cmp.visible)
-                        (cmp.select_next_item)
-                        (fallback)))
-             :<c-k> (fn [fallback]
-                      (if (cmp.visible)
-                        (cmp.select_prev_item)
-                        (fallback)))
+  {:completion {:keyword_length 2}
+   :documentation cmp.DocumentationConfig
+   :mapping {:<c-space> (cmp.mapping.complete)
+             :<c-j>     (cmp.mapping.select_next_item {:behavior cmp.SelectBehavior.Insert})
+             :<c-k>     (cmp.mapping.select_prev_item {:behavior cmp.SelectBehavior.Insert})
              :<c-y>     (cmp.mapping.confirm {:select true})
              :<c-e>     (cmp.mapping.abort)
              :<c-l>     (cmp.mapping.confirm {:behavior cmp.ConfirmBehavior.Replace

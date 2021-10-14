@@ -5,9 +5,8 @@
 (nvim.ex.packadd_ :nvim-treesitter)
 
 (def- config {:ensure_installed :maintained
-              :ignore_install [:nix :devicetree
-                               :gdscript :ocamllex :ledger
-                               :supercollider]
+              :ignore_install [:nix :devicetree :gdscript
+                               :ocamllex :ledger :supercollider]
               :highlight {:enable true
                           :disable [:slim]}
               :indent {:enable true}
