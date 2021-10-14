@@ -6,16 +6,21 @@
 
 (telescope.load_extension :fzy_native)
 (telescope.setup
-  {:defaults {:vimgrep_arguments ["rg" "--no-heading"
-                                  "--with-filename" "--line-number"
-                                  "--column" "--smart-case" "--only-matching"
-                                  "-w" "--hidden"]
-              ; :initial_mode :normal
-              :file_ignore_patterns ["node_modules" ".git/*"]
-              :mappings {:i {:<C-k> actions.move_selection_previous
-                             :<C-j> actions.move_selection_next
-                             :<C-i> actions.toggle_selection
-                             :<C-l> actions.get_current_line}}}
+  {:defaults
+   {:layout_config {:width 0.95
+                    :height 0.95
+                    :prompt_position :top}
+    :prompt_prefix ">> "
+    :initial_mode :normal
+    :vimgrep_arguments ["rg" "--no-heading"
+                        "--with-filename" "--line-number"
+                        "--column" "--smart-case" "--only-matching"
+                        "-w" "--hidden"]
+    :file_ignore_patterns ["node_modules" ".git/*"]
+    :mappings {:i {:<C-k> actions.move_selection_previous
+                   :<C-j> actions.move_selection_next
+                   :<C-i> actions.toggle_selection
+                   :<C-l> actions.get_current_line}}}
    :extensions {:fzy_native {:override_generic_sorter false
                              :override_file_sorter true}}})
 
