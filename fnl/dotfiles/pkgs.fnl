@@ -126,7 +126,8 @@
   :kristijanhusak/vim-dadbod-ui {:requires [:kristijanhusak/vim-dadbod-completion]}
 
   ;; statusline ---------------------------
-  :glepnir/galaxyline.nvim {:mod :galaxyline :branch :main}
+  ; :glepnir/galaxyline.nvim {:mod :galaxyline :branch :main}
+  :hoob3rt/lualine.nvim {:mod :lualine-nvim}
   :akinsho/nvim-bufferline.lua {:mod :bufferline}
 
   ; git ---------------------------

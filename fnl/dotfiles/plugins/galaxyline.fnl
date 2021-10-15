@@ -11,63 +11,61 @@
                          :UltestSummary])
 
 (def colors
-  {:bg "#f2f2f2"
-   :fg "#81A1C1"
-   :line-bg "#f2f2f2"
-   :lbg "NONE"
+  {:bg       "#f2f2f2"
+   :fg       "#81A1C1"
+   :line-bg  "#f2f2f2"
+   :lbg      "NONE"
    :fg-green "#8FBCBB"
-   :yellow "#EBCB8B"
-   :cyan "#A3BE8C"
+   :yellow   "#EBCB8B"
+   :cyan     "#A3BE8C"
    :darkblue "#81A1C1"
-   :green "#8FBCBB"
-   :orange "#D08770"
-   :purple "#B48EAD"
-   :magenta "#BF616A"
-   :gray "#616E88"
-   :blue "#5E81AC"
-   :red "#BF616A"})
+   :green    "#8FBCBB"
+   :orange   "#D08770"
+   :purple   "#B48EAD"
+   :magenta  "#BF616A"
+   :gray     "#616E88"
+   :blue     "#5E81AC"
+   :red      "#BF616A"})
 
 (def mode-color
-  {:n colors.magenta
-   :i colors.green
-   :v colors.blue
+  {:n   colors.magenta
+   :i   colors.green
+   :v   colors.blue
    "" colors.blue
-   :V colors.blue
-   :c colors.red
-   :no colors.magenta
-   :s colors.orange
-   :S colors.orange
+   :V   colors.blue
+   :c   colors.red
+   :no  colors.magenta
+   :s   colors.orange
+   :S   colors.orange
    "" colors.orange
-   :ic colors.yellow
-   :R colors.purple
-   :Rv colors.purple
-   :cv colors.red
-   :ce colors.red
-   :r colors.cyan
-   :rm colors.cyan
+   :ic  colors.yellow
+   :R   colors.purple
+   :Rv  colors.purple
+   :cv  colors.red
+   :ce  colors.red
+   :r   colors.cyan
+   :rm  colors.cyan
    "r?" colors.cyan
-   "!" colors.red
-   :t colors.red})
+   "!"  colors.red
+   :t   colors.red})
 
 (def mode-name
-  {:n "NORMAL"
-   :c "COMMAND"
-   :V "VISUAL"
-   :v "VISUAL"
+  {:n   "NORMAL"
+   :c   "COMMAND"
+   :V   "VISUAL"
+   :v   "VISUAL"
    "" "VISUAL"
-   :R "REPLACE"
-   :t "TERMINAL"
-   :i "INSERT"
-   :s "INSERT"
-   :S "INSERT"
+   :R   "REPLACE"
+   :t   "TERMINAL"
+   :i   "INSERT"
+   :s   "INSERT"
+   :S   "INSERT"
    "" "INSERT"})
 
-(defn set-config [side config]
+(defn- set-config [side config]
   (core.assoc-in gl [:section side] config))
 
-(set-config :left [{:FirstElement {:provider (fn [] "  ")
-                                   :highlight [colors.blue colors.lbg]}}
-                   {:ViMode {:provider (fn []
+(set-config :left [{:ViMode {:provider (fn []
                                          (vim.cmd (.. "hi GalaxyViMode guifg=" (. mode-color (vim.fn.mode))))
                                          (.. " " (. mode-name (vim.fn.mode)) " "))
                              :highlight [nil colors.lbg :bold]}}
