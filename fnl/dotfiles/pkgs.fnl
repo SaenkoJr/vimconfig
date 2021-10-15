@@ -116,6 +116,11 @@
   ;                       :mod :test}
   :janko-m/vim-test {:mod :test}
 
+  ; orgmode ---------------------------
+  :kristijanhusak/orgmode.nvim {:mod :orgmode}
+  :akinsho/org-bullets.nvim {}
+  :lukas-reineke/headlines.nvim {}
+
   ; database ---------------------------
   :tpope/vim-dadbod {:mod :database}
   :kristijanhusak/vim-dadbod-ui {:requires [:kristijanhusak/vim-dadbod-completion]}

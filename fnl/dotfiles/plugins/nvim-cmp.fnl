@@ -52,6 +52,7 @@
                        ((. (require :luasnip) :lsp_expand) args.body))}
    :sources [{:name :nvim_lsp}
              {:name :buffer}
+             {:name :orgmode}
              {:name :luasnip}
              {:name :nvim_lua}
              {:name :conjure}
