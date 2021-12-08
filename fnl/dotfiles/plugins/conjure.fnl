@@ -11,3 +11,6 @@
 (util.set-var :g :conjure#log#hud#height 0.7)
 
 (util.set-var :g :clojure_align_multiline_strings 1)
+
+;; racket
+(util.set-var :g :conjure#client#racket#stdio#command "racket")

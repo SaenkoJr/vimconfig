@@ -54,10 +54,10 @@
   (util.bnoremap bufnr :v :<leader>fm "<cmd>lua vim.lsp.buf.range_formatting()<CR>")
 
   (util.bnoremap bufnr :n :gp ":Lspsaga preview_definition<cr>")
-  (util.noremap :n "]d" ":Lspsaga diagnostic_jump_next<cr>")
-  (util.noremap :n "[d" ":Lspsaga diagnostic_jump_prev<cr>")
-  ; (util.noremap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
-  ; (util.noremap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
+  ; (util.noremap :n "]d" ":Lspsaga diagnostic_jump_next<cr>")
+  ; (util.noremap :n "[d" ":Lspsaga diagnostic_jump_prev<cr>")
+  (util.noremap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
+  (util.noremap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
 
   (print (.. "'" client.name "' server attached.")))
 

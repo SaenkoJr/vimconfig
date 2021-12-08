@@ -19,8 +19,8 @@
     :file_ignore_patterns ["node_modules" ".git/*"]
     :mappings {:i {:<C-k> actions.move_selection_previous
                    :<C-j> actions.move_selection_next
-                   :<C-i> actions.toggle_selection
-                   :<C-l> actions.get_current_line}}}
+                   :<C-i> actions.toggle_selection}}}
+                   ; :<C-l> actions.get_current_line}}}
    :extensions {:fzy_native {:override_generic_sorter false
                              :override_file_sorter true}}})
 

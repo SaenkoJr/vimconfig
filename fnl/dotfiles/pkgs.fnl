@@ -27,6 +27,7 @@
 (use
   ; setup ---------------------------
   :wbthomason/packer.nvim {}
+  :lewis6991/impatient.nvim {}
   :Olical/aniseed {:branch :develop}
   :Olical/conjure {:mod :conjure
                    :branch :develop}
@@ -52,7 +53,7 @@
   :PaterJason/cmp-conjure {}
   :L3MON4D3/LuaSnip {:mod :luasnip}
 
-  ; file managment ---------------------------
+  ; file managment / fzf ---------------------------
   :junegunn/fzf {:mod :fzf}
   :junegunn/fzf.vim {}
   :dyng/ctrlsf.vim {:mod :ctrlsf}
@@ -60,6 +61,13 @@
   :kyazdani42/nvim-web-devicons {}
   :kyazdani42/nvim-tree.lua {:mod :nvim-tree}
   :kevinhwang91/rnvimr {:mod :ranger}
+
+  ; buffers ---------------------------
+  :rbgrouleff/bclose.vim {}
+  :moll/vim-bbye {}
+  :schickling/vim-bufonly {}
+  :troydm/easybuffer.vim {}
+  :matbme/JABS.nvim {:mod :jabs}
 
   ; telescope ---------------------------
   :nvim-telescope/telescope.nvim {:mod :telescope
@@ -69,7 +77,6 @@
   :luc-tielen/telescope_hoogle {}
 
   ; utils ---------------------------
-  :Shougo/echodoc.vim {}
   ; :chaoren/vim-wordmotion {:mod :vim-wordmotion}
   :jiangmiao/auto-pairs {:mod :auto-pairs}
   ; :windwp/nvim-autopairs {:mod :auto-pairs}
@@ -86,15 +93,13 @@
   :ntpeters/vim-better-whitespace {:mod :better-whitespace}
   :matze/vim-move {}
   :AndrewRadev/splitjoin.vim {}
-  ; :mbbill/undotree {}
   :mhinz/vim-startify {:mod :startify}
   :preservim/nerdcommenter {:mod :nerdcommenter}
-  :rbgrouleff/bclose.vim {}
-  :moll/vim-bbye {}
   :rhysd/clever-f.vim {:mod :clever-f}
   :skywind3000/asyncrun.vim {:mod :asyncrun}
   :szw/vim-maximizer {}
   :talek/obvious-resize {:mod :obvious-resize}
+  :tpope/vim-abolish {}
   :tpope/vim-dispatch {}
   :tpope/vim-eunuch {}
   :tpope/vim-jdaddy {:ft :json}
@@ -104,16 +109,14 @@
   :tpope/vim-surround {:mod :surround}
   :tpope/vim-unimpaired {}
   :tpope/vim-dotenv {:mod :vim-dotenv}
-  :schickling/vim-bufonly {}
-  :troydm/easybuffer.vim {}
   :voldikss/vim-floaterm {:mod :floaterm}
   :wellle/targets.vim {}
   :mattn/emmet-vim {:mod :emmet}
   :andymass/vim-matchup {:mod :matchup}
 
   ; testing ---------------------------
-  ; :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
-  ;                       :mod :test}
+  :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
+                        :mod :test}
   :janko-m/vim-test {:mod :test}
 
   ; orgmode ---------------------------
@@ -126,7 +129,6 @@
   :kristijanhusak/vim-dadbod-ui {:requires [:kristijanhusak/vim-dadbod-completion]}
 
   ;; statusline ---------------------------
-  ; :glepnir/galaxyline.nvim {:mod :galaxyline :branch :main}
   :hoob3rt/lualine.nvim {:mod :lualine-nvim}
   :akinsho/nvim-bufferline.lua {:mod :bufferline}
 
@@ -140,7 +142,7 @@
 
   ; ruby ---------------------------
   :tpope/vim-rails {:mod :rails}
-  :slim-template/vim-slim {}
+  :onemanstartup/vim-slim {}
 
   ; js ---------------------------
   :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}

@@ -14,10 +14,10 @@
                            :Warning     :#d9cf50
                            :Error       :#e84444}]
     (each [name color (pairs diagnostic-colors)]
-      (ex hi (.. :LspDiagnosticsDefault     name) (.. :guifg= color) :guibg=none)
-      (ex hi (.. :LspDiagnosticsVirtualText name) (.. :guifg= color) :guibg=none)
-      (ex hi (.. :LspDiagnosticsFloating    name) (.. :guifg= color) :guibg=none)
-      (ex hi (.. :LspDiagnosticsSign        name) (.. :guifg= color) :guibg=none))))
+      (ex hi (.. :DiagnosticDefault     name) (.. :guifg= color) :guibg=none)
+      (ex hi (.. :DiagnosticVirtualText name) (.. :guifg= color) :guibg=none)
+      (ex hi (.. :DiagnosticFloating    name) (.. :guifg= color) :guibg=none)
+      (ex hi (.. :DiagnosticSign        name) (.. :guifg= color) :guibg=none))))
 
 (augroup lsp_diagnostics_colors
  (autocmd :BufEnter :* (viml->fn set_diagnostic_colors)))

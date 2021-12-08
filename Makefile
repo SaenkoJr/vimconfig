@@ -3,6 +3,8 @@ setup:
 		~/.local/share/nvim/site/pack/packer/start/packer.nvim
 	git clone -b develop https://github.com/Olical/aniseed \
 		~/.local/share/nvim/site/pack/packer/start/aniseed
+	git clone -b develop https://github.com/lewis6991/impatient.nvim \
+		~/.local/share/nvim/site/pack/packer/start/impatient.nvim
 
 install-lsp-servers:
 	make install-docker-lsp

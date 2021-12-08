@@ -5,7 +5,7 @@
   {:cmd [:solargraph :stdio]
    :root_dir (util.root_pattern "Gemfile" ".git" "*.rb")
    :settings {:solargraph {:diagnostics false
-                           :formatting false
+                           :formatting true
                            :autoformat false}}
    :flags {:debounce_text_change 150}
    :capabilities capabilities

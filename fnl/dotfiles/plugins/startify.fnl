@@ -47,6 +47,7 @@
 
 
 (util.set-var :g :startify_commands [{:h ["Check Vim health" ":checkhealth"]}
+                                     {:r ["Ranger"           ":RnvimrToggle"]}
                                      {:g ["Git status"       ":G"]}
                                      {:u ["Update Plugin"    ":PackerUpdate"]}
                                      {:c ["Clean Plugin"     ":PackerClean"]}

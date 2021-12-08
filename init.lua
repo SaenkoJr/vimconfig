@@ -1,3 +1,5 @@
+require('impatient')
+
 vim.g["aniseed#env"] = {
   module = "dotfiles.init",
   compile = true

@@ -16,11 +16,6 @@
 (augroup YankHighlight
          (autocmd :TextYankPost :* :silent! "lua vim.highlight.on_yank()"))
 
-(augroup SyntaxHighlight
-         (autocmd :FileType
-                  "slim"
-                  "set syntax=off"))
-
 (def- global-opts
   {:clipboard      :unnamedplus
    :backspace      "indent,eol,start"
