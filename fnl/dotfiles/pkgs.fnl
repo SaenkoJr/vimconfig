@@ -35,7 +35,7 @@
   ; lsp ---------------------------
   :RishabhRD/nvim-lsputils {:mod :lsp-utils
                             :requires :RishabhRD/popfix}
-  :glepnir/lspsaga.nvim {:mod :lsp-saga}
+  :tami5/lspsaga.nvim {:mod :lsp-saga}
   :neovim/nvim-lspconfig {:requires [:williamboman/nvim-lsp-installer]}
 
   ; treesitter ---------------------------
@@ -85,7 +85,8 @@
   :airblade/vim-rooter {:mod :rooter}
   :farmergreg/vim-lastplace {}
   :junegunn/vim-easy-align {:mod :easyalign}
-  :junegunn/limelight.vim {:mod :limelight}
+  ; :junegunn/limelight.vim {:mod :limelight}
+  ; :folke/twilight.nvim {:mod :twilight}
   :glts/vim-textobj-comment {}
   :kana/vim-textobj-function {}
   :kana/vim-textobj-indent {}
@@ -113,10 +114,11 @@
   :wellle/targets.vim {}
   :mattn/emmet-vim {:mod :emmet}
   :andymass/vim-matchup {:mod :matchup}
+  :lewis6991/spellsitter.nvim {:mod :spellsitter}
 
   ; testing ---------------------------
-  :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
-                        :mod :test}
+  ; :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
+  ;                       :mod :test}
   :janko-m/vim-test {:mod :test}
 
   ; orgmode ---------------------------
@@ -135,6 +137,7 @@
   ; git ---------------------------
   :tpope/vim-fugitive {:mod :git}
   :airblade/vim-gitgutter {}
+  :f-person/git-blame.nvim {}
 
   ; html ---------------------------
   :AndrewRadev/tagalong.vim {:mod :tagalong}

@@ -1,0 +1,44 @@
+---
+
+- hosts: localhost
+  vars:
+    home: "${HOME}"
+    packer_dest: "{{ home }}/.local/share/nvim/site/pack/packer/start"
+  tasks:
+    - name: Instal pynvim3
+      pip:
+        name: pynvim
+        extra_args: --user
+        executable: pip3
+
+    - name: Instal pynvim2
+      pip:
+        name: pynvim
+        extra_args: --user
+        executable: pip2
+
+    - name: Instal nvim via yarn
+      command: yarn global add neovim
+
+    - name: Instal nvim via gem
+      command: gem install neovim
+
+    - name: asdf reshim
+      command: asdf reshim
+
+    - name: Install packer
+      git:
+        repo: https://github.com/wbthomason/packer.nvim
+        depth: 1
+        dest: "{{ packer_dest }}/packer.nvim"
+
+    - name: Install aniseed
+      git:
+        repo: https://github.com/Olical/aniseed
+        dest: "{{ packer_dest }}/aniseed"
+        version: develop
+
+    - name: Install impatient
+      git:
+        repo: https://github.com/lewis6991/impatient.nvim
+        dest: "{{ packer_dest }}/impatient.nvim"

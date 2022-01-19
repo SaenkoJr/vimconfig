@@ -1,17 +1,32 @@
 (module dotfiles.plugins.fzf
   {require {nvim aniseed.nvim
-            util dotfiles.util}})
+            util dotfiles.util
+            string aniseed.string}})
 
-(def rg_opts
-  (.. "rg --column --line-number --no-heading --fixed-strings --smart-case --hidden --follow "
-      "-g \"!yarn.lock\" -g \"!.git\" -g \"!node_modules\" -- "))
+(def- rg-opts ["--column"
+               "--line-number"
+               "--no-heading"
+               "--fixed-strings"
+               "--smart-case"
+               "--hidden"
+               "--follow"
+               "-g \"!yarn.lock\""
+               "-g \"!.git\""
+               "-g \"!node_modules\""
+               "-- "])
+
+(def- rg
+  (.. :rg " " (string.join " " rg-opts)))
 
 (nvim.ex.command_
   "-bang -nargs=* Rg call fzf#vim#grep('"
-  rg_opts
+  rg
   "'.shellescape(<q-args>), 1,"
-  "<bang>0 ? fzf#vim#with_preview(\"up:65%\") : fzf#vim#with_preview(\"right:50%:hidden\", \"?\"), <bang>0)")
-  ; "fzf#vim#with_preview(), <bang>0)")
+  "<bang>0 ? fzf#vim#with_preview(\"up:75%\") : fzf#vim#with_preview(\"right:50%\", \"?\"), <bang>0)")
+
+(util.set-var :g :fzf_layout {:window {:width 0.9
+                                       :height 0.9}})
+(util.set-var :g :fzf_preview_window ["right:50%" "ctrl-/"])
 
 (util.noremap :n :<leader>FN ":Rg <c-r><c-w><cr>")
 

@@ -3,6 +3,7 @@
 
 (saga.init_lsp_saga {:border_style :round
                      :use_saga_diagnostic_sign true
+                     :diagnostic_header_icon ""
                      :error_sign :E
                      :warn_sign :W
                      :infor_sign :I

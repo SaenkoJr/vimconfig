@@ -9,7 +9,8 @@
 (utils.set-var :g :rnvimr_enable_bw 1)
 (utils.set-var :g :rnvimr_action {:<c-x> "NvimEdit split false"
                                   :<c-v> "NvimEdit vsplit false"
-                                  :<c-e> "NvimEdit edit"})
+                                  :<c-e> "NvimEdit edit"
+                                  :gw :JumpNvimCwd})
 
 (utils.set-var :g :rnvimr_presets [{:width 0.900 :height 0.900}])
 

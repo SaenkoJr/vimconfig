@@ -24,10 +24,6 @@
         vim.lsp.diagnostic.on_publish_diagnostics
         {:virtual_text {:prefix "■"}}))
 
-(def- servers [:ruby :efm :lua :js])
-
-(core.keys (require :dotfiles.lsp.servers.solargraph))
-
 (lsp-installer.on_server_ready
   (fn [server]
     (let [config (lu.safe-require-server-config (. server :name))]

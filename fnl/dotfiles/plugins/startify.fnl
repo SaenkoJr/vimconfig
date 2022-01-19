@@ -52,7 +52,8 @@
                                      {:u ["Update Plugin"    ":PackerUpdate"]}
                                      {:c ["Clean Plugin"     ":PackerClean"]}
                                      {:s ["Sync Plugin"      ":PackerSync"]}
-                                     {:S ["Start Time"       ":StartupTime"]}])
+                                     {:S ["Start Time"       ":StartupTime"]}
+                                     {:l ["LSP Status"       ":LspInstallInfo"]}])
 
 
 (util.set-var :g :startify_bookmarks [{:n "~/.config/nvim/init.lua"}
