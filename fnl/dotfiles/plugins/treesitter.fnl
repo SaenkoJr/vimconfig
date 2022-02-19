@@ -8,6 +8,7 @@
 (def- config {:ensure_installed :maintained
               :ignore_install [:nix :devicetree :gdscript
                                :ocamllex :ledger :supercollider]
+              :endwise {:enable true}
               :highlight {:enable true}
               :indent {:enable true
                        :disable [:yaml :yml]}
@@ -30,6 +31,8 @@
                                            :revision :main
                                            :files ["src/parser.c" "src/scanner.cc"]}
                             :filetype :org}))
+  ; (tset parser_config :slim {:install_info {:url "~/Public/Projects/tree-sitter-slim"
+  ;                                           :files ["src/parser.c"]}}))
 
 (vim.schedule
   (fn []

@@ -12,6 +12,7 @@
 (nvim-tree.setup
   {:disable_netrw true
    :hijack_cursor true
+   :git {:enable false}
    :update_to_buf_dir {:enable false
                        :auto_open false}
    :update_focused_file {:enable true

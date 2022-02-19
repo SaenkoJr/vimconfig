@@ -2,8 +2,8 @@
   {require {util dotfiles.util}})
 
 (util.set-var :g :gitblame_enabled 0)
-(util.set-var :g :gitblame_message_template "<author> • <date> • <sha> • <summary>")
-(util.set-var :g :gitblame_date_format "%x")
+(util.set-var :g :gitblame_message_template "    - <author> • <date> • <sha> • <summary>")
+(util.set-var :g :gitblame_date_format "%d %B %Y")
 
 (util.noremap :n :<leader>gs ":G<cr>")
 (util.noremap :n :<leader>gb ":GitBlameToggle<cr>")

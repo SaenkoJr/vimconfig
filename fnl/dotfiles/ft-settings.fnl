@@ -9,6 +9,8 @@
 ;                   "slim"
 ;                   "set syntax=off"))
 
+(autocmd :BufNewFile :BufRead "*.slim" "set ft=slim")
+
 ;; Rust
 (utils.set-var :g :rust_recommended_style 0)
 

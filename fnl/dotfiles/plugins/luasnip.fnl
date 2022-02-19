@@ -11,5 +11,6 @@
 (util.inoremap :<S-Tab> "<cmd>lua require('luasnip').jump(-1)<Cr>")
 (util.noremap :s :<S-Tab> "<cmd>lua require('luasnip').jump(-1)<Cr>")
 
+; NOTE: ls.praser.parse_snippet(<text>, <VS**** style snippet>)
 (core.assoc-in luasnip [:snippets :fennel] fennelsnip.snippets)
 (core.assoc-in luasnip [:snippets :ruby] rubysnip.snippets)

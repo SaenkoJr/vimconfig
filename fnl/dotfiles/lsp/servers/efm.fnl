@@ -18,7 +18,7 @@
    :lintStdin true})
 
 (def- slimlint
-  {:lintCommand        "slim-lint -c '$HOME/.config/rubocop/.slim-lint.yml' --reporter emacs --stdin-file-path ${INPUT}"
+  {:lintCommand        "slim-lint -c $HOME/.config/rubocop/.slim-lint.yml --reporter emacs --stdin-file-path ${INPUT}"
    :lintFormats        ["%f:%l:%c: %m"]
    :lintIgnoreExitCode true
    :formatStdin        true

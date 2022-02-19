@@ -36,6 +36,3 @@
 (utils.noremap :i :<C-v> :<Esc>pa)
 (utils.noremap :n :<leader>P "\"0P")
 (utils.noremap :x :<leader>P "\"0P")
-
-(utils.noremap :c :<c-k> :<c-p>)
-(utils.noremap :c :<c-j> :<c-n>)
