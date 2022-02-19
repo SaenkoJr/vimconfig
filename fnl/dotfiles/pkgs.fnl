@@ -41,8 +41,10 @@
   ; treesitter ---------------------------
   :nvim-treesitter/nvim-treesitter {:mod :treesitter
                                     :run "TSUpdate"}
+  :nvim-treesitter/playground {}
   :nvim-treesitter/nvim-treesitter-textobjects {}
   :p00f/nvim-ts-rainbow {}
+  :RRethy/nvim-treesitter-endwise {}
 
   ; completion ---------------------------
   :hrsh7th/nvim-cmp {:mod :nvim-cmp}
@@ -115,6 +117,7 @@
   :mattn/emmet-vim {:mod :emmet}
   :andymass/vim-matchup {:mod :matchup}
   :lewis6991/spellsitter.nvim {:mod :spellsitter}
+  :gelguy/wilder.nvim {:mod :wilder}
 
   ; testing ---------------------------
   ; :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
@@ -171,10 +174,10 @@
    :norcalli/nvim-colorizer.lua {:mod :nvim-colorizer}
    :NLKNguyen/papercolor-theme {}
    :arcticicestudio/nord-vim {}
-   :ayu-theme/ayu-vim {}
+   ; :ayu-theme/ayu-vim {}
+   :Shatur/neovim-ayu {}
    :casperstorm/sort-hvid.vim {}
    :equt/paper.vim {}
-   :lifepillar/vim-colortemplate {}
    :logico/typewriter-vim {}
    :mikker/vim-colors-pap {}
    :pgdouyon/vim-yin-yang {}
