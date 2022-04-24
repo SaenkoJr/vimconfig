@@ -5,7 +5,6 @@
 
 (def tree-cb (. tree-conf :nvim_tree_callback))
 
-(util.set-var :g :nvim_tree_indent_markers 1)
 (util.set-var :g :nvim_tree_highlight_opened_files 2)
 (util.set-var :g :nvim_tree_show_icons {:git 0})
 
@@ -13,8 +12,7 @@
   {:disable_netrw true
    :hijack_cursor true
    :git {:enable false}
-   :update_to_buf_dir {:enable false
-                       :auto_open false}
+   :renderer {:indent_markers {:enable true}}
    :update_focused_file {:enable true
                          :update_cwd true
                          :ignore_list ["help"]}

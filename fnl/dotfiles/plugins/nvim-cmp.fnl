@@ -55,7 +55,7 @@
              {:name :orgmode}
              {:name :luasnip}
              {:name :nvim_lua}
-             {:name :conjure}
+             {:name :conjure :trigger_characters ["." "/"]}
              {:name :path}]
    :formatting {:format (fn [entry vim_item]
                           (tset vim_item :menu (. menu_icons entry.source.name))

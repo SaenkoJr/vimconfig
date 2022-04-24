@@ -14,6 +14,7 @@
     (vim.lsp.protocol.make_client_capabilities)))
 
 (defn on-attach [client bufnr]
+  (. (require :virtualtypes) :on_attach)
   ; (set nvim.b.omnifunc :lua.vim.lsp.omnifunc)
 
   (if client.resolved_capabilities.hover

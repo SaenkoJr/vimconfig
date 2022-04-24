@@ -15,7 +15,9 @@
              :padding 1
              :section_separators ["" ""]
              :component_separators ""
-             :disabled_filetypes []}
+             :disabled_filetypes []
+
+             :globalstatus true}
    :sections {:lualine_a [:mode]
               :lualine_b [:branch]
               :lualine_c [{1 :filename

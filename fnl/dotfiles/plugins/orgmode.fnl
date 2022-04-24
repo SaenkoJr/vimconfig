@@ -17,5 +17,6 @@
                               :target "~/Documents/orgs/work.org"}
                           :n {:description "Note"
                               :template "* NOTE %?\n  %T"}}})
+(orgmode.setup_ts_grammar)
 
 (util.noremap :n :<leader>ot    ":e ~/Documents/orgs<cr>")

@@ -9,6 +9,8 @@
     (when (not ok?)
       (print (.. "dotfiles error: " val-or-err)))))
 
+(packer.init {:max_jobs 8})
+
 (defn- use [...]
   "Iterates through the arguments as pairs and calls packer's use function for
   each of them. Works around Fennel not liking mixed associative and sequential
@@ -37,6 +39,8 @@
                             :requires :RishabhRD/popfix}
   :tami5/lspsaga.nvim {:mod :lsp-saga}
   :neovim/nvim-lspconfig {:requires [:williamboman/nvim-lsp-installer]}
+  :jubnzv/virtual-types.nvim {}
+  :j-hui/fidget.nvim {:mod :fidget}
 
   ; treesitter ---------------------------
   :nvim-treesitter/nvim-treesitter {:mod :treesitter
@@ -54,6 +58,7 @@
   :saadparwaiz1/cmp_luasnip {}
   :PaterJason/cmp-conjure {}
   :L3MON4D3/LuaSnip {:mod :luasnip}
+  :ray-x/lsp_signature.nvim {:mod :lsp-signature}
 
   ; file managment / fzf ---------------------------
   :junegunn/fzf {:mod :fzf}
@@ -117,7 +122,8 @@
   :mattn/emmet-vim {:mod :emmet}
   :andymass/vim-matchup {:mod :matchup}
   :lewis6991/spellsitter.nvim {:mod :spellsitter}
-  :gelguy/wilder.nvim {:mod :wilder}
+  ; :gelguy/wilder.nvim {:mod :wilder}
+  :folke/which-key.nvim {:mod :which-key}
 
   ; testing ---------------------------
   ; :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
@@ -134,7 +140,7 @@
   :kristijanhusak/vim-dadbod-ui {:requires [:kristijanhusak/vim-dadbod-completion]}
 
   ;; statusline ---------------------------
-  :hoob3rt/lualine.nvim {:mod :lualine-nvim}
+  :nvim-lualine/lualine.nvim {:mod :lualine-nvim}
   :akinsho/nvim-bufferline.lua {:mod :bufferline}
 
   ; git ---------------------------
