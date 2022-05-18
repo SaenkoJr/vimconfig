@@ -5,5 +5,7 @@
   {:capabilities capabilities
    :cmd [:clojure-lsp]
    :filetypes [:clojure :clj :edn]
+   :init_options {:hover {:clojuredocs true
+                          :hide-file-location? true}}
    :root_dir (util.root_pattern "project.clj" ".git" "*.clj" "deps.end")
    :on_attach on-attach})

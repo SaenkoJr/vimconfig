@@ -1,8 +1,7 @@
 (module dotfiles.lsp.init
-  {require {util dotfiles.util
-            lu dotfiles.lsp.utils
-            nvim aniseed.nvim
+  {require {lu dotfiles.lsp.utils
             core aniseed.core
+            lspconfig lspconfig
             lsp-installer nvim-lsp-installer}})
 
 (let [code-action (require "lsputil.codeAction")
@@ -24,9 +23,10 @@
         vim.lsp.diagnostic.on_publish_diagnostics
         {:virtual_text {:prefix "■"}}))
 
-(lsp-installer.on_server_ready
-  (fn [server]
-    (let [config (lu.safe-require-server-config (. server :name))]
-      (server:setup
-        (config.build lu.on-attach lu.capabilities))
-      (vim.cmd "do User LspAttachBuffers"))))
+(lsp-installer.setup)
+
+(let [servers (lsp-installer.get_installed_servers)]
+  (each [_ server (ipairs servers)]
+    (let [conf-builder (lu.safe-require-server-config (. server :name))
+          lsp (. lspconfig (. server :name))]
+      (lsp.setup (conf-builder.build lu.on-attach lu.capabilities)))))

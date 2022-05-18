@@ -9,4 +9,5 @@
                      :infor_sign :I
                      :code_action_icon "*"
                      :code_action_prompt {:virtual_text false
-                                          :sign false}})
+                                          :sign false}
+                     :rename_action_keys {:quit "<esc>"}})

@@ -9,7 +9,8 @@
     (when (not ok?)
       (print (.. "dotfiles error: " val-or-err)))))
 
-(packer.init {:max_jobs 8})
+(packer.init {:max_jobs 8
+              :show_all_info false})
 
 (defn- use [...]
   "Iterates through the arguments as pairs and calls packer's use function for
@@ -123,7 +124,8 @@
   :andymass/vim-matchup {:mod :matchup}
   :lewis6991/spellsitter.nvim {:mod :spellsitter}
   ; :gelguy/wilder.nvim {:mod :wilder}
-  :folke/which-key.nvim {:mod :which-key}
+  ; :folke/which-key.nvim {:mod :which-key}
+  :jparise/vim-graphql {}
 
   ; testing ---------------------------
   ; :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"

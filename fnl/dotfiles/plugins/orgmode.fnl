@@ -16,7 +16,8 @@
                               :template "* TODO %?\n  DEADLINE: %T"
                               :target "~/Documents/orgs/work.org"}
                           :n {:description "Note"
-                              :template "* NOTE %?\n  %T"}}})
+                              :template "* NOTE %?\n  %T"}}
+   :org_agenda_min_height 25})
 (orgmode.setup_ts_grammar)
 
-(util.noremap :n :<leader>ot    ":e ~/Documents/orgs<cr>")
+(util.noremap :n :<leader>ot ":e ~/Documents/orgs<cr>")

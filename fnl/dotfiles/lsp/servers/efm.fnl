@@ -39,8 +39,8 @@
    :javascriptreact [eslint_d]
    :typescriptreact [eslint_d]
    :ruby            [rubocop]
-   :slim            [slimlint]
-   :clojure         [clj-kondo]})
+   :slim            [slimlint]})
+   ; :clojure         [clj-kondo]})
 
 (defn build [on-attach capabilities]
   {:cmd ["efm-langserver" "-logfile" "/tmp/efm.log"]

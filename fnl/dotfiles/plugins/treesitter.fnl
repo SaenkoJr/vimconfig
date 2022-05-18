@@ -26,11 +26,6 @@
                                                :ac "@class.outer"
                                                :ic "@class.inner"}}}})
 
-; (let [parser_config (parsers.get_parser_configs)]
-;   (tset parser_config :org {:install_info {:url "https://github.com/milisims/tree-sitter-org"
-;                                            :revision :main
-;                                            :files ["src/parser.c" "src/scanner.cc"]}
-;                             :filetype :org}))
   ; (tset parser_config :slim {:install_info {:url "~/Public/Projects/tree-sitter-slim"
   ;                                           :files ["src/parser.c"]}}))
 
