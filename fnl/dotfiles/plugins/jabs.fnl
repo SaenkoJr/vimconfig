@@ -6,9 +6,11 @@
 
 (jabs.setup
   {:border :rounded
-   :position :corner
-   :width 75
-   :height 30
-   :preview {:border :single}})
+   :position :center
+   :width 95
+   :height 18
+   :preview {:border :single}
+   :col 0
+   :row (/ ui.height 2)})
 
 (util.noremap :n :<leader>ob ":JABSOpen<cr>")

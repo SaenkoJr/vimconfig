@@ -6,6 +6,7 @@
 (def- rg-opts ["--column"
                "--line-number"
                "--no-heading"
+               "--no-ignore-vcs"
                "--fixed-strings"
                "--smart-case"
                "--hidden"

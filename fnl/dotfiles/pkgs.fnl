@@ -38,7 +38,7 @@
   ; lsp ---------------------------
   :RishabhRD/nvim-lsputils {:mod :lsp-utils
                             :requires :RishabhRD/popfix}
-  :tami5/lspsaga.nvim {:mod :lsp-saga}
+  :glepnir/lspsaga.nvim {:mod :lsp-saga}
   :neovim/nvim-lspconfig {:requires [:williamboman/nvim-lsp-installer]}
   :jubnzv/virtual-types.nvim {}
   :j-hui/fidget.nvim {:mod :fidget}
@@ -74,7 +74,6 @@
   :rbgrouleff/bclose.vim {}
   :moll/vim-bbye {}
   :schickling/vim-bufonly {}
-  :troydm/easybuffer.vim {}
   :matbme/JABS.nvim {:mod :jabs}
 
   ; telescope ---------------------------
@@ -85,7 +84,6 @@
   :luc-tielen/telescope_hoogle {}
 
   ; utils ---------------------------
-  ; :chaoren/vim-wordmotion {:mod :vim-wordmotion}
   :jiangmiao/auto-pairs {:mod :auto-pairs}
   ; :windwp/nvim-autopairs {:mod :auto-pairs}
   :easymotion/vim-easymotion {:mod :easymotion}
@@ -93,14 +91,12 @@
   :airblade/vim-rooter {:mod :rooter}
   :farmergreg/vim-lastplace {}
   :junegunn/vim-easy-align {:mod :easyalign}
-  ; :junegunn/limelight.vim {:mod :limelight}
   ; :folke/twilight.nvim {:mod :twilight}
   :glts/vim-textobj-comment {}
   :kana/vim-textobj-function {}
   :kana/vim-textobj-indent {}
   :kana/vim-textobj-user {}
   :ntpeters/vim-better-whitespace {:mod :better-whitespace}
-  :matze/vim-move {}
   :AndrewRadev/splitjoin.vim {}
   :mhinz/vim-startify {:mod :startify}
   :preservim/nerdcommenter {:mod :nerdcommenter}
@@ -108,7 +104,7 @@
   :skywind3000/asyncrun.vim {:mod :asyncrun}
   :szw/vim-maximizer {}
   :talek/obvious-resize {:mod :obvious-resize}
-  :tpope/vim-abolish {}
+  :tpope/vim-abolish {} ; crs, crm, crc, crs, cru, etc...
   :tpope/vim-dispatch {}
   :tpope/vim-eunuch {}
   :tpope/vim-jdaddy {:ft :json}
@@ -119,8 +115,6 @@
   :tpope/vim-unimpaired {}
   :tpope/vim-dotenv {:mod :vim-dotenv}
   :voldikss/vim-floaterm {:mod :floaterm}
-  :wellle/targets.vim {}
-  :mattn/emmet-vim {:mod :emmet}
   :andymass/vim-matchup {:mod :matchup}
   :lewis6991/spellsitter.nvim {:mod :spellsitter}
   ; :gelguy/wilder.nvim {:mod :wilder}
@@ -150,9 +144,13 @@
   :airblade/vim-gitgutter {}
   :f-person/git-blame.nvim {}
 
+  ; yaml ---------------------------
+  :cuducos/yaml.nvim {:ft [:yaml]}
+
   ; html ---------------------------
   :AndrewRadev/tagalong.vim {:mod :tagalong}
   :alvan/vim-closetag {:mod :closetag}
+  :mattn/emmet-vim {:mod :emmet}
 
   ; ruby ---------------------------
   :tpope/vim-rails {:mod :rails}
@@ -162,10 +160,12 @@
   :maxmellon/vim-jsx-pretty {:mod :jsx-pretty}
 
   ; lisp ---------------------------
-  :eraserhd/parinfer-rust {:run "cargo build --release"
+  :eraserhd/parinfer-rust {:mod :parinfer
+                           :run "cargo build --release"
                            :ft [:fennel :clojure :racket :scheme]}
   :wlangstroth/vim-racket {}
   ; :guns/vim-sexp {}
+  ; :tpope/vim-sexp-mappings-for-regular-people {}
   :clojure-vim/clojure.vim {}
   :tpope/vim-salve {}
   :tpope/vim-classpath {}
@@ -181,7 +181,6 @@
    ; colours ---------------------------
    :norcalli/nvim-colorizer.lua {:mod :nvim-colorizer}
    :NLKNguyen/papercolor-theme {}
-   :arcticicestudio/nord-vim {}
    ; :ayu-theme/ayu-vim {}
    :Shatur/neovim-ayu {}
    :casperstorm/sort-hvid.vim {}

@@ -3,6 +3,8 @@
             custom_ayu_ligh lualine.themes.ayu_light
             core aniseed.core}})
 
+(core.assoc-in custom_ayu_ligh [:normal :middle :bg] "#000000")
+
 (defn buf-status []
   (if vim.bo.modified
       "unsaved"
@@ -11,12 +13,11 @@
       ""))
 
 (lualine.setup
-  {:options {:theme :ayu_light
-             :padding 1
+  {:options {:theme custom_ayu_ligh
              :section_separators ["" ""]
              :component_separators ""
              :disabled_filetypes []
-
+             :always_divide_middle true
              :globalstatus true}
    :sections {:lualine_a [:mode]
               :lualine_b [:branch]

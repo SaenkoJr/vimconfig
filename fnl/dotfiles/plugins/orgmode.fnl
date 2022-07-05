@@ -17,7 +17,10 @@
                               :target "~/Documents/orgs/work.org"}
                           :n {:description "Note"
                               :template "* NOTE %?\n  %T"}}
-   :org_agenda_min_height 25})
+   :org_agenda_min_height 25
+   :mappings {:prefix "<localleader>"
+              :global {:org_agenda :<leader>oa
+                       :org_capture :<leader>oc}}})
 (orgmode.setup_ts_grammar)
 
 (util.noremap :n :<leader>ot ":e ~/Documents/orgs<cr>")

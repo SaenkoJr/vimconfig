@@ -5,8 +5,7 @@
 (util.set-var :g :indentLine_fileType [:pug :slim :slime :html.slim :fennel
                                        :html :yaml :yml :css :sass
                                        :scss :ruby :eruby :eruby.yaml :jsx
-                                       :javascript.jsx :javascript.react
-                                       :NvimTree])
+                                       :javascript.jsx :javascript.react])
 
 ; (util.set-var :g :indentLine_char "|")
 (util.set-var :g :indent_blankline_use_treesitter true)

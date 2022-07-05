@@ -42,7 +42,7 @@
   {:shiftwidth 2
    :tabstop    2
    :synmaxcol  200
-   :textwidth  100})
+   :textwidth  0})
 
 (def- enabled
   [:cindent     :termguicolors :expandtab

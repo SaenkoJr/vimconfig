@@ -26,13 +26,13 @@
                {:name :luasnip :priority 3}
                {:name :nvim_lua :priority 4}
                {:name :orgmode}]
-              [{:name :buffer :max_item_count 10}])
-   :window {:col_offset -2
+              [{:name :buffer :max_item_count 15}])
+   :window {:col_offset -3
             :side_padding 0}
    :formatting {:fields ["menu" "abbr" "kind"]
                 :format (fn [entry vim_item]
                           (tset vim_item :menu (. lspkind.menu_icons entry.source.name))
-                          (tset vim_item :kind (. lspkind.menu_kind vim_item.kind))
+                          (tset vim_item :kind (.. "  " (. lspkind.menu_kind vim_item.kind)))
                           vim_item)}})
 
 (util.inoremap :<c-k> "pumvisible() ? '<c-p>' : '<c-k>'" {:expr true})
