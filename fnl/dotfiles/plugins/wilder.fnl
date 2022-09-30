@@ -5,8 +5,8 @@
 (utils.nvim-set [:nowildmenu])
 
 (wilder.setup
-  {:modes [":" "/" "?"]
-   :enable_cmdline_enter 1
+  {:modes [":"]
+   :use_cmdlinechanged 1
    :previous_key "<c-k>"
    :next_key "<c-j>"
    :accept_key "<c-y>"})
@@ -25,5 +25,6 @@
   :renderer
   (wilder.popupmenu_renderer
     (wilder.popupmenu_border_theme {:highlights {:border :Normal}
-                                    :border :rounded})))
+                                    :border :rounded
+                                    :max_height "40%"})))
 

@@ -19,14 +19,13 @@
 
   (if client.resolved_capabilities.hover
     (do
-      (util.bnoremap bufnr :n :K ":Lspsaga hover_doc<cr>")
-      (util.bnoremap bufnr :n :<leader>K ":Lspsaga signature_help<cr>")))
-      ; (util.bnoremap bufnr :n :K "<cmd>lua vim.lsp.buf.hover()<cr>")
-      ; (util.bnoremap bufnr :n :<leader>K "<cmd>lua vim.lsp.buf.signature_help()<cr>")
+      ; (util.bnoremap bufnr :n :K ":Lspsaga hover_doc<cr>")
+      (util.bnoremap bufnr :n :K "<cmd>lua vim.lsp.buf.hover()<cr>")
+      (util.bnoremap bufnr :n :<leader>K "<cmd>lua vim.lsp.buf.signature_help()<cr>")))
 
   (if client.resolved_capabilities.goto_definition
-    (util.bnoremap bufnr :n :gd "<cmd>lua vim.lsp.buf.definition()<cr>"))
-      ; (util.bnoremap :n bufnr :gd ":Lspsaga lsp_finder<cr>")
+    ; (util.bnoremap bufnr :n :gd "<cmd>lua vim.lsp.buf.definition()<cr>")
+    (util.bnoremap bufnr :n :gd "<cmd>Telescope lsp_definitions<cr>"))
 
   (if client.resolved_capabilities.find_references
     (util.bnoremap bufnr :n :gr "<cmd>lua vim.lsp.buf.references()<cr>"))
@@ -57,11 +56,11 @@
   (util.bnoremap bufnr :n :<leader>wa "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>")
   (util.bnoremap bufnr :n :<leader>wr "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>")
 
-  (util.bnoremap bufnr :n :gp ":Lspsaga preview_definition<cr>")
-  (util.noremap :n "]d" "<cmd>Lspsaga diagnostic_jump_next<cr>")
-  (util.noremap :n "[d" "<cmd>Lspsaga diagnostic_jump_prev<cr>")
-  ; (util.noremap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
-  ; (util.noremap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
+  (util.bnoremap bufnr :n :gp ":Lspsaga peek_definition<cr>")
+  ; (util.noremap :n "]d" "<cmd>Lspsaga diagnostic_jump_next<cr>")
+  ; (util.noremap :n "[d" "<cmd>Lspsaga diagnostic_jump_prev<cr>")
+  (util.noremap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
+  (util.noremap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
 
   (print (.. "'" client.name "' server attached.")))
 

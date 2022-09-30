@@ -14,6 +14,7 @@
                "-g \"!yarn.lock\""
                "-g \"!.git\""
                "-g \"!node_modules\""
+               "-g \"!log\""
                "-- "])
 
 (def- rg
@@ -30,6 +31,7 @@
 (util.set-var :g :fzf_preview_window ["right:50%" "ctrl-/"])
 
 (util.noremap :n :<leader>FN ":Rg <c-r><c-w><cr>")
+(util.noremap :n :<leader>LG "<cmd>Rg<cr>")
 
 (util.noremap :n :<leader>ff "<cmd>Files<cr>")
 (util.noremap :n :<leader>FF "<cmd>Files ~<cr>")

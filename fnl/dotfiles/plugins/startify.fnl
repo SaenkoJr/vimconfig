@@ -61,3 +61,4 @@
                                       {:z "~/.zshrc"}
                                       {:d "~/dotfiles"}])
 
+(util.noremap :n :<leader>SS "<cmd>SSave!<cr>")

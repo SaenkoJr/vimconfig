@@ -13,30 +13,30 @@
 (nvim.ex.filetype "plugin indent on")
 (nvim.ex.syntax "sync minlines=256")
 
-(augroup YankHighlight
-         (autocmd :TextYankPost :* :silent! "lua vim.highlight.on_yank()"))
+(augroup
+  YankHighlight
+  (autocmd :TextYankPost :* :silent! "lua vim.highlight.on_yank()"))
 
 (def- global-opts
   {:clipboard      :unnamedplus
-   :backspace      "indent,eol,start"
    :completeopt    "menuone,noselect"
-   :encoding       "UTF-8"
    :fillchars      "stlnc:-,vert:|"
-   :foldlevelstart 99
+   ; :foldlevelstart 1
    :mouse          :a
    :scrolloff      3
    :shortmess      (.. nvim.o.shortmess "c")
    :sidescrolloff  10
    :pumheight      30
    :regexpengine   0
-   :updatetime     300
-   :viewoptions    :options
-   :whichwrap      "b,<,>,[,],l,h"})
+   :updatetime     50})
+   ; :viewoptions    :options})
+   ; :whichwrap      "b,<,>,[,],l,h"})
 
 (def- window-opts
   {:foldmethod  :expr
    :foldexpr    "nvim_treesitter#foldexpr()"
-   :foldnestmax 10})
+   :foldnestmax 10
+   :foldlevel   20})
 
 (def buffer-opts
   {:shiftwidth 2

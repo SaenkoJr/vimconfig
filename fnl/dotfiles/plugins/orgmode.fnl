@@ -15,6 +15,9 @@
                           :w {:description "Work task"
                               :template "* TODO %?\n  DEADLINE: %T"
                               :target "~/Documents/orgs/work.org"}
+                          :s {:description "Study task"
+                              :template "* TODO %?\n  %T"
+                              :target "~/Documents/orgs/study.org"}
                           :n {:description "Note"
                               :template "* NOTE %?\n  %T"}}
    :org_agenda_min_height 25

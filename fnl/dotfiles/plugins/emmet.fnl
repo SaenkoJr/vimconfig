@@ -7,5 +7,5 @@
 (util.set-var :g :user_emmet_install_global 0)
 (nvim.ex.autocmd
   :FileType
-  "html,css,scss,erb,eruby,html.erb,javascript.jsx,jsx"
+  "html,xhtml,css,scss,erb,eruby,html.erb,javascript.jsx,jsx"
   :EmmetInstall)

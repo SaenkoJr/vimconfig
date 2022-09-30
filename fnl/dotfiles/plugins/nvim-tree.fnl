@@ -3,13 +3,16 @@
             tree-conf nvim-tree.config
             util dotfiles.util}})
 
-(def tree-cb (. tree-conf :nvim_tree_callback))
+(def- tree-cb (. tree-conf :nvim_tree_callback))
 
 (nvim-tree.setup
-  {:disable_netrw true
-   :hijack_cursor true
+  {:disable_netrw false
+   :hijack_cursor false
+   :hijack_netrw false
    :reload_on_bufenter true
+   :sync_root_with_cwd true
    :git {:enable false}
+   :filters {:dotfiles false}
    :renderer {:indent_markers {:enable true}
               :icons {:show
                       {:git false}}

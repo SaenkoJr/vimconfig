@@ -34,14 +34,17 @@
   :Olical/aniseed {:branch :develop}
   :Olical/conjure {:mod :conjure
                    :branch :develop}
+  :nvim-lua/plenary.nvim {}
+  :nvim-lua/popup.nvim {}
 
   ; lsp ---------------------------
   :RishabhRD/nvim-lsputils {:mod :lsp-utils
                             :requires :RishabhRD/popfix}
-  :glepnir/lspsaga.nvim {:mod :lsp-saga}
   :neovim/nvim-lspconfig {:requires [:williamboman/nvim-lsp-installer]}
+  :j-hui/fidget.nvim {:mod :fidget} ; lsp status
   :jubnzv/virtual-types.nvim {}
-  :j-hui/fidget.nvim {:mod :fidget}
+  :glepnir/lspsaga.nvim {:mod :lsp-saga}
+  ; :jose-elias-alvarez/null-ls.nvim {:mod :null-ls}
 
   ; treesitter ---------------------------
   :nvim-treesitter/nvim-treesitter {:mod :treesitter
@@ -50,6 +53,8 @@
   :nvim-treesitter/nvim-treesitter-textobjects {}
   :p00f/nvim-ts-rainbow {}
   :RRethy/nvim-treesitter-endwise {}
+  :nvim-treesitter/nvim-treesitter-context {:mod :treesitter-context}
+  :lewis6991/spellsitter.nvim {:mod :spellsitter}
 
   ; completion ---------------------------
   :hrsh7th/nvim-cmp {:mod :nvim-cmp}
@@ -74,24 +79,21 @@
   :rbgrouleff/bclose.vim {}
   :moll/vim-bbye {}
   :schickling/vim-bufonly {}
-  :matbme/JABS.nvim {:mod :jabs}
 
   ; telescope ---------------------------
   :nvim-telescope/telescope.nvim {:mod :telescope
-                                  :requires [:nvim-lua/plenary.nvim
-                                             :nvim-lua/popup.nvim]}
-  :nvim-telescope/telescope-fzy-native.nvim {}
+                                  :requires []}
+  :nvim-telescope/telescope-fzf-native.nvim {:run "make"}
   :luc-tielen/telescope_hoogle {}
 
   ; utils ---------------------------
-  :jiangmiao/auto-pairs {:mod :auto-pairs}
+  ; :jiangmiao/auto-pairs {:mod :auto-pairs}
   ; :windwp/nvim-autopairs {:mod :auto-pairs}
+  ; :ZhiyuanLck/smart-pairs {:mod :auto-pairs}
   :easymotion/vim-easymotion {:mod :easymotion}
   :lukas-reineke/indent-blankline.nvim {:mod :indentline}
   :airblade/vim-rooter {:mod :rooter}
-  :farmergreg/vim-lastplace {}
   :junegunn/vim-easy-align {:mod :easyalign}
-  ; :folke/twilight.nvim {:mod :twilight}
   :glts/vim-textobj-comment {}
   :kana/vim-textobj-function {}
   :kana/vim-textobj-indent {}
@@ -99,6 +101,7 @@
   :ntpeters/vim-better-whitespace {:mod :better-whitespace}
   :AndrewRadev/splitjoin.vim {}
   :mhinz/vim-startify {:mod :startify}
+  ; :goolord/alpha-nvim {:mod :alpha-nvim}
   :preservim/nerdcommenter {:mod :nerdcommenter}
   :rhysd/clever-f.vim {:mod :clever-f}
   :skywind3000/asyncrun.vim {:mod :asyncrun}
@@ -106,19 +109,14 @@
   :talek/obvious-resize {:mod :obvious-resize}
   :tpope/vim-abolish {} ; crs, crm, crc, crs, cru, etc...
   :tpope/vim-dispatch {}
-  :tpope/vim-eunuch {}
   :tpope/vim-jdaddy {:ft :json}
   :tpope/vim-ragtag {}
-  :tpope/vim-repeat {}
-  :tpope/vim-speeddating {}
+  ; :tpope/vim-repeat {}
   :tpope/vim-surround {:mod :surround}
   :tpope/vim-unimpaired {}
-  :tpope/vim-dotenv {:mod :vim-dotenv}
   :voldikss/vim-floaterm {:mod :floaterm}
   :andymass/vim-matchup {:mod :matchup}
-  :lewis6991/spellsitter.nvim {:mod :spellsitter}
-  ; :gelguy/wilder.nvim {:mod :wilder}
-  ; :folke/which-key.nvim {:mod :which-key}
+  :gelguy/wilder.nvim {:mod :wilder}
   :jparise/vim-graphql {}
 
   ; testing ---------------------------
@@ -145,7 +143,7 @@
   :f-person/git-blame.nvim {}
 
   ; yaml ---------------------------
-  :cuducos/yaml.nvim {:ft [:yaml]}
+  :cuducos/yaml.nvim {:ft [:yaml :eruby.yaml]}
 
   ; html ---------------------------
   :AndrewRadev/tagalong.vim {:mod :tagalong}
@@ -173,23 +171,15 @@
   :radenling/vim-dispatch-neovim {}
 
   ; markdown ---------------------------
-  :iamcco/markdown-preview.nvim {:mod :markdown :run "cd app && yarn install"}
+  :iamcco/markdown-preview.nvim {:mod :markdown
+                                 :run "cd app && yarn install"}
 
   ; debug ---------------------------
-  :tweekmonster/startuptime.vim {:opt true}
+  :tweekmonster/startuptime.vim {}
 
-   ; colours ---------------------------
-   :norcalli/nvim-colorizer.lua {:mod :nvim-colorizer}
-   :NLKNguyen/papercolor-theme {}
-   ; :ayu-theme/ayu-vim {}
-   :Shatur/neovim-ayu {}
-   :casperstorm/sort-hvid.vim {}
-   :equt/paper.vim {}
-   :logico/typewriter-vim {}
-   :mikker/vim-colors-pap {}
-   :pgdouyon/vim-yin-yang {}
-   :rflban/homecolors.vim {}
-   :thenewvu/vim-colors-sketching {}
-   :wolverian/minimal {}
-   :altercation/vim-colors-solarized {}
-   :rakr/vim-two-firewatch {})
+  ; colours ---------------------------
+  :norcalli/nvim-colorizer.lua {:mod :nvim-colorizer}
+  :NLKNguyen/papercolor-theme {}
+  ; :ayu-theme/ayu-vim {}
+  :Shatur/neovim-ayu {}
+  :equt/paper.vim {})

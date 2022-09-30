@@ -3,7 +3,7 @@
             indent_blankline indent_blankline}})
 
 (util.set-var :g :indentLine_fileType [:pug :slim :slime :html.slim :fennel
-                                       :html :yaml :yml :css :sass
+                                       :html :xhtml :yaml :yml :css :sass
                                        :scss :ruby :eruby :eruby.yaml :jsx
                                        :javascript.jsx :javascript.react])
 

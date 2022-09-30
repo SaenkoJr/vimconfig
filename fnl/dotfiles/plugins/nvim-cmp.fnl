@@ -25,8 +25,10 @@
                {:name :path}
                {:name :luasnip :priority 3}
                {:name :nvim_lua :priority 4}
-               {:name :orgmode}]
-              [{:name :buffer :max_item_count 15}])
+               {:name :orgmode}
+               {:name :buffer
+                :max_item_count 15
+                :priority 1}])
    :window {:col_offset -3
             :side_padding 0}
    :formatting {:fields ["menu" "abbr" "kind"]

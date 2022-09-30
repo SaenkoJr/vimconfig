@@ -13,7 +13,7 @@
 (utils.noremap :n :<localleader>q ":q<cr>")
 (utils.noremap :n :<localleader>Q ":Bdelete<cr>")
 (utils.noremap :n :<localleader>w ":w!<cr>")
-(utils.noremap :n :<localleader>W ":w!<cr>:e<cr>")
+(utils.noremap :n :<localleader>W ":w!<cr>:e %<cr>")
 
 (utils.noremap :n :<leader><leader> :<c-^>)
 (utils.noremap :n :<leader>ll ":bnext<cr>")

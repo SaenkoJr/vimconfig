@@ -17,5 +17,4 @@
 (saga.init_lsp_saga
   {:border_style :rounded
    :diagnostic_header ["" "" "" ""]
-   :show_diagnostic_source true
    :code_action_icon ""})
