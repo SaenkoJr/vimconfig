@@ -57,10 +57,10 @@
   (util.bnoremap bufnr :n :<leader>wr "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>")
 
   (util.bnoremap bufnr :n :gp ":Lspsaga peek_definition<cr>")
-  ; (util.noremap :n "]d" "<cmd>Lspsaga diagnostic_jump_next<cr>")
-  ; (util.noremap :n "[d" "<cmd>Lspsaga diagnostic_jump_prev<cr>")
-  (util.noremap :n "]d" "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>")
-  (util.noremap :n "[d" "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>")
+  (util.noremap :n "]d" "<cmd>Lspsaga diagnostic_jump_next<cr>")
+  (util.noremap :n "[d" "<cmd>Lspsaga diagnostic_jump_prev<cr>")
+  ; (util.noremap :n "]d" "<cmd>lua vim.diagnostic.goto_next()<CR>")
+  ; (util.noremap :n "[d" "<cmd>lua vim.diagnostic.goto_prev()<CR>")
 
   (print (.. "'" client.name "' server attached.")))
 

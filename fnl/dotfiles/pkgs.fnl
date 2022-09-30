@@ -44,7 +44,8 @@
   :j-hui/fidget.nvim {:mod :fidget} ; lsp status
   :jubnzv/virtual-types.nvim {}
   :glepnir/lspsaga.nvim {:mod :lsp-saga}
-  ; :jose-elias-alvarez/null-ls.nvim {:mod :null-ls}
+  :jose-elias-alvarez/null-ls.nvim {:mod :null-ls}
+  :folke/lsp-colors.nvim {}
 
   ; treesitter ---------------------------
   :nvim-treesitter/nvim-treesitter {:mod :treesitter

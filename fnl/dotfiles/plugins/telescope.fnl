@@ -59,6 +59,7 @@
 
 (util.noremap :n :<F1> "<cmd>Telescope help_tags<cr>")
 (util.noremap :n :<leader>ob "<cmd>Telescope buffers<cr>")
+(util.noremap :n :<leader>td "<cmd>Telescope diagnostics<cr>")
 (util.noremap :n :<leader>fn "<cmd>Telescope grep_string<cr>")
 
 (util.noremap :n :<leader>ds "<cmd>Telescope lsp_document_symbols<cr>")

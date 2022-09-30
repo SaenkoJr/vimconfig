@@ -28,13 +28,7 @@
     (core.assoc-in nvim [:o name] value)))
 
 (defn set-var [mode name value]
-  "Set global or local vars.
-   Modes:
-     - :g
-     - :w
-     - :b
-     - :t
-     - :v"
+  "Set global or local vars."
   (match mode
     :g (tset nvim.g name value)
     :v (tset nvim.v name value)
