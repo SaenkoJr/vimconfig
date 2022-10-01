@@ -4,11 +4,7 @@
             nvim aniseed.nvim}
    require-macros [dotfiles.macros]})
 
-; (augroup SyntaxHighlight
-;          (autocmd :FileType
-;                   "slim"
-;                   "set syntax=off"))
-
+;; Slim
 (autocmd :BufNewFile :BufRead "*.slim" "set ft=slim")
 
 ;; Rust
@@ -26,6 +22,3 @@
 ;; Folding
 (nvim.ex.autocmd :FileType "eruby.yaml" "set foldmethod=indent")
 (nvim.ex.autocmd :FileType "fennel" "set foldmethod=indent")
-
-;; Syntax
-(nvim.ex.autocmd :FileType "startify" "setlocal syntax=on")

@@ -11,7 +11,6 @@
 (utils.set-var :g :loaded_netrwPlugin 1)
 
 (nvim.ex.filetype "plugin indent on")
-(nvim.ex.syntax "off")
 (nvim.ex.syntax "sync minlines=256")
 
 (augroup
