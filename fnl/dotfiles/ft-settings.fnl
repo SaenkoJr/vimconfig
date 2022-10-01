@@ -28,4 +28,4 @@
 (nvim.ex.autocmd :FileType "fennel" "set foldmethod=indent")
 
 ;; Syntax
-(nvim.ex.autocmd :FileType "startify" "syntax on")
+(nvim.ex.autocmd :FileType "startify" "setlocal syntax=on")
