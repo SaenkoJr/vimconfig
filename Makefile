@@ -3,7 +3,6 @@ install-lsp-servers:
 	make install-bash-lsp
 	make install-yaml-lsp
 	make install-typescript-lsp
-	make install-efm-lsp
 	make install-solargraph-lsp
 	make install-html-lsp
 	make install-css-lsp
@@ -32,10 +31,6 @@ install-css-lsp:
 
 install-typescript-lsp:
 	npm i -g typescript typescript-language-server
-
-install-efm-lsp:
-	go get github.com/mattn/efm-langserver
-	asdf reshim golang
 
 install-solargraph-lsp:
 	gem install solargraph
