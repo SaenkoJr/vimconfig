@@ -26,3 +26,6 @@
 ;; Folding
 (nvim.ex.autocmd :FileType "eruby.yaml" "set foldmethod=indent")
 (nvim.ex.autocmd :FileType "fennel" "set foldmethod=indent")
+
+;; Syntax
+(nvim.ex.autocmd :FileType "startify" "syntax on")
