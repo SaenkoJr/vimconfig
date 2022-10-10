@@ -10,15 +10,15 @@
 ;; Rust
 (utils.set-var :g :rust_recommended_style 0)
 
+;; Fennel
+(nvim.ex.autocmd :FileType "fennel" "lua vim.opt.listchars:append({ lead = \"⋅\" })")
+
 ;; Racket
 (nvim.ex.autocmd :FileType "sicp" "set filetype=racket")
-
-;; Packer
-(nvim.ex.autocmd :FileType "packer" "setlocal cursorline")
-
-;; Orgmode
-(nvim.ex.autocmd :FileType "orgagenda" "setlocal cursorline")
 
 ;; Folding
 (nvim.ex.autocmd :FileType "eruby.yaml" "set foldmethod=indent")
 (nvim.ex.autocmd :FileType "fennel" "set foldmethod=indent")
+
+;; Cursorline
+(nvim.ex.autocmd :FileType "packer,orgagenda" "setlocal cursorline")

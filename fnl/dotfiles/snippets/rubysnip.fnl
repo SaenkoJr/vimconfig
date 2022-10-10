@@ -10,6 +10,7 @@
 (def sn ls.snippet_node)
 (def d ls.dynamic_node)
 (def isn ls.indent_snippet_node)
+(def fmt (. (require :luasnip.extras.fmt) fmt))
 
 (def snippets
   [(s "def" [(t "def ") (i 1)
@@ -17,4 +18,11 @@
              (t ["" "end"])])
    (s "pp" [(t "pp '------------------------------------------'")
             (t ["" "pp "]) (i 0)
-            (t ["" "pp '------------------------------------------'"])])])
+            (t ["" "pp '------------------------------------------'"])])
+   (s "m" [(t "module ") (i 1)
+           (t ["" "\t"]) (i 0)
+           (t ["" "end"])])
+   (s "cl" [(t "class ") (i 1)
+            (t ["" "\t"]) (i 0)
+            (t ["" "end"])])
+   (s "it" [(t "it {  }")])])

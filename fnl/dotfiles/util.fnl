@@ -19,13 +19,13 @@
                                 {:noremap true :silent true}
                                 ?options)))
 
-(defn nvim-set [opts]
+(defn nvim-sets [opts]
   (each [_ opt (ipairs opts)]
     (nvim.ex.set opt)))
 
 (defn set-options [options]
   (each [name value (pairs options)]
-    (core.assoc-in nvim [:o name] value)))
+    (nvim.set_option_value name value {})))
 
 (defn set-var [mode name value]
   "Set global or local vars."

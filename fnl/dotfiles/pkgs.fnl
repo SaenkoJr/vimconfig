@@ -41,7 +41,7 @@
   :RishabhRD/nvim-lsputils {:mod :lsp-utils
                             :requires :RishabhRD/popfix}
   :neovim/nvim-lspconfig {:requires [:williamboman/nvim-lsp-installer]}
-  :j-hui/fidget.nvim {:mod :fidget} ; lsp status
+  ; :j-hui/fidget.nvim {:mod :fidget} ; lsp status
   :jubnzv/virtual-types.nvim {}
   :glepnir/lspsaga.nvim {:mod :lsp-saga}
   :jose-elias-alvarez/null-ls.nvim {:mod :null-ls}

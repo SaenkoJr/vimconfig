@@ -2,7 +2,7 @@
   {require {wilder wilder
             utils dotfiles.util}})
 
-(utils.nvim-set [:nowildmenu])
+(utils.nvim-sets [:nowildmenu])
 
 (wilder.setup
   {:modes [":"]
@@ -27,4 +27,3 @@
     (wilder.popupmenu_border_theme {:highlights {:border :Normal}
                                     :border :rounded
                                     :max_height "40%"})))
-

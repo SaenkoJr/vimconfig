@@ -2,7 +2,7 @@
   {require {util dotfiles.util
             indent_blankline indent_blankline}})
 
-(util.set-var :g :indentLine_fileType [:pug :slim :slime :html.slim :fennel
+(util.set-var :g :indentLine_fileType [:pug :slim :slime :html.slim
                                        :html :xhtml :yaml :yml :css :sass
                                        :scss :ruby :eruby :eruby.yaml :jsx
                                        :javascript.jsx :javascript.react])
@@ -13,8 +13,10 @@
 (util.set-var :g :vim_json_syntax_conceal 0)
 (util.set-var :g :vim_json_syntax_conceal 0)
 
-(util.set-var :g :indent_blankline_filetype_exclude [:help :packer])
 (util.set-var :g :indent_blankline_buftype_exclude [:terminal :nofile])
 
+(tset vim.opt :list true)
+
 (indent_blankline.setup
-  {:show_current_context true})
+  {:show_current_context true
+   :space_char_blankline " "})

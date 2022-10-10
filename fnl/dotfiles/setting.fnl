@@ -41,7 +41,7 @@
 (def buffer-opts
   {:shiftwidth 2
    :tabstop    2
-   :synmaxcol  200
+   :synmaxcol  300
    :textwidth  0})
 
 (def- enabled
@@ -56,8 +56,8 @@
 (def- disabled
   [:nobk :nojs :nosmd :noswapfile :nolz :nowrap])
 
-(utils.nvim-set enabled)
-(utils.nvim-set disabled)
+(utils.nvim-sets enabled)
+(utils.nvim-sets disabled)
 
 (utils.set-options global-opts)
 (utils.set-options window-opts)
