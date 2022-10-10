@@ -2,7 +2,8 @@
   {require {lu dotfiles.lsp.utils
             core aniseed.core
             lspconfig lspconfig
-            lsp-installer nvim-lsp-installer}})
+            mason mason
+            mason-lspconfig mason-lspconfig}})
 
 (let [code-action (require "lsputil.codeAction")
       symbols (require "lsputil.symbols")
@@ -23,10 +24,12 @@
         vim.lsp.diagnostic.on_publish_diagnostics
         {:virtual_text {:prefix "■"}}))
 
-(lsp-installer.setup)
+(mason.setup {})
+(mason-lspconfig.setup
+  {:ensure_installed [:solargraph :tsserver :sumneko_lua :clojure_lsp]})
 
-(let [servers (lsp-installer.get_installed_servers)]
-  (each [_ server (ipairs servers)]
-    (let [conf-builder (lu.safe-require-server-config (. server :name))
-          lsp (. lspconfig (. server :name))]
-      (lsp.setup (conf-builder.build lu.on-attach lu.capabilities)))))
+; (let [servers (lsp-installer.get_installed_servers)]
+;   (each [_ server (ipairs servers)]
+;     (let [conf-builder (lu.safe-require-server-config (. server :name))
+;           lsp (. lspconfig (. server :name))]
+;       (lsp.setup (conf-builder.build lu.on-attach lu.capabilities)))))

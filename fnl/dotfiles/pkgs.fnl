@@ -40,7 +40,7 @@
   ; lsp ---------------------------
   :RishabhRD/nvim-lsputils {:mod :lsp-utils
                             :requires :RishabhRD/popfix}
-  :neovim/nvim-lspconfig {:requires [:williamboman/nvim-lsp-installer]}
+  :williamboman/mason-lspconfig.nvim {:requires [:williamboman/mason.nvim :neovim/nvim-lspconfig]}
   ; :j-hui/fidget.nvim {:mod :fidget} ; lsp status
   :jubnzv/virtual-types.nvim {}
   :glepnir/lspsaga.nvim {:mod :lsp-saga}

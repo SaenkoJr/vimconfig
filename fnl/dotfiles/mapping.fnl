@@ -36,3 +36,7 @@
 (utils.noremap :i :<C-v> :<Esc>pa)
 (utils.noremap :n :<leader>P "\"0P")
 (utils.noremap :x :<leader>P "\"0P")
+
+;; commands
+(vim.api.nvim_create_user_command :Format ":%!jq ." {})
+(vim.api.nvim_create_user_command :Unformat ":%!jq -c ." {})
