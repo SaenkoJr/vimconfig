@@ -1,4 +1,4 @@
-(module dotfiles.plugings.null-ls
+(module dotfiles.lsp.servers.null-ls
   {require {null-ls null-ls
             c aniseed.core}})
 
