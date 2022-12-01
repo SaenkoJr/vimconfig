@@ -5,5 +5,5 @@
             ayu ayu}
    require-macros [dotfiles.macros]})
 
-(nvim.ex.colorscheme :PaperColor)
+(nvim.ex.colorscheme :paper)
 (core.assoc-in nvim [:o :background] :light)
