@@ -25,37 +25,43 @@
     :prompt_prefix ">> "
     :initial_mode :normal
     :vimgrep_arguments vimgrep-opts
-    :file_ignore_patterns ["node_modules" ".git" "^log/" "%.log" "^storage/" "%.lock"
+    :file_ignore_patterns ["node_modules" ".git" "^log/"
+                           "%.log" "^storage/" "%.lock"
                            "^tmp/" "%.keep" "%.key"]
     :mappings {:i {:<C-k> actions.move_selection_previous
                    :<C-j> actions.move_selection_next
                    :<C-i> actions.toggle_selection
                    :<C-s> actions.cycle_previewers_next
                    :<C-a> actions.cycle_previewers_prev
-                   :<C-u> false
-                   :q actions.close}}}
+                   :<C-u> false}
+               :n {:q actions.close}}}
    :pickers
    {:buffers {:theme :dropdown
               :layout_config {:width 0.45
                               :height 0.3
                               :prompt_position :top}
               :path_display {:truncate 5}
-              :mappings
-              {:n {:<c-d> actions.delete_buffer
-                   :q actions.close}}}
+              :mappings {:n {:<c-d> actions.delete_buffer
+                             :q actions.close}}}
     :diagnostics {:theme :dropdown
                   :layout_config {:width 0.55
                                   :height 0.3
                                   :prompt_position :top}
                   :path_display {:truncate 5}
-                  :mappings
-                  {:n {:q actions.close}}}}
+                  :mappings {:n {:q actions.close}}}}
    :extensions
    {:fzf {:fuzzy true
           :override_file_sorter true
           :override_generic_sorter true
-          :case_mode :smart_case}}})
+          :case_mode :smart_case}
+    :ui-select {:theme :dropdown
+                :layout_config {:width 0.55
+                                :height 0.4
+                                :prompt_position :top}
+                :mappings {:n {:q actions.close}}}}})
+
 (telescope.load_extension :fzf)
+(telescope.load_extension :ui-select)
 
 (util.noremap :n :<F1> "<cmd>Telescope help_tags<cr>")
 (util.noremap :n :<leader>ob "<cmd>Telescope buffers<cr>")
