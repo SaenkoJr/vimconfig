@@ -14,6 +14,6 @@
                   null-ls.builtins.formatting.lua_format
                   null-ls.builtins.formatting.eslint_d])
 
-(null-ls.setup
-  {:diagnostics_format "[#{c}] #{m} (#{s})"
-   :sources (c.concat code_actions diagnostics formatters)})
+; (null-ls.setup
+;   {:diagnostics_format "[#{c}] #{m} (#{s})"
+;    :sources (c.concat code_actions diagnostics formatters)})

@@ -14,7 +14,7 @@
       conf-or-err)))
 
 (def capabilities
-  (cmplsp.update_capabilities
+  (cmplsp.default_capabilities
     (vim.lsp.protocol.make_client_capabilities)))
 
 (defn on-attach [client bufnr]
@@ -39,17 +39,9 @@
   (util.bnoremap bufnr :v :<leader>ca ":<C-U>Lspsaga range_code_action<cr>")
 
   (util.bnoremap bufnr :n :gi "<cmd>lua vim.lsp.buf.implementation()<cr>")
-
   (util.bnoremap bufnr :n :<leader>gt "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 
-  ; (if (client.supports_method "textDocument/formatting")
-  ;   (do
-  ;     (vim.api.nvim_create_autocmd
-  ;       "BufWritePre"
-  ;       {:bufnr bufnr
-  ;        :callback (fn [] (lsp_formating bufnr))})
   (util.bnoremap bufnr :n :<leader>fm "<cmd>lua vim.lsp.buf.format({ async = true })<cr>")
-  ; (util.bnoremap bufnr :v :<leader>fm "<cmd>lua vim.lsp.buf.range_format({ async = true })<CR>")))
 
   (util.bnoremap bufnr :n :<leader>wa "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>")
   (util.bnoremap bufnr :n :<leader>wr "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>")

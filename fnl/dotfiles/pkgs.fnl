@@ -40,7 +40,9 @@
   ; lsp ---------------------------
   :RishabhRD/nvim-lsputils {:mod :lsp-utils
                             :requires :RishabhRD/popfix}
-  :williamboman/mason-lspconfig.nvim {:requires [:williamboman/mason.nvim :neovim/nvim-lspconfig]}
+  :williamboman/mason-lspconfig.nvim {:requires [:williamboman/mason.nvim
+                                                 :neovim/nvim-lspconfig
+                                                 :jayp0521/mason-null-ls.nvim]}
   ; :j-hui/fidget.nvim {:mod :fidget} ; lsp status
   :jubnzv/virtual-types.nvim {}
   :glepnir/lspsaga.nvim {:mod :lsp-saga}
@@ -86,6 +88,9 @@
                                   :requires []}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"}
   :luc-tielen/telescope_hoogle {}
+
+  ; ui ---------------------------
+  :nvim-telescope/telescope-ui-select.nvim {}
 
   ; utils ---------------------------
   ; :jiangmiao/auto-pairs {:mod :auto-pairs}

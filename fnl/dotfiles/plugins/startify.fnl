@@ -36,7 +36,7 @@
 
 (util.set-var :g :startify_fortune_use_unicode 1)
 (util.set-var :g :startify_change_to_dir 0)
-(util.set-var :g :startify_lists [{:type :dir       :header ["   ---------------------  MRU Current Dir ---------------------"]}
+(util.set-var :g :startify_lists [{:type :dir       :header ["   ---------------------  MRU [Current Dir] ---------------------"]}
                                   {:type :files     :header ["   ---------------------  MRU ---------------------"]}
                                   {:type :sessions  :header ["   ---------------------  Sessions ---------------------"]}
                                   {:type :bookmarks :header ["   ---------------------  Bookmarks ---------------------"]}
@@ -53,7 +53,7 @@
                                      {:c ["Clean Plugin"     ":PackerClean"]}
                                      {:s ["Sync Plugin"      ":PackerSync"]}
                                      {:S ["Start Time"       ":StartupTime"]}
-                                     {:l ["LSP Status"       ":LspInstallInfo"]}])
+                                     {:l ["Mason"            ":Mason"]}])
 
 
 (util.set-var :g :startify_bookmarks [{:n "~/.config/nvim/init.lua"}

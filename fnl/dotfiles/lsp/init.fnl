@@ -3,7 +3,9 @@
             core aniseed.core
             lspconfig lspconfig
             mason mason
-            mason-lspconfig mason-lspconfig}})
+            mason-lspconfig mason-lspconfig
+            null-ls null-ls
+            mason-null-ls mason-null-ls}})
 
 (let [code-action (require "lsputil.codeAction")
       symbols (require "lsputil.symbols")
@@ -24,12 +26,22 @@
         vim.lsp.diagnostic.on_publish_diagnostics
         {:virtual_text {:prefix "■"}}))
 
-(mason.setup {})
+; (print vim.env.PATH)
+(mason.setup
+  {:PATH :append})
 (mason-lspconfig.setup
   {:ensure_installed [:solargraph :tsserver :sumneko_lua :clojure_lsp]})
 
-; (let [servers (lsp-installer.get_installed_servers)]
-;   (each [_ server (ipairs servers)]
-;     (let [conf-builder (lu.safe-require-server-config (. server :name))
-;           lsp (. lspconfig (. server :name))]
-;       (lsp.setup (conf-builder.build lu.on-attach lu.capabilities)))))
+(null-ls.setup
+  {:diagnostics_format "[#{c}] #{m} (#{s})"
+   :sources [null-ls.builtins.diagnostics.clj_kondo
+             null-ls.builtins.formatting.lua_format
+             null-ls.builtins.formatting.fnlfmt]})
+(mason-null-ls.setup
+  {:ensure_installed [:rubocop :eslint_d :luacheck]})
+
+(let [servers (mason-lspconfig.get_installed_servers)]
+  (each [_ server (ipairs servers)]
+    (let [conf-builder (lu.safe-require-server-config server)
+          lsp (. lspconfig server)]
+      (lsp.setup (conf-builder.build lu.on-attach lu.capabilities)))))
