@@ -12,7 +12,7 @@
    :reload_on_bufenter true
    :sync_root_with_cwd true
    :git {:enable false}
-   :filters {:dotfiles false}
+   :filters {:dotfiles true}
    :renderer {:indent_markers {:enable true}
               :icons {:show
                       {:git false}}

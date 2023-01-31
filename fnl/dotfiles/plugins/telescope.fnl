@@ -62,6 +62,7 @@
 
 (telescope.load_extension :fzf)
 (telescope.load_extension :ui-select)
+(telescope.load_extension :harpoon)
 
 (util.noremap :n :<F1> "<cmd>Telescope help_tags<cr>")
 (util.noremap :n :<leader>ob "<cmd>Telescope buffers<cr>")

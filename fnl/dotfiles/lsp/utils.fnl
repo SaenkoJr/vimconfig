@@ -36,7 +36,7 @@
   ; (util.bnoremap bufnr :n :<leader>ca "<cmd>lua vim.lsp.buf.code_action()<cr>")
   ; (util.bnoremap bufnr :v :<leader>ca "<cmd>lua vim.lsp.buf.range_code_action()<cr>")
   (util.bnoremap bufnr :n :<leader>ca ":Lspsaga code_action<cr>")
-  (util.bnoremap bufnr :v :<leader>ca ":<C-U>Lspsaga range_code_action<cr>")
+  (util.bnoremap bufnr :v :<leader>ca ":Lspsaga range_code_action<cr>")
 
   (util.bnoremap bufnr :n :gi "<cmd>lua vim.lsp.buf.implementation()<cr>")
   (util.bnoremap bufnr :n :<leader>gt "<cmd>lua vim.lsp.buf.type_definition()<cr>")

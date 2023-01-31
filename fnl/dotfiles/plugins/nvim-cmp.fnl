@@ -18,13 +18,16 @@
    :snippet {:expand (fn [args]
                        ((. (require :luasnip) :lsp_expand) args.body))}
    :sources (cmp.config.sources
-              [{:name :nvim_lsp :priority 5}
+              [{:name :nvim_lsp
+                :priority 10}
                {:name :conjure
                 :trigger_characters ["." "/"]
                 :priority 4}
                {:name :path}
-               {:name :luasnip :priority 3}
-               {:name :nvim_lua :priority 4}
+               {:name :luasnip
+                :priority 3}
+               {:name :nvim_lua
+                :priority 4}
                {:name :orgmode}
                {:name :buffer
                 :max_item_count 15

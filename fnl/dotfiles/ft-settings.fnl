@@ -10,11 +10,11 @@
 ;; Rust
 (utils.set-var :g :rust_recommended_style 0)
 
-;; Fennel
-(nvim.ex.autocmd :FileType "fennel" "lua vim.opt.listchars:append({ lead = \"⋅\" })")
-
 ;; Racket
 (nvim.ex.autocmd :FileType "sicp" "set filetype=racket")
+
+;; Leads
+(nvim.ex.autocmd :FileType "fennel,clojure" "lua vim.opt.listchars:append({ lead = \"⋅\" })")
 
 ;; Folding
 (nvim.ex.autocmd :FileType "eruby.yaml" "set foldmethod=indent")
@@ -22,3 +22,6 @@
 
 ;; Cursorline
 (nvim.ex.autocmd :FileType "packer,orgagenda" "setlocal cursorline")
+
+;; diagnostic
+(nvim.ex.autocmd :BufWinEnter "conjure-log-*,*.log" "lua vim.diagnostic.disable(0)")

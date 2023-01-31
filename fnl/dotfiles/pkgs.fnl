@@ -34,6 +34,7 @@
   :Olical/aniseed {:branch :develop}
   :Olical/conjure {:mod :conjure
                    :branch :develop}
+  :m00qek/baleia.nvim {}
   :nvim-lua/plenary.nvim {}
   :nvim-lua/popup.nvim {}
 
@@ -94,7 +95,7 @@
 
   ; utils ---------------------------
   ; :jiangmiao/auto-pairs {:mod :auto-pairs}
-  ; :windwp/nvim-autopairs {:mod :auto-pairs}
+  :windwp/nvim-autopairs {:mod :auto-pairs}
   ; :ZhiyuanLck/smart-pairs {:mod :auto-pairs}
   :easymotion/vim-easymotion {:mod :easymotion}
   :lukas-reineke/indent-blankline.nvim {:mod :indentline}
@@ -124,6 +125,7 @@
   :andymass/vim-matchup {:mod :matchup}
   :gelguy/wilder.nvim {:mod :wilder}
   :jparise/vim-graphql {}
+  :ThePrimeagen/harpoon {}
 
   ; testing ---------------------------
   ; :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
@@ -188,4 +190,7 @@
   :NLKNguyen/papercolor-theme {}
   ; :ayu-theme/ayu-vim {}
   :Shatur/neovim-ayu {}
-  :equt/paper.vim {})
+  :equt/paper.vim {}
+  :jesseleite/nvim-noirbuddy {:requires ["tjdevries/colorbuddy.nvim"]})
+
+ 

@@ -1,8 +1,9 @@
 (module dotfiles.plugins.lsp-saga
   {require {saga lspsaga}})
 
-(saga.init_lsp_saga
-  {:border_style :rounded
-   :diagnostic_header ["" "" "" ""]
-   :code_action_icon ""
-   :symbol_in_winbar {:enable false}})
+(saga.setup
+  {:symbol_in_winbar {:enable false}
+   :lightbulb {:enable false}
+   :ui {:border :rounded
+        :code_action ""
+        :colors {:title_bg ""}}})

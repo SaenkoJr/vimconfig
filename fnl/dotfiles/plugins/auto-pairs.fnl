@@ -1,6 +1,6 @@
 (module dotfiles.plugin.auto-pairs
   {require {util dotfiles.util
-            pairs pairs}})
+            nvim-autopairs nvim-autopairs}})
 
 (util.set-var
   :g
@@ -20,11 +20,15 @@
           ["|" "|"]]
    :javascript [["'" "'"]]})
 
-(pairs:setup
-  {:pairs pairs-list
-   :autojump_strategy {:unbalanced :right}
-   :enter {:enable_mapping false}
-   :indent {:* 1
-            :ruby 1
-            :fennel 0
-            :clojure 0}})
+; (pairs:setup
+;   {:pairs pairs-list
+;    :autojump_strategy {:unbalanced :right}
+;    :enter {:enable_mapping false}
+;    :indent {:* 1
+;             :ruby 1
+;             :fennel 0
+;             :clojure 0}})
+
+(nvim-autopairs.setup
+  {:disable_filetyp [:TelescopePrompt :vim :clojure :fennel]
+   :map_c_h true})
