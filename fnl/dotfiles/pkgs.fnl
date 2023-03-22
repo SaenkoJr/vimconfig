@@ -125,7 +125,7 @@
   :tpope/vim-dispatch {}
   :tpope/vim-jdaddy {:ft :json}
   :tpope/vim-ragtag {}
-  ; :tpope/vim-repeat {}
+  :tpope/vim-repeat {}
   :tpope/vim-surround {:mod :surround}
   :tpope/vim-unimpaired {}
   :voldikss/vim-floaterm {:mod :floaterm}
@@ -187,7 +187,8 @@
 
   ; markdown ---------------------------
   :iamcco/markdown-preview.nvim {:mod :markdown
-                                 :run "cd app && yarn install"}
+                                 :run "cd app && yarn install"
+                                 :ft [:markdown :md]}
 
   ; debug ---------------------------
   :tweekmonster/startuptime.vim {}
@@ -199,9 +200,6 @@
   ; colours ---------------------------
   :norcalli/nvim-colorizer.lua {:mod :nvim-colorizer}
   :NLKNguyen/papercolor-theme {}
-  ; :ayu-theme/ayu-vim {}
   :Shatur/neovim-ayu {}
   :equt/paper.vim {}
   :jesseleite/nvim-noirbuddy {:requires ["tjdevries/colorbuddy.nvim"]})
-
- 

@@ -16,18 +16,15 @@
                                      :node_incremental :gnn
                                      :node_decremental :gnm
                                      :scope_incremental :gnc}}
-   :endwise {:enable true}
    :textobjects {:select {:enable false
                           :keymaps {:ab "@block.outer"
                                     :ib "@block.inner"
                                     :ac "@class.outer"
                                     :ic "@class.inner"}}}
+   :endwise {:enable true}
    :rainbow {:enable true
              :extended_mode false
              :max_file_lines 1000}})
-
-  ; (tset parser_config :slim {:install_info {:url "~/Public/Projects/tree-sitter-slim"
-  ;                                           :files ["src/parser.c"]}}))
 
 (vim.schedule
   (fn []

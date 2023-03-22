@@ -26,9 +26,7 @@
         vim.lsp.diagnostic.on_publish_diagnostics
         {:virtual_text {:prefix "■"}}))
 
-; (print vim.env.PATH)
-(mason.setup
-  {:PATH :append})
+(mason.setup {:PATH :append})
 (mason-lspconfig.setup
   {:ensure_installed [:solargraph :tsserver :lua_ls :clojure_lsp]})
 
@@ -37,6 +35,7 @@
    :sources [null-ls.builtins.diagnostics.clj_kondo
              null-ls.builtins.formatting.lua_format
              null-ls.builtins.formatting.fnlfmt]})
+
 (mason-null-ls.setup
   {:ensure_installed [:rubocop :eslint_d :luacheck]})
 
