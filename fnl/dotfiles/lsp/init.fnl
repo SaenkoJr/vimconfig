@@ -30,7 +30,7 @@
 (mason.setup
   {:PATH :append})
 (mason-lspconfig.setup
-  {:ensure_installed [:solargraph :tsserver :sumneko_lua :clojure_lsp]})
+  {:ensure_installed [:solargraph :tsserver :lua_ls :clojure_lsp]})
 
 (null-ls.setup
   {:diagnostics_format "[#{c}] #{m} (#{s})"

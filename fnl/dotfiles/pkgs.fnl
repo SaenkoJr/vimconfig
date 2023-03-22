@@ -1,16 +1,19 @@
 (module dotfiles.p
   {autoload {core aniseed.core
-             packer packer}})
+             packer packer}
+   require {packer_util packer.util}})
 
 (vim.cmd "packadd packer.nvim")
+
+(packer.init {:max_jobs 8
+              :show_all_info false
+              :display {:compact true
+                        :open_fn (. :float packer_util)}})
 
 (defn- safe-require-plugin-config [name]
   (let [(ok? val-or-err) (pcall require (.. :dotfiles.plugins. name))]
     (when (not ok?)
       (print (.. "dotfiles error: " val-or-err)))))
-
-(packer.init {:max_jobs 8
-              :show_all_info false})
 
 (defn- use [...]
   "Iterates through the arguments as pairs and calls packer's use function for
@@ -49,6 +52,9 @@
   :glepnir/lspsaga.nvim {:mod :lsp-saga}
   :jose-elias-alvarez/null-ls.nvim {:mod :null-ls}
   :folke/lsp-colors.nvim {}
+  :zbirenbaum/copilot.lua {:mod :copilot}
+                           ; :event :VimEnter}
+                           ; :cmd :Copilot}
 
   ; treesitter ---------------------------
   :nvim-treesitter/nvim-treesitter {:mod :treesitter
@@ -69,6 +75,7 @@
   :PaterJason/cmp-conjure {}
   :L3MON4D3/LuaSnip {:mod :luasnip}
   :ray-x/lsp_signature.nvim {:mod :lsp-signature}
+  :zbirenbaum/copilot-cmp {}
 
   ; file managment / fzf ---------------------------
   :junegunn/fzf {:mod :fzf}
@@ -184,6 +191,10 @@
 
   ; debug ---------------------------
   :tweekmonster/startuptime.vim {}
+  ; :mfussenegger/nvim-dap {:mod :nvim-dap}
+  ; :rcarriga/nvim-dap-ui {}
+  ; :theHamsta/nvim-dap-virtual-text {}
+  ; :suketa/nvim-dap-ruby {}
 
   ; colours ---------------------------
   :norcalli/nvim-colorizer.lua {:mod :nvim-colorizer}

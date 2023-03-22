@@ -2,4 +2,4 @@
   {require {treesitter-context treesitter-context}})
 
 (treesitter-context.setup
-  {:ebable true})
+  {:enable false})

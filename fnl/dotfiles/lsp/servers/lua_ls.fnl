@@ -1,4 +1,4 @@
-(module dotfiles.lsp.servers.sumneko_lua)
+(module dotfiles.lsp.servers.lua_ls)
 
 (def sumneko_root_path (.. (os.getenv "HOME") "/binaries/lua-language-server"))
 (def sumneko_bin (.. sumneko_root_path "/bin/Linux/lua-language-server"))

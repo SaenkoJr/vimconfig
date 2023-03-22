@@ -7,7 +7,8 @@
                  :nvim_lua " [lsp]"
                  :conjure  " [conj]"
                  :buffer   " [buf]"
-                 :omni     "𐂷 [omni]"})
+                 :omni     "𐂷 [omni]"
+                 :Copilot  " [copilot]"})
 
 (def menu_kind {:Text          "  [text]"
                 :Method        " [method]"
@@ -33,4 +34,5 @@
                 :Struct        " [struct]"
                 :Event         "⌘ [event]"
                 :Operator      " [operator]"
-                :TypeParameter "⌂ [type]"})
+                :TypeParameter "⌂ [type]"
+                :Copilot       " [copilot]"})

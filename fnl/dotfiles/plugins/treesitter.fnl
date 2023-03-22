@@ -11,7 +11,7 @@
    :highlight {:enable true
                :additional_vim_regex_highlighting false}
    :indent {:enable true}
-   :incremental_selection {:enable true
+   :incremental_selection {:enable false
                            :keymaps {:init_selection :gnn
                                      :node_incremental :gnn
                                      :node_decremental :gnm

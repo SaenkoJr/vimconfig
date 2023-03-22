@@ -35,30 +35,28 @@
                    :<C-a> actions.cycle_previewers_prev
                    :<C-u> false}
                :n {:q actions.close}}}
-   :pickers
-   {:buffers {:theme :dropdown
-              :layout_config {:width 0.45
-                              :height 0.3
-                              :prompt_position :top}
-              :path_display {:truncate 5}
-              :mappings {:n {:<c-d> actions.delete_buffer
-                             :q actions.close}}}
-    :diagnostics {:theme :dropdown
-                  :layout_config {:width 0.55
-                                  :height 0.3
-                                  :prompt_position :top}
-                  :path_display {:truncate 5}
-                  :mappings {:n {:q actions.close}}}}
-   :extensions
-   {:fzf {:fuzzy true
-          :override_file_sorter true
-          :override_generic_sorter true
-          :case_mode :smart_case}
-    :ui-select {:theme :dropdown
-                :layout_config {:width 0.55
-                                :height 0.4
-                                :prompt_position :top}
-                :mappings {:n {:q actions.close}}}}})
+   :pickers {:buffers {:theme :dropdown
+                       :layout_config {:width 0.45
+                                       :height 0.5
+                                       :prompt_position :top}
+                       :path_display {:truncate 5}
+                       :mappings {:n {:<c-d> actions.delete_buffer
+                                      :q actions.close}}}
+             :diagnostics {:theme :dropdown
+                           :layout_config {:width 0.55
+                                           :height 0.3
+                                           :prompt_position :top}
+                           :path_display {:truncate 5}
+                           :mappings {:n {:q actions.close}}}}
+   :extensions {:fzf {:fuzzy true
+                      :override_file_sorter true
+                      :override_generic_sorter true
+                      :case_mode :smart_case}
+                :ui-select {:theme :dropdown
+                            :layout_config {:width 0.55
+                                            :height 0.4
+                                            :prompt_position :top}
+                            :mappings {:n {:q actions.close}}}}})
 
 (telescope.load_extension :fzf)
 (telescope.load_extension :ui-select)
@@ -67,7 +65,9 @@
 (util.noremap :n :<F1> "<cmd>Telescope help_tags<cr>")
 (util.noremap :n :<leader>ob "<cmd>Telescope buffers<cr>")
 (util.noremap :n :<leader>td "<cmd>Telescope diagnostics<cr>")
+
 (util.noremap :n :<leader>fn "<cmd>Telescope grep_string<cr>")
+(util.noremap :v :<leader>fn "<cmd>Telescope grep_string<cr>")
 
 (util.noremap :n :<leader>ds "<cmd>Telescope lsp_document_symbols<cr>")
 (util.noremap :n :<leader>lg "<cmd>Telescope live_grep<cr>")
