@@ -16,11 +16,16 @@
                                      :node_incremental :gnn
                                      :node_decremental :gnm
                                      :scope_incremental :gnc}}
-   :textobjects {:select {:enable false
-                          :keymaps {:ab "@block.outer"
+   :textobjects {:select {:enable true
+                          :keymaps {:af "@function.outer"
+                                    :if "@function.inner"
+                                    :ab "@block.outer"
                                     :ib "@block.inner"
                                     :ac "@class.outer"
-                                    :ic "@class.inner"}}}
+                                    :ic "@class.inner"}}
+                 :swap {:enable true
+                        :swap_next {:<leader>a "@parameter.inner"}
+                        :swap_previous {:<leader>A "@parameter.inner"}}}
    :endwise {:enable true}
    :rainbow {:enable true
              :extended_mode false
