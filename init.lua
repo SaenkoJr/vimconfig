@@ -1,7 +1,7 @@
 require('impatient')
 
 vim.g["aniseed#env"] = {
-  module = "dotfiles.init",
+  module = "saenkomm.init",
   compile = true
 }
 
