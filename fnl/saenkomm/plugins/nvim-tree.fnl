@@ -1,9 +1,6 @@
 (module saenkomm.plugins.nvim-tree
   {require {nvim-tree nvim-tree
-            tree-conf nvim-tree.config
             util saenkomm.util}})
-
-(def- tree-cb (. tree-conf :nvim_tree_callback))
 
 (nvim-tree.setup
   {:disable_netrw false

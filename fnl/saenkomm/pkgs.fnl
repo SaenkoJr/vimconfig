@@ -61,7 +61,6 @@
                                     :run "TSUpdate"}
   :nvim-treesitter/playground {}
   :nvim-treesitter/nvim-treesitter-textobjects {}
-  :p00f/nvim-ts-rainbow {}
   :RRethy/nvim-treesitter-endwise {}
   :nvim-treesitter/nvim-treesitter-context {:mod :treesitter-context}
   :lewis6991/spellsitter.nvim {:mod :spellsitter}

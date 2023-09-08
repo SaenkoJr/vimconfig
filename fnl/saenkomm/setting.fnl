@@ -17,6 +17,7 @@
   YankHighlight
   (autocmd :TextYankPost :* :silent! "lua vim.highlight.on_yank()"))
 
+
 (def- global-opts
   {:clipboard      :unnamedplus
    :completeopt    "menuone,noselect"
