@@ -49,7 +49,7 @@
                                                  :jayp0521/mason-null-ls.nvim]}
   ; :j-hui/fidget.nvim {:mod :fidget} ; lsp status
   :jubnzv/virtual-types.nvim {}
-  :glepnir/lspsaga.nvim {:mod :lsp-saga}
+  :nvimdev/lspsaga.nvim {:mod :lsp-saga}
   :jose-elias-alvarez/null-ls.nvim {}
   :folke/lsp-colors.nvim {}
   :zbirenbaum/copilot.lua {:mod :copilot}

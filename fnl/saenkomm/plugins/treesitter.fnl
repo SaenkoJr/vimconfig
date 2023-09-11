@@ -36,7 +36,7 @@
                         :swap_next {:<leader>a "@parameter.inner"}
                         :swap_previous {:<leader>A "@parameter.inner"}}}
    :endwise {:enable true}
-   :rainbow {:enable true
+   :rainbow {:enable false
              :extended_mode false
              :max_file_lines 1000}})
 
