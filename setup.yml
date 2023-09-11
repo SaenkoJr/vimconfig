@@ -9,11 +9,15 @@
       pip:
         name: 
           - pynvim
-          - ranger-fm
+          - ranger
         extra_args: --user
         executable: pip3
       vars:
         ansible_python_interpreter: /home/maksim/.asdf/shims/python3
+
+    - name: Install ranger deps
+      become: yes
+      command: 'yay -Sy python-pynvim ueberzugpp'
 
     - name: Install pynvim2
       pip:
@@ -51,4 +55,3 @@
 
     - name: asdf reshim
       command: asdf reshim
-

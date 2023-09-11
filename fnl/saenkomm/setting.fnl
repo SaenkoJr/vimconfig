@@ -48,7 +48,7 @@
 (def- enabled
   [:cindent     :termguicolors :expandtab
    :smartindent :smartcase     :smarttab
-   :splitbelow  :splitright
+   :splitbelow  :splitright    :lazyredraw
    :hidden      :hlsearch      :ignorecase
    :incsearch   :autowrite     :showcmd
    :breakindent :number        :relativenumber
