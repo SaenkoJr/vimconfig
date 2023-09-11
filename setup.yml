@@ -5,23 +5,23 @@
     home: "${HOME}"
     packer_dest: "{{ home }}/.local/share/nvim/site/pack/packer/start"
   tasks:
-    - name: Install pynvim3
+    - name: Install deps
       pip:
-        name: pynvim
+        name: 
+          - pynvim
+          - ranger-fm
         extra_args: --user
         executable: pip3
-
-    - name: Install ranger-fm
-      pip:
-        name: ranger-fm
-        extra_args: --user
-        executable: pip3
+      vars:
+        ansible_python_interpreter: /home/maksim/.asdf/shims/python3
 
     - name: Install pynvim2
       pip:
         name: pynvim
         extra_args: --user
         executable: pip2
+      vars:
+        ansible_python_interpreter: /home/maksim/.asdf/shims/python2
 
     - name: Install nvim via yarn
       command: yarn global add neovim
@@ -48,3 +48,7 @@
       git:
         repo: https://github.com/lewis6991/impatient.nvim
         dest: "{{ packer_dest }}/impatient.nvim"
+
+    - name: asdf reshim
+      command: asdf reshim
+
