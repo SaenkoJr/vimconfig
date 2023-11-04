@@ -5,18 +5,21 @@
 
 (nvim.ex.packadd_ :nvim-treesitter)
 
+(def- langs
+  [:c :clojure :css :cmake :comment
+   :commonlisp :diff :dockerfile
+   :elixir :erlang :fennel
+   :git_config :git_rebase :gitattributes
+   :gitcommit :gitignore :go :graphql
+   :haskell :haskell_persistent :hjson :hlsl
+   :html :htmldjango :http :ini :java :javascript
+   :jq :jsdoc :json :jsonc :lua :luadoc :markdown
+   :make :markdown_inline :pug :ql :query :r :racket
+   :regex :ruby :rst :rust :scheme :scss :slint :sql
+   :typescript :tsx :vim :yaml])
+
 (def- config
-  {:ensure_installed [:c :clojure :css :cmake :comment
-                      :commonlisp :diff :dockerfile
-                      :elixir :erlang :fennel
-                      :git_config :git_rebase :gitattributes
-                      :gitcommit :gitignore :go :graphql
-                      :haskell :haskell_persistent :hjson :hlsl
-                      :html :htmldjango :http :ini :java :javascript
-                      :jq :jsdoc :json :jsonc :lua :luadoc :markdown
-                      :make :markdown_inline :pug :ql :query :r :racket
-                      :regex :ruby :rst :rust :scheme :scss :slint :sql
-                      :typescript :tsx :vim :yaml]
+  {:ensure_installed langs
    :highlight {:enable true
                :additional_vim_regex_highlighting false}
    :indent {:enable true}

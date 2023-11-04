@@ -45,5 +45,3 @@
     (let [conf-builder (lu.safe-require-server-config server)
           lsp (. lspconfig server)]
       (lsp.setup (conf-builder.build lu.on-attach lu.capabilities)))))
-
-

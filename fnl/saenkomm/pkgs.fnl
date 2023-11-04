@@ -29,15 +29,14 @@
             (p-use (core.assoc opts 1 name)))))))
   nil)
 
-;; Plugins to be managed by packer.
 (use
   ; setup ---------------------------
   :wbthomason/packer.nvim {}
   :lewis6991/impatient.nvim {}
-  :Olical/aniseed {:branch :develop}
+  :Olical/aniseed {}
   :Olical/conjure {:mod :conjure
                    :branch :develop}
-  :m00qek/baleia.nvim {}
+  :m00qek/baleia.nvim {:tag "v1.3.0"}
   :nvim-lua/plenary.nvim {}
   :nvim-lua/popup.nvim {}
 
@@ -47,11 +46,10 @@
   :williamboman/mason-lspconfig.nvim {:requires [:williamboman/mason.nvim
                                                  :neovim/nvim-lspconfig
                                                  :jayp0521/mason-null-ls.nvim]}
-  ; :j-hui/fidget.nvim {:mod :fidget} ; lsp status
+  :j-hui/fidget.nvim {:mod :fidget :tag :legacy} ; lsp status
   :jubnzv/virtual-types.nvim {}
   :nvimdev/lspsaga.nvim {:mod :lsp-saga}
   :jose-elias-alvarez/null-ls.nvim {}
-  :folke/lsp-colors.nvim {}
   :zbirenbaum/copilot.lua {:mod :copilot}
                            ; :event :VimEnter}
                            ; :cmd :Copilot}
@@ -59,11 +57,8 @@
   ; treesitter ---------------------------
   :nvim-treesitter/nvim-treesitter {:mod :treesitter
                                     :run "TSUpdate"}
-  :nvim-treesitter/playground {}
   :nvim-treesitter/nvim-treesitter-textobjects {}
   :RRethy/nvim-treesitter-endwise {}
-  :nvim-treesitter/nvim-treesitter-context {:mod :treesitter-context}
-  :lewis6991/spellsitter.nvim {:mod :spellsitter}
 
   ; completion ---------------------------
   :hrsh7th/nvim-cmp {:mod :nvim-cmp}
@@ -72,9 +67,9 @@
   :hrsh7th/cmp-path {}
   :saadparwaiz1/cmp_luasnip {}
   :PaterJason/cmp-conjure {}
-  :L3MON4D3/LuaSnip {:mod :luasnip}
   :ray-x/lsp_signature.nvim {:mod :lsp-signature}
   :zbirenbaum/copilot-cmp {}
+  :L3MON4D3/LuaSnip {:mod :luasnip}
 
   ; file managment / fzf ---------------------------
   :junegunn/fzf {:mod :fzf}
@@ -100,9 +95,7 @@
   :nvim-telescope/telescope-ui-select.nvim {}
 
   ; utils ---------------------------
-  ; :jiangmiao/auto-pairs {:mod :auto-pairs}
   :windwp/nvim-autopairs {:mod :auto-pairs}
-  ; :ZhiyuanLck/smart-pairs {:mod :auto-pairs}
   :lukas-reineke/indent-blankline.nvim {:mod :indentline}
   :airblade/vim-rooter {:mod :rooter}
   :junegunn/vim-easy-align {:mod :easyalign}
@@ -125,7 +118,7 @@
   :tpope/vim-ragtag {}
   :tpope/vim-repeat {}
   :tpope/vim-surround {:mod :surround}
-  :tpope/vim-unimpaired {}
+  :tpope/vim-unimpaired {} ; [q, ]q, etc
   :voldikss/vim-floaterm {:mod :floaterm}
   :andymass/vim-matchup {:mod :matchup}
   :gelguy/wilder.nvim {:mod :wilder}
