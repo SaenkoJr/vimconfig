@@ -7,6 +7,7 @@
 (utils.set-var :g :rnvimr_enable_picker 1)
 (utils.set-var :g :rnvimr_enable_ex 1)
 (utils.set-var :g :rnvimr_enable_bw 1)
+(utils.set-var :g :rnvimr_vanila 1)
 (utils.set-var :g :rnvimr_action {:<c-x> "NvimEdit split false"
                                   :<c-v> "NvimEdit vsplit false"
                                   :<c-e> "NvimEdit edit"

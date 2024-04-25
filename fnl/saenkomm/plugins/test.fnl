@@ -23,7 +23,7 @@
 
 (defn docker_transform [cmd]
   (if (= 1 (vim.fn.filereadable "./docker-compose.yml"))
-    (.. "docker-compose run --rm web " cmd)
+    (.. "docker compose run --rm web " cmd)
     cmd))
 
 (util.set-var :g "test#custom_transformations" {:docker docker_transform})

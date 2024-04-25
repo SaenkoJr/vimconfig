@@ -25,3 +25,11 @@
 
 ;; diagnostic
 (nvim.ex.autocmd :BufWinEnter "conjure-log-*,*.log" "lua vim.diagnostic.disable(0)")
+
+(vim.filetype.add
+  {:extension {:env :sh}
+   :pattern {"%.env%.[%w_.-]+" :sh}})
+
+(vim.filetype.add
+  {:extension {:j2 :sh}
+   :pattern {"*.j2" :sh}})

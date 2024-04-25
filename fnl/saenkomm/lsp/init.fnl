@@ -40,7 +40,7 @@
   {:ensure_installed [:rubocop :eslint_d :luacheck]})
 
 ; (let [servers (mason-lspconfig.get_installed_servers)])
-(let [servers ["hls" "clojure_lsp" "solargraph" "lua_ls" "tsserver"]]
+(let [servers ["hls" "clojure_lsp" "solargraph" "lua_ls" "tsserver" "sqls"]]
   (each [_ server (ipairs servers)]
     (let [conf-builder (lu.safe-require-server-config server)
           lsp (. lspconfig server)]

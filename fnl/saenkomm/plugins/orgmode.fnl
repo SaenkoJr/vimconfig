@@ -24,6 +24,5 @@
    :mappings {:prefix "<localleader>"
               :global {:org_agenda :<leader>oa
                        :org_capture :<leader>oc}}})
-(orgmode.setup_ts_grammar)
 
 (util.noremap :n :<leader>ot ":e ~/Documents/orgs<cr>")

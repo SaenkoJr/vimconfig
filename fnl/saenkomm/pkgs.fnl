@@ -53,6 +53,7 @@
   :zbirenbaum/copilot.lua {:mod :copilot}
                            ; :event :VimEnter}
                            ; :cmd :Copilot}
+  :nanotee/sqls.nvim {}
 
   ; treesitter ---------------------------
   :nvim-treesitter/nvim-treesitter {:mod :treesitter
@@ -125,6 +126,7 @@
   :jparise/vim-graphql {}
   :ThePrimeagen/harpoon {}
   :dhruvasagar/vim-table-mode {}
+  :fabridamicelli/cronex.nvim {:mod :cronex}
 
   ; testing ---------------------------
   ; :rcarriga/vim-ultest {:run ":UpdateRemotePlugins"
@@ -194,4 +196,7 @@
   :NLKNguyen/papercolor-theme {}
   :Shatur/neovim-ayu {}
   :equt/paper.vim {}
+  :folke/tokyonight.nvim {}
+  :shaunsingh/nord.nvim {}
+  :projekt0n/github-nvim-theme {}
   :jesseleite/nvim-noirbuddy {:requires ["tjdevries/colorbuddy.nvim"]})
