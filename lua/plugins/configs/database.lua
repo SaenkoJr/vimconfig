@@ -1,5 +1,5 @@
 -- [nfnl] Compiled from fnl/plugins/configs/database.fnl by https://github.com/Olical/nfnl, do not edit.
-module(saenkomm.plugins.database, {[require] = {[util] = saenkomm.util}})
+local util = require("dotfiles.utils")
 util["set-var"]("g", "db_ui_auto_execute_table_helpers", 1)
 util["set-var"]("g", "db_ui_show_database_icon", 1)
 util["set-var"]("g", "db_ui_use_nerd_fonts", 1)

@@ -1,11 +1,10 @@
-(module saenkomm.plugins.lualine-nvim
-  {require {lualine lualine
-            custom_ayu_ligh lualine.themes.ayu_light
-            core aniseed.core}})
+(local lualine (require :lualine))
+(local custom_ayu_ligh (require :lualine.themes.ayu_light))
+(local core (require :aniseed.core))
 
 (core.assoc-in custom_ayu_ligh [:normal :middle :bg] "#000000")
 
-(defn buf-status []
+(fn buf-status []
   (if vim.bo.modified
       "unsaved"
       vim.bo.readonly

@@ -1,6 +1,4 @@
-(module saenkomm.plugins.bufferline
-  {require {bufferline bufferline
-            util saenkomm.util}})
+(local bufferline (require :bufferline))
 
 (bufferline.setup
   {:options {:mode :tabs

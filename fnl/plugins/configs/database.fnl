@@ -1,5 +1,4 @@
-(module saenkomm.plugins.database
-  {require {util saenkomm.util}})
+(local util (require :dotfiles.utils))
 
 (util.set-var :g :db_ui_auto_execute_table_helpers 1)
 (util.set-var :g :db_ui_show_database_icon 1)

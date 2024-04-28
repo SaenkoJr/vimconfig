@@ -1,5 +1,5 @@
 -- [nfnl] Compiled from fnl/plugins/configs/ragtag.fnl by https://github.com/Olical/nfnl, do not edit.
-module(saenkomm.plugins.ragtag, {[require] = {[util] = saenkomm.util}})
+local util = require("dotfiles.utils")
 util.noremap("n", "]r", ":RE<cr>")
 util.noremap("n", "]a", ":AE<cr>")
 util.noremap("n", "]R", ":RV<cr>")

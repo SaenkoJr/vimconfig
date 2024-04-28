@@ -1,5 +1,4 @@
-(module saenkomm.plugins.ragtag
-  {require {util saenkomm.util}})
+(local util (require :dotfiles.utils))
 
 (util.noremap :n "]r" ":RE<cr>")
 (util.noremap :n "]a" ":AE<cr>")

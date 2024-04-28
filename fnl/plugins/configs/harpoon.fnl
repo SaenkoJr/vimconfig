@@ -1,4 +1,3 @@
-(module saenkomm.plugings.harpoon
-  {require {harpoon harpoon}})
+(local harpoon (require :harpoon))
 
 (harpoon.setup {})
