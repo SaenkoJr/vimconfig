@@ -1,4 +1,4 @@
-(module saenkomm.mapping
+(module mapping
   {require {nvim aniseed.nvim
             utils saenkomm.util}})
 

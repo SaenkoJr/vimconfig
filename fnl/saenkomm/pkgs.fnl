@@ -31,7 +31,7 @@
 
 (use
   ; setup ---------------------------
-  :wbthomason/packer.nvim {}
+  ; :wbthomason/packer.nvim {}
   :lewis6991/impatient.nvim {}
   :Olical/aniseed {}
   :Olical/conjure {:mod :conjure
