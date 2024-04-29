@@ -12,4 +12,6 @@
                                    :gw :JumpNvimCwd})
     (uu.set-var :g :rnvimr_presets [{:width 0.900 :height 0.900}])))
 
+(uu.noremap :n :<c-n> ":RnvimrToggle<cr>")
+
 {: config}

@@ -10,4 +10,5 @@ local function _1_()
   return uu["set-var"]("g", "rnvimr_presets", {{width = 0.9, height = 0.9}})
 end
 config = _1_
+uu.noremap("n", "<c-n>", ":RnvimrToggle<cr>")
 return {config = config}

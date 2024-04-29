@@ -1,5 +1,4 @@
 -- [nfnl] Compiled from fnl/dotfiles/ft-settings.fnl by https://github.com/Olical/nfnl, do not edit.
-local core = require("aniseed.core")
 local nvim = require("aniseed.nvim")
 local utils = require("dotfiles.utils")
 nvim.ex.autocmd("BufNewFile", "BufRead", "*.slim", "set ft=slim")

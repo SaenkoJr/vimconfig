@@ -52,7 +52,8 @@
                                      {:c ["Clean Plugin"     ":Lazy clean"]}
                                      {:s ["Sync Plugin"      ":Lazy sync"]}
                                      {:S ["Start Time"       ":StartupTime"]}
-                                     {:l ["Mason"            ":Mason"]}])
+                                     {:l ["Lazy"             ":Lazy"]}
+                                     {:m ["Mason"            ":Mason"]}])
 
 
 (util.set-var :g :startify_bookmarks [{:n "~/.config/nvim/init.lua"}

@@ -1,6 +1,3 @@
-(local uu (require :dotfiles.utils))
-(local nvim (require :aniseed.nvim))
-(local parsers (require "nvim-treesitter.parsers"))
 (local treesitter (require "nvim-treesitter.configs"))
 
 (local langs
