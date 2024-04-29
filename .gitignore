@@ -1,4 +1,6 @@
 .netrwhist
 inittest.vim
 backup/
+lua/**/*
+!lua/dotfiles/vendor/**/*
 /plugin
