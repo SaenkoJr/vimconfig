@@ -1,10 +1,5 @@
 (local uu (require :dotfiles.utils))
-(local nvim (require :aniseed.nvim))
 (local cmplsp (require :cmp_nvim_lsp))
-
-(fn lsp_formating [bufnr]
-  (vim.lsp.format {:filter (fn [client] (= client.name :null-ls))
-                   :bufnr bufnr}))
 
 (fn safe-require-server-config [name]
   (let [(ok? conf-or-err) (pcall require (.. "dotfiles.lsp.servers." name))]
@@ -40,7 +35,8 @@
   (uu.bnoremap bufnr :n :gi "<cmd>lua vim.lsp.buf.implementation()<cr>")
   (uu.bnoremap bufnr :n :<leader>gt "<cmd>lua vim.lsp.buf.type_definition()<cr>")
 
-  (uu.bnoremap bufnr :n :<leader>fm "<cmd>lua vim.lsp.buf.format({ async = true })<cr>")
+  ; (uu.bnoremap bufnr :n :<leader>fm "<cmd>lua vim.lsp.buf.format({ async = true })<cr>")
+  (uu.bnoremap bufnr :n :<leader>fm "<cmd>lua require('conform').format({ async = true })<cr>")
 
   (uu.bnoremap bufnr :n :<leader>wa "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>")
   (uu.bnoremap bufnr :n :<leader>wr "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>")

@@ -3,8 +3,6 @@ local lu = require("dotfiles.lsp.utils")
 local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
-local null_ls = require("null-ls")
-local mason_null_ls = require("mason-null-ls")
 do
   local code_action = require("lsputil.codeAction")
   local symbols = require("lsputil.symbols")
@@ -21,9 +19,7 @@ do
 end
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = {prefix = "\226\150\160"}})
 mason.setup({PATH = "append"})
-mason_lspconfig.setup({ensure_installed = {"solargraph", "tsserver", "lua_ls", "clojure_lsp", "fennel_language_server"}})
-null_ls.setup({diagnostics_format = "[#{c}] #{m} (#{s})", sources = {null_ls.builtins.diagnostics.clj_kondo, null_ls.builtins.formatting.lua_format, null_ls.builtins.formatting.fnlfmt}})
-mason_null_ls.setup({ensure_installed = {"rubocop", "eslint_d", "luacheck"}})
+mason_lspconfig.setup({ensure_installed = {"solargraph", "erb_format", "prettier", "tsserver", "lua_ls", "clojure_lsp", "fennel_language_server"}})
 local servers = {"hls", "clojure_lsp", "solargraph", "lua_ls", "tsserver", "sqls", "fennel_language_server"}
 for _, server_name in ipairs(servers) do
   local server = lu["safe-require-server-config"](server_name)
