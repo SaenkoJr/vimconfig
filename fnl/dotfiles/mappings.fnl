@@ -32,7 +32,7 @@
 (utils.noremap :x :c "\"_c")
 (utils.noremap :n :C "\"_C")
 
-(utils.noremap :i :<C-v> :<Esc>pa)
+; (utils.noremap :i :<C-v> :<Esc>pa)
 (utils.noremap :n :<leader>P "\"0P")
 (utils.noremap :x :<leader>P "\"0P")
 

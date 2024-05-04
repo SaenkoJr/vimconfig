@@ -30,4 +30,6 @@
 
 (nvim-autopairs.setup
   {:disable_filetyp [:TelescopePrompt :vim :clojure :fennel]
-   :map_c_h true})
+   :map_c_h true
+   :map_c_w true
+   :disable_in_macro true})

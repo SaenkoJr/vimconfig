@@ -1,6 +1,6 @@
-(local core (require :aniseed.core))
 (local cmp (require :cmp))
 (local copilot_cmp_comparators (require :copilot_cmp.comparators))
+(local cmp_autopairs (require :nvim-autopairs.completion.cmp))
 (local uu (require :dotfiles.utils))
 (local lspkind (require :dotfiles.lspkind))
 
@@ -24,7 +24,7 @@
   (tset vim_item :menu (. lspkind.menu_icons entry.source.name))
   (tset vim_item :kind (.. "  " (. lspkind.menu_kind vim_item.kind)))
   vim_item)
-  
+
 (local comparators
   [copilot_cmp_comparators.prioritize
    copilot_cmp_comparators.score
@@ -59,6 +59,8 @@
    :formatters {:insert_text (. (require "copilot_cmp.format") :remove_existing)}
    :sorting {:priority_weight 2
              :comparators comparators}})
-                           
+
+(cmp.event:on :confirm_done (cmp_autopairs.on_confirm_done))
+
 (uu.inoremap :<c-k> "pumvisible() ? '<c-p>' : '<c-k>'" {:expr true})
 (uu.inoremap :<c-j> "pumvisible() ? '<c-n>' : '<c-j>'" {:expr true})

@@ -4,11 +4,10 @@
                                   :init (uu.lc :lsp-utils)})
  (uu.tx :williamboman/mason-lspconfig.nvim
         {:dependencies [(uu.tx :williamboman/mason.nvim {:lazy false})
-                        :neovim/nvim-lspconfig
-                        :jayp0521/mason-null-ls.nvim]})
+                        :neovim/nvim-lspconfig]})
  (uu.tx :j-hui/fidget.nvim {:lazy false})
  (uu.tx :nvimdev/lspsaga.nvim {:init (uu.lc :lsp-saga)})
  (uu.tx :zbirenbaum/copilot.lua {:init (uu.lc :copilot)})
+ (uu.tx :stevearc/conform.nvim {:init (uu.lc :conform)})
  :jubnzv/virtual-types.nvim
- :jose-elias-alvarez/null-ls.nvim
  :nanotee/sqls.nvim]

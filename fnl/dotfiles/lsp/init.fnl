@@ -2,8 +2,6 @@
 (local lspconfig (require :lspconfig))
 (local mason (require :mason))
 (local mason-lspconfig (require :mason-lspconfig))
-(local null-ls (require :null-ls))
-(local mason-null-ls (require :mason-null-ls))
 
 (let [code-action (require "lsputil.codeAction")
       symbols (require "lsputil.symbols")
@@ -26,16 +24,8 @@
 
 (mason.setup {:PATH :append})
 (mason-lspconfig.setup
-  {:ensure_installed [:solargraph :tsserver :lua_ls :clojure_lsp :fennel_language_server]})
-
-(null-ls.setup
-  {:diagnostics_format "[#{c}] #{m} (#{s})"
-   :sources [null-ls.builtins.diagnostics.clj_kondo
-             null-ls.builtins.formatting.lua_format
-             null-ls.builtins.formatting.fnlfmt]})
-
-(mason-null-ls.setup
-  {:ensure_installed [:rubocop :eslint_d :luacheck]})
+  {:ensure_installed [:solargraph :tsserver :lua_ls
+                      :clojure_lsp :fennel_language_server]})
 
 ; (let [servers (mason-lspconfig.get_installed_servers)])
 (let [servers ["hls" "clojure_lsp" "solargraph" "lua_ls" "tsserver" "sqls" "fennel_language_server"]]
