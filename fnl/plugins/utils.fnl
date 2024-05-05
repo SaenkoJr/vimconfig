@@ -11,8 +11,9 @@
  ; (uu.tx :kana/vim-textobj-user {:lazy false})
  (uu.tx :ntpeters/vim-better-whitespace {:init (uu.lc :better-whitespace)})
  (uu.tx :AndrewRadev/splitjoin.vim {})
- (uu.tx :mhinz/vim-startify {:init (uu.lc :startify)})
- ; (uu.tx :goolord/alpha-nvim {:init :alpha-nvim})
+ (uu.tx :nvimdev/dashboard-nvim {:init (uu.lc :dashboard)
+                                 :event :VimEnter
+                                 :dependencies [:nvim-tree/nvim-web-devicons]})
  ;; --- Commebter
  (uu.tx :JoosepAlviste/nvim-ts-context-commentstring {})
  (uu.tx :echasnovski/mini.comment {:init (uu.lc :commenter)})

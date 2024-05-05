@@ -4,4 +4,4 @@ local ibl = require("ibl")
 util["set-var"]("g", "vim_json_syntax_conceal", 0)
 util["set-var"]("g", "vim_json_syntax_conceal", 0)
 do end (vim.opt)["list"] = true
-return ibl.setup({exclude = {filetypes = {"fennel", "javascript", "startify"}}})
+return ibl.setup({exclude = {filetypes = {"fennel", "javascript", "startify", "dashboard"}}})

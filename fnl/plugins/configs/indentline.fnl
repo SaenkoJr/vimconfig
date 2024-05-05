@@ -7,4 +7,4 @@
 (tset vim.opt :list true)
 
 (ibl.setup
-  {:exclude {:filetypes [:fennel :javascript :startify]}})
+  {:exclude {:filetypes [:fennel :javascript :startify :dashboard]}})
