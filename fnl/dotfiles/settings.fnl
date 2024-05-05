@@ -4,6 +4,7 @@
 
 (utils.set-var :g :python_host_prog  "$HOME/.asdf/shims/python2")
 (utils.set-var :g :python3_host_prog "$HOME/.asdf/shims/python3")
+(utils.set-var :g :ruby_host_prog "$HOME/.asdf/shims/ruby")
 
 (utils.set-var :g :loaded_netrw       1)
 (utils.set-var :g :loaded_netrwPlugin 1)
