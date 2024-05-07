@@ -25,9 +25,9 @@ local function on_attach(client, bufnr)
   uu.bnoremap(bufnr, "n", "<leader>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<cr>")
   uu.bnoremap(bufnr, "n", "<leader>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<cr>")
   uu.bnoremap(bufnr, "n", "gp", ":Lspsaga peek_definition<cr>")
-  uu.noremap("n", "]d", "<cmd>Lspsaga diagnostic_jump_next<cr>")
-  uu.noremap("n", "[d", "<cmd>Lspsaga diagnostic_jump_prev<cr>")
   uu.noremap("n", "<leader>sl", "<cmd>Lspsaga show_line_diagnostics<cr>")
+  uu.noremap("n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>")
+  uu.noremap("n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>")
   return print(("'" .. client.name .. "' server attached."))
 end
 return {["safe-require-server-config"] = safe_require_server_config, capabilities = capabilities, ["on-attach"] = on_attach}

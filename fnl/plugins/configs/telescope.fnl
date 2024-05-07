@@ -63,12 +63,12 @@
 
 (uu.noremap :n :<F1> "<cmd>Telescope help_tags<cr>")
 (uu.noremap :n :<leader>ob "<cmd>Telescope buffers<cr>")
-(uu.noremap :n :<leader>td "<cmd>Telescope diagnostics<cr>")
+; (uu.noremap :n :<leader>td "<cmd>Telescope diagnostics<cr>")
 
 (uu.noremap :n :<leader>fn "<cmd>Telescope grep_string<cr>")
 (uu.noremap :v :<leader>fn "<cmd>Telescope grep_string<cr>")
 
-(uu.noremap :n :<leader>ds "<cmd>Telescope lsp_document_symbols<cr>")
+; (uu.noremap :n :<leader>ds "<cmd>Telescope lsp_document_symbols<cr>")
 (uu.noremap :n :<leader>lg "<cmd>Telescope live_grep<cr>")
 
 ; (uu.noremap :n :<leader>ff "<cmd>Telescope find_files find_command=rg,--ignore,--hidden,--files <cr>")

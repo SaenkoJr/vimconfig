@@ -22,7 +22,7 @@
         vim.lsp.diagnostic.on_publish_diagnostics
         {:virtual_text {:prefix "■"}}))
 
-(local servers [:clojure_lsp :solargraph :lua_ls
+(local servers [:clojure_lsp :ruby_lsp :lua_ls
                 :tsserver :sqls :fennel_language_server
                 :tailwindcss])
 
