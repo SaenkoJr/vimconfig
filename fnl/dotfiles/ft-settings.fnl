@@ -25,7 +25,7 @@
 
 (vim.filetype.add
   {:extension {:env :sh}
-   :pattern {"%.env%.[%w_.-]+" :sh}})
+   :pattern {"%.env%.[%w.-]+" :sh}})
 
 (vim.filetype.add
   {:extension {:j2 :sh}

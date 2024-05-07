@@ -2,13 +2,15 @@
 local cmp = require("cmp")
 local copilot_cmp_comparators = require("copilot_cmp.comparators")
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+local tcm = require("tailwindcss-colorizer-cmp")
 local uu = require("dotfiles.utils")
 local lspkind = require("dotfiles.lspkind")
+tcm.setup({color_square_width = 2})
 local sources = {{name = "copilot", priority = 11, group_index = 2}, {name = "nvim_lsp", priority = 10}, {name = "conjure", trigger_characters = {".", "/"}, priority = 4}, {name = "path"}, {name = "luasnip", priority = 3}, {name = "nvim_lua", priority = 4}, {name = "orgmode"}, {name = "buffer", max_item_count = 15, priority = 1}}
 local function fmtfn(entry, vim_item)
   vim_item["menu"] = lspkind.menu_icons[entry.source.name]
   vim_item["kind"] = ("  " .. lspkind.menu_kind[vim_item.kind])
-  return vim_item
+  return tcm.formatter(entry, vim_item)
 end
 local comparators = {copilot_cmp_comparators.prioritize, copilot_cmp_comparators.score, cmp.config.compare.offset, cmp.config.compare.exact, cmp.config.compare.score, cmp.config.compare.recently_used, cmp.config.compare.locality, cmp.config.compare.kind, cmp.config.compare.sort_text, cmp.config.compare.length, cmp.config.compare.order}
 local function _1_(args)

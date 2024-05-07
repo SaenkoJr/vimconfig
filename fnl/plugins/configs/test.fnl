@@ -1,28 +1,28 @@
 (local util (require :dotfiles.utils))
+(local neotest (require :neotest))
+(local rspec-adapter (require :neotest-rspec))
 
-(util.set-var :g :test#strategy {:file :basic
-                                 :nearest :floaterm
-                                 :suite :basic})
-(util.set-var :g :ultest_virtual_text 1)
-(util.set-var :g :ultest_output_on_line 0)
-(util.set-var :g :ultest_output_rows 100)
-(util.set-var :g :ultest_disable_grouping ["ruby#rails"])
-
-(util.noremap :n :<leader>TN ":UltestNearest<CR>")
-(util.noremap :n :<leader>TS ":UltestSummary<CR>")
-(util.noremap :n :<leader>to ":UltestOutput<CR>")
-(util.noremap :n :<leader>tf ":TestFile<cr>")
-(util.noremap :n :<leader>tn ":TestNearest<cr>")
-(util.noremap :n :<leader>tl ":TestLast<cr>")
-(util.noremap :n :<leader>tv ":TestVisit<CR>")
-
-(util.noremap :n "[t" "<Plug>(ultest-prev-fail)" {:noremap false})
-(util.noremap :n "]t" "<Plug>(ultest-next-fail)" {:noremap false})
-
-(fn docker_transform [cmd]
+(fn rspec-cmd []
   (if (= 1 (vim.fn.filereadable "./docker-compose.yml"))
-    (.. "docker compose run --rm web " cmd)
-    cmd))
+    (vim.tbl_flatten [:docker :compose :run :--rm :-w :/usr/app :web :bundle :exec :rspec])
+    (vim.tbl_flatten [:bundle :exec :rspec])))
 
-(util.set-var :g "test#custom_transformations" {:docker docker_transform})
-(util.set-var :g "test#transformation" :docker)
+(fn rspec-path [path]
+  (if (= 1 (vim.fn.filereadable "./docker-compose.yml"))
+    (let [prefix (rspec-adapter.root path)]
+      (string.sub path (+ (string.len prefix) 2) -1))
+    path))
+
+(neotest.setup
+  {:adapters [(rspec-adapter {:rspec_cmd rspec-cmd
+                              :transform_spec_path rspec-path
+                              :results_path "tmp/rspec.output"})]})
+(util.noremap :n :<leader>ts ":Neotest summary<cr>")
+(util.noremap :n :<leader>to ":Neotest output<cr>")
+(util.noremap :n :<leader>tf ":Neotest run file<cr>")
+(util.noremap :n :<leader>tn ":Neotest run<cr>")
+(util.noremap :n :<leader>tl ":Neotest run last<cr>")
+(util.noremap :n :<leader>ta ":Neotest attach<cr>")
+
+; (util.noremap :n "[t" "<Plug>(ultest-prev-fail)" {:noremap false})
+; (util.noremap :n "]t" "<Plug>(ultest-next-fail)" {:noremap false})

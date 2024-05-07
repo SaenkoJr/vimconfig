@@ -1,7 +1,7 @@
 (local harpoon (require :harpoon))
 (local wk (require :which-key))
 
-(harpoon:setup {})
+(harpoon:setup {:settings {:save_on_toggle true}})
 
 (wk.register
   {:h {:a [(fn [] (: (harpoon:list) :add)) "Add to harpoon list"]

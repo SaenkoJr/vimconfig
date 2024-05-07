@@ -1,25 +1,26 @@
 -- [nfnl] Compiled from fnl/plugins/configs/test.fnl by https://github.com/Olical/nfnl, do not edit.
 local util = require("dotfiles.utils")
-util["set-var"]("g", "test#strategy", {file = "basic", nearest = "floaterm", suite = "basic"})
-util["set-var"]("g", "ultest_virtual_text", 1)
-util["set-var"]("g", "ultest_output_on_line", 0)
-util["set-var"]("g", "ultest_output_rows", 100)
-util["set-var"]("g", "ultest_disable_grouping", {"ruby#rails"})
-util.noremap("n", "<leader>TN", ":UltestNearest<CR>")
-util.noremap("n", "<leader>TS", ":UltestSummary<CR>")
-util.noremap("n", "<leader>to", ":UltestOutput<CR>")
-util.noremap("n", "<leader>tf", ":TestFile<cr>")
-util.noremap("n", "<leader>tn", ":TestNearest<cr>")
-util.noremap("n", "<leader>tl", ":TestLast<cr>")
-util.noremap("n", "<leader>tv", ":TestVisit<CR>")
-util.noremap("n", "[t", "<Plug>(ultest-prev-fail)", {noremap = false})
-util.noremap("n", "]t", "<Plug>(ultest-next-fail)", {noremap = false})
-local function docker_transform(cmd)
+local neotest = require("neotest")
+local rspec_adapter = require("neotest-rspec")
+local function rspec_cmd()
   if (1 == vim.fn.filereadable("./docker-compose.yml")) then
-    return ("docker compose run --rm web " .. cmd)
+    return vim.tbl_flatten({"docker", "compose", "run", "--rm", "-w", "/usr/app", "web", "bundle", "exec", "rspec"})
   else
-    return cmd
+    return vim.tbl_flatten({"bundle", "exec", "rspec"})
   end
 end
-util["set-var"]("g", "test#custom_transformations", {docker = docker_transform})
-return util["set-var"]("g", "test#transformation", "docker")
+local function rspec_path(path)
+  if (1 == vim.fn.filereadable("./docker-compose.yml")) then
+    local prefix = rspec_adapter.root(path)
+    return string.sub(path, (string.len(prefix) + 2), -1)
+  else
+    return path
+  end
+end
+neotest.setup({adapters = {rspec_adapter({rspec_cmd = rspec_cmd, transform_spec_path = rspec_path, results_path = "tmp/rspec.output"})}})
+util.noremap("n", "<leader>ts", ":Neotest summary<cr>")
+util.noremap("n", "<leader>to", ":Neotest output<cr>")
+util.noremap("n", "<leader>tf", ":Neotest run file<cr>")
+util.noremap("n", "<leader>tn", ":Neotest run<cr>")
+util.noremap("n", "<leader>tl", ":Neotest run last<cr>")
+return util.noremap("n", "<leader>ta", ":Neotest attach<cr>")

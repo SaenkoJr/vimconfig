@@ -18,10 +18,11 @@ do
   vim.lsp.handlers["textDocument/typeDefinition"] = locations.typeDefinition_handler
 end
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = {prefix = "\226\150\160"}})
+local servers = {"clojure_lsp", "solargraph", "lua_ls", "tsserver", "sqls", "fennel_language_server", "tailwindcss"}
 mason.setup({PATH = "append"})
-mason_lspconfig.setup({ensure_installed = {"solargraph", "tsserver", "lua_ls", "clojure_lsp", "fennel_language_server"}})
-local servers = {"hls", "clojure_lsp", "solargraph", "lua_ls", "tsserver", "sqls", "fennel_language_server"}
-for _, server_name in ipairs(servers) do
+mason_lspconfig.setup({ensure_installed = servers})
+local servers0 = servers
+for _, server_name in ipairs(servers0) do
   local server = lu["safe-require-server-config"](server_name)
   local lsp = lspconfig[server_name]
   lsp.setup(server.build(lu["on-attach"], lu.capabilities))

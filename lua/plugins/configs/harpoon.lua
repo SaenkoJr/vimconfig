@@ -1,7 +1,7 @@
 -- [nfnl] Compiled from fnl/plugins/configs/harpoon.fnl by https://github.com/Olical/nfnl, do not edit.
 local harpoon = require("harpoon")
 local wk = require("which-key")
-harpoon:setup({})
+harpoon:setup({settings = {save_on_toggle = true}})
 local function _1_()
   return harpoon:list():add()
 end

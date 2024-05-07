@@ -1,8 +1,12 @@
 (local cmp (require :cmp))
 (local copilot_cmp_comparators (require :copilot_cmp.comparators))
 (local cmp_autopairs (require :nvim-autopairs.completion.cmp))
+(local tcm (require :tailwindcss-colorizer-cmp))
 (local uu (require :dotfiles.utils))
 (local lspkind (require :dotfiles.lspkind))
+
+(tcm.setup
+  {:color_square_width 2})
 
 (local sources
   [{:name :copilot
@@ -23,7 +27,7 @@
 (fn fmtfn [entry vim_item]
   (tset vim_item :menu (. lspkind.menu_icons entry.source.name))
   (tset vim_item :kind (.. "  " (. lspkind.menu_kind vim_item.kind)))
-  vim_item)
+  (tcm.formatter entry vim_item))
 
 (local comparators
   [copilot_cmp_comparators.prioritize

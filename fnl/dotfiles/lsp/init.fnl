@@ -22,13 +22,15 @@
         vim.lsp.diagnostic.on_publish_diagnostics
         {:virtual_text {:prefix "■"}}))
 
+(local servers [:clojure_lsp :solargraph :lua_ls
+                :tsserver :sqls :fennel_language_server
+                :tailwindcss])
+
 (mason.setup {:PATH :append})
 (mason-lspconfig.setup
-  {:ensure_installed [:solargraph :tsserver :lua_ls
-                      :clojure_lsp :fennel_language_server]})
+  {:ensure_installed servers})
 
-; (let [servers (mason-lspconfig.get_installed_servers)])
-(let [servers ["hls" "clojure_lsp" "solargraph" "lua_ls" "tsserver" "sqls" "fennel_language_server"]]
+(let [servers servers]
   (each [_ server-name (ipairs servers)]
     (let [server (lu.safe-require-server-config server-name)
           lsp (. lspconfig server-name)]

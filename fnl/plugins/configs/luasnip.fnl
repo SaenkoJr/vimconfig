@@ -1,6 +1,7 @@
-(local core (require :aniseed.core))
 (local luasnip (require :luasnip))
 (local uu (require :dotfiles.utils))
+(local fennelsnip (require :dotfiles.snippets.fennelsnips))
+(local rubysnip (require :dotfiles.snippets.rubysnips))
 
 (uu.inoremap :<Tab> "luasnip#expand_or_jumpable() ? '<plug>luasnip-expand-or-jump' : '<Tab>'" {:noremap false :expr true})
 (uu.noremap :s :<Tab> "luasnip#expand_or_jumpable() ? '<plug>luasnip-expand-or-jump' : '<Tab>'" {:noremap false :expr true})
@@ -9,5 +10,5 @@
 (uu.noremap :s :<S-Tab> "<cmd>lua require('luasnip').jump(-1)<Cr>")
 
 ; NOTE: ls.praser.parse_snippet(<text>, <VS**** style snippet>)
-; (luasnip.add_snippets :fennel fennelsnip.snippets)
-; (luasnip.add_snippets :ruby rubysnip.snippets)
+(luasnip.add_snippets :fennel fennelsnip.snippets)
+(luasnip.add_snippets :ruby rubysnip.snippets)
