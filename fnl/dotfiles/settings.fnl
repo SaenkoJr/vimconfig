@@ -4,13 +4,13 @@
 
 (utils.set-var :g :python_host_prog  "$HOME/.asdf/shims/python2")
 (utils.set-var :g :python3_host_prog "$HOME/.asdf/shims/python3")
-(utils.set-var :g :ruby_host_prog "$HOME/.asdf/shims/ruby")
+(utils.set-var :g :ruby_host_prog    "$HOME/.asdf/shims/ruby")
 
 (utils.set-var :g :loaded_netrw       1)
 (utils.set-var :g :loaded_netrwPlugin 1)
 
 (nvim.ex.filetype "plugin indent on")
-(nvim.ex.syntax "sync minlines=256")
+(nvim.ex.syntax   "sync minlines=256")
 
 (vim.api.nvim_create_autocmd
   [:TextYankPost]
@@ -45,13 +45,12 @@
    :textwidth  0})
 
 (local enabled
-  [:cindent     :termguicolors :expandtab
-   :smartindent :smartcase     :smarttab
-   :splitbelow  :splitright    :lazyredraw
-   :hidden      :hlsearch      :ignorecase
-   :incsearch   :autowrite     :showcmd
-   :breakindent :number        :relativenumber
-   :wildmenu])
+  [:cindent     :expandtab  :wildmenu
+   :smartindent :smartcase  :smarttab
+   :splitbelow  :splitright :lazyredraw
+   :hidden      :hlsearch   :ignorecase
+   :incsearch   :autowrite  :showcmd
+   :breakindent :number     :relativenumber])
 
 (local disabled
   [:nobk :nojs :nosmd :noswapfile :nolz :nowrap])

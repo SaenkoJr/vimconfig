@@ -2,6 +2,7 @@
 (local lspconfig (require :lspconfig))
 (local mason (require :mason))
 (local mason-lspconfig (require :mason-lspconfig))
+(local lint (require :lint))
 
 (let [code-action (require "lsputil.codeAction")
       symbols (require "lsputil.symbols")
@@ -25,8 +26,14 @@
 (local servers [:clojure_lsp :ruby_lsp :lua_ls
                 :tsserver :sqls :fennel_language_server
                 :tailwindcss])
+; (local linters [:eslint_d :prettier])
 
-(mason.setup {:PATH :append})
+(vim.diagnostic.config {:float {:border :rounded}})
+
+(mason.setup
+  {:PATH :append
+   :ui {:border :rounded
+        :height 0.7}})
 (mason-lspconfig.setup
   {:ensure_installed servers})
 
@@ -35,3 +42,10 @@
     (let [server (lu.safe-require-server-config server-name)
           lsp (. lspconfig server-name)]
       (lsp.setup (server.build lu.on-attach lu.capabilities)))))
+
+(tset lint :linters_by_ft
+  {:javascript [:eslint_d]})
+
+(vim.api.nvim_create_autocmd
+  [:BufWritePost :BufEnter :InsertLeave]
+  {:callback (fn [] (lint.try_lint))})

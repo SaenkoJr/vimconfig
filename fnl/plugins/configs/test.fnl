@@ -16,7 +16,10 @@
 (neotest.setup
   {:adapters [(rspec-adapter {:rspec_cmd rspec-cmd
                               :transform_spec_path rspec-path
-                              :results_path "tmp/rspec.output"})]})
+                              :results_path "tmp/rspec.output"})]
+   :floating {:max_height 0.7
+              :max_width 0.9}})
+
 (util.noremap :n :<leader>ts ":Neotest summary<cr>")
 (util.noremap :n :<leader>to ":Neotest output<cr>")
 (util.noremap :n :<leader>tf ":Neotest run file<cr>")

@@ -8,3 +8,4 @@
    :disable_in_macro true})
 
 (npairs.add_rules [(rule "|" "|" "ruby")])
+(npairs.add_rules [(rule "<%" "%>" "eruby")])

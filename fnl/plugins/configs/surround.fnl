@@ -9,6 +9,6 @@
               :find :gsf            ; Find surrounding (to the right)
               :find_left :gsF       ; Find surrounding (to the left)
               :highlight :gsh       ; Highlight surrounding
-              :replace :gcs         ; Replace surrounding
+              :replace :gsc         ; Replace surrounding
               :update_n_lines :gsn} ; Update `n_lines`}
    :silent true})

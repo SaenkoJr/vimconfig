@@ -11,10 +11,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  'Olical/aniseed',
+  {'Olical/aniseed', branch = 'develop'},
   'Olical/nfnl',
   { import = 'plugins' }
-})
+}, {
+    ui = {
+      border = 'rounded'
+    }
+  })
 
 require('dotfiles.settings')
 require('dotfiles.mappings')

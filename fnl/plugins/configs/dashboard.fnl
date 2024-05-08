@@ -16,7 +16,7 @@
                        {:desc :Lazy
                         :key :l
                         :group "DiagnosticHint"
-                        :action :Lazy}
+                        :action "Lazy check"}
                        {:desc :Mason
                         :key :m
                         :group "DiagnosticHint"

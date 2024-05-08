@@ -8,9 +8,9 @@
  (uu.tx :nvimdev/lspsaga.nvim {:init (uu.lc :lsp-saga)})
  (uu.tx :zbirenbaum/copilot.lua {:init (uu.lc :copilot)})
  (uu.tx :stevearc/conform.nvim {:init (uu.lc :conform)})
+ (uu.tx :mfussenegger/nvim-lint)
  :jubnzv/virtual-types.nvim
  :nanotee/sqls.nvim
  (uu.tx :folke/trouble.nvim {:branch :dev
                              :init (uu.lc :nvim-trouble)
                              :opts {}})]
-                             ; :keys [(uu.tx "<leader>td" "<cmd>Trouble diagnostics toggle focus=true<cr>" {:desc "Open trouble diagnostics"})]})]

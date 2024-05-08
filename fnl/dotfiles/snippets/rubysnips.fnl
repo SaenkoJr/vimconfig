@@ -23,6 +23,7 @@
    (s "cl" [(t "class ") (i 1)
             (t ["" "\t"]) (i 0)
             (t ["" "end"])])
-   (s "it" [(t "it {  }")])])
+   (s "it" [(t "it {  }")])
+   (s "d" [(t "debugger")])])
 
 {: snippets}

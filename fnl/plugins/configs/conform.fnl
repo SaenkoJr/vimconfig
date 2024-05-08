@@ -4,4 +4,7 @@
   {:formatters_by_ft
     {:ruby [:rubocop]
      :eruby [:erb_format]
-     :javascript [:prettier]}})
+     :javascript [:eslint_d]}})
+
+(tset conform.formatters :prettier
+  {:prepend_args ["--single-quote"]})

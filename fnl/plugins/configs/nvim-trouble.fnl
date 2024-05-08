@@ -1,9 +1,19 @@
+(local trouble (require :trouble))
 (local wk (require :which-key))
+
+(trouble.setup
+  {:focus true
+   :auto_preview false
+   :win {:size {:width 45
+                :height 15}}
+   :preview {:type :split}
+   :modes {:diagnostics
+           {:filter {:not {:ft :*-log}}}}})
 
 (wk.register
   {:t {:name :+prefix
-       :d ["<cmd>Trouble diagnostics toggle focus=true<cr>" "Open trouble diagnostics"]
-       :D ["<cmd>Trouble diagnostics toggle focus=true filter.buf=0<cr>" "Open buffer diagnostics (Trouble)"]}}
+       :d ["<cmd>Trouble diagnostics toggle<cr>" "Open trouble diagnostics"]
+       :D ["<cmd>Trouble diagnostics toggle filter.buf=0<cr>" "Open buffer diagnostics (Trouble)"]}}
   {:prefix :<leader>})
 
 (wk.register

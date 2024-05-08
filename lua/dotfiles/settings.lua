@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd({"TextYankPost"}, {pattern = {"*"}, command = "silen
 local global_opts = {clipboard = "unnamedplus", completeopt = "menuone,noselect", fillchars = "stlnc:-,vert:|", mouse = "a", scrolloff = 3, shortmess = (nvim.o.shortmess .. "c"), sidescrolloff = 10, pumheight = 30, regexpengine = 0, updatetime = 50}
 local window_opts = {foldmethod = "expr", foldexpr = "nvim_treesitter#foldexpr()", foldnestmax = 10, foldlevel = 20}
 local buffer_opts = {shiftwidth = 2, tabstop = 2, synmaxcol = 300, textwidth = 0}
-local enabled = {"cindent", "termguicolors", "expandtab", "smartindent", "smartcase", "smarttab", "splitbelow", "splitright", "lazyredraw", "hidden", "hlsearch", "ignorecase", "incsearch", "autowrite", "showcmd", "breakindent", "number", "relativenumber", "wildmenu"}
+local enabled = {"cindent", "expandtab", "wildmenu", "smartindent", "smartcase", "smarttab", "splitbelow", "splitright", "lazyredraw", "hidden", "hlsearch", "ignorecase", "incsearch", "autowrite", "showcmd", "breakindent", "number", "relativenumber"}
 local disabled = {"nobk", "nojs", "nosmd", "noswapfile", "nolz", "nowrap"}
 utils["nvim-sets"](enabled)
 utils["nvim-sets"](disabled)
