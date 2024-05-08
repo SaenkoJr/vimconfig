@@ -8,6 +8,6 @@ nvim.ex.autocmd("FileType", "fennel,clojure", "lua vim.opt.listchars:append({ le
 nvim.ex.autocmd("FileType", "eruby.yaml", "set foldmethod=indent")
 nvim.ex.autocmd("FileType", "fennel", "set foldmethod=indent")
 nvim.ex.autocmd("FileType", "packer,orgagenda", "setlocal cursorline")
-nvim.ex.autocmd("BufWinEnter", "conjure-log-*,*.log", "lua vim.diagnostic.disable(0)")
+nvim.ex.autocmd("BufWinEnter", "conjure-log-*,*.log", "lua vim.diagnostic.disable()")
 vim.filetype.add({extension = {env = "sh"}, pattern = {["%.env%.[%w.-]+"] = "sh"}})
 return vim.filetype.add({extension = {j2 = "sh"}, pattern = {["*.j2"] = "sh"}})

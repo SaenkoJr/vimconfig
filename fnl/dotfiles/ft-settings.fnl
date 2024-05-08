@@ -21,7 +21,7 @@
 (nvim.ex.autocmd :FileType "packer,orgagenda" "setlocal cursorline")
 
 ;; diagnostic
-(nvim.ex.autocmd :BufWinEnter "conjure-log-*,*.log" "lua vim.diagnostic.disable(0)")
+(nvim.ex.autocmd :BufWinEnter "conjure-log-*,*.log" "lua vim.diagnostic.disable()")
 
 (vim.filetype.add
   {:extension {:env :sh}

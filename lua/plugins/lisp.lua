@@ -6,4 +6,4 @@ end
 local function _2_()
   return require("plugins.configs.vim-jack-in")
 end
-return {uu.tx("eraserhd/parinfer-rust", {build = "cargo build --release", ft = {"fennel", "clojure", "racket", "scheme"}, config = _1_}), "wlangstroth/vim-racket", "clojure-vim/clojure.vim", "tpope/vim-salve", "tpope/vim-classpath", uu.tx("clojure-vim/vim-jack-in", {config = _2_}), "radenling/vim-dispatch-neovim"}
+return {uu.tx("eraserhd/parinfer-rust", {build = "cargo build --release", ft = {"fennel", "clojure", "racket", "scheme"}, config = _1_}), "wlangstroth/vim-racket", "clojure-vim/clojure.vim", "tpope/vim-salve", uu.tx("clojure-vim/vim-jack-in", {config = _2_}), "radenling/vim-dispatch-neovim"}

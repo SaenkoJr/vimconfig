@@ -5,10 +5,6 @@
  (uu.tx :lukas-reineke/indent-blankline.nvim {:init (uu.lc :indentline)})
  (uu.tx :airblade/vim-rooter {:init (uu.lc :rooter)})
  (uu.tx :junegunn/vim-easy-align {:init (uu.lc :easyalign)})
- ; (uu.tx :glts/vim-textobj-comment {:lazy false})
- ; (uu.tx :kana/vim-textobj-function {:lazy false})
- ; (uu.tx :kana/vim-textobj-indent {:lazy false})
- ; (uu.tx :kana/vim-textobj-user {:lazy false})
  (uu.tx :ntpeters/vim-better-whitespace {:init (uu.lc :better-whitespace)})
  (uu.tx :AndrewRadev/splitjoin.vim {})
  (uu.tx :nvimdev/dashboard-nvim {:init (uu.lc :dashboard)
@@ -21,12 +17,11 @@
  (uu.tx :skywind3000/asyncrun.vim {:init (uu.lc :asyncrun)})
  (uu.tx :szw/vim-maximizer {})
  (uu.tx :talek/obvious-resize {:init (uu.lc :obvious-resize)})
- (uu.tx :tpope/vim-abolish {}) ; crs, crm, crc, crs, cru, etc...
+ (uu.tx :johmsalas/text-case.nvim {:config (uu.lc :text-case)
+                                   :lazy false}) ; crs, crm, crc, crs, cru, etc...
  (uu.tx :tpope/vim-dispatch {})
  (uu.tx :tpope/vim-jdaddy {:ft [:json]})
- (uu.tx :tpope/vim-ragtag {})
  (uu.tx :tpope/vim-repeat {})
- (uu.tx :tpope/vim-surround {:init (uu.lc :surround)})
  (uu.tx :echasnovski/mini.surround {:init (uu.lc :surround)})
  (uu.tx :tpope/vim-unimpaired {}) ; [q, ]q, etc
  (uu.tx :voldikss/vim-floaterm {:init (uu.lc :floaterm)})

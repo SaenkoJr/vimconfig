@@ -1,9 +1,7 @@
 -- [nfnl] Compiled from fnl/plugins/configs/telescope.fnl by https://github.com/Olical/nfnl, do not edit.
 local uu = require("dotfiles.utils")
-local core = require("aniseed.core")
 local telescope = require("telescope")
 local actions = require("telescope.actions")
-local builtin = require("telescope.builtin")
 local vimgrep_opts = {"rg", "--color=never", "--no-heading", "--with-filename", "--line-number", "--column", "--smart-case", "--only-matching", "-w", "--hidden"}
 telescope.setup({defaults = {layout_config = {width = 0.95, height = 0.95, prompt_position = "bottom"}, prompt_prefix = ">> ", initial_mode = "normal", vimgrep_arguments = vimgrep_opts, file_ignore_patterns = {"node_modules", ".git", "^log/", "%.log", "^storage/", "%.lock", "^tmp/", "%.keep", "%.key"}, mappings = {i = {["<C-k>"] = actions.move_selection_previous, ["<C-j>"] = actions.move_selection_next, ["<C-i>"] = actions.toggle_selection, ["<C-s>"] = actions.cycle_previewers_next, ["<C-a>"] = actions.cycle_previewers_prev, ["<C-u>"] = false}, n = {q = actions.close}}}, pickers = {buffers = {theme = "dropdown", layout_config = {width = 0.75, height = 0.55, prompt_position = "top"}, path_display = {truncate = 5}, mappings = {n = {["<c-d>"] = actions.delete_buffer, q = actions.close}}}, diagnostics = {theme = "dropdown", layout_config = {width = 0.75, height = 0.55, prompt_position = "top"}, path_display = {truncate = 5}, mappings = {n = {q = actions.close}}}}, extensions = {fzf = {fuzzy = true, override_file_sorter = true, override_generic_sorter = true, case_mode = "smart_case"}, ["ui-select"] = {theme = "dropdown", layout_config = {width = 0.75, height = 0.55, prompt_position = "top"}, mappings = {n = {q = actions.close}}}}})
 telescope.load_extension("fzf")

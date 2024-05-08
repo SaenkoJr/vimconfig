@@ -3,7 +3,7 @@
 (local langs
   [:c :clojure :css :cmake :comment
    :commonlisp :diff :dockerfile
-   :elixir :erlang :fennel
+   :elixir :erlang :fennel :embedded_template
    :git_config :git_rebase :gitattributes
    :gitcommit :gitignore :go :graphql
    :haskell :haskell_persistent :hjson :hlsl
@@ -35,8 +35,10 @@
                         :swap_next {:<leader>a "@parameter.inner"}
                         :swap_previous {:<leader>A "@parameter.inner"}}}
    :endwise {:enable true}
-   :rainbow {:enable false
-             :extended_mode false
-             :max_file_lines 1000}})
+   :autotag {:enable true
+             :filetypes [:html :javascript :typescript :javascriptreact :typescriptreact
+                         :svelte :vue :tsx :jsx :rescript :erb :eruby :xml :markdown]}
+   :matchup {:enable true
+             :disable [:clojure :racket :fennel]}})
 
 (treesitter.setup config)

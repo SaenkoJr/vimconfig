@@ -1,8 +1,6 @@
 (local uu (require :dotfiles.utils))
-(local core (require :aniseed.core))
 (local telescope (require :telescope))
 (local actions (require :telescope.actions))
-(local builtin (require :telescope.builtin))
 
 (local vimgrep-opts
   ["rg"
@@ -63,7 +61,6 @@
 
 (uu.noremap :n :<F1> "<cmd>Telescope help_tags<cr>")
 (uu.noremap :n :<leader>ob "<cmd>Telescope buffers<cr>")
-; (uu.noremap :n :<leader>td "<cmd>Telescope diagnostics<cr>")
 
 (uu.noremap :n :<leader>fn "<cmd>Telescope grep_string<cr>")
 (uu.noremap :v :<leader>fn "<cmd>Telescope grep_string<cr>")

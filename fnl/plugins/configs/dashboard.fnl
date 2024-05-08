@@ -3,7 +3,7 @@
 (dashboard.setup
   {:theme :hyper
    :week_header {:enable true}
-   ; :shortcut_type :number
+   :disable_move true
    :change_to_vsc_root true
    :config {:shortcut [{:desc "Git status"
                         :key :g
