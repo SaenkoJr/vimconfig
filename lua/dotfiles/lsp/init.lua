@@ -4,6 +4,8 @@ local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local lint = require("lint")
+local lint_parser = require("lint.parser")
+local core = require("aniseed.core")
 do
   local code_action = require("lsputil.codeAction")
   local symbols = require("lsputil.symbols")
@@ -31,8 +33,12 @@ do
     lsp.setup(server.build(lu["on-attach"], lu.capabilities))
   end
 end
-lint["linters_by_ft"] = {javascript = {"eslint_d"}}
 local function _1_()
+  return vim.api.nvim_buf_get_name(0)
+end
+lint.linters["slim-lint"] = {cmd = "slim-lint", stdin = true, ignore_exitcode = true, stream = "stdout", args = {"-r", "emacs", "--stdin-file-path", _1_}, parser = lint_parser.from_errorformat("%f:%l:%c: %m", {source = "slim-lint", severity = vim.diagnostic.severity.WARN})}
+lint["linters_by_ft"] = {javascript = {"eslint_d"}, slim = {"slim-lint"}, ruby = {"rubocop"}}
+local function _2_()
   return lint.try_lint()
 end
-return vim.api.nvim_create_autocmd({"BufWritePost", "BufEnter", "InsertLeave"}, {callback = _1_})
+return vim.api.nvim_create_autocmd({"BufWritePost", "BufEnter", "InsertLeave"}, {callback = _2_})

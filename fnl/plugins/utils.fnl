@@ -34,4 +34,6 @@
                                :dependencies [:nvim-lua/plenary.nvim]})
  (uu.tx :dhruvasagar/vim-table-mode {})
  (uu.tx :fabridamicelli/cronex.nvim {:init (uu.lc :cronex)})
- (uu.tx :folke/which-key.nvim {:config (uu.lc :which-key)})]
+ (uu.tx :folke/which-key.nvim {:config (uu.lc :which-key)})
+ (uu.tx :kevinhwang91/nvim-bqf {:ft :qf
+                                :config (uu.lc :bqf)})]

@@ -35,9 +35,9 @@
                         :swap_next {:<leader>a "@parameter.inner"}
                         :swap_previous {:<leader>A "@parameter.inner"}}}
    :endwise {:enable true}
-   :autotag {:enable true
-             :filetypes [:html :javascript :typescript :javascriptreact :typescriptreact
-                         :svelte :vue :tsx :jsx :rescript :erb :eruby :xml :markdown]}
+   ; :autotag {:enable true
+   ;           :filetypes [:html :javascript :typescript :javascriptreact :typescriptreact
+   ;                       :svelte :vue :tsx :jsx :rescript :erb :eruby :xml :markdown]}
    :matchup {:enable true
              :disable [:clojure :racket :fennel]}})
 

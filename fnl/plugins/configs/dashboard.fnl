@@ -3,7 +3,7 @@
 (dashboard.setup
   {:theme :hyper
    :week_header {:enable true}
-   :disable_move true
+   :disable_move false
    :change_to_vsc_root true
    :config {:shortcut [{:desc "Git status"
                         :key :g
@@ -28,4 +28,5 @@
             :project {:limit 5
                       :group "DiagnosticHint"}
             :mru {:limit 6}
-            :footer {}}})
+            :footer ["---------------------"
+                     (.. " " (. (vim.fn.systemlist "git rev-parse --abbrev-ref HEAD") 1))]}})

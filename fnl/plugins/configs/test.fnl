@@ -17,7 +17,7 @@
   {:adapters [(rspec-adapter {:rspec_cmd rspec-cmd
                               :transform_spec_path rspec-path
                               :results_path "tmp/rspec.output"})]
-   :floating {:max_height 0.7
+   :floating {:max_height 0.9
               :max_width 0.9}})
 
 (util.noremap :n :<leader>ts ":Neotest summary<cr>")
@@ -26,6 +26,8 @@
 (util.noremap :n :<leader>tn ":Neotest run<cr>")
 (util.noremap :n :<leader>tl ":Neotest run last<cr>")
 (util.noremap :n :<leader>ta ":Neotest attach<cr>")
+(util.noremap :n "[t" ":Neotest jump prev<cr>")
+(util.noremap :n "]t" ":Neotest jump next<cr>")
 
 ; (util.noremap :n "[t" "<Plug>(ultest-prev-fail)" {:noremap false})
 ; (util.noremap :n "]t" "<Plug>(ultest-next-fail)" {:noremap false})

@@ -3,6 +3,8 @@
 (local mason (require :mason))
 (local mason-lspconfig (require :mason-lspconfig))
 (local lint (require :lint))
+(local lint-parser (require :lint.parser))
+(local core (require :aniseed.core))
 
 (let [code-action (require "lsputil.codeAction")
       symbols (require "lsputil.symbols")
@@ -43,8 +45,18 @@
           lsp (. lspconfig server-name)]
       (lsp.setup (server.build lu.on-attach lu.capabilities)))))
 
+(tset lint.linters :slim-lint {:cmd :slim-lint
+                               :stdin true
+                               :ignore_exitcode true
+                               :stream :stdout
+                               :args ["-r" "emacs" "--stdin-file-path" (fn [] (vim.api.nvim_buf_get_name 0))]
+                               :parser (lint-parser.from_errorformat "%f:%l:%c: %m" {:source :slim-lint
+                                                                                     :severity vim.diagnostic.severity.WARN})})
+
 (tset lint :linters_by_ft
-  {:javascript [:eslint_d]})
+  {:javascript [:eslint_d]
+   :slim [:slim-lint]
+   :ruby [:rubocop]})
 
 (vim.api.nvim_create_autocmd
   [:BufWritePost :BufEnter :InsertLeave]

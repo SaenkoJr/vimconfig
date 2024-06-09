@@ -32,5 +32,6 @@
 (uu.noremap :n :<leader>FN ":Rg <c-r><c-w><cr>")
 (uu.noremap :n :<leader>LG "<cmd>Rg<cr>")
 
-(uu.noremap :n :<leader>ff "<cmd>Files<cr>")
+(uu.noremap :n :<leader>ff "<cmd>Telescope find_files<cr>")
+; (uu.noremap :n :<leader>ff "<cmd>Files<cr>")
 (uu.noremap :n :<leader>FF "<cmd>Files ~<cr>")

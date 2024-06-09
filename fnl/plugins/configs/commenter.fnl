@@ -5,7 +5,8 @@
 
 ((. (require :mini.comment) :setup)
  {:options
-  {:custom_commentstring (fn []
+  {:ignore_blank_line true
+   :custom_commentstring (fn []
                            (or
                              (tscomment.calculate_commentstring)
                              (. vim.bo :commentstring)))}})

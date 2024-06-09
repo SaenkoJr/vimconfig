@@ -6,7 +6,7 @@ local tcm = require("tailwindcss-colorizer-cmp")
 local uu = require("dotfiles.utils")
 local lspkind = require("dotfiles.lspkind")
 tcm.setup({color_square_width = 2})
-local sources = {{name = "copilot", priority = 11, group_index = 2}, {name = "nvim_lsp", priority = 10}, {name = "conjure", trigger_characters = {".", "/"}, priority = 4}, {name = "path"}, {name = "luasnip", priority = 3}, {name = "nvim_lua", priority = 4}, {name = "orgmode"}, {name = "buffer", max_item_count = 15, priority = 1}}
+local sources = {{name = "supermaven", priority = 11, group_index = 2}, {name = "nvim_lsp", priority = 10}, {name = "conjure", trigger_characters = {".", "/"}, priority = 4}, {name = "path"}, {name = "luasnip", priority = 3}, {name = "nvim_lua", priority = 4}, {name = "orgmode"}, {name = "buffer", max_item_count = 15, priority = 1}}
 local function fmtfn(entry, vim_item)
   vim_item["menu"] = lspkind.menu_icons[entry.source.name]
   vim_item["kind"] = ("  " .. lspkind.menu_kind[vim_item.kind])

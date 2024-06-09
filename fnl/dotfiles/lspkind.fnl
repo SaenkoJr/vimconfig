@@ -6,7 +6,8 @@
                    :conjure  " [conj]"
                    :buffer   " [buf]"
                    :omni     "𐂷 [omni]"
-                   :Copilot  " [copilot]"})
+                   :Copilot  " [copilot]"
+                   :Supermaven " [supermaven]"})
 
 (local menu_kind {:Text          "  [text]"
                   :Method        " [method]"
@@ -33,7 +34,8 @@
                   :Event         "⌘ [event]"
                   :Operator      " [operator]"
                   :TypeParameter "⌂ [type]"
-                  :Copilot       " [copilot]"})
+                  :Copilot       " [copilot]"
+                  :Supermaven " [supermaven]"})
 
 {: menu_kind
  : menu_icons}
