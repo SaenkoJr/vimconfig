@@ -1,11 +1,12 @@
 (local nvim (require :aniseed.nvim))
 (local utils (require :dotfiles.utils))
+(local core (require :aniseed.core))
 
 ;; Slim
 (nvim.ex.autocmd :BufNewFile :BufRead "*.slim" "set ft=slim")
 
 ;; Rust
-(utils.set-var :g :rust_recommended_style 0)
+(tset vim.g :rust_recommended_style "0")
 
 ;; Racket
 (nvim.ex.autocmd :FileType "sicp" "set filetype=racket")

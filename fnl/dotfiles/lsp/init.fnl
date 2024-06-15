@@ -27,7 +27,7 @@
 
 (local servers [:clojure_lsp :ruby_lsp :lua_ls
                 :tsserver :sqls :fennel_language_server
-                :tailwindcss])
+                :tailwindcss :rust_analyzer])
 ; (local linters [:eslint_d :prettier])
 
 (vim.diagnostic.config {:float {:border :rounded}})

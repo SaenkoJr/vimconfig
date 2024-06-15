@@ -21,7 +21,7 @@ do
   vim.lsp.handlers["textDocument/typeDefinition"] = locations.typeDefinition_handler
 end
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = {prefix = "\226\150\160"}})
-local servers = {"clojure_lsp", "ruby_lsp", "lua_ls", "tsserver", "sqls", "fennel_language_server", "tailwindcss"}
+local servers = {"clojure_lsp", "ruby_lsp", "lua_ls", "tsserver", "sqls", "fennel_language_server", "tailwindcss", "rust_analyzer"}
 vim.diagnostic.config({float = {border = "rounded"}})
 mason.setup({PATH = "append", ui = {border = "rounded", height = 0.7}})
 mason_lspconfig.setup({ensure_installed = servers})

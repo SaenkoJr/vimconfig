@@ -57,7 +57,9 @@
                        ((. (require :luasnip) :lsp_expand) args.body))}
    :sources (cmp.config.sources sources)
    :window {:col_offset -3
-            :side_padding 0}
+            :side_padding 0
+            :completion (cmp.config.window.bordered)
+            :documentation (cmp.config.window.bordered)}
    :formatting {:fields ["menu" "abbr" "kind"]
                 :format fmtfn}
    :formatters {:insert_text (. (require "copilot_cmp.format") :remove_existing)}
