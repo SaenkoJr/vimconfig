@@ -5,7 +5,8 @@
    :week_header {:enable true}
    :disable_move false
    :change_to_vsc_root true
-   :config {:shortcut [{:desc "Git status"
+   :config {:header [""]
+            :shortcut [{:desc "Git status"
                         :key :g
                         :group "@diff.plus"
                         :action :G}
@@ -28,5 +29,5 @@
             :project {:limit 5
                       :group "DiagnosticHint"}
             :mru {:limit 6}
-            :footer ["---------------------"
+            :footer [(vim.fn.repeat "-" 50)
                      (.. " " (. (vim.fn.systemlist "git rev-parse --abbrev-ref HEAD") 1))]}})

@@ -10,7 +10,6 @@
  (uu.tx :nvimdev/dashboard-nvim {:init (uu.lc :dashboard)
                                  :event :VimEnter
                                  :dependencies [:nvim-tree/nvim-web-devicons]})
- ;; --- Commebter
  (uu.tx :JoosepAlviste/nvim-ts-context-commentstring {})
  (uu.tx :echasnovski/mini.comment {:init (uu.lc :commenter)})
  (uu.tx :rhysd/clever-f.vim {:init (uu.lc :clever-f)})
