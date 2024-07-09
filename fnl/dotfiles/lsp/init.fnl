@@ -49,12 +49,17 @@
                                :stdin true
                                :ignore_exitcode true
                                :stream :stdout
-                               :args ["-r" "emacs" "--stdin-file-path" (fn [] (vim.api.nvim_buf_get_name 0))]
+                               :args ["--config" "~/.config/slim-lint/.slim-lint.yml"
+                                      "--reporter" "emacs"
+                                      "--stdin-file-path" (fn [] (vim.api.nvim_buf_get_name 0))]
+                                      
                                :parser (lint-parser.from_errorformat "%f:%l:%c: %m" {:source :slim-lint
                                                                                      :severity vim.diagnostic.severity.WARN})})
 
 (tset lint :linters_by_ft
   {:javascript [:eslint_d]
+   :typescript [:eslint_d]
+   :typescriptreact [:eslint_d]
    :slim [:slim-lint]
    :ruby [:rubocop]})
 

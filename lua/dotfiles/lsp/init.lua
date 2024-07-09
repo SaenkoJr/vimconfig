@@ -36,8 +36,8 @@ end
 local function _1_()
   return vim.api.nvim_buf_get_name(0)
 end
-lint.linters["slim-lint"] = {cmd = "slim-lint", stdin = true, ignore_exitcode = true, stream = "stdout", args = {"-r", "emacs", "--stdin-file-path", _1_}, parser = lint_parser.from_errorformat("%f:%l:%c: %m", {source = "slim-lint", severity = vim.diagnostic.severity.WARN})}
-lint["linters_by_ft"] = {javascript = {"eslint_d"}, slim = {"slim-lint"}, ruby = {"rubocop"}}
+lint.linters["slim-lint"] = {cmd = "slim-lint", stdin = true, ignore_exitcode = true, stream = "stdout", args = {"--config", "~/.config/slim-lint/.slim-lint.yml", "--reporter", "emacs", "--stdin-file-path", _1_}, parser = lint_parser.from_errorformat("%f:%l:%c: %m", {source = "slim-lint", severity = vim.diagnostic.severity.WARN})}
+lint["linters_by_ft"] = {javascript = {"eslint_d"}, typescript = {"eslint_d"}, typescriptreact = {"eslint_d"}, slim = {"slim-lint"}, ruby = {"rubocop"}}
 local function _2_()
   return lint.try_lint()
 end
