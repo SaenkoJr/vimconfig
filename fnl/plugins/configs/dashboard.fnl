@@ -14,6 +14,10 @@
                         :key :r
                         :group "@attribute"
                         :action :RnvimrToggle}
+                       {:desc :DBUI
+                        :key :d
+                        :group "@attribute"
+                        :action :DBUIToggle}
                        {:desc :Lazy
                         :key :l
                         :group "DiagnosticHint"

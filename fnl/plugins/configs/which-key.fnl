@@ -5,8 +5,10 @@
 (tset nvim.o :timeoutlen 600)
 
 (wk.setup
-  {:mode [:n :v]
-   :key_labels {:<tab> :<TAB>
-                :<cr> :<ENTER>
-                :<space> :<SPACE>}
-   :window {:border :single}})
+  {:delay (fn [] (. nvim :o :timeoutlen))
+   :notify false
+   :preset :modern
+   :icons {:keys {:Tab :TAB
+                  :CR :ENTER
+                  :Space :SPACE}
+           :colors true}})

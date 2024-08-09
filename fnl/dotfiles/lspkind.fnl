@@ -7,7 +7,7 @@
                    :buffer   " [buf]"
                    :omni     "𐂷 [omni]"
                    :Copilot  " [copilot]"
-                   :Supermaven " [supermaven]"})
+                   :Supermaven " [supermaven]"})
 
 (local menu_kind {:Text          "  [text]"
                   :Method        " [method]"

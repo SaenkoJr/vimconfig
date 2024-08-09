@@ -68,10 +68,10 @@
 
 (uu.noremap :n :<leader>lg "<cmd>Telescope live_grep<cr>")
 
-(wk.register
-  {:tg {:name "Telescope git"
-        :b ["<cmd>Telescope git_branches<cr>" "Open git branches"]
-        :C ["<cmd>Telescope git_commits<cr>" "Open git commits"]
-        :c ["<cmd>Telescope git_bcommits<cr>" "Open current file commits"]
-        :s ["<cmd>Telescope git_status<cr>" "Open git status"]}}
-  {:prefix :<leader>})
+(wk.add
+  [(uu.tx "<leader>tg" {:group "Telescope git"})
+   (uu.tx "<leader>tgC" "<cmd>Telescope git_commits<cr>" {:desc "Open git commits"})
+   (uu.tx "<leader>tgb" "<cmd>Telescope git_branches<cr>" {:desc "Open git branches"})
+   (uu.tx "<leader>tgc" "<cmd>Telescope git_bcommits<cr>" {:desc "Open current file commits"})
+   (uu.tx "<leader>tgs" "<cmd>Telescope git_status<cr>" {:desc "Open git status"})
+   {:mode [:n]}])
