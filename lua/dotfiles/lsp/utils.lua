@@ -11,7 +11,6 @@ local function safe_require_server_config(name)
 end
 local capabilities = cmplsp.default_capabilities(vim.lsp.protocol.make_client_capabilities())
 local function on_attach(client, bufnr)
-  do local _ = (require("virtualtypes")).on_attach end
   uu.bnoremap(bufnr, "n", "K", ":Lspsaga hover_doc<cr>")
   uu.bnoremap(bufnr, "n", "<leader>K", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
   uu.bnoremap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<cr>")

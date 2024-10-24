@@ -12,7 +12,7 @@
     (vim.lsp.protocol.make_client_capabilities)))
 
 (fn on-attach [client bufnr]
-  (. (require :virtualtypes) :on_attach)
+  ; (. (require :virtualtypes) :on_attach)
   ; (set nvim.b.omnifunc :lua.vim.lsp.omnifunc)
 
   (uu.bnoremap bufnr :n :K ":Lspsaga hover_doc<cr>")

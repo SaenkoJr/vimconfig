@@ -26,7 +26,7 @@
         {:virtual_text {:prefix "■"}}))
 
 (local servers [:clojure_lsp :ruby_lsp :lua_ls
-                :tsserver :sqls :fennel_language_server
+                :ts_ls :sqls :fennel_language_server
                 :tailwindcss :rust_analyzer])
 ; (local linters [:eslint_d :prettier])
 
