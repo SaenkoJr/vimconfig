@@ -19,8 +19,8 @@
   ; (uu.bnoremap bufnr :n :K "<cmd>lua vim.lsp.buf.hover()<cr>")
   (uu.bnoremap bufnr :n :<leader>K "<cmd>lua vim.lsp.buf.signature_help()<cr>")
 
-  ; (uu.bnoremap bufnr :n :gd "<cmd>lua vim.lsp.buf.definition()<cr>")
-  (uu.bnoremap bufnr :n :gd "<cmd>Telescope lsp_definitions<cr>")
+  (uu.bnoremap bufnr :n :gd "<cmd>lua vim.lsp.buf.definition()<cr>")
+  ; (uu.bnoremap bufnr :n :gd "<cmd>Telescope lsp_definitions<cr>")
 
   (uu.bnoremap bufnr :n :gr "<cmd>lua vim.lsp.buf.references()<cr>")
 

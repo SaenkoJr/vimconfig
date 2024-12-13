@@ -13,7 +13,7 @@ local capabilities = cmplsp.default_capabilities(vim.lsp.protocol.make_client_ca
 local function on_attach(client, bufnr)
   uu.bnoremap(bufnr, "n", "K", ":Lspsaga hover_doc<cr>")
   uu.bnoremap(bufnr, "n", "<leader>K", "<cmd>lua vim.lsp.buf.signature_help()<cr>")
-  uu.bnoremap(bufnr, "n", "gd", "<cmd>Telescope lsp_definitions<cr>")
+  uu.bnoremap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
   uu.bnoremap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<cr>")
   uu.bnoremap(bufnr, "n", "<leader>rn", ":Lspsaga rename<cr>")
   uu.bnoremap(bufnr, "n", "<leader>ca", ":Lspsaga code_action<cr>")
