@@ -27,13 +27,17 @@
 
 (local servers [:clojure_lsp :ruby_lsp :lua_ls
                 :ts_ls :sqls :fennel_language_server
-                :tailwindcss :rust_analyzer])
+                :tailwindcss :rust_analyzer :pylsp :elixirls])
 ; (local linters [:eslint_d :prettier])
 
 (vim.diagnostic.config {:float {:border :rounded}})
 
 (mason.setup
   {:PATH :append
+   :log_level vim.log.levels.INFO
+   :max_concurrent_installers 4
+   :registries ["github:mason-org/mason-registry"]
+   :providers ["mason.providers.registry-api" "mason.providers.client"]
    :ui {:border :rounded
         :height 0.7}})
 (mason-lspconfig.setup
@@ -52,15 +56,15 @@
                                :args ["--config" "~/.config/slim-lint/.slim-lint.yml"
                                       "--reporter" "emacs"
                                       "--stdin-file-path" (fn [] (vim.api.nvim_buf_get_name 0))]
-                                      
                                :parser (lint-parser.from_errorformat "%f:%l:%c: %m" {:source :slim-lint
                                                                                      :severity vim.diagnostic.severity.WARN})})
 
 (tset lint :linters_by_ft
   {:javascript [:eslint_d]
    :typescript [:eslint_d]
+   :javascriptreact [:eslint_d]
    :typescriptreact [:eslint_d]
-   ; :slim [:slim-lint]
+   :slim [:slim-lint]
    :ruby [:rubocop]})
 
 (vim.api.nvim_create_autocmd

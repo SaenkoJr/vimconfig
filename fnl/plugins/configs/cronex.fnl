@@ -1,3 +1,3 @@
 (local cronex (require :cronex))
 
-(cronex.setup {})
+; (cronex.setup {})

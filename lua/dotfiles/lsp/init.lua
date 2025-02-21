@@ -21,9 +21,9 @@ do
   vim.lsp.handlers["textDocument/typeDefinition"] = locations.typeDefinition_handler
 end
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = {prefix = "\226\150\160"}})
-local servers = {"clojure_lsp", "ruby_lsp", "lua_ls", "ts_ls", "sqls", "fennel_language_server", "tailwindcss", "rust_analyzer"}
+local servers = {"clojure_lsp", "ruby_lsp", "lua_ls", "ts_ls", "sqls", "fennel_language_server", "tailwindcss", "rust_analyzer", "pylsp", "elixirls"}
 vim.diagnostic.config({float = {border = "rounded"}})
-mason.setup({PATH = "append", ui = {border = "rounded", height = 0.7}})
+mason.setup({PATH = "append", log_level = vim.log.levels.INFO, max_concurrent_installers = 4, registries = {"github:mason-org/mason-registry"}, providers = {"mason.providers.registry-api", "mason.providers.client"}, ui = {border = "rounded", height = 0.7}})
 mason_lspconfig.setup({ensure_installed = servers})
 do
   local servers0 = servers
@@ -37,7 +37,7 @@ local function _1_()
   return vim.api.nvim_buf_get_name(0)
 end
 lint.linters["slim-lint"] = {cmd = "slim-lint", stdin = true, ignore_exitcode = true, stream = "stdout", args = {"--config", "~/.config/slim-lint/.slim-lint.yml", "--reporter", "emacs", "--stdin-file-path", _1_}, parser = lint_parser.from_errorformat("%f:%l:%c: %m", {source = "slim-lint", severity = vim.diagnostic.severity.WARN})}
-lint["linters_by_ft"] = {javascript = {"eslint_d"}, typescript = {"eslint_d"}, typescriptreact = {"eslint_d"}, ruby = {"rubocop"}}
+lint["linters_by_ft"] = {javascript = {"eslint_d"}, typescript = {"eslint_d"}, javascriptreact = {"eslint_d"}, typescriptreact = {"eslint_d"}, slim = {"slim-lint"}, ruby = {"rubocop"}}
 local function _2_()
   return lint.try_lint()
 end

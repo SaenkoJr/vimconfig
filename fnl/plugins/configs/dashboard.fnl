@@ -26,6 +26,10 @@
                         :key :m
                         :group "DiagnosticHint"
                         :action :Mason}
+                       {:desc :Colors
+                        :key :c
+                        :group "DiagnosticHint"
+                        :action :Colors}
                        {:desc :Quit
                         :key :q
                         :group "DiagnosticError"
