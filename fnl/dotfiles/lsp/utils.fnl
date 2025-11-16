@@ -2,7 +2,7 @@
 (local cmplsp (require :cmp_nvim_lsp))
 
 (fn safe-require-server-config [name]
-  (let [(ok? conf-or-err) (pcall require (.. "dotfiles.lsp.servers." name))]
+  (let [(ok? conf-or-err) (pcall require (.. "dotfiles.lsp.configs." name))]
     (if (not ok?)
       (print (.. "lsp config error: " conf-or-err))
       conf-or-err)))

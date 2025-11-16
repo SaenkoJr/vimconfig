@@ -2,8 +2,8 @@
 
 [(uu.tx :RishabhRD/nvim-lsputils {:dependencies [:RishabhRD/popfix]
                                   :init (uu.lc :lsp-utils)})
- (uu.tx :williamboman/mason-lspconfig.nvim {:dependencies [(uu.tx :williamboman/mason.nvim {:lazy false})
-                                                           :neovim/nvim-lspconfig]})
+ (uu.tx :mason-org/mason-lspconfig.nvim {:dependencies [(uu.tx :mason-org/mason.nvim {:lazy false})
+                                                        :neovim/nvim-lspconfig]})
  (uu.tx :j-hui/fidget.nvim {:lazy false})
  (uu.tx :nvimdev/lspsaga.nvim {:init (uu.lc :lsp-saga)})
  (uu.tx :supermaven-inc/supermaven-nvim {:init (uu.lc :supermaven)

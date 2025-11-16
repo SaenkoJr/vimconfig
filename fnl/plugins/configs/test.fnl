@@ -16,7 +16,8 @@
 (neotest.setup
   {:adapters [(rspec-adapter {:rspec_cmd rspec-cmd
                               :transform_spec_path rspec-path
-                              :results_path "tmp/rspec.output"})]
+                              :results_path "tmp/rspec.output"
+                              :formatter "json"})]
    :floating {:max_height 0.9
               :max_width 0.9}})
 

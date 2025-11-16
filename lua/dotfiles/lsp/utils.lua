@@ -1,8 +1,8 @@
--- [nfnl] Compiled from fnl/dotfiles/lsp/utils.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/dotfiles/lsp/utils.fnl
 local uu = require("dotfiles.utils")
 local cmplsp = require("cmp_nvim_lsp")
 local function safe_require_server_config(name)
-  local ok_3f, conf_or_err = pcall(require, ("dotfiles.lsp.servers." .. name))
+  local ok_3f, conf_or_err = pcall(require, ("dotfiles.lsp.configs." .. name))
   if not ok_3f then
     return print(("lsp config error: " .. conf_or_err))
   else

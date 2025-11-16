@@ -4,7 +4,6 @@
 (local mason-lspconfig (require :mason-lspconfig))
 (local lint (require :lint))
 (local lint-parser (require :lint.parser))
-(local core (require :aniseed.core))
 
 (let [code-action (require "lsputil.codeAction")
       symbols (require "lsputil.symbols")
@@ -27,10 +26,8 @@
 
 (local servers [:clojure_lsp :ruby_lsp :lua_ls
                 :ts_ls :sqls :fennel_language_server
-                :tailwindcss :rust_analyzer :pylsp :elixirls])
+                :tailwindcss :rust_analyzer :pylsp :pyright :elixirls])
 ; (local linters [:eslint_d :prettier])
-
-(vim.diagnostic.config {:float {:border :rounded}})
 
 (mason.setup
   {:PATH :append
@@ -41,30 +38,27 @@
    :ui {:border :rounded
         :height 0.7}})
 (mason-lspconfig.setup
-  {:ensure_installed servers})
+  {:ensure_installed servers
+   :automatic_enable false})
 
-(let [servers servers]
-  (each [_ server-name (ipairs servers)]
-    (let [server (lu.safe-require-server-config server-name)
-          lsp (. lspconfig server-name)]
-      (lsp.setup (server.build lu.on-attach lu.capabilities)))))
+(vim.diagnostic.config {:virtual_text true
+                        :float {:border :rounded}})
+(vim.lsp.config :* {:on_attach lu.on-attach
+                    :capabilities lu.capabilities})
 
-(tset lint.linters :slim-lint {:cmd :slim-lint
-                               :stdin true
-                               :ignore_exitcode true
-                               :stream :stdout
-                               :args ["--config" "~/.config/slim-lint/.slim-lint.yml"
-                                      "--reporter" "emacs"
-                                      "--stdin-file-path" (fn [] (vim.api.nvim_buf_get_name 0))]
-                               :parser (lint-parser.from_errorformat "%f:%l:%c: %m" {:source :slim-lint
-                                                                                     :severity vim.diagnostic.severity.WARN})})
+(local servers-configs-names [:ruby_lsp :pyright :ts_ls])
+(each [_ server-name (ipairs servers-configs-names)]
+  (let [server-config (lu.safe-require-server-config server-name)]
+    (do
+      (vim.lsp.enable server-name)
+      (vim.lsp.config server-name server-config.config))))
 
 (tset lint :linters_by_ft
   {:javascript [:eslint_d]
    :typescript [:eslint_d]
    :javascriptreact [:eslint_d]
    :typescriptreact [:eslint_d]
-   :slim [:slim-lint]
+   :python []
    :ruby [:rubocop]})
 
 (vim.api.nvim_create_autocmd

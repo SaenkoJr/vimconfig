@@ -1,11 +1,10 @@
--- [nfnl] Compiled from fnl/dotfiles/lsp/init.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/dotfiles/lsp/init.fnl
 local lu = require("dotfiles.lsp.utils")
 local lspconfig = require("lspconfig")
 local mason = require("mason")
 local mason_lspconfig = require("mason-lspconfig")
 local lint = require("lint")
 local lint_parser = require("lint.parser")
-local core = require("aniseed.core")
 do
   local code_action = require("lsputil.codeAction")
   local symbols = require("lsputil.symbols")
@@ -21,24 +20,19 @@ do
   vim.lsp.handlers["textDocument/typeDefinition"] = locations.typeDefinition_handler
 end
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {virtual_text = {prefix = "\226\150\160"}})
-local servers = {"clojure_lsp", "ruby_lsp", "lua_ls", "ts_ls", "sqls", "fennel_language_server", "tailwindcss", "rust_analyzer", "pylsp", "elixirls"}
-vim.diagnostic.config({float = {border = "rounded"}})
+local servers = {"clojure_lsp", "ruby_lsp", "lua_ls", "ts_ls", "sqls", "fennel_language_server", "tailwindcss", "rust_analyzer", "pylsp", "pyright", "elixirls"}
 mason.setup({PATH = "append", log_level = vim.log.levels.INFO, max_concurrent_installers = 4, registries = {"github:mason-org/mason-registry"}, providers = {"mason.providers.registry-api", "mason.providers.client"}, ui = {border = "rounded", height = 0.7}})
-mason_lspconfig.setup({ensure_installed = servers})
-do
-  local servers0 = servers
-  for _, server_name in ipairs(servers0) do
-    local server = lu["safe-require-server-config"](server_name)
-    local lsp = lspconfig[server_name]
-    lsp.setup(server.build(lu["on-attach"], lu.capabilities))
-  end
+mason_lspconfig.setup({ensure_installed = servers, automatic_enable = false})
+vim.diagnostic.config({virtual_text = true, float = {border = "rounded"}})
+vim.lsp.config("*", {on_attach = lu["on-attach"], capabilities = lu.capabilities})
+local servers_configs_names = {"ruby_lsp", "pyright", "ts_ls"}
+for _, server_name in ipairs(servers_configs_names) do
+  local server_config = lu["safe-require-server-config"](server_name)
+  vim.lsp.enable(server_name)
+  vim.lsp.config(server_name, server_config.config)
 end
+lint["linters_by_ft"] = {javascript = {"eslint_d"}, typescript = {"eslint_d"}, javascriptreact = {"eslint_d"}, typescriptreact = {"eslint_d"}, python = {}, ruby = {"rubocop"}}
 local function _1_()
-  return vim.api.nvim_buf_get_name(0)
-end
-lint.linters["slim-lint"] = {cmd = "slim-lint", stdin = true, ignore_exitcode = true, stream = "stdout", args = {"--config", "~/.config/slim-lint/.slim-lint.yml", "--reporter", "emacs", "--stdin-file-path", _1_}, parser = lint_parser.from_errorformat("%f:%l:%c: %m", {source = "slim-lint", severity = vim.diagnostic.severity.WARN})}
-lint["linters_by_ft"] = {javascript = {"eslint_d"}, typescript = {"eslint_d"}, javascriptreact = {"eslint_d"}, typescriptreact = {"eslint_d"}, slim = {"slim-lint"}, ruby = {"rubocop"}}
-local function _2_()
   return lint.try_lint()
 end
-return vim.api.nvim_create_autocmd({"BufWritePost", "BufEnter", "InsertLeave"}, {callback = _2_})
+return vim.api.nvim_create_autocmd({"BufWritePost", "BufEnter", "InsertLeave"}, {callback = _1_})

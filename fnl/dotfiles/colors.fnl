@@ -7,5 +7,5 @@
 
 (nvim.ex.syntax :manual)
 (nvim.ex.autocmd :FileType (table.concat fts-syntax-on ",") "set syntax=on")
-(nvim.ex.colorscheme :paper)
-(core.assoc-in nvim [:o :background] :light)
+(nvim.ex.colorscheme :ayu-dark)
+(core.assoc-in nvim [:o :background] :dark)

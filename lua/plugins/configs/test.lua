@@ -1,4 +1,4 @@
--- [nfnl] Compiled from fnl/plugins/configs/test.fnl by https://github.com/Olical/nfnl, do not edit.
+-- [nfnl] fnl/plugins/configs/test.fnl
 local util = require("dotfiles.utils")
 local neotest = require("neotest")
 local rspec_adapter = require("neotest-rspec")
@@ -17,7 +17,7 @@ local function rspec_path(path)
     return path
   end
 end
-neotest.setup({adapters = {rspec_adapter({rspec_cmd = rspec_cmd, transform_spec_path = rspec_path, results_path = "tmp/rspec.output"})}, floating = {max_height = 0.9, max_width = 0.9}})
+neotest.setup({adapters = {rspec_adapter({rspec_cmd = rspec_cmd, transform_spec_path = rspec_path, results_path = "tmp/rspec.output", formatter = "json"})}, floating = {max_height = 0.9, max_width = 0.9}})
 util.noremap("n", "<leader>ts", ":Neotest summary<cr>")
 util.noremap("n", "<leader>to", ":Neotest output<cr>")
 util.noremap("n", "<leader>tf", ":Neotest run file<cr>")

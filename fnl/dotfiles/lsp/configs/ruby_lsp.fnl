@@ -1,4 +1,5 @@
 (local util (require :lspconfig.util))
+(local lu (require :dotfiles.lsp.utils))
 
 (fn add_ruby_deps_command [client bufnr]
   (vim.api.nvim_buf_create_user_command bufnr
@@ -30,4 +31,16 @@
                 (add_ruby_deps_command client bufnr)
                 (on-attach client bufnr))})
 
-{: build}
+(local config
+  {:filetypes [:ruby :eruby]
+   :init_options {:enabledFeatures {:diagnostics false}
+                  :experimentalFeaturesEnabled true}
+   ; :root_dir (util.root_pattern "Gemfile" ".git" "*.rb")
+   :root_markers ["Gemfile" ".git"]
+   :single_file_support true
+   :on_attach (fn [client bufnr]
+                (do
+                  (add_ruby_deps_command client bufnr)
+                  (lu.on-attach client bufnr)))})
+
+{: config}
